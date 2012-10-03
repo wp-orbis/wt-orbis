@@ -52,6 +52,10 @@ body.admin-bar .navbar-fixed-top {
 	top: 28px;
 }
 
+.navbar-inverse .nav > li > a {
+	color: #bbb;
+}
+
 .col-a {
 	float: left;
 

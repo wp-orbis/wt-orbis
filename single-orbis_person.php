@@ -46,76 +46,78 @@
 					<dl>
 						<?php if ( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ) : ?>
 
-						<dt><?php _e( 'Phone number', 'orbis' ); ?></dt>
-						<dd><a href="#" class="anchor-tooltip" title="<?php _e( 'Call this number', 'orbis' ); ?>"><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></a></dd>
+							<dt><?php _e( 'Phone number', 'orbis' ); ?></dt>
+							<dd><a href="#" class="anchor-tooltip" title="<?php _e( 'Call this number', 'orbis' ); ?>"><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></a></dd>
 
 						<?php endif; ?>
-						
+
 						<?php if ( get_post_meta( $post->ID, '_orbis_person_mobile_number', true ) ) : ?>
 
-						<dt><?php _e( 'Mobile number', 'orbis' ); ?></dt>
-						<dd><a href="#" class="anchor-tooltip" title="<?php _e( 'Call this number', 'orbis' ); ?>"><?php echo get_post_meta( $post->ID, '_orbis_person_mobile_number', true ); ?></a></dd>
-						
+							<dt><?php _e( 'Mobile number', 'orbis' ); ?></dt>
+							<dd><a href="#" class="anchor-tooltip" title="<?php _e( 'Call this number', 'orbis' ); ?>"><?php echo get_post_meta( $post->ID, '_orbis_person_mobile_number', true ); ?></a></dd>
+
 						<?php endif; ?>
-						
+
 						<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
 
-						<dt><?php _e( 'E-mail address', 'orbis' ); ?></dt>
-						<dd><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></dd>
-						
+							<dt><?php _e( 'E-mail address', 'orbis' ); ?></dt>
+							<dd><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></dd>
+
 						<?php endif; ?>
 
 						<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) || get_post_meta( $post->ID, '_orbis_person_facebook', true ) || get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ) : ?>
 
-						<dt><?php _e( 'Social media', 'orbis' ); ?></dt>
-						<dd>
-							<ul class="social">
-								<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) ) : ?>
+							<dt><?php _e( 'Social media', 'orbis' ); ?></dt>
+							<dd>
+								<ul class="social">
+									<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) ) : ?>
+						
+										<li class="twitter">
+											<?php
+						
+											printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
+												'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ) ,
+												'Twitter'
+											);
 					
-									<li class="twitter">
-										<?php
+											?>
+										</li>
+	
+									<?php endif; ?>
+	
+									<?php if ( get_post_meta( $post->ID, '_orbis_person_facebook', true ) ) : ?>
+						
+										<li class="facebook">
+											<?php
+						
+											printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
+												'http://www.facebook.com/' . get_post_meta( $post->ID, '_orbis_person_facebook', true ) ,
+												'Facebook'
+											);
 					
-										printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-											'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ) ,
-											'Twitter'
-										);
-				
-										?>
-									</li>
+											?>
+										</li>
+	
+									<?php endif; ?>
+	
+									<?php if ( get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ) : ?>
+						
+										<li class="linkedin">
+											<?php
+						
+											printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
+												'http://www.linkedin.com/in/' . get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ,
+												'LinkedIn'
+											);
+					
+											?>
+										</li>
+	
+									<?php endif; ?>
+								</ul>
+							</dd>
 
-								<?php endif; ?>
-
-								<?php if ( get_post_meta( $post->ID, '_orbis_person_facebook', true ) ) : ?>
-					
-									<li class="facebook">
-										<?php
-					
-										printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-											'http://www.facebook.com/' . get_post_meta( $post->ID, '_orbis_person_facebook', true ) ,
-											'Facebook'
-										);
-				
-										?>
-									</li>
-
-								<?php endif; ?>
-
-								<?php if ( get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ) : ?>
-					
-									<li class="linkedin">
-										<?php
-					
-										printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-											'http://www.linkedin.com/in/' . get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ,
-											'LinkedIn'
-										);
-				
-										?>
-									</li>
-
-								<?php endif; ?>
-							</ul>
-						</dd>
+						<?php endif; ?>
 					</dl>
 				</div>
 			</div>
@@ -127,50 +129,50 @@
 	<div class="span4">
 		<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) ) : ?>
 		
-		<?php $username = get_post_meta( $post->ID, '_orbis_person_twitter', true ); ?>
-	
-		<div class="panel">
-			<header>
-				<h3>
-					<?php
+			<?php $username = get_post_meta( $post->ID, '_orbis_person_twitter', true ); ?>
+		
+			<div class="panel">
+				<header>
+					<h3>
+						<?php
+						
+						printf( __( '%1$s op Twitter', 'orbis' ),
+							get_the_title()
+						);
 					
-					printf( __( '%1$s op Twitter', 'orbis' ),
-						get_the_title()
-					);
-				
-					?>
-				</h3>
-			</header>
-
-			<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-			<script>
-				new TWTR.Widget({
-					version: 2,
-					type: 'profile',
-					rpp: 4,
-					interval: 20000,
-					width: 'auto',
-					theme: {
-						shell: {
-							background: 'none',
-							color: '#000'
+						?>
+					</h3>
+				</header>
+	
+				<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+				<script>
+					new TWTR.Widget({
+						version: 2,
+						type: 'profile',
+						rpp: 4,
+						interval: 20000,
+						width: 'auto',
+						theme: {
+							shell: {
+								background: 'none',
+								color: '#000'
+							},
+							tweets: {
+								background: 'none',
+								color: '#000',
+								links: '#0088CC'
+							}
 						},
-						tweets: {
-							background: 'none',
-							color: '#000',
-							links: '#0088CC'
+						features: {
+							scrollbar: false,
+							loop: true,
+							live: false,
+							behavior: 'all' ,
+							avatars: true
 						}
-					},
-					features: {
-						scrollbar: false,
-						loop: true,
-						live: false,
-						behavior: 'all' ,
-						avatars: true
-					}
-				}).render().setUser('<?php echo $username; ?>').start();
-			</script>
-		</div>
+					}).render().setUser('<?php echo $username; ?>').start();
+				</script>
+			</div>
 
 		<?php endif; ?>
 	
