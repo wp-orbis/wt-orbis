@@ -65,6 +65,8 @@
 						
 						<?php endif; ?>
 
+						<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) || get_post_meta( $post->ID, '_orbis_person_facebook', true ) || get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ) : ?>
+
 						<dt><?php _e( 'Social media', 'orbis' ); ?></dt>
 						<dd>
 							<ul class="social">
