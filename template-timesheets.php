@@ -61,11 +61,11 @@ $user = filter_input( INPUT_GET, 'user', FILTER_SANITIZE_STRING );
 $query = 'WHERE 1 = 1';
 
 if ( $start_date ) {
-	$query .= $wpdb->prepare( ' AND date >= %s', date( 'd-m-Y', $start_date ) );
+	$query .= $wpdb->prepare( ' AND date >= %s', date( 'Y-m-d', $start_date ) );
 }
 
 if ( $end_date ) {
-	$query .= $wpdb->prepare( ' AND date <= %s', date( 'd-m-Y', $end_date ) );
+	$query .= $wpdb->prepare( ' AND date <= %s', date( 'Y-m-d', $end_date ) );
 }
 
 if ( $user ) {
