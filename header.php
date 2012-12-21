@@ -81,6 +81,35 @@
 						wp_nav_menu($args);
 
 						?>
+
+						<form method="get" class="navbar-search pull-left" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                      		<input type="text" name="s" class="search-query span2" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php if ( ! empty( $_GET['s'] ) ) { echo $_GET['s']; } ?>">
+                    	</form>
+
+						<?php if ( is_user_logged_in() ) : ?>
+				
+							<?php 
+					
+							global $current_user;
+					
+							get_currentuserinfo();
+					
+							?>
+	
+							<ul class="nav pull-right">
+								<li class="dropdown">
+									<a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo get_avatar( $current_user->ID, 20 ); ?> <?php echo $current_user->user_login; ?> <b class="caret"></b></a>
+	
+									<ul class="dropdown-menu">
+										<li><a href="http://orbiswp.com/help/"><i class="icon-question-sign"></i> <?php _e('Help', 'orbis'); ?></a></li>
+										<li><a href="<?php echo admin_url( 'profile.php' ); ?>"><i class="icon-user"></i> <?php _e('Edit profile', 'orbis'); ?></a></li>
+										<li class="divider"></li>
+										<li><a href="<?php echo wp_logout_url(); ?>""><i class="icon-off"></i> <?php _e('Log out', 'orbis'); ?></a></li>
+									</ul>
+								</li>
+							</ul>
+
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>

@@ -7,7 +7,7 @@
 -------------------------------------------------- */
 
 body {
-	background: #f6f6f6;
+	background: #f6f6f6 url("../img/misc/body-texture.png");
 
 	position: relative;
 
@@ -56,20 +56,53 @@ body.admin-bar .navbar-fixed-top {
 	color: #bbb;
 }
 
-.col-a {
-	float: left;
-
-	width: 50%;
-}
-
-.col-b {
-	width: 50%;
-	
-	float: right;
-}
-
 .with-cols {
-	background: #fff url("../img/misc/line.png") center center repeat-y;
+	background: url("../img/misc/line.png") center center repeat-y;
+}
+
+@media (max-width: 767px) { 
+	.with-cols {
+		background: none;
+	}
+}
+
+.no-disc {
+	list-style: none;
+
+	margin: 0;
+	padding: 0;
+}
+
+/* Navigation
+------------------------- */
+.nav .avatar {
+	margin: -2px 4px;
+}
+
+/* Intro
+------------------------- */
+
+.hero-unit {
+	border: 1px solid #ddd;
+}
+
+.hero-unit h1 {
+	margin-bottom: 10px;
+}
+
+.hero-unit p {
+	line-height: 26px;
+}
+
+.hero-unit ul {
+	font-size: 18px;
+	line-height: 26px;
+
+	margin-bottom: 20px;
+}
+
+.hero-unit li {
+	margin: 5px 0;
 }
 
 /* Panel
@@ -236,27 +269,25 @@ ul.list.persons li .person-wrapper a,
 
 /* News
 ------------------------- */
-.news {
-	min-height: 400px;
-}
-
-.news ul {
-	list-style: none;
-
-	margin: 0;
-	padding: 0;
-}
-
-.news li {
-	padding: 1px 0;
-}
-
 .news img {
 	margin-bottom: 10px;
 }
 
 .news h4 {
 	margin-top: 0;
+}
+
+/* Stats
+------------------------- */
+.stats .col {
+	text-align: center;
+}
+
+.stats .important {
+	font-size: 48px;
+	line-height: 48px;
+
+	font-weight: bold;
 }
 
 /* Posts

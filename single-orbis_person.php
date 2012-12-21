@@ -15,110 +15,112 @@
 				<h3><?php _e( 'About this person', 'orbis' ); ?></h3>
 			</header>
 			
-			<div class="col-a">
-				<div class="content">
-					<div class="thumbnail">
-						<?php if ( has_post_thumbnail() ) : ?>
-
-						<?php the_post_thumbnail( 'medium' ); ?>
-
-						<?php else: ?>
-
-						<img src="<?php bloginfo('template_directory'); ?>/placeholders/avatar-medium.png">
-
+			<div class="row-fluid">
+				<div class="span6">
+					<div class="content">
+						<div class="thumbnail">
+							<?php if ( has_post_thumbnail() ) : ?>
+	
+							<?php the_post_thumbnail( 'medium' ); ?>
+	
+							<?php else: ?>
+	
+							<img src="<?php bloginfo('template_directory'); ?>/placeholders/avatar-medium.png">
+	
+							<?php endif; ?>
+						</div>
+	
+						<?php if ( $post->post_content ) : ?>
+	
+							<?php the_content(); ?>
+	
+						<?php else : ?>
+	
+							<?php _e( 'No description.', 'orbis' ); ?>
+	
 						<?php endif; ?>
 					</div>
-
-					<?php if ( $post->post_content ) : ?>
-
-					<?php the_content(); ?>
-
-					<?php else : ?>
-
-					<?php _e( 'No description.', 'orbis' ); ?>
-
-					<?php endif; ?>
 				</div>
-			</div>
-			
-			<div class="col-b">
-				<div class="content">
-					<dl>
-						<?php if ( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ) : ?>
-
-							<dt><?php _e( 'Phone number', 'orbis' ); ?></dt>
-							<dd><a href="#" class="anchor-tooltip" title="<?php _e( 'Call this number', 'orbis' ); ?>"><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></a></dd>
-
-						<?php endif; ?>
-
-						<?php if ( get_post_meta( $post->ID, '_orbis_person_mobile_number', true ) ) : ?>
-
-							<dt><?php _e( 'Mobile number', 'orbis' ); ?></dt>
-							<dd><a href="#" class="anchor-tooltip" title="<?php _e( 'Call this number', 'orbis' ); ?>"><?php echo get_post_meta( $post->ID, '_orbis_person_mobile_number', true ); ?></a></dd>
-
-						<?php endif; ?>
-
-						<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
-
-							<dt><?php _e( 'E-mail address', 'orbis' ); ?></dt>
-							<dd><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></dd>
-
-						<?php endif; ?>
-
-						<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) || get_post_meta( $post->ID, '_orbis_person_facebook', true ) || get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ) : ?>
-
-							<dt><?php _e( 'Social media', 'orbis' ); ?></dt>
-							<dd>
-								<ul class="social">
-									<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) ) : ?>
-						
-										<li class="twitter">
-											<?php
-						
-											printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-												'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ) ,
-												'Twitter'
-											);
-					
-											?>
-										</li>
+				
+				<div class="span6">
+					<div class="content">
+						<dl>
+							<?php if ( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ) : ?>
 	
-									<?php endif; ?>
+								<dt><?php _e( 'Phone number', 'orbis' ); ?></dt>
+								<dd><a href="tel:<?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?>" class="anchor-tooltip" title="<?php _e( 'Call this number', 'orbis' ); ?>"><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></a></dd>
 	
-									<?php if ( get_post_meta( $post->ID, '_orbis_person_facebook', true ) ) : ?>
-						
-										<li class="facebook">
-											<?php
-						
-											printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-												'http://www.facebook.com/' . get_post_meta( $post->ID, '_orbis_person_facebook', true ) ,
-												'Facebook'
-											);
-					
-											?>
-										</li>
+							<?php endif; ?>
 	
-									<?php endif; ?>
+							<?php if ( get_post_meta( $post->ID, '_orbis_person_mobile_number', true ) ) : ?>
 	
-									<?php if ( get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ) : ?>
-						
-										<li class="linkedin">
-											<?php
-						
-											printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-												'http://www.linkedin.com/in/' . get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ,
-												'LinkedIn'
-											);
-					
-											?>
-										</li>
+								<dt><?php _e( 'Mobile number', 'orbis' ); ?></dt>
+								<dd><a href="tel:<?php echo get_post_meta( $post->ID, '_orbis_person_mobile_number', true ); ?>" class="anchor-tooltip" title="<?php _e( 'Call this number', 'orbis' ); ?>"><?php echo get_post_meta( $post->ID, '_orbis_person_mobile_number', true ); ?></a></dd>
 	
-									<?php endif; ?>
-								</ul>
-							</dd>
-
-						<?php endif; ?>
-					</dl>
+							<?php endif; ?>
+	
+							<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
+	
+								<dt><?php _e( 'E-mail address', 'orbis' ); ?></dt>
+								<dd><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></dd>
+	
+							<?php endif; ?>
+	
+							<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) || get_post_meta( $post->ID, '_orbis_person_facebook', true ) || get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ) : ?>
+	
+								<dt><?php _e( 'Social media', 'orbis' ); ?></dt>
+								<dd>
+									<ul class="social">
+										<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) ) : ?>
+							
+											<li class="twitter">
+												<?php
+							
+												printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
+													'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ) ,
+													'Twitter'
+												);
+						
+												?>
+											</li>
+		
+										<?php endif; ?>
+		
+										<?php if ( get_post_meta( $post->ID, '_orbis_person_facebook', true ) ) : ?>
+							
+											<li class="facebook">
+												<?php
+							
+												printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
+													'http://www.facebook.com/' . get_post_meta( $post->ID, '_orbis_person_facebook', true ) ,
+													'Facebook'
+												);
+						
+												?>
+											</li>
+		
+										<?php endif; ?>
+		
+										<?php if ( get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ) : ?>
+							
+											<li class="linkedin">
+												<?php
+							
+												printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
+													'http://www.linkedin.com/in/' . get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ,
+													'LinkedIn'
+												);
+						
+												?>
+											</li>
+		
+										<?php endif; ?>
+									</ul>
+								</dd>
+	
+							<?php endif; ?>
+						</dl>
+					</div>
 				</div>
 			</div>
 		</div>

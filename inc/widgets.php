@@ -174,33 +174,35 @@ class Orbis_News_Widget extends WP_Widget {
 		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 		
 		<div class="news with-cols clearfix">
-			<div class="col-a">
-				<div class="content">
-					<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo('template_directory'); ?>/temp/featured.jpg" /></a>
-	
-					<h4>
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					</h4>
-	
-					<?php the_excerpt(); ?>
-				</div>
-			</div>
-	
-			<?php break; endwhile; ?>
-	
-			<div class="col-b">
-				<div class="content">
-					<h4><?php _e( 'More news', 'orbis' ); ?></h4>
-	
-					<ul>
-						<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-	
-						<li>
+			<div class="row-fluid">
+				<div class="span6">
+					<div class="content">
+						<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo('template_directory'); ?>/temp/featured.jpg" /></a>
+		
+						<h4>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</li>
-	
-						<?php endwhile; ?>
-					</ul>
+						</h4>
+		
+						<?php the_excerpt(); ?>
+					</div>
+				</div>
+
+				<?php break; endwhile; ?>
+
+				<div class="span6">
+					<div class="content">
+						<h4><?php _e( 'More news', 'orbis' ); ?></h4>
+		
+						<ul class="no-disc">
+							<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+		
+							<li>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</li>
+		
+							<?php endwhile; ?>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
