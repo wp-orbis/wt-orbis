@@ -110,39 +110,50 @@ $url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
 
 ?>
 
-<div class="row">
-	<div class="span2">
-		<div class="btn-group">
-			<a class="btn"href="<?php echo $url_previous; ?>">&lt;</a>
-			<a class="btn"href="<?php echo $url_next; ?>">&gt;</a>
-			<a class="btn"href="<?php echo $url_week_this; ?>">Deze week</a>
+<form class="form-inline" method="get" action="">
+	<div class="row">
+		<div class="span2">
+			<div class="btn-group">
+				<a class="btn"href="<?php echo $url_previous; ?>">&lt;</a>
+				<a class="btn"href="<?php echo $url_next; ?>">&gt;</a>
+				<a class="btn"href="<?php echo $url_week_this; ?>">Deze week</a>
+			</div>
 		</div>
-	</div>
-
-	<div class="span6">
-		<form method="get" class="form-inline">
+	
+		<div class="span6">			
 			View report from
 			<input type="text" name="start_date" class="input-small" placeholder="0000-00-00" value="<?php echo date( 'd-m-Y', $start_date ); ?>"> to
 			<input type="text" name="end_date" class="input-small" placeholder="0000-00-00" value="<?php echo date( 'd-m-Y', $end_date ); ?>">
-
+	
 			<button type="submit" class="btn">Filter</button>
-		</form>
-	</div>
+		</div>
+	
+		<div class="span4">
+			<div class="pull-right">
+				<?php 
+				
+				$users = array(
+					 1 => 'Jelke Boonstra',
+					 3 => 'Leo Oosterloo',
+					 4 => 'Jan Lammert Sijtsema',
+					 5 => 'Karel-Jan Tolsma',
+					 6 => 'Remco Tolsma',
+					24 => 'Martijn Duker'
+				);
+				
+				?>
+				<select name="user" id="userSelect">
+					<option value="">Alle gebruikers</option>
+					<?php foreach ( $users as $id => $name ) : ?>
+						<option value="<?php echo $id; ?>" <?php selected( $id, $user ); ?>><?php echo $name; ?></option>
+					<?php endforeach; ?>
+				</select>
 
-	<div class="span4">
-		<form name="userForm" method="get" class="form-inline pull-right">
-			<select name="user" id="userSelect">
-				<option value="">Alle gebruikers</option>
-				<option value="1"<?php if ( $user == 1 ) echo ' selected'; ?>>Jelke Boonstra</option>
-				<option value="3"<?php if ( $user == 3 ) echo ' selected'; ?>>Leo Oosterloo</option>
-				<option value="4"<?php if ( $user == 4 ) echo ' selected'; ?>>Jan Lammert Sijtsema</option>
-				<option value="5"<?php if ( $user == 5 ) echo ' selected'; ?>>Karel-Jan Tolsma</option>
-				<option value="6"<?php if ( $user == 6 ) echo ' selected'; ?>>Remco Tolsma</option>
-				<option value="24"<?php if ( $user == 24 ) echo ' selected'; ?>>Martijn Duker</option>
-			</select>
-		</form>
+				<button type="submit" class="btn">Filter</button>
+			</div>
+		</div>
 	</div>
-</div>
+</form>
 
 <hr>
 
