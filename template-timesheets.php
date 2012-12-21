@@ -3,48 +3,78 @@
  * Template Name: Timesheets
  */
 
-get_header(); ?>
+get_header();
 
-<?php
+// Globals
+global $wpdb;
 
-// Get week range
-function get_week_range( $date ) {
-	$ts    = strtotime( $date );
-	$start = strtotime( 'sunday this week -1 week', $ts );
-	$end   = strtotime( 'sunday this week', $ts );
-
-	return array( date( 'Y-m-d', $start ), date( 'Y-m-d', $end ) );
+// Functions
+function orbis_format_timestamps( array $timestamps, $format ) {
+	$dates = array();
+	
+	foreach( $timestamps as $key => $value ) {
+		$dates[$key] = date( $format, $value );
+	}
+	
+	return $dates;
 }
 
-$dates = get_week_range( date('Y-m-d') );
+// This week
+$week_this = array(
+	'start_date' => strtotime( 'sunday this week -1 week' ),
+	'end_date'   => strtotime( 'sunday this week' )
+);
 
-// Handle query variables
-$user       = filter_input( INPUT_GET, 'user', FILTER_SANITIZE_STRING );
-$start_date = filter_input( INPUT_GET, 'start_date', FILTER_SANITIZE_STRING );
-$end_date   = filter_input( INPUT_GET, 'end_date', FILTER_SANITIZE_STRING );
+// Start date
+$value = filter_input( INPUT_GET, 'start_date', FILTER_SANITIZE_STRING );
+if ( empty( $value ) ) {
+	$start_date = $week_this['start_date'];
+} else {
+	$start_date = strtotime( $value );
+}
 
-// Set start date
+// End date
+$value = filter_input( INPUT_GET, 'end_date', FILTER_SANITIZE_STRING );
+if ( empty( $value ) ) {
+	$end_date = $week_this['end_date'];
+} else {
+	$end_date = strtotime( $value );
+}
+
+// Step
+$step = max( $end_date - $start_date, ( 3600 * 12 ) );
+
+$previous = array(
+	'start_date' => $start_date - $step,
+	'end_date'   => $end_date - $step
+);
+
+$next = array(
+	'start_date' => $start_date + $step,
+	'end_date'   => $end_date + $step
+);
+
+// Inputs
+$user = filter_input( INPUT_GET, 'user', FILTER_SANITIZE_STRING );
+
+// Build query
+$query = 'WHERE 1 = 1';
+
 if ( $start_date ) {
-	$start_date = $start_date;
-} else {
-	$start_date = $dates[0];
+	$query .= $wpdb->prepare( ' AND date >= %s', date( 'd-m-Y', $start_date ) );
 }
 
-// Set end date
 if ( $end_date ) {
-	$end_date = $end_date;
-} else {
-	$end_date = $dates[1];
+	$query .= $wpdb->prepare( ' AND date <= %s', date( 'd-m-Y', $end_date ) );
 }
 
 if ( $user ) {
-	$query = "WHERE user_id = " . $_GET['user'] . " AND date >= '$start_date' AND date <= '$end_date' ORDER BY date ASC";
-} else {
-	$query = "WHERE date >= '$start_date'  AND date < '$end_date' ORDER BY date ASC";
+	$query .= $wpdb->prepare( ' AND user_id = %d', $user );
 }
 
-global $wpdb;
+$query .= ' ORDER BY date ASC';
 
+// Get results
 $result = $wpdb->get_results( "SELECT orbis_hours_registration.*, orbis_projects.invoicable FROM orbis_hours_registration LEFT JOIN orbis_projects ON(orbis_hours_registration.project_id = orbis_projects.id ) $query" );
 
 $total_seconds      = 0;
@@ -73,24 +103,27 @@ if ( $total_seconds > 0 ) {
 
 $amount = $billable_hours * 75;
 
+// URL's
+$url_week_this = add_query_arg( orbis_format_timestamps( $week_this, 'd-m-Y' ) );
+$url_previous  = add_query_arg( orbis_format_timestamps( $previous, 'd-m-Y' ) );
+$url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
+
 ?>
 
 <div class="row">
 	<div class="span2">
-		<form method="get" class="form-inline">
-			<div class="btn-group">
-				<button class="btn"><</button>
-				<button class="btn">></button>
-				<button class="btn">Deze week</button>
-			</div>
-		</form>
+		<div class="btn-group">
+			<a class="btn"href="<?php echo $url_previous; ?>">&lt;</a>
+			<a class="btn"href="<?php echo $url_next; ?>">&gt;</a>
+			<a class="btn"href="<?php echo $url_week_this; ?>">Deze week</a>
+		</div>
 	</div>
 
 	<div class="span6">
 		<form method="get" class="form-inline">
 			View report from
-			<input type="text" name="start_date" class="input-small" placeholder="0000-00-00" value="<?php if ( $start_date ) { echo $start_date; } else { echo '2010-06-01'; }?>"> to
-			<input type="text" name="end_date" class="input-small" placeholder="0000-00-00" value="<?php if ( $end_date ) { echo $end_date; } else { echo '2010-06-10'; }?>">
+			<input type="text" name="start_date" class="input-small" placeholder="0000-00-00" value="<?php echo date( 'd-m-Y', $start_date ); ?>"> to
+			<input type="text" name="end_date" class="input-small" placeholder="0000-00-00" value="<?php echo date( 'd-m-Y', $end_date ); ?>">
 
 			<button type="submit" class="btn">Filter</button>
 		</form>
