@@ -73,6 +73,15 @@ body.admin-bar .navbar-fixed-top {
 	padding: 0;
 }
 
+blockquote p {
+ 	font-size: 14px;
+ 	font-weight: normal;
+  
+    line-height: 20px;
+
+	margin-bottom: 15px;
+}
+
 /* Navigation
 ------------------------- */
 .nav .avatar {

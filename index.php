@@ -2,17 +2,29 @@
 
 <div class="page-header">
 	<h1>
-		<?php post_type_archive_title(); ?>
-
-		<small>
-			<?php
-			
-			printf( __( 'Overview of %1$s', 'orbis' ),
-				strtolower( post_type_archive_title( '', false ) )
-			);
+		<?php if ( is_search() ) : ?>
 		
-			?>
-		</small>
+			<?php _e( 'Search', 'orbis' ); ?>
+		
+		<?php else : ?>
+
+			<?php post_type_archive_title(); ?>
+		
+		<?php endif; ?>
+
+		<?php if ( ! is_search() ) : ?>
+
+			<small>
+				<?php
+				
+				printf( __( 'Overview of %1$s', 'orbis' ),
+					strtolower( post_type_archive_title( '', false ) )
+				);
+			
+				?>
+			</small>
+	
+		<?php endif; ?>
 	</h1>
 </div>
 
@@ -30,42 +42,42 @@
 	
 	<?php if ( have_posts() ) : ?>
 	
-	<table class="table table-striped table-bordered table-condense table-hover">
-		<thead>
-			<tr>
-				<th><?php _e( 'Title', 'orbis' ); ?></th>
-				<th><?php _e( 'Comments', 'orbis' ); ?></th>
-				<th><?php _e( 'Actions', 'orbis' ); ?></th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-			<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<td>
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-				</td>
-				<td>
-					<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
-				</td>
-				<td>
-					<div class="actions">
-						<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
-					</div>
-				</td>
-			</tr>
-
-			<?php endwhile; ?>
-		</tbody>
-	</table>
+		<table class="table table-striped table-bordered table-condense table-hover">
+			<thead>
+				<tr>
+					<th><?php _e( 'Title', 'orbis' ); ?></th>
+					<th><?php _e( 'Comments', 'orbis' ); ?></th>
+					<th><?php _e( 'Actions', 'orbis' ); ?></th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php while ( have_posts() ) : the_post(); ?>
+	
+					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<td>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</td>
+						<td>
+							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
+						</td>
+						<td>
+							<div class="actions">
+								<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+							</div>
+						</td>
+					</tr>
+	
+				<?php endwhile; ?>
+			</tbody>
+		</table>
 
 	<?php else: ?>
 
-	<div class="content">
-		<p>
-			<?php _e( 'No results found.', 'orbis' ); ?>
-		</p>
-	</div>
+		<div class="content">
+			<p>
+				<?php _e( 'No results found.', 'orbis' ); ?>
+			</p>
+		</div>
 
 	<?php endif; ?>
 </div>

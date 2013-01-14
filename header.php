@@ -101,10 +101,10 @@
 									<a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo get_avatar( $current_user->ID, 20 ); ?> <?php echo $current_user->user_login; ?> <b class="caret"></b></a>
 	
 									<ul class="dropdown-menu">
-										<li><a href="http://orbiswp.com/help/"><i class="icon-question-sign"></i> <?php _e('Help', 'orbis'); ?></a></li>
-										<li><a href="<?php echo admin_url( 'profile.php' ); ?>"><i class="icon-user"></i> <?php _e('Edit profile', 'orbis'); ?></a></li>
+										<li><a href="http://orbiswp.com/help/"><i class="icon-question-sign"></i> <?php _e( 'Help', 'orbis' ); ?></a></li>
+										<li><a href="<?php echo admin_url( 'profile.php' ); ?>"><i class="icon-user"></i> <?php _e( 'Edit profile', 'orbis' ); ?></a></li>
 										<li class="divider"></li>
-										<li><a href="<?php echo wp_logout_url(); ?>""><i class="icon-off"></i> <?php _e('Log out', 'orbis'); ?></a></li>
+										<li><a href="<?php echo wp_logout_url(); ?>""><i class="icon-off"></i> <?php _e( 'Log out', 'orbis' ); ?></a></li>
 									</ul>
 								</li>
 							</ul>

@@ -1,6 +1,10 @@
 <?php
 
-require_once 'inc/widgets.php';
+/**
+ * Includes
+ */
+require_once get_template_directory() . '/includes/widgets.php';
+require_once get_template_directory() . '/includes/template-tags.php';
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -13,10 +17,6 @@ if ( ! isset( $content_width ) ) {
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function orbis_setup() {
-
-	/* Custom template tags for this theme. */
-	require( get_template_directory() . '/inc/template-tags.php' );
-
 	/* Make theme available for translation */
 	load_theme_textdomain( 'orbis', get_template_directory() . '/languages' );
 

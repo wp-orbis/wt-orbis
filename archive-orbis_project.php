@@ -34,62 +34,62 @@
 	
 	<?php if ( have_posts() ) : ?>
 	
-	<table class="table table-striped table-bordered table-condense table-hover">
-		<thead>
-			<tr>
-				<th><?php _e( 'Principal', 'orbis' ); ?></th>
-				<th><?php _e( 'Project', 'orbis' ); ?></th>
-				<th><?php _e( 'Time', 'orbis' ); ?></th>
-				<th><?php _e( 'Comments', 'orbis' ); ?></th>
-				<th><?php _e( 'Actions', 'orbis' ); ?></th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php while ( have_posts() ) : the_post(); ?>
+		<table class="table table-striped table-bordered table-condense table-hover">
+			<thead>
+				<tr>
+					<th><?php _e( 'Principal', 'orbis' ); ?></th>
+					<th><?php _e( 'Project', 'orbis' ); ?></th>
+					<th><?php _e( 'Time', 'orbis' ); ?></th>
+					<th><?php _e( 'Comments', 'orbis' ); ?></th>
+					<th><?php _e( 'Actions', 'orbis' ); ?></th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php while ( have_posts() ) : the_post(); ?>
+		
+					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<td>
+							<?php 
+							
+							if ( function_exists( 'orbis_project_has_principal' ) ) {
+								if ( orbis_project_has_principal() ) {
+									printf( 
+										'<a href="%s">%s</a>',
+										esc_attr( orbis_project_principal_get_permalink() ),
+										orbis_project_principel_get_the_name()
+									);
+								}
+							}
+		
+							?>
+						</td>
+						<td>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</td>
+						<td class="project-time">
+							<?php if ( function_exists( 'orbis_project_the_time' ) ) orbis_project_the_time(); ?>
+						</td>
+						<td>
+							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
+						</td>
+						<td>
+							<div class="actions">
+								<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+							</div>
+						</td>
+					</tr>
 	
-			<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<td>
-					<?php 
-					
-					if ( function_exists( 'orbis_project_has_principal' ) ) {
-						if ( orbis_project_has_principal() ) {
-							printf( 
-								'<a href="%s">%s</a>',
-								esc_attr( orbis_project_principal_get_permalink() ),
-								orbis_project_principel_get_the_name()
-							);
-						}
-					}
-
-					?>
-				</td>
-				<td>
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-				</td>
-				<td class="project-time">
-					<?php if ( function_exists( 'orbis_project_the_time' ) ) orbis_project_the_time(); ?>
-				</td>
-				<td>
-					<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
-				</td>
-				<td>
-					<div class="actions">
-						<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
-					</div>
-				</td>
-			</tr>
-
-			<?php endwhile; ?>
-		</tbody>
-	</table>
+				<?php endwhile; ?>
+			</tbody>
+		</table>
 	
-	<?php else: ?>
+	<?php else : ?>
 	
-	<div class="content">
-		<p>
-			<?php _e( 'No results found.', 'orbis' ); ?>
-		</p>
-	</div>
+		<div class="content">
+			<p>
+				<?php _e( 'No results found.', 'orbis' ); ?>
+			</p>
+		</div>
 
 	<?php endif; ?>
 </div>
