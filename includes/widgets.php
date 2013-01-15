@@ -177,7 +177,17 @@ class Orbis_News_Widget extends WP_Widget {
 			<div class="row-fluid">
 				<div class="span6">
 					<div class="content">
-						<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo('template_directory'); ?>/temp/featured.jpg" /></a>
+						<a href="<?php the_permalink(); ?>">
+							<?php if ( has_post_thumbnail() ) : ?>
+
+								<?php the_post_thumbnail( 'featured' ); ?>
+
+							<?php else : ?>
+
+								<img src="<?php bloginfo( 'template_directory' ); ?>/placeholders/featured.png" />
+
+							<?php endif; ?>
+						</a>
 		
 						<h4>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

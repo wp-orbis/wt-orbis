@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-14 11:26+0100\n"
-"PO-Revision-Date: 2013-01-14 11:30+0100\n"
+"POT-Creation-Date: 2013-01-15 14:41+0100\n"
+"PO-Revision-Date: 2013-01-15 14:42+0100\n"
 "Last-Translator: K.Tolsma <kareljan@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "MIME-Version: 1.0\n"
@@ -24,8 +24,9 @@ msgid "Page %s"
 msgstr "Pagina %s"
 
 #: header.php:86
-#: index.php:27
-#: index.php:28
+#: index.php:7
+#: index.php:43
+#: index.php:44
 #: archive-orbis_project.php:31
 #: archive-orbis_project.php:32
 msgid "Search"
@@ -102,7 +103,7 @@ msgid "% replies"
 msgstr "% reacties"
 
 #: home.php:117
-#: index.php:66
+#: index.php:82
 #: archive-orbis_project.php:90
 msgid "No results found."
 msgstr "Geen resultaten gevonden."
@@ -184,7 +185,7 @@ msgid "Not invoiced"
 msgstr "Niet gefactureerd"
 
 #: single-orbis_project.php:125
-#: index.php:38
+#: index.php:54
 #: single-orbis_person.php:194
 #: single.php:56
 #: archive-orbis_project.php:44
@@ -192,7 +193,7 @@ msgid "Actions"
 msgstr "Acties"
 
 #: single-orbis_project.php:126
-#: index.php:53
+#: index.php:69
 #: single-orbis_person.php:195
 #: single.php:57
 #: archive-orbis_project.php:77
@@ -228,22 +229,26 @@ msgstr "Reacties zijn gesloten."
 msgid "Give a comment"
 msgstr "Geef een reactie"
 
-#: index.php:10
+#: index.php:20
 #: archive-orbis_project.php:10
 #, php-format
 msgid "Overview of %1$s"
 msgstr "Overzicht van %1$s"
 
-#: index.php:21
+#: index.php:31
+msgid "Add new"
+msgstr "Nieuwe toevoegen"
+
+#: index.php:37
 #: archive-orbis_project.php:25
 msgid "Overview"
 msgstr "Overzicht"
 
-#: index.php:36
+#: index.php:52
 msgid "Title"
 msgstr "Titel"
 
-#: index.php:37
+#: index.php:53
 #: archive-orbis_project.php:43
 msgid "Comments"
 msgstr "Reacties"
@@ -451,7 +456,7 @@ msgid "Show all"
 msgstr "Bekijk alles"
 
 #: includes/widgets.php:90
-#: includes/widgets.php:232
+#: includes/widgets.php:242
 msgid "Title:"
 msgstr "Titel:"
 
@@ -463,7 +468,7 @@ msgstr "Post type:"
 msgid "Number:"
 msgstr "Aantal:"
 
-#: includes/widgets.php:194
+#: includes/widgets.php:204
 msgid "More news"
 msgstr "Meer nieuws"
 

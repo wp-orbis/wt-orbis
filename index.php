@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<div class="page-header">
-	<h1>
+<div class="page-header clearfix">
+	<h1 class="pull-left">
 		<?php if ( is_search() ) : ?>
 		
 			<?php _e( 'Search', 'orbis' ); ?>
@@ -26,6 +26,10 @@
 	
 		<?php endif; ?>
 	</h1>
+
+	<a class="btn btn-primary pull-right" href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=<?php echo get_post_type(); ?>">
+		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add new', 'orbis' ); ?>
+	</a>
 </div>
 
 <div class="panel">
