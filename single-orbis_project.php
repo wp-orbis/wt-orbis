@@ -33,11 +33,11 @@
 				<div class="content">
 					<?php if ( $post->post_content ) : ?>
 					
-					<?php the_content(); ?>
+						<?php the_content(); ?>
 					
 					<?php else : ?>
 					
-					<?php _e( 'No description.', 'orbis' ); ?>
+						<?php _e( 'No description.', 'orbis' ); ?>
 					
 					<?php endif; ?>
 				</div>
@@ -131,11 +131,6 @@
 	</div>
 
 <?php endwhile; ?>
-
-<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.js"></script>
-<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.js"></script>
-<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.resize.js"></script>
-<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.pie.js"></script>
 
 <div class="panel">
 	<header>
