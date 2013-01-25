@@ -132,4 +132,169 @@
 
 <?php endwhile; ?>
 
+<div class="panel">
+	<header>
+		<h3><?php _e( 'Activities used in this project', 'orbis' ); ?></h3>
+	</header>
+
+	<div class="content">
+		<?php
+		
+		$result = $wpdb->get_results( '
+			SELECT SUM(orbis_hours_registration.number_seconds) AS total_seconds, orbis_activities.name AS activity_name, orbis_activities.id AS activity_id, orbis_projects.* 
+			FROM orbis_hours_registration 
+			LEFT JOIN orbis_activities ON(orbis_hours_registration.activity_id = orbis_activities.id)
+			LEFT JOIN orbis_projects ON(orbis_hours_registration.project_id = orbis_projects.id)
+			WHERE orbis_projects.post_id = '. get_the_ID() .' 
+			GROUP BY orbis_activities.id
+		' );
+		
+		foreach ( $result as $row ) {
+			echo $row->activity_name . ' - <strong>' . orbis_format_seconds($row->total_seconds) . '</strong><br />';
+		}
+		
+		?>
+	</div>
+</div>
+
+<div class="panel">
+	<header>
+		<h3><?php _e( 'Persons worked on this project', 'orbis' ); ?></h3>
+	</header>
+
+	<div class="content">
+		<?php
+		
+		$result = $wpdb->get_results( '
+			SELECT SUM(orbis_hours_registration.number_seconds) AS total_seconds, orbis_persons.first_name, orbis_persons.last_name, orbis_projects.* 
+			FROM orbis_hours_registration 
+			LEFT JOIN orbis_persons ON(orbis_hours_registration.user_id = orbis_persons.id)
+			LEFT JOIN orbis_projects ON(orbis_hours_registration.project_id = orbis_projects.id)
+			WHERE orbis_projects.post_id = '. get_the_ID() .' 
+			GROUP BY orbis_persons.id
+		' );
+		
+		foreach ( $result as $row ) {
+			echo $row->first_name . ' - <strong>' . orbis_format_seconds($row->total_seconds) . '</strong><br />';
+		}
+		
+		?>
+	</div>
+</div>
+
+
+
+
+<!-- Plot -->
+
+<div class="row">
+	<div class="span6">
+		<div class="panel">
+			<header>
+				<h3>Graph</h3>
+			</header>
+			
+			<div class="content">
+				<div id="graph" class="graph" style="height: 500px; width: 100%;"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="span6">
+		<div class="panel">
+			<header>
+				<h3>Donut</h3>
+			</header>
+			
+			<div class="content">
+				<div id="donut" class="graph" style="height: 500px; width: 100%;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span6">
+		<div class="panel">
+			<header>
+				<h3>Graph</h3>
+			</header>
+			
+			<div class="content">
+				<div id="placeholder" class="graph" style="height: 500px; width: 100%;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.js"></script>
+<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.resize.js"></script>
+<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.pie.js"></script>
+
+<script type="text/javascript">
+	$(function () {
+		var data = [ 
+			{ color: "#53bddd", label: "Design", data: [ [0, 25] ] },
+			{ color: "#5dc25c", label: "Project management", data: [ [0, 12] ] }, 
+			{ color: "#fcb13a", label: "Ontwikkeling", data: [ [0, 76] ] },
+			{ color: "#ec5b53", label: "SEO", data: [ [0, 28] ] } 
+		];
+
+		// Graph
+		$.plot($("#graph"), data, 
+		{
+			series: {
+				pie: { 
+					show: true
+				}
+			},
+			legend: {
+				show: false
+			}
+		});
+
+		// Donut
+		$.plot($("#donut"), data, {
+			series: {
+				pie: { 
+					innerRadius: 0.5,
+					show: true
+				}
+			}
+		});
+
+		// data
+		var data_b = [
+			{ label: "Karel-Jan",  data: 50},
+			{ label: "Remco",  data: 30},
+			{ label: "Jelke",  data: 90},
+			{ label: "Martijn",  data: 70},
+			{ label: "Jan Lammert",  data: 80},
+			{ label: "Leo",  data: 110}
+		];
+	
+		$.plot($("#placeholder"), data_b, {
+			series: {
+				pie: {
+					show: true,
+					radius: 1,
+					label: {
+						show: true,
+						radius: 2/3,
+						formatter: function(label, series){
+							return '<div style="font-size:10pt;text-align:center;padding:2px;color:#fff;">'+label+'<br/>'+Math.round(series.percent)+'%</div>';
+						},
+						threshold: 0.1
+					}
+				}
+			},
+			legend: {
+				show: false
+			}
+		});
+	});
+</script>
+		
+
 <?php get_footer(); ?>
