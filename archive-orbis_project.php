@@ -15,7 +15,14 @@
 		</small>
 	</h1>
 
-	<a class="btn btn-primary pull-right" href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=<?php echo get_post_type(); ?>">
+	<?php 
+	
+	$post_type_obj = get_queried_object();
+	
+	$url = add_query_arg( 'post_type', $post_type_obj->name, admin_url( 'post-new.php' ) );
+	
+	?>
+	<a class="btn btn-primary pull-right" href="<?php echo $url; ?>">
 		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add project', 'orbis' ); ?>
 	</a>
 </div>
