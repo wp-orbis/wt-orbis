@@ -49,7 +49,8 @@ $results = $wpdb->get_results('
 		orbis_projects.name,
 		orbis_projects.id,
 		orbis_projects.number_seconds AS project_time, 
-		SUM(orbis_hours_registration.number_seconds) AS registration_time
+		SUM(orbis_hours_registration.number_seconds) AS registration_time,
+		orbis_projects.post_id
 	FROM 
 		orbis_projects 
 	LEFT JOIN 
@@ -69,6 +70,7 @@ foreach ($results as $row ) : if ( $row->registration_time > $row->project_time 
 
 $projects[$row->id]['company_name'] = $row->company_name; 
 $projects[$row->id]['name'] = $row->name; 
+$projects[$row->id]['post_id'] = $row->post_id;
 $projects[$row->id]['registration_time'] = $row->registration_time;
 $projects[$row->id]['project_time'] = $row->project_time;
 $projects[$row->id]['over_budget'] = $row->registration_time / $row->project_time * 100;
@@ -102,7 +104,11 @@ endif; endforeach;
 					<?php foreach ( $projects as $project ) : ?>
 		
 					<tr>
-						<td><?php echo $project['company_name']; ?> - <?php echo $project['name']; ?></td>
+						<td>
+							<a href="<?php echo get_permalink( $project['post_id'] ); ?>">
+								<?php echo $project['company_name']; ?> - <?php echo $project['name']; ?>
+							</a>
+						</td>
 						<td <?php if($project['over_budget'] > 150) { echo 'class="attention"'; } ?>><?php echo round($project['over_budget']); ?>%</td>
 					</tr>
 					
@@ -145,7 +151,11 @@ endif; endforeach;
 					?>
 	
 					<tr>
-						<td><?php echo $project['company_name']; ?> - <?php echo $project['name']; ?></td>
+						<td>
+							<a href="<?php echo get_permalink( $project['post_id'] ); ?>">
+								<?php echo $project['company_name']; ?> - <?php echo $project['name']; ?>
+							</a>
+						</td>
 						<td><?php echo $total; ?> uren</td>
 						<td <?php if($total > 10) { echo 'class="attention"'; } ?>>&euro;<?php echo number_format( $amount, 2, ',', '.' ); ?></td>
 					</tr>
