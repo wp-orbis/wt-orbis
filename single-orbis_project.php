@@ -104,21 +104,21 @@
 						<dd>
 							<?php if ( orbis_project_is_finished() ) : ?>
 	
-							<span class="label label-success"><?php _e( 'Finished', 'orbis' ); ?></span>
+								<span class="label label-success"><?php _e( 'Finished', 'orbis' ); ?></span>
 	
 							<?php else : ?>
 	
-							<span class="label"><?php _e( 'Not finished', 'orbis' ); ?></span>
+								<span class="label"><?php _e( 'Not finished', 'orbis' ); ?></span>
 	
 							<?php endif; ?>
 	
 							<?php if ( orbis_project_is_invoiced() ) : ?>
 	
-							<span class="label label-success"><?php _e( 'Invoiced', 'orbis' ); ?></span>
+								<span class="label label-success"><?php _e( 'Invoiced', 'orbis' ); ?></span>
 	
 							<?php else : ?>
 	
-							<span class="label"><?php _e( 'Not invoiced', 'orbis' ); ?></span>
+								<span class="label"><?php _e( 'Not invoiced', 'orbis' ); ?></span>
 	
 							<?php endif; ?>
 						</dd>
@@ -175,7 +175,7 @@
 		' );
 		
 		foreach ( $result as $row ) {
-			echo $row->first_name . ' - <strong>' . orbis_format_seconds($row->total_seconds) . '</strong><br />';
+			echo $row->first_name . ' - <strong>' . orbis_format_seconds( $row->total_seconds ) . '</strong><br />';
 		}
 		
 		?>
