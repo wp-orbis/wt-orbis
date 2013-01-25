@@ -132,6 +132,11 @@
 
 <?php endwhile; ?>
 
+<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.js"></script>
+<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.resize.js"></script>
+<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.pie.js"></script>
+
 <div class="panel">
 	<header>
 		<h3><?php _e( 'Activities used in this project', 'orbis' ); ?></h3>
@@ -153,7 +158,39 @@
 			echo $row->activity_name . ' - <strong>' . orbis_format_seconds($row->total_seconds) . '</strong><br />';
 		}
 		
+		function orbis_flot( $id, $data, $options ) {
+			printf(
+				'<script type="text/javascript">jQuery.plot("#%s", %s, %s);</script>',
+				$id,
+				json_encode( $data ),
+				json_encode( $options )
+			);
+		}
+		
+		$flot_data = array();
+		
+		foreach ( $result as $row ) {
+			$flot_data[] = array(
+				'label' => $row->activity_name,
+				'data'  => array(
+					array( 0, $row->total_seconds )
+				)
+			);
+		}
+
+		$flot_options = array(
+			'series' => array(
+				'pie' => array(
+					'innerRadius' => 0.5,
+					'show'        => true
+				)
+			)
+		);
+		
 		?>
+		<div id="donut" class="graph" style="height: 500px; width: 100%;"></div>
+
+		<?php orbis_flot( 'donut', $flot_data, $flot_options ); ?>
 	</div>
 </div>
 
@@ -178,123 +215,31 @@
 			echo $row->first_name . ' - <strong>' . orbis_format_seconds( $row->total_seconds ) . '</strong><br />';
 		}
 		
-		?>
-	</div>
-</div>
-
-
-
-
-<!-- Plot -->
-
-<div class="row">
-	<div class="span6">
-		<div class="panel">
-			<header>
-				<h3>Graph</h3>
-			</header>
-			
-			<div class="content">
-				<div id="graph" class="graph" style="height: 500px; width: 100%;"></div>
-			</div>
-		</div>
-	</div>
-
-	<div class="span6">
-		<div class="panel">
-			<header>
-				<h3>Donut</h3>
-			</header>
-			
-			<div class="content">
-				<div id="donut" class="graph" style="height: 500px; width: 100%;"></div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="row">
-	<div class="span6">
-		<div class="panel">
-			<header>
-				<h3>Graph</h3>
-			</header>
-			
-			<div class="content">
-				<div id="placeholder" class="graph" style="height: 500px; width: 100%;"></div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.js"></script>
-<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.js"></script>
-<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.resize.js"></script>
-<script language="javascript" type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/flot/jquery.flot.pie.js"></script>
-
-<script type="text/javascript">
-	$(function () {
-		var data = [ 
-			{ color: "#53bddd", label: "Design", data: [ [0, 25] ] },
-			{ color: "#5dc25c", label: "Project management", data: [ [0, 12] ] }, 
-			{ color: "#fcb13a", label: "Ontwikkeling", data: [ [0, 76] ] },
-			{ color: "#ec5b53", label: "SEO", data: [ [0, 28] ] } 
-		];
-
-		// Graph
-		$.plot($("#graph"), data, 
-		{
-			series: {
-				pie: { 
-					show: true
-				}
-			},
-			legend: {
-				show: false
-			}
-		});
-
-		// Donut
-		$.plot($("#donut"), data, {
-			series: {
-				pie: { 
-					innerRadius: 0.5,
-					show: true
-				}
-			}
-		});
-
-		// data
-		var data_b = [
-			{ label: "Karel-Jan",  data: 50},
-			{ label: "Remco",  data: 30},
-			{ label: "Jelke",  data: 90},
-			{ label: "Martijn",  data: 70},
-			{ label: "Jan Lammert",  data: 80},
-			{ label: "Leo",  data: 110}
-		];
-	
-		$.plot($("#placeholder"), data_b, {
-			series: {
-				pie: {
-					show: true,
-					radius: 1,
-					label: {
-						show: true,
-						radius: 2/3,
-						formatter: function(label, series){
-							return '<div style="font-size:10pt;text-align:center;padding:2px;color:#fff;">'+label+'<br/>'+Math.round(series.percent)+'%</div>';
-						},
-						threshold: 0.1
-					}
-				}
-			},
-			legend: {
-				show: false
-			}
-		});
-	});
-</script>
+		$flot_data = array();
 		
+		foreach ( $result as $row ) {
+			$flot_data[] = array(
+				'label' => $row->first_name,
+				'data'  => array(
+					array( 0, $row->total_seconds )
+				)
+			);
+		}
+
+		$flot_options = array(
+			'series' => array(
+				'pie' => array(
+					'innerRadius' => 0.5,
+					'show'        => true
+				)
+			)
+		);
+		
+		?>
+		<div id="donut2" class="graph" style="height: 500px; width: 100%;"></div>
+
+		<?php orbis_flot( 'donut2', $flot_data, $flot_options ); ?>
+	</div>
+</div>
 
 <?php get_footer(); ?>
