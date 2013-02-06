@@ -78,7 +78,8 @@ $query .= ' ORDER BY date ASC';
 $query_budgets = $wpdb->prepare(
 	"SELECT
 		project.id,
-		SUM( registration.number_seconds ) > project.number_seconds AS over_budget 
+		SUM( registration.number_seconds ) > project.number_seconds AS over_budget,
+		project.invoicable 
 	FROM
 		orbis_projects AS project
 			LEFT JOIN
@@ -111,7 +112,10 @@ $unbillable_seconds = 0;
 foreach ( $result as $row ) {
 	$total_seconds += $row->number_seconds;
 
-	if ( isset( $budgets[$row->project_id]) && $budgets[$row->project_id]->over_budget ) {
+	$over_budget = isset( $budgets[$row->project_id] ) ? $budgets[$row->project_id]->over_budget : true;
+	$invoicable  = isset( $budgets[$row->project_id] ) ? $budgets[$row->project_id]->invoicable : false;
+
+	if ( $over_budget || ! $invoicable ) {
 		$unbillable_seconds += $row->number_seconds;
 	} else {
 		$billable_seconds   += $row->number_seconds;
@@ -165,7 +169,8 @@ $url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
 					 4 => 'Jan Lammert Sijtsema',
 					 5 => 'Karel-Jan Tolsma',
 					 6 => 'Remco Tolsma',
-					24 => 'Martijn Duker'
+					24 => 'Martijn Duker',
+					26 => 'Leon Rowland'
 				);
 				
 				?>
