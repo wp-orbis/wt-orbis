@@ -65,10 +65,10 @@
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</td>
 						<td>
-							<?php 
-							
+							<?php
+
 							$kvk_number = get_post_meta( $post->ID, '_orbis_company_kvk_number', true );
-							
+
 							if ( ! empty( $kvk_number ) ) {
 								$url = sprintf( 'http://www.openkvk.nl/%s', $kvk_number );
 							
