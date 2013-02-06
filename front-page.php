@@ -8,19 +8,14 @@
 	
 			<?php if ( is_user_logged_in() ) : ?>
 	
-				<?php 
-		
-				global $current_user;
-		
-				get_currentuserinfo();
-		
-				?>
+				<?php $user = wp_get_current_user(); ?>
 		
 				<small>
 					<?php
 					
-					printf( __( 'Logged in as %1$s', 'orbis' ),
-						$current_user->user_login
+					printf(
+						__( 'Logged in as %1$s', 'orbis' ),
+						$user->user_login
 					);
 				
 					?>
@@ -34,30 +29,34 @@
 
 <?php endwhile; ?>
 
-<?php
-
-$user_info = get_userdata( $current_user->ID );
-
-if ( strtotime( $user_info->user_registered ) > ( time() - 172800 ) ) : ?>
-
-	<div class="hero-unit">
-		<h1><?php _e( 'Welcome to Orbis', 'orbis' ); ?></h1>
+<?php if ( is_user_logged_in() ) : ?>
 	
-		<p>
-			<?php _e( 'Orbis is a tool to manage your projects, your customer relations, it can be used as intranet en has much more great features. Orbis is built on WordPress which is a great base to create a powerful tool for your bussiness. Enough introduction, time to work.', 'orbis' ); ?>
-		</p>
+	<?php
 	
-		<ul>
-			<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=post"><?php _e( 'Add a post', 'orbis' ); ?></a></li>	
-			<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=orbis_company"><?php _e( 'Add a company', 'orbis' ); ?></a></li>
-			<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=orbis_project"><?php _e( 'Add a project', 'orbis' ); ?></a></li>
-			<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=orbis_person"><?php _e( 'Add a person', 'orbis' ); ?></a></li>
-		</ul>
+	$user = wp_get_current_user();
 	
-		<p>
-			<a class="btn btn-primary btn-large" href="http://orbiswp.com"><?php _e( 'Learn more', 'orbis' ); ?></a>
-		</p>
-	</div>
+	if ( strtotime( $user->user_registered ) > ( time() - 172800 ) ) : ?>
+	
+		<div class="hero-unit">
+			<h1><?php _e( 'Welcome to Orbis', 'orbis' ); ?></h1>
+		
+			<p>
+				<?php _e( 'Orbis is a tool to manage your projects, your customer relations, it can be used as intranet en has much more great features. Orbis is built on WordPress which is a great base to create a powerful tool for your bussiness. Enough introduction, time to work.', 'orbis' ); ?>
+			</p>
+		
+			<ul>
+				<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=post"><?php _e( 'Add a post', 'orbis' ); ?></a></li>	
+				<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=orbis_company"><?php _e( 'Add a company', 'orbis' ); ?></a></li>
+				<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=orbis_project"><?php _e( 'Add a project', 'orbis' ); ?></a></li>
+				<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=orbis_person"><?php _e( 'Add a person', 'orbis' ); ?></a></li>
+			</ul>
+		
+			<p>
+				<a class="btn btn-primary btn-large" href="http://orbiswp.com"><?php _e( 'Learn more', 'orbis' ); ?></a>
+			</p>
+		</div>
+	
+	<?php endif; ?>
 
 <?php endif; ?>
 
