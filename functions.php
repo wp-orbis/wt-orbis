@@ -231,3 +231,17 @@ class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
 		
 	}
 }
+
+function orbis_get_url_post_new( $post_type = null ) {
+	if ( null === $post_type ) {
+		$post_type_obj = get_queried_object();
+		
+		$post_type = $post_type_obj->name;
+	}
+	
+	$url = add_query_arg( 'post_type', $post_type, admin_url( 'post-new.php' ) );
+
+	return $url;
+}
+
+

@@ -27,7 +27,7 @@
 		<?php endif; ?>
 	</h1>
 
-	<a class="btn btn-primary pull-right" href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=<?php echo get_post_type(); ?>">
+	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
 		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add new', 'orbis' ); ?>
 	</a>
 </div>

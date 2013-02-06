@@ -15,14 +15,7 @@
 		</small>
 	</h1>
 
-	<?php 
-	
-	$post_type_obj = get_queried_object();
-	
-	$url = add_query_arg( 'post_type', $post_type_obj->name, admin_url( 'post-new.php' ) );
-	
-	?>
-	<a class="btn btn-primary pull-right" href="<?php echo $url; ?>">
+	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
 		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add project', 'orbis' ); ?>
 	</a>
 </div>
