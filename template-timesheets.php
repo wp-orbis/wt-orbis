@@ -75,7 +75,34 @@ if ( $user ) {
 $query .= ' ORDER BY date ASC';
 
 // Get results
-$result = $wpdb->get_results( "SELECT orbis_hours_registration.*, orbis_projects.invoicable FROM orbis_hours_registration LEFT JOIN orbis_projects ON(orbis_hours_registration.project_id = orbis_projects.id ) $query" );
+$query_budgets = $wpdb->prepare(
+	"SELECT
+		project.id,
+		SUM( registration.number_seconds ) > project.number_seconds AS over_budget 
+	FROM
+		orbis_projects AS project
+			LEFT JOIN
+		orbis_hours_registration AS registration
+				ON project.id = registration.project_id
+	WHERE
+		registration.date <= %s
+	GROUP BY
+		project.id
+	",
+	date( 'Y-m-d', $end_date )
+);
+
+$budgets = $wpdb->get_results( $query_budgets, OBJECT_K );
+
+$query_hours =  "
+	SELECT
+		*
+	FROM
+		orbis_hours_registration
+	$query
+";
+
+$result = $wpdb->get_results( $query_hours );
 
 $total_seconds      = 0;
 $billable_seconds   = 0;
@@ -83,11 +110,11 @@ $unbillable_seconds = 0;
 
 foreach ( $result as $row ) {
 	$total_seconds += $row->number_seconds;
-	
-	if ( $row->invoicable ) {
-		$billable_seconds   += $row->number_seconds;
-	} else {
+
+	if ( isset( $budgets[$row->project_id]) && $budgets[$row->project_id]->over_budget ) {
 		$unbillable_seconds += $row->number_seconds;
+	} else {
+		$billable_seconds   += $row->number_seconds;
 	}
 }
 
@@ -185,7 +212,7 @@ $url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
 
 	<div class="span3">
 		<p><?php _e( 'Billable Amount', 'orbis' ); ?></p>
-		<h1><?php echo '&euro;' . number_format( $amount, 2, ',', '.' ); ?></h1>
+		<h1><?php echo orbis_price( $amount ); ?></h1>
 	</div>
 </div>
 
