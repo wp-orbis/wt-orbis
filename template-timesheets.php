@@ -78,7 +78,7 @@ $query .= ' ORDER BY date ASC';
 $query_budgets = $wpdb->prepare(
 	"SELECT
 		project.id,
-		SUM( registration.number_seconds ) > project.number_seconds AS over_budget,
+		project.number_seconds - SUM( registration.number_seconds ) AS seconds_available,
 		project.invoicable 
 	FROM
 		orbis_projects AS project
@@ -90,7 +90,7 @@ $query_budgets = $wpdb->prepare(
 	GROUP BY
 		project.id
 	",
-	date( 'Y-m-d', $end_date )
+	date( 'Y-m-d', $start_date )
 );
 
 $budgets = $wpdb->get_results( $query_budgets, OBJECT_K );
@@ -112,8 +112,16 @@ $unbillable_seconds = 0;
 foreach ( $result as $row ) {
 	$total_seconds += $row->number_seconds;
 
-	$over_budget = isset( $budgets[$row->project_id] ) ? $budgets[$row->project_id]->over_budget : true;
-	$invoicable  = isset( $budgets[$row->project_id] ) ? $budgets[$row->project_id]->invoicable : false;
+	$invoicable      = isset( $budgets[$row->project_id] ) ? $budgets[$row->project_id]->invoicable : false;
+	$over_budget     = true;
+	
+	if ( isset( $budgets[$row->project_id] ) ) {
+		$project =& $budgets[$row->project_id];
+		
+		$project->seconds_available -= $row->number_seconds;
+		
+		$over_budget = $project->seconds_available <= 0;
+	}
 
 	if ( $over_budget || ! $invoicable ) {
 		$unbillable_seconds += $row->number_seconds;
