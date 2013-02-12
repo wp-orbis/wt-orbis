@@ -24,15 +24,7 @@
 				</header>
 				
 				<div class="content">
-					<?php if ( $post->post_content ) : ?>
-					
-						<?php the_content(); ?>
-					
-					<?php else : ?>
-					
-						<?php _e( 'No description.', 'orbis' ); ?>
-					
-					<?php endif; ?>
+					<?php the_content(); ?>
 				</div>
 			</div>
 	
