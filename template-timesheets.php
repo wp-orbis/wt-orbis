@@ -110,10 +110,7 @@ $billable_seconds   = 0;
 $unbillable_seconds = 0;
 
 foreach ( $result as &$row ) {
-	$total_seconds += $row->number_seconds;
-
 	$invoicable      = isset( $budgets[$row->project_id] ) ? $budgets[$row->project_id]->invoicable : false;
-	$over_budget     = true;
 
 	$row->billable_seconds   = 0;
 	$row->unbillable_seconds = 0;
@@ -270,7 +267,11 @@ $url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
 			<?php $total += $row->number_seconds; ?>
 	
 			<tr>
-				<td><?php echo $row->project_id; ?></td>
+				<td>
+					<a href="http://orbis.pronamic.nl/projecten/details/<?php echo $row->project_id; ?>/" target="_blank">
+						<?php echo $row->project_id; ?>
+					</a>
+				</td>
 				<td><?php echo $row->description; ?></td>
 				<td>
 					<?php 
