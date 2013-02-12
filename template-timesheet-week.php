@@ -20,11 +20,11 @@ function orbis_format_timestamps( array $timestamps, $format ) {
 }
 
 $users = array(
-	1 => 'Jelke Boonstra',
-	3 => 'Leo Oosterloo',
-	4 => 'Jan Lammert Sijtsema',
-	5 => 'Karel-Jan Tolsma',
-	6 => 'Remco Tolsma',
+	1  => 'Jelke Boonstra',
+	3  => 'Leo Oosterloo',
+	4  => 'Jan Lammert Sijtsema',
+	5  => 'Karel-Jan Tolsma',
+	6  => 'Remco Tolsma',
 	24 => 'Martijn Duker',
 	26 => 'Leon Rowland'
 );
