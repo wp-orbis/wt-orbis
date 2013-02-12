@@ -109,25 +109,41 @@ $total_seconds      = 0;
 $billable_seconds   = 0;
 $unbillable_seconds = 0;
 
-foreach ( $result as $row ) {
+foreach ( $result as &$row ) {
 	$total_seconds += $row->number_seconds;
 
 	$invoicable      = isset( $budgets[$row->project_id] ) ? $budgets[$row->project_id]->invoicable : false;
 	$over_budget     = true;
+
+	$row->billable_seconds   = 0;
+	$row->unbillable_seconds = 0;
 	
 	if ( isset( $budgets[$row->project_id] ) ) {
 		$project =& $budgets[$row->project_id];
 		
-		$project->seconds_available -= $row->number_seconds;
-		
-		$over_budget = $project->seconds_available <= 0;
-	}
+		if ( $invoicable ) {
+			if ( $row->number_seconds < $project->seconds_available ) {
+				// 1800 seconds registred < 3600 seconds available
+				$row->billable_seconds   = $row->number_seconds;
+			} else {
+				// 3600 seconds registred < 1800 seconds available
+				$seconds_avilable        = max( 0, $project->seconds_available );
 
-	if ( $over_budget || ! $invoicable ) {
-		$unbillable_seconds += $row->number_seconds;
+				$row->billable_seconds   = $seconds_avilable;
+				$row->unbillable_seconds = $row->number_seconds - $seconds_avilable;
+			}
+		} else {
+			$row->unbillable_seconds = $row->number_seconds;
+		}
+
+		$project->seconds_available -= $row->number_seconds;
 	} else {
-		$billable_seconds   += $row->number_seconds;
+		$row->unbillable_seconds = $row->number_seconds;
 	}
+	
+	$total_seconds      += $row->number_seconds;
+	$billable_seconds   += $row->billable_seconds;
+	$unbillable_seconds += $row->unbillable_seconds;
 }
 
 $unbillable_hours = $unbillable_seconds / 60 / 60;
@@ -243,7 +259,7 @@ $url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
 	<tbody>
 		<?php $date = 0; foreach( $result as $row ) : ?>
 	
-			<?php if( $date != $row->date ) : $date = $row->date; $total = 0; ?>
+			<?php if ( $date != $row->date ) : $date = $row->date; $total = 0; ?>
 			
 				<tr>
 					<td colspan="4"><h2><?php echo $row->date; ?></h2></td>
@@ -256,8 +272,21 @@ $url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
 			<tr>
 				<td><?php echo $row->project_id; ?></td>
 				<td><?php echo $row->description; ?></td>
-				<td><?php echo gmdate( 'H:i', $row->number_seconds ); ?></td>
-				<td><?php echo gmdate( 'H:i', $total ); ?></td>
+				<td>
+					<?php 
+					
+					$title = sprintf(
+						__( '%s billable, %s unbillable', 'orbis' ),
+						orbis_format_seconds( $row->billable_seconds ),
+						orbis_format_seconds( $row->unbillable_seconds )
+					);
+					
+					?>
+					<a href="#" data-toggle="tooltip" title="<?php echo esc_attr( $title ); ?>">
+						<?php echo orbis_format_seconds( $row->number_seconds ); ?>
+					</a>
+				</td>
+				<td><?php echo orbis_format_seconds( $total ); ?></td>
 			</tr>
 
 		<?php endforeach; ?>
