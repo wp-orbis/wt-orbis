@@ -460,6 +460,10 @@ p.project-time {
 	left: 0;
 }
 
+.commentlist img.avatar {
+	border-radius: 100px;
+}
+
 .comment-author cite {
 	color: #000;
 	font-style: normal;
