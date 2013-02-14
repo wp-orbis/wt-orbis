@@ -78,15 +78,17 @@ $query .= ' ORDER BY date ASC';
 $query_budgets = $wpdb->prepare(
 	"SELECT
 		project.id,
-		project.number_seconds - SUM( registration.number_seconds ) AS seconds_available,
+		project.number_seconds - IFNULL( SUM( registration.number_seconds ), 0 ) AS seconds_available,
 		project.invoicable 
 	FROM
 		orbis_projects AS project
 			LEFT JOIN
 		orbis_hours_registration AS registration
-				ON project.id = registration.project_id
-	WHERE
-		registration.date <= %s
+				ON (
+					project.id = registration.project_id
+						AND
+					registration.date <= %s
+				)
 	GROUP BY
 		project.id
 	",
