@@ -111,16 +111,14 @@ $total_seconds      = 0;
 $billable_seconds   = 0;
 $unbillable_seconds = 0;
 
-foreach ( $result as &$row ) {
-	$invoicable      = isset( $budgets[$row->project_id] ) ? $budgets[$row->project_id]->invoicable : false;
-
+foreach ( $result as $row ) {
 	$row->billable_seconds   = 0;
 	$row->unbillable_seconds = 0;
 	
 	if ( isset( $budgets[$row->project_id] ) ) {
-		$project =& $budgets[$row->project_id];
+		$project = $budgets[$row->project_id];
 		
-		if ( $invoicable ) {
+		if ( $project->invoicable ) {
 			if ( $row->number_seconds < $project->seconds_available ) {
 				// 1800 seconds registred < 3600 seconds available
 				$row->billable_seconds   = $row->number_seconds;
