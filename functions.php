@@ -248,4 +248,14 @@ function orbis_price( $price ) {
 	return '&euro;&nbsp;' . number_format( $price, 2, ',', '.' );
 }
 
+function orbis_the_content_empty( $content ) {
+	if ( is_singular( array( 'post', 'orbis_person', 'orbis_project' ) ) ) {
+		if ( empty( $content ) ) {
+			$content =  __( 'No description.', 'orbis' );
+		}
+	}
+	
+	return $content;
+}
 
+add_filter( 'the_content', 'orbis_the_content_empty', 200 );

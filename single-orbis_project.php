@@ -31,21 +31,13 @@
 				</header>
 				
 				<div class="content">
-					<?php if ( $post->post_content ) : ?>
-					
-						<?php the_content(); ?>
-					
-					<?php else : ?>
-					
-						<?php _e( 'No description.', 'orbis' ); ?>
-					
-					<?php endif; ?>
+					<?php the_content(); ?>
 				</div>
 			</div>
 
-					<?php get_template_part( 'project_flot_activities' ); ?>
+			<?php get_template_part( 'project_flot_activities' ); ?>
 
-					<?php get_template_part( 'project_flot_persons' ); ?>
+			<?php get_template_part( 'project_flot_persons' ); ?>
 	
 			<?php comments_template( '', true ); ?>
 		</div>
