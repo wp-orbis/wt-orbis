@@ -28,6 +28,8 @@
 				</div>
 			</div>
 	
+			<?php do_action( 'orbis_after_main_content' ); ?>
+	
 			<?php comments_template( '', true ); ?>
 		</div>
 	
