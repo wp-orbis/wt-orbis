@@ -244,8 +244,10 @@ function orbis_get_url_post_new( $post_type = null ) {
 	return $url;
 }
 
-function orbis_price( $price ) {
-	return '&euro;&nbsp;' . number_format( $price, 2, ',', '.' );
+if ( ! function_exists( 'orbis_price' ) ) {
+	function orbis_price( $price ) {
+		return '&euro;&nbsp;' . number_format( $price, 2, ',', '.' );
+	}
 }
 
 function orbis_the_content_empty( $content ) {
