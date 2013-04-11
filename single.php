@@ -15,7 +15,9 @@
 	</div>
 	
 	<div class="row">
-		<div class="span8">
+		<div class="span8">	
+			<?php do_action( 'orbis_before_main_content' ); ?>
+
 			<div class="panel">
 				<header>
 					<h3><?php _e( 'Description', 'orbis' ); ?></h3>
@@ -32,6 +34,8 @@
 		</div>
 	
 		<div class="span4">
+			<?php do_action( 'orbis_before_side_content' ); ?>
+
 			<div class="panel">
 				<header>
 					<h3><?php _e( 'Additional Information', 'orbis' ); ?></h3>
