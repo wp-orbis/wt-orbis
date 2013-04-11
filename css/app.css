@@ -357,6 +357,12 @@ table tr:hover .actions {
 	visibility: visible;
 }
 
+table tr.canceled {
+	color: #999;
+
+	text-decoration: line-through;
+}
+
 /* Well
 ------------------------- */
 .panel .well {
