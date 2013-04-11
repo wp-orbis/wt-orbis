@@ -8,9 +8,7 @@
 			
 			<?php if ( is_singular( 'orbis_company' ) ) : ?>
 			
-				<small>
-					<?php _e( 'Company details', 'orbis' ); ?>
-				</small>
+				<small><?php _e( 'Company Details', 'orbis' ); ?></small>
 			
 			<?php endif; ?>
 		</h1>
@@ -36,22 +34,27 @@
 		<div class="span4">
 			<div class="panel">
 				<header>
-					<h3><?php _e( 'Additional information', 'orbis' ); ?></h3>
+					<h3><?php _e( 'Additional Information', 'orbis' ); ?></h3>
 				</header>
 	
 				<div class="content">
 					<dl>
 						<dt><?php _e( 'ID', 'orbis' ); ?></dt>
 						<dd><?php echo get_the_id(); ?></dd>
+
 						<dt><?php _e( 'Posted on', 'orbis' ); ?></dt>
-						<dd><?php echo get_the_date() ?></dd>
+						<dd><?php echo get_the_date(); ?></dd>
+
 						<dt><?php _e( 'Posted by', 'orbis' ); ?></dt>
-						<dd><?php echo get_the_author() ?></dd>
+						<dd><?php echo get_the_author(); ?></dd>
+
 						<dt><?php _e( 'Actions', 'orbis' ); ?></dt>
 						<dd><?php edit_post_link( __( 'Edit', 'orbis' ) ); ?></dd>
 					</dl>
 				</div>
 			</div>
+			
+			<?php do_action( 'orbis_after_side_content' ); ?>
 		</div>
 	</div>
 
