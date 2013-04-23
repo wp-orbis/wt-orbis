@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 09:18+0100\n"
-"PO-Revision-Date: 2013-04-11 09:18+0100\n"
+"POT-Creation-Date: 2013-04-23 11:23+0100\n"
+"PO-Revision-Date: 2013-04-23 11:23+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -54,7 +54,7 @@ msgid "Search"
 msgstr "Zoeken"
 
 #: archive-orbis_company.php:40 single-orbis_person.php:180
-#: single-orbis_project.php:93 single.php:42
+#: single-orbis_project.php:93 single.php:46
 msgid "ID"
 msgstr "ID"
 
@@ -62,7 +62,7 @@ msgstr "ID"
 msgid "Name"
 msgstr "Naam"
 
-#: archive-orbis_company.php:42
+#: archive-orbis_company.php:42 templates/company_contact.php:24
 msgid "KvK Number"
 msgstr "KvK nummer"
 
@@ -73,13 +73,13 @@ msgstr "Reacties"
 
 #: archive-orbis_company.php:44 archive-orbis_person.php:42
 #: archive-orbis_project.php:44 index.php:54 single-orbis_person.php:186
-#: single-orbis_project.php:121 single.php:51
+#: single-orbis_project.php:121 single.php:55
 msgid "Actions"
 msgstr "Acties"
 
 #: archive-orbis_company.php:85 archive-orbis_person.php:89
 #: archive-orbis_project.php:77 index.php:69 single-orbis_person.php:187
-#: single-orbis_project.php:122 single.php:52
+#: single-orbis_project.php:122 single.php:56
 msgid "Edit"
 msgstr "Bewerken"
 
@@ -332,14 +332,6 @@ msgstr "Taken van deze gebruiker"
 msgid "Add task"
 msgstr "Taak toevoegen"
 
-#: project_flot_activities.php:3
-msgid "Activities used in this project"
-msgstr "Activiteiten gebruikt in dit projectt"
-
-#: project_flot_persons.php:3
-msgid "Persons worked on this project"
-msgstr "Personen gewerkt aan dit project"
-
 #: single-orbis_person.php:15
 msgid "About this person"
 msgstr "Over deze persoon"
@@ -379,15 +371,15 @@ msgstr "%1$s op Twitter"
 msgid "Additional information"
 msgstr "Aanvullende informatie"
 
-#: single-orbis_person.php:182 single-orbis_project.php:95 single.php:45
+#: single-orbis_person.php:182 single-orbis_project.php:95 single.php:49
 msgid "Posted on"
 msgstr "Geplaatst op"
 
-#: single-orbis_person.php:184 single-orbis_project.php:97 single.php:48
+#: single-orbis_person.php:184 single-orbis_project.php:97 single.php:52
 msgid "Posted by"
 msgstr "Aangemaakt door"
 
-#: single-orbis_project.php:30 single.php:21 template-timesheets.php:251
+#: single-orbis_project.php:30 single.php:23 template-timesheets.php:251
 #: templates-tasks.php:26 templates-tasks.php:91
 msgid "Description"
 msgstr "Beschrijving"
@@ -428,7 +420,7 @@ msgstr "Niet gefactureerd"
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: single.php:37
+#: single.php:41
 msgid "Additional Information"
 msgstr "Aanvullende informatie"
 
@@ -583,6 +575,42 @@ msgstr "Aantal:"
 #: includes/widgets.php:204
 msgid "More news"
 msgstr "Meer nieuws"
+
+#: templates/company_contact.php:19
+msgid "Contact Details"
+msgstr "Contact details"
+
+#: templates/company_contact.php:29
+msgid "E-Mail"
+msgstr "E-mailadres"
+
+#: templates/company_contact.php:38
+msgid "Website"
+msgstr "Website"
+
+#: templates/company_contact.php:45
+msgid "Address"
+msgstr "Adres"
+
+#: templates/company_contact.php:48
+msgid "Electronic billing"
+msgstr "Elektronische facturatie"
+
+#: templates/company_contact.php:49
+msgid "Yes"
+msgstr "Ja"
+
+#: templates/company_contact.php:49
+msgid "No"
+msgstr "Nee"
+
+#: templates/project_flot_activities.php:3
+msgid "Activities used in this project"
+msgstr "Activiteiten gebruikt in dit projectt"
+
+#: templates/project_flot_persons.php:3
+msgid "Persons worked on this project"
+msgstr "Personen gewerkt aan dit project"
 
 #~ msgid "Featured"
 #~ msgstr "Uitgelicht"

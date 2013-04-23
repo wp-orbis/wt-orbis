@@ -261,3 +261,14 @@ function orbis_the_content_empty( $content ) {
 }
 
 add_filter( 'the_content', 'orbis_the_content_empty', 200 );
+
+/**
+ * Orbis Companies
+ */
+function orbis_companies_render_contact_details() {
+	if ( is_singular( 'orbis_company' ) ) {
+		get_template_part( 'templates/company_contact' );
+	}
+}
+
+add_action( 'orbis_before_side_content', 'orbis_companies_render_contact_details' );

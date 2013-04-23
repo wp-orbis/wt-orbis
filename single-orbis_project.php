@@ -35,9 +35,9 @@
 				</div>
 			</div>
 
-			<?php get_template_part( 'project_flot_activities' ); ?>
+			<?php get_template_part( 'templates/project_flot_activities' ); ?>
 
-			<?php get_template_part( 'project_flot_persons' ); ?>
+			<?php get_template_part( 'templates/project_flot_persons' ); ?>
 	
 			<?php comments_template( '', true ); ?>
 		</div>
