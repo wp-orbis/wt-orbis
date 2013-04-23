@@ -49,8 +49,25 @@ $ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
 			<dt><?php _e( 'Electronic billing', 'orbis' ); ?></dt>
 			<dd><?php echo $ebilling ? __( 'Yes', 'orbis' ) :  __( 'No', 'orbis' ); ?></dd>
 
-			<dt><?php _e( 'KvK Number', 'orbis' ); ?></dt>
-			<dd><?php echo $kvk_number; ?></dd>
+			<?php if ( ! empty( $kvk_number ) ) : ?>
+	
+				<dt><?php _e( 'KvK Number', 'orbis' ); ?></dt>
+				<dd>
+					<?php echo $kvk_number; ?>
+					
+					<?php 
+					
+					$url_open_kvk = sprintf( 'http://openkvk.nl/%s', $kvk_number );
+					$url_kvk      = add_query_arg( 'q', $kvk_number, 'http://www.kvk.nl/zoek/' );
+					
+					?>
+					<small>
+						<a href="<?php echo esc_attr( $url_open_kvk ); ?>" target="_blank">openkvk.nl</a>
+						<a href="<?php echo esc_attr( $url_kvk ); ?>" target="_blank">kvk.nl</a>
+					</small>
+				</dd>
+
+			<?php endif; ?>
 		</dl>
 	</div>
 </div>
