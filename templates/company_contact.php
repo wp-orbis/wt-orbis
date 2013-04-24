@@ -62,8 +62,8 @@ $ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
 					
 					?>
 					<small>
-						<a href="<?php echo esc_attr( $url_open_kvk ); ?>" target="_blank">openkvk.nl</a>
-						<a href="<?php echo esc_attr( $url_kvk ); ?>" target="_blank">kvk.nl</a>
+						<a class="label label-info" href="<?php echo esc_attr( $url_open_kvk ); ?>" target="_blank">openkvk.nl</a>
+						<a class="label label-info" href="<?php echo esc_attr( $url_kvk ); ?>" target="_blank">kvk.nl</a>
 					</small>
 				</dd>
 
