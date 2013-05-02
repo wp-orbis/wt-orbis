@@ -80,10 +80,12 @@
 
 						wp_nav_menu($args);
 
+						$s = filter_input( INPUT_GET, 's', FILTER_SANITIZE_STRING );
+						
 						?>
 
 						<form method="get" class="navbar-search pull-left" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                      		<input type="text" name="s" class="search-query span2" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php if ( ! empty( $_GET['s'] ) ) { echo $_GET['s']; } ?>">
+                      		<input type="text" name="s" class="search-query span2" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php echo esc_attr( $s ); ?>">
                     	</form>
 
 						<?php if ( is_user_logged_in() ) : ?>

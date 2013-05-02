@@ -25,12 +25,7 @@
 		<h3><?php _e( 'Overview', 'orbis' ); ?></h3>
 	</header>
 
-	<?php $s = filter_input( INPUT_GET, 's', FILTER_SANITIZE_STRING ); ?>
-	  
-	<form class="well form-search" method="get">
-		<input type="text" class="input-medium search-query" name="s" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php if ( ! empty( $_GET['s'] ) ) { echo $_GET['s']; } ?>">
-		<button type="submit" class="btn"><?php esc_attr_e( 'Search', 'orbis' ); ?></button>
-	</form>
+	<?php get_template_part( 'templates/search_form' ); ?>
 	
 	<?php if ( have_posts() ) : ?>
 	
