@@ -61,41 +61,52 @@
 	
 			<?php endif; ?>
 	
-			<?php if ( function_exists( 'orbis_project_has_principal' ) && orbis_project_has_principal() ) : ?>
-	
-				<div class="panel">
-					<header>
-						<h3><?php _e( 'Connected company', 'orbis' ); ?></h3>
-					</header>
-	
-					<div class="content">
-						<?php
-	
-						printf( 
-							'<a href="%s">%s</a>',
-							esc_attr( orbis_project_principal_get_permalink() ),
-							orbis_project_principel_get_the_name()
-						);
-	
-						?>
-					</div>
-				</div>
-	
-			<?php endif; ?>
-	
 			<div class="panel">
 				<header>
-					<h3><?php _e( 'Additional information', 'orbis' ); ?></h3>
+					<h3><?php _e( 'Project Details', 'orbis' ); ?></h3>
 				</header>
 	
 				<div class="content">
 					<dl>
+						<?php if ( function_exists( 'orbis_project_has_principal' ) && orbis_project_has_principal() ) : ?>
+	
+							<dt><?php _e( 'Principal', 'orbis' ); ?></dt>
+							<dd>
+								<?php
+			
+								printf( 
+									'<a href="%s">%s</a>',
+									esc_attr( orbis_project_principal_get_permalink() ),
+									orbis_project_principel_get_the_name()
+								);
+			
+								?>
+							</dd>
+
+						<?php endif; ?>
+
 						<dt><?php _e( 'ID', 'orbis' ); ?></dt>
-						<dd><?php echo get_the_id(); ?></dd>
+						<dd><?php echo get_the_ID(); ?></dd>
+
 						<dt><?php _e( 'Posted on', 'orbis' ); ?></dt>
 						<dd><?php echo get_the_date() ?></dd>
+
 						<dt><?php _e( 'Posted by', 'orbis' ); ?></dt>
 						<dd><?php echo get_the_author() ?></dd>
+						
+						<?php 
+						
+						$agreement = get_post( get_post_meta( get_the_ID(), '_orbis_project_agreement_id', true ) );
+
+						if ( $agreement ) : ?>
+						
+							<dt><?php _e( 'Agreement', 'orbis' ); ?></dt>
+							<dd>
+								<a href="<?php echo get_permalink( $agreement ); ?>"><?php echo get_the_title( $agreement ); ?></a>
+							</dd>
+
+						<?php endif; ?>
+						
 						<dt><?php _e( 'Status', 'orbis' ); ?></dt>
 						<dd>
 							<?php if ( orbis_project_is_finished() ) : ?>
@@ -118,6 +129,7 @@
 	
 							<?php endif; ?>
 						</dd>
+
 						<dt><?php _e( 'Actions', 'orbis' ); ?></dt>
 						<dd><?php edit_post_link( __( 'Edit', 'orbis' ) ); ?></dd>
 					</dl>
