@@ -96,9 +96,9 @@
 						
 						<?php 
 						
-						$agreement = get_post( get_post_meta( get_the_ID(), '_orbis_project_agreement_id', true ) );
+						$agreement_id = get_post_meta( get_the_ID(), '_orbis_project_agreement_id', true );
 
-						if ( $agreement ) : ?>
+						if ( ! empty( $agreement_id ) && $agreement = get_post( $agreement_id ) ) : ?>
 						
 							<dt><?php _e( 'Agreement', 'orbis' ); ?></dt>
 							<dd>
