@@ -110,7 +110,7 @@ $results = $wpdb->get_results('
 								<?php echo mysql2date( 'd-m-Y', $row->planned_end_date ); ?>
 							</td>
 							<td>
-								<?php echo orbis_format_seconds( $row->planned_duration ); ?>
+								<?php echo orbis_time( $row->planned_duration ); ?>
 							</td>
 						</tr>
 					
