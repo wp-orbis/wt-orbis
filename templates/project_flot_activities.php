@@ -20,7 +20,7 @@
 		foreach ( $result as $row ) {
 			$label = sprintf( 
 				'<strong>%s</strong> - %s',
-				orbis_format_seconds( $row->total_seconds ),
+				orbis_time( $row->total_seconds ),
 				$row->activity_name
 			);
 
