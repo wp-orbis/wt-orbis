@@ -278,16 +278,16 @@ $url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
 					
 					$title = sprintf(
 						__( '%s billable, %s unbillable', 'orbis' ),
-						orbis_format_seconds( $row->billable_seconds ),
-						orbis_format_seconds( $row->unbillable_seconds )
+						orbis_time( $row->billable_seconds ),
+						orbis_time( $row->unbillable_seconds )
 					);
 					
 					?>
 					<a href="#" data-toggle="tooltip" title="<?php echo esc_attr( $title ); ?>">
-						<?php echo orbis_format_seconds( $row->number_seconds ); ?>
+						<?php echo orbis_time( $row->number_seconds ); ?>
 					</a>
 				</td>
-				<td><?php echo orbis_format_seconds( $total ); ?></td>
+				<td><?php echo orbis_time( $total ); ?></td>
 			</tr>
 
 		<?php endforeach; ?>
