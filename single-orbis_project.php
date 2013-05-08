@@ -35,6 +35,8 @@
 				</div>
 			</div>
 
+			<?php do_action( 'orbis_after_main_content' ); ?>
+
 			<?php get_template_part( 'templates/project_flot_activities' ); ?>
 
 			<?php get_template_part( 'templates/project_flot_persons' ); ?>
@@ -129,6 +131,33 @@
 	
 							<?php endif; ?>
 						</dd>
+						
+						<?php 
+						
+						$invoice_number = get_post_meta( get_the_ID(), '_orbis_project_invoice_number', true );
+
+						if ( ! empty( $invoice_number ) ) : ?>
+						
+							<dt><?php _e( 'Invoice', 'orbis' ); ?></dt>
+							<dd>
+								<?php 
+								
+								$invoice_link = orbis_get_invoice_link( $invoice_number );
+								
+								if ( ! empty( $invoice_link ) ) {
+									printf(
+										'<a href="%s" target="_blank">%s</a>',
+										esc_attr( $invoice_link ),
+										$invoice_number
+									);
+								} else {
+									echo $invoice_number;
+								}
+
+								?>
+							</dd>
+
+						<?php endif; ?>
 
 						<dt><?php _e( 'Actions', 'orbis' ); ?></dt>
 						<dd><?php edit_post_link( __( 'Edit', 'orbis' ) ); ?></dd>

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-03 12:39+0100\n"
-"PO-Revision-Date: 2013-05-03 12:40+0100\n"
+"POT-Creation-Date: 2013-05-08 10:59+0100\n"
+"PO-Revision-Date: 2013-05-08 10:59+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -47,7 +47,7 @@ msgid "Overview"
 msgstr "Overzicht"
 
 #: archive-orbis_company.php:35 single-orbis_person.php:180
-#: single-orbis_project.php:88 single.php:46
+#: single-orbis_project.php:90 single.php:46
 msgid "ID"
 msgstr "ID"
 
@@ -66,13 +66,13 @@ msgstr "Reacties"
 
 #: archive-orbis_company.php:39 archive-orbis_person.php:37
 #: archive-orbis_project.php:39 index.php:49 single-orbis_person.php:186
-#: single-orbis_project.php:133 single.php:55
+#: single-orbis_project.php:162 single.php:55
 msgid "Actions"
 msgstr "Acties"
 
 #: archive-orbis_company.php:80 archive-orbis_person.php:84
 #: archive-orbis_project.php:72 index.php:64 single-orbis_person.php:187
-#: single-orbis_project.php:134 single.php:56
+#: single-orbis_project.php:163 single.php:56
 msgid "Edit"
 msgstr "Bewerken"
 
@@ -89,7 +89,7 @@ msgstr "Persoon toevoegen"
 msgid "Add project"
 msgstr "Project toevoegen"
 
-#: archive-orbis_project.php:35 single-orbis_project.php:73
+#: archive-orbis_project.php:35 single-orbis_project.php:75
 msgid "Principal"
 msgstr "Opdrachtgever"
 
@@ -369,11 +369,11 @@ msgstr "%1$s op Twitter"
 msgid "Additional information"
 msgstr "Aanvullende informatie"
 
-#: single-orbis_person.php:182 single-orbis_project.php:91 single.php:49
+#: single-orbis_person.php:182 single-orbis_project.php:93 single.php:49
 msgid "Posted on"
 msgstr "Geplaatst op"
 
-#: single-orbis_person.php:184 single-orbis_project.php:94 single.php:52
+#: single-orbis_person.php:184 single-orbis_project.php:96 single.php:52
 msgid "Posted by"
 msgstr "Aangemaakt door"
 
@@ -382,41 +382,45 @@ msgstr "Aangemaakt door"
 msgid "Description"
 msgstr "Beschrijving"
 
-#: single-orbis_project.php:50
+#: single-orbis_project.php:52
 msgid "Project status"
 msgstr "Project status"
 
-#: single-orbis_project.php:54
+#: single-orbis_project.php:56
 msgid "Project budget"
 msgstr "Project budget"
 
-#: single-orbis_project.php:66
+#: single-orbis_project.php:68
 msgid "Project Details"
 msgstr "Project details"
 
-#: single-orbis_project.php:103
+#: single-orbis_project.php:105
 msgid "Agreement"
 msgstr "Akkoord"
 
-#: single-orbis_project.php:110
+#: single-orbis_project.php:112
 msgid "Status"
 msgstr "Status"
 
-#: single-orbis_project.php:114
+#: single-orbis_project.php:116
 msgid "Finished"
 msgstr "Afgerond"
 
-#: single-orbis_project.php:118
+#: single-orbis_project.php:120
 msgid "Not finished"
 msgstr "Niet afgerond"
 
-#: single-orbis_project.php:124
+#: single-orbis_project.php:126
 msgid "Invoiced"
 msgstr "Gefactureerd"
 
-#: single-orbis_project.php:128
+#: single-orbis_project.php:130
 msgid "Not invoiced"
 msgstr "Niet gefactureerd"
+
+#: single-orbis_project.php:141
+msgid "Invoice"
+msgstr "Factuur"
 
 #: single.php:11
 msgid "Company Details"
