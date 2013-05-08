@@ -133,13 +133,13 @@ $url_week_this = add_query_arg( 'date', date( 'd-m-Y', $week_this ) );
 					
 					?>
 					<td>
-						<a href="<?php echo $url; ?>"><?php echo orbis_format_seconds( $seconds ); ?></a>
+						<a href="<?php echo $url; ?>"><?php echo orbis_time( $seconds ); ?></a>
 					</td>
 			
 				<?php endforeach; ?>
 
 				<td>
-					<?php echo orbis_format_seconds( $total ); ?>
+					<?php echo orbis_time( $total ); ?>
 				</td>
 			</tr>
 
