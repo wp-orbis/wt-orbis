@@ -63,6 +63,19 @@
 						</td>
 						<td class="project-time">
 							<?php if ( function_exists( 'orbis_project_the_time' ) ) orbis_project_the_time(); ?>
+
+							<?php if ( function_exists( 'orbis_project_the_logged_time' ) ) : ?>
+
+								<?php 
+								
+								$classes = array();
+								$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
+
+								?>
+
+								<span class="<?php echo implode( $classes, ' ' ); ?>"><?php orbis_project_the_logged_time(); ?></span>
+							
+							<?php endif ?>
 						</td>
 						<td>
 							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
