@@ -276,6 +276,16 @@ ul.list.persons li .person-wrapper a,
 	vertical-align: top;
 }
 
+/* Search
+------------------------- */
+#advanced-search fieldset {
+	margin-top: 20px;
+}
+
+.advanced-search-link {
+	margin-left: 20px;
+}
+
 /* News
 ------------------------- */
 .news img {

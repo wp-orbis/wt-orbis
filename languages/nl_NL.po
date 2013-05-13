@@ -3,21 +3,263 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-08 10:59+0100\n"
-"PO-Revision-Date: 2013-05-08 10:59+0100\n"
-"Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
+"POT-Creation-Date: 2013-05-13 16:18+0100\n"
+"PO-Revision-Date: 2013-05-13 16:18+0100\n"
+"Last-Translator: K.Tolsma <kareljan@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
-"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;__ngettext:1,2;__withdesc;_ewithdesc;_c;"
-"_n_noop:1,2;__ngettext_noop:1,2;_x:2c,1;_nc:1,2;esc_attr_e;esc_html_e;"
-"esc_attr__;_nx:4c,1,2;_nx_noop:4c,1,2;esc_html_x:2c,1;esc_html__;_ex:2c,1\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;__ngettext:1,2;__withdesc;_ewithdesc;_c;_n_noop:1,2;__ngettext_noop:1,2;_x:2c,1;_nc:1,2;esc_attr_e;esc_html_e;esc_attr__;_nx:4c,1,2;_nx_noop:4c,1,2;esc_html_x:2c,1;esc_html__;_ex:2c,1\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: templates-projects-to-invoice.php:144
+#: archive-orbis_company.php:80
+#: single-orbis_project.php:176
+#: index.php:64
+#: single-orbis_person.php:187
+#: single.php:56
+msgid "Edit"
+msgstr "Bewerken"
+
+#: header.php:24
+#, php-format
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: header.php:88
+#: index.php:7
+msgid "Search"
+msgstr "Zoeken"
+
+#: header.php:106
+msgid "Help"
+msgstr "Help"
+
+#: header.php:107
+msgid "Edit profile"
+msgstr "Wijzig profiel"
+
+#: header.php:109
+msgid "Log out"
+msgstr "Uitloggen"
+
+#: category.php:7
+#: home.php:5
+#: home.php:21
+msgid "News"
+msgstr "Nieuws"
+
+#: category.php:12
+#, php-format
+msgid "In the category \"%1$s\""
+msgstr "In de categorie \"%1$s\""
+
+#: category.php:21
+#: home.php:13
+msgid "Add post"
+msgstr "Bericht toevoegen"
+
+#: archive-orbis_company.php:10
+#: index.php:20
+#, php-format
+msgid "Overview of %1$s"
+msgstr "Overzicht van %1$s"
+
+#: archive-orbis_company.php:19
+msgid "Add company"
+msgstr "Bedrijf toevoegen"
+
+#: archive-orbis_company.php:25
+#: index.php:37
+msgid "Overview"
+msgstr "Overzicht"
+
+#: archive-orbis_company.php:35
+#: single-orbis_project.php:103
+#: single-orbis_person.php:180
+#: single.php:46
+msgid "ID"
+msgstr "ID"
+
+#: archive-orbis_company.php:36
+msgid "Name"
+msgstr "Naam"
+
+#: archive-orbis_company.php:37
+msgid "KvK Number"
+msgstr "KvK nummer"
+
+#: archive-orbis_company.php:38
+#: index.php:48
+msgid "Comments"
+msgstr "Reacties"
+
+#: archive-orbis_company.php:39
+#: single-orbis_project.php:175
+#: index.php:49
+#: single-orbis_person.php:186
+#: single.php:55
+msgid "Actions"
+msgstr "Acties"
+
+#: archive-orbis_company.php:93
+#: home.php:117
+#: index.php:77
+msgid "No results found."
+msgstr "Geen resultaten gevonden."
+
+#: home.php:8
+msgid "Overview of the latest news"
+msgstr "Overzicht van het laatste nieuws"
+
+#: home.php:31
+#, php-format
+msgid "Permalink to %s"
+msgstr "Permalink naar %s"
+
+#: home.php:47
+msgid "Continue reading &rarr;"
+msgstr "Lees verder &rarr;"
+
+#: home.php:57
+#: home.php:77
+msgid ",  "
+msgstr ", "
+
+#: home.php:66
+#, php-format
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">Geplaatst in</span> %2$s"
+
+#: home.php:88
+#, php-format
+msgid "<span class=\"%1$s\">Tagged</span> %2$s"
+msgstr "<span class=\"%1$s\">Tags:</span> %2$s"
+
+#: home.php:104
+msgid "Leave a reply"
+msgstr "Geef een reactie"
+
+#: home.php:104
+msgid "1 reply"
+msgstr "1 reactie"
+
+#: home.php:104
+msgid "% replies"
+msgstr "% reacties"
+
+#: home.php:129
+msgid "Categories"
+msgstr "Categorie&#235;n"
+
+#: home.php:146
+msgid "Tags"
+msgstr "Tags"
+
+#: single-orbis_project.php:30
+#: single.php:23
+#: templates-tasks.php:26
+#: templates-tasks.php:91
+msgid "Description"
+msgstr "Beschrijving"
+
+#: single-orbis_project.php:52
+msgid "Project status"
+msgstr "Project status"
+
+#: single-orbis_project.php:56
+msgid "Project budget"
+msgstr "Project budget"
+
+#: single-orbis_project.php:81
+msgid "Project Details"
+msgstr "Project details"
+
+#: single-orbis_project.php:88
+msgid "Principal"
+msgstr "Opdrachtgever"
+
+#: single-orbis_project.php:106
+#: single-orbis_person.php:182
+#: single.php:49
+msgid "Posted on"
+msgstr "Geplaatst op"
+
+#: single-orbis_project.php:109
+#: single-orbis_person.php:184
+#: single.php:52
+msgid "Posted by"
+msgstr "Aangemaakt door"
+
+#: single-orbis_project.php:118
+msgid "Agreement"
+msgstr "Akkoord"
+
+#: single-orbis_project.php:125
+msgid "Status"
+msgstr "Status"
+
+#: single-orbis_project.php:129
+msgid "Finished"
+msgstr "Afgerond"
+
+#: single-orbis_project.php:133
+msgid "Not finished"
+msgstr "Niet afgerond"
+
+#: single-orbis_project.php:139
+msgid "Invoiced"
+msgstr "Gefactureerd"
+
+#: single-orbis_project.php:143
+msgid "Not invoiced"
+msgstr "Niet gefactureerd"
+
+#: single-orbis_project.php:154
+msgid "Invoice"
+msgstr "Factuur"
+
+#: comments.php:5
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Dit bericht is beveiligd met een wachtwoord. Geef het wachtwoord om de reacties te bekijken."
+
+#: comments.php:15
+#, php-format
+msgid "One thought"
+msgid_plural "%1$s thoughts"
+msgstr[0] "1 reactie"
+msgstr[1] "%1$s reacties"
+
+#: comments.php:21
+#: comments.php:34
+msgid "&larr; Older Comments"
+msgstr "&larr; Oudere reacties"
+
+#: comments.php:22
+#: comments.php:35
+msgid "Newer Comments &rarr;"
+msgstr "Nieuwe reacties &rarr;"
+
+#: comments.php:43
+msgid "Comments are closed."
+msgstr "Reacties zijn gesloten."
+
+#: comments.php:51
+msgid "Give a comment"
+msgstr "Geef een reactie"
+
+#: index.php:31
+msgid "Add new"
+msgstr "Nieuwe toevoegen"
+
+#: index.php:47
+msgid "Title"
+msgstr "Titel"
 
 #: 404.php:5
 msgid "404"
@@ -31,180 +273,139 @@ msgstr "Pagina niet gevonden"
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
 msgstr "Het lijkt erop dat we niet kunnen vinden waar je naar zoekt."
 
-#: archive-orbis_company.php:10 archive-orbis_person.php:10
-#: archive-orbis_project.php:10 index.php:20
-#, php-format
-msgid "Overview of %1$s"
-msgstr "Overzicht van %1$s"
+#: templates-projects-over-budget.php:18
+msgid "This list should be empty dude"
+msgstr "Deze lijst zou leeg moeten zijn dude"
 
-#: archive-orbis_company.php:19
-msgid "Add company"
-msgstr "Bedrijf toevoegen"
-
-#: archive-orbis_company.php:25 archive-orbis_person.php:25
-#: archive-orbis_project.php:25 index.php:37
-msgid "Overview"
-msgstr "Overzicht"
-
-#: archive-orbis_company.php:35 single-orbis_person.php:180
-#: single-orbis_project.php:90 single.php:46
-msgid "ID"
-msgstr "ID"
-
-#: archive-orbis_company.php:36 archive-orbis_person.php:35
-msgid "Name"
-msgstr "Naam"
-
-#: archive-orbis_company.php:37 templates/company_contact.php:54
-msgid "KvK Number"
-msgstr "KvK nummer"
-
-#: archive-orbis_company.php:38 archive-orbis_person.php:36
-#: archive-orbis_project.php:38 index.php:48
-msgid "Comments"
-msgstr "Reacties"
-
-#: archive-orbis_company.php:39 archive-orbis_person.php:37
-#: archive-orbis_project.php:39 index.php:49 single-orbis_person.php:186
-#: single-orbis_project.php:162 single.php:55
-msgid "Actions"
-msgstr "Acties"
-
-#: archive-orbis_company.php:80 archive-orbis_person.php:84
-#: archive-orbis_project.php:72 index.php:64 single-orbis_person.php:187
-#: single-orbis_project.php:163 single.php:56
-msgid "Edit"
-msgstr "Bewerken"
-
-#: archive-orbis_company.php:93 archive-orbis_person.php:108
-#: archive-orbis_project.php:85 content-post.php:102 home.php:117 index.php:77
-msgid "No results found."
-msgstr "Geen resultaten gevonden."
-
-#: archive-orbis_person.php:19
-msgid "Add person"
-msgstr "Persoon toevoegen"
-
-#: archive-orbis_project.php:19
-msgid "Add project"
-msgstr "Project toevoegen"
-
-#: archive-orbis_project.php:35 single-orbis_project.php:75
-msgid "Principal"
-msgstr "Opdrachtgever"
-
-#: archive-orbis_project.php:36 template-timesheets.php:250
 #: templates-projects-over-budget.php:99
-#: templates-projects-over-budget.php:136 templates-tasks.php:36
+#: templates-projects-over-budget.php:136
+#: templates-tasks.php:36
 #: templates-tasks.php:90
 msgid "Project"
 msgstr "Project"
 
-#: archive-orbis_project.php:37 template-timesheets.php:252
+#: templates-projects-over-budget.php:100
+msgid "Over budget"
+msgstr "Over budget"
+
+#: templates-projects-over-budget.php:137
+msgid "Aantal uren over budget"
+msgstr "Aantal uren over budget"
+
+#: templates-projects-over-budget.php:138
+msgid "Kosten"
+msgstr "Kosten"
+
+#: single-orbis_person.php:15
+msgid "About this person"
+msgstr "Over deze persoon"
+
+#: single-orbis_person.php:42
+msgid "Phone number"
+msgstr "Telefoon nummer"
+
+#: single-orbis_person.php:43
+#: single-orbis_person.php:50
+msgid "Call this number"
+msgstr "Bel dit nummer"
+
+#: single-orbis_person.php:49
+msgid "Mobile number"
+msgstr "Mobiel nummer"
+
+#: single-orbis_person.php:56
+msgid "E-mail address"
+msgstr "E-mailadres"
+
+#: single-orbis_person.php:63
+msgid "Social media"
+msgstr "Social media"
+
+#: single-orbis_person.php:71
+#: single-orbis_person.php:86
+#: single-orbis_person.php:101
+#, php-format
+msgid "<a href=\"%1$s\">%2$s</a>"
+msgstr "<a href=\"%1$s\">%2$s</a>"
+
+#: single-orbis_person.php:133
+#, php-format
+msgid "%1$s op Twitter"
+msgstr "%1$s op Twitter"
+
+#: single-orbis_person.php:175
+msgid "Additional information"
+msgstr "Aanvullende informatie"
+
+#: single.php:11
+msgid "Company Details"
+msgstr "Bedrijf details"
+
+#: single.php:41
+msgid "Additional Information"
+msgstr "Aanvullende informatie"
+
+#: templates-tasks.php:10
+msgid "Tasks"
+msgstr "Taken"
+
+#: templates-tasks.php:10
+msgid "Time to get some work done"
+msgstr "Tijd om wat werk te verzetten"
+
+#: templates-tasks.php:13
+#: templates-tasks.php:22
+msgid "Add task"
+msgstr "Taak toevoegen"
+
 #: templates-tasks.php:31
 msgid "Time"
 msgstr "Tijd"
 
-#: author.php:7 category.php:7 content-post.php:5 home.php:5 home.php:21
-#: tag.php:7 includes/widgets.php:147
-msgid "News"
-msgstr "Nieuws"
+#: templates-tasks.php:39
+#: templates-tasks.php:89
+msgid "Person"
+msgstr "Persoon"
+
+#: templates-tasks.php:42
+#: templates-tasks.php:92
+msgid "Date"
+msgstr "Datum"
+
+#: templates-tasks.php:46
+msgid "Save task"
+msgstr "Taak opslaan"
+
+#: templates-tasks.php:47
+msgid "Cancel"
+msgstr "Annuleer"
+
+#: templates-tasks.php:93
+msgid "Budget"
+msgstr "Budget"
 
 #: author.php:12
 #, php-format
 msgid "Written by %1$s"
 msgstr "Geschreven door %1$s"
 
-#: author.php:21 category.php:21 home.php:13 tag.php:21
-msgid "Add post"
-msgstr "Bericht toevoegen"
-
-#: category.php:12
-#, php-format
-msgid "In the category \"%1$s\""
-msgstr "In de categorie \"%1$s\""
-
-#: comments.php:5
-msgid ""
-"This post is password protected. Enter the password to view any comments."
-msgstr ""
-"Dit bericht is beveiligd met een wachtwoord. Geef het wachtwoord om de "
-"reacties te bekijken."
-
-#: comments.php:15
-#, php-format
-msgid "One thought"
-msgid_plural "%1$s thoughts"
-msgstr[0] "1 reactie"
-msgstr[1] "%1$s reacties"
-
-#: comments.php:21 comments.php:34
-msgid "&larr; Older Comments"
-msgstr "&larr; Oudere reacties"
-
-#: comments.php:22 comments.php:35
-msgid "Newer Comments &rarr;"
-msgstr "Nieuwe reacties &rarr;"
-
-#: comments.php:43
-msgid "Comments are closed."
-msgstr "Reacties zijn gesloten."
-
-#: comments.php:51
-msgid "Give a comment"
-msgstr "Geef een reactie"
-
-#: content-post.php:15 home.php:31
-#, php-format
-msgid "Permalink to %s"
-msgstr "Permalink naar %s"
-
-#: content-post.php:31 home.php:47
-msgid "Continue reading &rarr;"
-msgstr "Lees verder &rarr;"
-
-#: content-post.php:41 content-post.php:61 home.php:57 home.php:77
-msgid ",  "
-msgstr ", "
-
-#: content-post.php:50 home.php:66
-#, php-format
-msgid "<span class=\"%1$s\">Posted in</span> %2$s"
-msgstr "<span class=\"%1$s\">Geplaatst in</span> %2$s"
-
-#: content-post.php:72 home.php:88
-#, php-format
-msgid "<span class=\"%1$s\">Tagged</span> %2$s"
-msgstr "<span class=\"%1$s\">Tags:</span> %2$s"
-
-#: content-post.php:88 home.php:104
-msgid "Leave a reply"
-msgstr "Geef een reactie"
-
-#: content-post.php:88 home.php:104
-msgid "1 reply"
-msgstr "1 reactie"
-
-#: content-post.php:88 home.php:104
-msgid "% replies"
-msgstr "% reacties"
-
-#: content-post.php:115 home.php:129
-msgid "Categories"
-msgstr "Categorie&#235;n"
-
-#: content-post.php:132 home.php:146
-msgid "Tags"
-msgstr "Tags"
+#: archive-orbis_project.php:19
+msgid "Add project"
+msgstr "Project toevoegen"
 
 #: footer.php:4
 #, php-format
-msgid ""
-"&copy; %1$s %2$s. WordPress theme by <a href=\"%3$s\">Pronamic</a>, based on "
-"<a href=\"%4$s\">Bootstrap</a>."
-msgstr ""
-"&copy; %1$s %2$s. WordPress thema door <a href=\"%3$s\">Pronamic</a>, "
-"gebaseerd op <a href=\"%4$s\">Bootstrap</a>."
+msgid "&copy; %1$s %2$s. WordPress theme by <a href=\"%3$s\">Pronamic</a>, based on <a href=\"%4$s\">Bootstrap</a>."
+msgstr "&copy; %1$s %2$s. WordPress thema door <a href=\"%3$s\">Pronamic</a>, gebaseerd op <a href=\"%4$s\">Bootstrap</a>."
+
+#: page-taken.php:47
+msgid "Tasks from this user"
+msgstr "Taken van deze gebruiker"
+
+#: tag.php:12
+#, php-format
+msgid "From the tag \"%1$s\""
+msgstr "Van de tag \"%1$s\""
 
 #: front-page.php:7
 msgid "Dashboard"
@@ -220,17 +421,8 @@ msgid "Welcome to Orbis"
 msgstr "Welkom bij Orbis"
 
 #: front-page.php:44
-msgid ""
-"Orbis is a tool to manage your projects, your customer relations, it can be "
-"used as intranet en has much more great features. Orbis is built on "
-"WordPress which is a great base to create a powerful tool for your "
-"bussiness. Enough introduction, time to work."
-msgstr ""
-"Orbis is een hulpmiddel om uw projecten te beheren, uw klantenrelaties te "
-"onderhouden, het kan gebruikt worden als intranet en heeft veel meer "
-"geweldige functies. Orbis is gebouwd met WordPress wat een krachtige basis "
-"is om een krachtig hulpmiddel voor uw bussiness te creëren. Genoeg "
-"introductie, tijd om aan de slag te gaan. "
+msgid "Orbis is a tool to manage your projects, your customer relations, it can be used as intranet en has much more great features. Orbis is built on WordPress which is a great base to create a powerful tool for your bussiness. Enough introduction, time to work."
+msgstr "Orbis is een hulpmiddel om uw projecten te beheren, uw klantenrelaties te onderhouden, het kan gebruikt worden als intranet en heeft veel meer geweldige functies. Orbis is gebouwd met WordPress wat een krachtige basis is om een krachtig hulpmiddel voor uw bussiness te creëren. Genoeg introductie, tijd om aan de slag te gaan. "
 
 #: front-page.php:48
 msgid "Add a post"
@@ -256,190 +448,27 @@ msgstr "Meer informatie"
 msgid "Posts"
 msgstr "Berichten"
 
-#: front-page.php:77 front-page.php:125
+#: front-page.php:77
+#: front-page.php:125
 msgid "Companies"
 msgstr "Bedrijven"
 
-#: front-page.php:85 front-page.php:140
+#: front-page.php:85
+#: front-page.php:140
 msgid "Projects"
 msgstr "Projecten"
 
-#: front-page.php:93 front-page.php:155
+#: front-page.php:93
+#: front-page.php:155
 msgid "Persons"
 msgstr "Personen"
-
-#: functions.php:32
-msgid "Primary Menu"
-msgstr "Primair menu"
-
-#: functions.php:63
-msgid "Main Widget"
-msgstr "Hoofd widget"
-
-#: functions.php:72
-msgid "Frontpage Top Widget"
-msgstr "Voorpagina bovenkant widget"
-
-#: functions.php:81
-msgid "Frontpage Bottom Widget"
-msgstr "Voorpagina onderkant widget"
-
-#: functions.php:256
-msgid "No description."
-msgstr "Geen beschrijving."
-
-#: header.php:24
-#, php-format
-msgid "Page %s"
-msgstr "Pagina %s"
-
-#: header.php:88 index.php:7 templates/search_form.php:8
-#: templates/search_form.php:10
-msgid "Search"
-msgstr "Zoeken"
-
-#: header.php:106
-msgid "Help"
-msgstr "Help"
-
-#: header.php:107
-msgid "Edit profile"
-msgstr "Wijzig profiel"
-
-#: header.php:109
-msgid "Log out"
-msgstr "Uitloggen"
-
-#: home.php:8
-msgid "Overview of the latest news"
-msgstr "Overzicht van het laatste nieuws"
-
-#: index.php:31
-msgid "Add new"
-msgstr "Nieuwe toevoegen"
-
-#: index.php:47
-msgid "Title"
-msgstr "Titel"
-
-#: page-taken.php:47
-msgid "Tasks from this user"
-msgstr "Taken van deze gebruiker"
-
-#: page-taken.php:50 templates-tasks.php:13 templates-tasks.php:22
-msgid "Add task"
-msgstr "Taak toevoegen"
-
-#: single-orbis_person.php:15
-msgid "About this person"
-msgstr "Over deze persoon"
-
-#: single-orbis_person.php:42
-msgid "Phone number"
-msgstr "Telefoon nummer"
-
-#: single-orbis_person.php:43 single-orbis_person.php:50
-msgid "Call this number"
-msgstr "Bel dit nummer"
-
-#: single-orbis_person.php:49
-msgid "Mobile number"
-msgstr "Mobiel nummer"
-
-#: single-orbis_person.php:56
-msgid "E-mail address"
-msgstr "E-mailadres"
-
-#: single-orbis_person.php:63
-msgid "Social media"
-msgstr "Social media"
-
-#: single-orbis_person.php:71 single-orbis_person.php:86
-#: single-orbis_person.php:101
-#, php-format
-msgid "<a href=\"%1$s\">%2$s</a>"
-msgstr "<a href=\"%1$s\">%2$s</a>"
-
-#: single-orbis_person.php:133
-#, php-format
-msgid "%1$s op Twitter"
-msgstr "%1$s op Twitter"
-
-#: single-orbis_person.php:175
-msgid "Additional information"
-msgstr "Aanvullende informatie"
-
-#: single-orbis_person.php:182 single-orbis_project.php:93 single.php:49
-msgid "Posted on"
-msgstr "Geplaatst op"
-
-#: single-orbis_person.php:184 single-orbis_project.php:96 single.php:52
-msgid "Posted by"
-msgstr "Aangemaakt door"
-
-#: single-orbis_project.php:30 single.php:23 template-timesheets.php:251
-#: templates-tasks.php:26 templates-tasks.php:91
-msgid "Description"
-msgstr "Beschrijving"
-
-#: single-orbis_project.php:52
-msgid "Project status"
-msgstr "Project status"
-
-#: single-orbis_project.php:56
-msgid "Project budget"
-msgstr "Project budget"
-
-#: single-orbis_project.php:68
-msgid "Project Details"
-msgstr "Project details"
-
-#: single-orbis_project.php:105
-msgid "Agreement"
-msgstr "Akkoord"
-
-#: single-orbis_project.php:112
-msgid "Status"
-msgstr "Status"
-
-#: single-orbis_project.php:116
-msgid "Finished"
-msgstr "Afgerond"
-
-#: single-orbis_project.php:120
-msgid "Not finished"
-msgstr "Niet afgerond"
-
-#: single-orbis_project.php:126
-msgid "Invoiced"
-msgstr "Gefactureerd"
-
-#: single-orbis_project.php:130
-msgid "Not invoiced"
-msgstr "Niet gefactureerd"
-
-#: single-orbis_project.php:141
-msgid "Invoice"
-msgstr "Factuur"
-
-#: single.php:11
-msgid "Company Details"
-msgstr "Bedrijf details"
-
-#: single.php:41
-msgid "Additional Information"
-msgstr "Aanvullende informatie"
-
-#: tag.php:12
-#, php-format
-msgid "From the tag \"%1$s\""
-msgstr "Van de tag \"%1$s\""
 
 #: template-timesheet-week.php:93
 msgid "User"
 msgstr "Gebruiker"
 
-#: template-timesheet-week.php:101 template-timesheets.php:253
+#: template-timesheet-week.php:101
+#: template-timesheets.php:253
 msgid "Total"
 msgstr "Totaal"
 
@@ -464,123 +493,54 @@ msgstr "Totaal bedrag"
 msgid "%s billable, %s unbillable"
 msgstr "%s factureerbaar, %s niet factureerbaar"
 
-#: templates-projects-over-budget.php:18
-msgid "This list should be empty dude"
-msgstr "Deze lijst zou leeg moeten zijn dude"
+#: functions.php:32
+msgid "Primary Menu"
+msgstr "Primair menu"
 
-#: templates-projects-over-budget.php:100
-msgid "Over budget"
-msgstr "Over budget"
+#: functions.php:63
+msgid "Main Widget"
+msgstr "Hoofd widget"
 
-#: templates-projects-over-budget.php:137
-msgid "Aantal uren over budget"
-msgstr "Aantal uren over budget"
+#: functions.php:72
+msgid "Frontpage Top Widget"
+msgstr "Voorpagina bovenkant widget"
 
-#: templates-projects-over-budget.php:138
-msgid "Kosten"
-msgstr "Kosten"
+#: functions.php:81
+msgid "Frontpage Bottom Widget"
+msgstr "Voorpagina onderkant widget"
 
-#: templates-tasks.php:10
-msgid "Tasks"
-msgstr "Taken"
+#: functions.php:256
+msgid "No description."
+msgstr "Geen beschrijving."
 
-#: templates-tasks.php:10
-msgid "Time to get some work done"
-msgstr "Tijd om wat werk te verzetten"
+#: archive-orbis_person.php:19
+msgid "Add person"
+msgstr "Persoon toevoegen"
 
-#: templates-tasks.php:39 templates-tasks.php:89
-msgid "Person"
-msgstr "Persoon"
+#: templates/search_form.php:12
+#: templates/search_form.php:17
+msgid "Advanced Search"
+msgstr "Geavanceerd zoeken"
 
-#: templates-tasks.php:42 templates-tasks.php:92
-msgid "Date"
-msgstr "Datum"
+#: templates/search_form.php:19
+msgid "Client"
+msgstr "Klant"
 
-#: templates-tasks.php:46
-msgid "Save task"
-msgstr "Taak opslaan"
+#: templates/search_form.php:20
+msgid "Search on Client"
+msgstr "Zoek op klant"
 
-#: templates-tasks.php:47
-msgid "Cancel"
-msgstr "Annuleer"
+#: templates/search_form.php:22
+msgid "Invoice Number"
+msgstr "Factuurnummer"
 
-#: templates-tasks.php:93
-msgid "Budget"
-msgstr "Budget"
+#: templates/search_form.php:23
+msgid "Search on Invoice Number"
+msgstr "Zoek op factuurnummer"
 
-#: includes/template-tags.php:13
-msgid "&larr; Previous"
-msgstr "&larr; Vorige"
-
-#: includes/template-tags.php:16
-msgid "Next &rarr;"
-msgstr "Volgende &rarr;"
-
-#: includes/template-tags.php:36
-#, php-format
-msgid "%s <span class=\"says\">says:</span>"
-msgstr "%s <span class=\"says\">zegt:</span>"
-
-#: includes/template-tags.php:41
-msgid "Your comment is awaiting moderation."
-msgstr "Je reactie is in afwachting van moderatie."
-
-#: includes/template-tags.php:46
-#, php-format
-msgid "%1$s at %2$s"
-msgstr "%1$s om %2$s"
-
-#: includes/template-tags.php:46 includes/template-tags.php:64
-msgid "(Edit)"
-msgstr "Bewerken"
-
-#: includes/template-tags.php:64
-msgid "Pingback:"
-msgstr "Pingback:"
-
-#: includes/template-tags.php:74
-#, php-format
-msgid ""
-"<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
-"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
-"time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span "
-"class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
-"rel=\"author\">%7$s</a></span></span>"
-msgstr ""
-"<span class=\"sep\">Geplaatst op </span><a href=\"%1$s\" title=\"%2$s\" rel="
-"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
-"time></a><span class=\"by-author\"> <span class=\"sep\"> door </span> <span "
-"class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
-"rel=\"author\">%7$s</a></span></span>"
-
-#: includes/template-tags.php:80
-#, php-format
-msgid "View all posts by %s"
-msgstr "Bekijk alle berichten van %s"
-
-#: includes/widgets.php:20
-msgid "Posts list"
-msgstr "Berichten lijst"
-
-#: includes/widgets.php:60
-msgid "Show all"
-msgstr "Bekijk alles"
-
-#: includes/widgets.php:90 includes/widgets.php:242
-msgid "Title:"
-msgstr "Titel:"
-
-#: includes/widgets.php:98
-msgid "Post type:"
-msgstr "Post type:"
-
-#: includes/widgets.php:115
-msgid "Number:"
-msgstr "Aantal:"
-
-#: includes/widgets.php:204
-msgid "More news"
-msgstr "Meer nieuws"
+#: templates/project_flot_persons.php:3
+msgid "Persons worked on this project"
+msgstr "Personen gewerkt aan dit project"
 
 #: templates/company_contact.php:19
 msgid "Contact Details"
@@ -614,9 +574,71 @@ msgstr "Nee"
 msgid "Activities used in this project"
 msgstr "Activiteiten gebruikt in dit project"
 
-#: templates/project_flot_persons.php:3
-msgid "Persons worked on this project"
-msgstr "Personen gewerkt aan dit project"
+#: includes/widgets.php:20
+msgid "Posts list"
+msgstr "Berichten lijst"
+
+#: includes/widgets.php:60
+msgid "Show all"
+msgstr "Bekijk alles"
+
+#: includes/widgets.php:90
+#: includes/widgets.php:242
+msgid "Title:"
+msgstr "Titel:"
+
+#: includes/widgets.php:98
+msgid "Post type:"
+msgstr "Post type:"
+
+#: includes/widgets.php:115
+msgid "Number:"
+msgstr "Aantal:"
+
+#: includes/widgets.php:204
+msgid "More news"
+msgstr "Meer nieuws"
+
+#: includes/template-tags.php:13
+msgid "&larr; Previous"
+msgstr "&larr; Vorige"
+
+#: includes/template-tags.php:16
+msgid "Next &rarr;"
+msgstr "Volgende &rarr;"
+
+#: includes/template-tags.php:36
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">zegt:</span>"
+
+#: includes/template-tags.php:41
+msgid "Your comment is awaiting moderation."
+msgstr "Je reactie is in afwachting van moderatie."
+
+#: includes/template-tags.php:46
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s om %2$s"
+
+#: includes/template-tags.php:46
+#: includes/template-tags.php:64
+msgid "(Edit)"
+msgstr "Bewerken"
+
+#: includes/template-tags.php:64
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: includes/template-tags.php:74
+#, php-format
+msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr "<span class=\"sep\">Geplaatst op </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> door </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+
+#: includes/template-tags.php:80
+#, php-format
+msgid "View all posts by %s"
+msgstr "Bekijk alle berichten van %s"
 
 #~ msgid "Connected company"
 #~ msgstr "Gekoppeld bedrijf"
@@ -689,18 +711,19 @@ msgstr "Personen gewerkt aan dit project"
 #~ msgstr "Geen beschrijving voor dit bericht."
 
 #~ msgid "One thought on &ldquo;%2$s&rdquo;"
+
 #~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 #~ msgstr[0] "1 reactie op &ldquo;%2$s&rdquo;"
 #~ msgstr[1] "%1$s reacties op &ldquo;%2$s&rdquo;"
 
 #~ msgid "Quote"
 #~ msgstr "Citaat"
-
 #~ msgctxt "comments number"
+
 #~ msgid "1"
 #~ msgstr "1"
-
 #~ msgctxt "comments number"
+
 #~ msgid "%"
 #~ msgstr "%"
 
@@ -729,15 +752,15 @@ msgstr "Personen gewerkt aan dit project"
 #~ msgstr "Afbeelding"
 
 #~ msgid ""
-#~ "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime="
-#~ "\"%2$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span class="
-#~ "\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" "
-#~ "href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+#~ "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2"
+#~ "$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span class=\"sep"
+#~ "\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%"
+#~ "4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 #~ msgstr ""
-#~ "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime="
-#~ "\"%2$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span class="
-#~ "\"sep\"> door </span> <span class=\"author vcard\"><a class=\"url fn n\" "
-#~ "href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+#~ "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2"
+#~ "$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span class=\"sep"
+#~ "\"> door </span> <span class=\"author vcard\"><a class=\"url fn n\" href="
+#~ "\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
 #~ msgid "Archives"
 #~ msgstr "Archief"
@@ -755,6 +778,7 @@ msgstr "Personen gewerkt aan dit project"
 #~ msgstr "Galerij"
 
 #~ msgid "This gallery contains <a %1$s>%2$s photo</a>."
+
 #~ msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
 #~ msgstr[0] "Deze galerij bevat <a %1$s>%2$s foto</a>."
 #~ msgstr[1] "Deze galerij bevat <a %1$s>%2$s foto&#39;s</a>."
@@ -987,15 +1011,15 @@ msgstr "Personen gewerkt aan dit project"
 
 #~ msgid "Monthly Archives: %s"
 #~ msgstr "Maandelijks archief: %s"
-
 #~ msgctxt "monthly archives date format"
+
 #~ msgid "F Y"
 #~ msgstr "F Y"
 
 #~ msgid "Yearly Archives: %s"
 #~ msgstr "Jaarlijks archief: %s"
-
 #~ msgctxt "yearly archives date format"
+
 #~ msgid "Y"
 #~ msgstr "Y"
 
