@@ -99,9 +99,27 @@ $budgets = $wpdb->get_results( $query_budgets, OBJECT_K );
 
 $query_hours =  "
 	SELECT
-		*
+		hr.id AS registration_id,
+		project.id AS project_id,
+		project.name AS project_name,
+		project.post_id AS project_post_id,
+		client.id AS client_id,
+		client.name AS client_name,
+		client.post_id AS client_post_id,
+		person.first_name AS user_name,
+		hr.description AS description,
+		hr.number_seconds AS number_seconds
 	FROM
-		orbis_hours_registration
+		orbis_hours_registration AS hr
+			LEFT JOIN
+		orbis_companies AS client
+				ON hr.company_id = client.id
+			LEFT JOIN
+		orbis_projects AS project
+				ON hr.project_id = project.id
+			LEFT JOIN
+		orbis_persons AS person
+				ON hr.user_id = person.id
 	$query
 ";
 
@@ -247,6 +265,8 @@ $url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
 <table class="table table-striped  table-bordered">
 	<thead>
 		<tr>
+			<th><?php _e( 'User', 'orbis' ); ?></th>
+			<th><?php _e( 'Client', 'orbis' ); ?></th>
 			<th><?php _e( 'Project', 'orbis' ); ?></th>
 			<th><?php _e( 'Description', 'orbis' ); ?></th>
 			<th><?php _e( 'Time', 'orbis' ); ?></th>
@@ -268,8 +288,16 @@ $url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
 	
 			<tr>
 				<td>
-					<a href="http://orbis.pronamic.nl/projecten/details/<?php echo $row->project_id; ?>/" target="_blank">
-						<?php echo $row->project_id; ?>
+					<?php echo $row->user_name; ?>
+				</td>
+				<td>
+					<a href="<?php echo get_permalink( $row->client_post_id ); ?>" target="_blank">
+						<?php echo $row->client_name; ?>
+					</a>
+				</td>
+				<td>
+					<a href="<?php echo get_permalink( $row->project_post_id ); ?>" target="_blank">
+						<?php echo $row->project_name; ?>
 					</a>
 				</td>
 				<td><?php echo $row->description; ?></td>
