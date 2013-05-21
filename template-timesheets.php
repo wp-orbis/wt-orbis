@@ -107,6 +107,7 @@ $query_hours =  "
 		client.name AS client_name,
 		client.post_id AS client_post_id,
 		person.first_name AS user_name,
+		hr.date AS date,
 		hr.description AS description,
 		hr.number_seconds AS number_seconds
 	FROM
@@ -279,7 +280,9 @@ $url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
 			<?php if ( $date != $row->date ) : $date = $row->date; $total = 0; ?>
 			
 				<tr>
-					<td colspan="4"><h2><?php echo $row->date; ?></h2></td>
+					<td colspan="6">
+						<h2><?php echo $row->date; ?></h2>
+					</td>
 				</tr>
 			
 			<?php endif; ?>
