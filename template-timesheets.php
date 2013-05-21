@@ -263,7 +263,7 @@ $url_next      = add_query_arg( orbis_format_timestamps( $next, 'd-m-Y' ) );
 
 <hr />
 
-<table class="table table-striped  table-bordered">
+<table class="table table-striped table-bordered panel">
 	<thead>
 		<tr>
 			<th><?php _e( 'User', 'orbis' ); ?></th>
