@@ -171,6 +171,20 @@ blockquote p {
 	margin: 0;
 }
 
+header.with-tabs {
+    padding-top: 10px;
+}
+
+header.with-tabs .nav-tabs {
+    border: medium none;
+    margin: 0;
+}
+
+header.with-tabs .nav-tabs > .active > a,
+header.with-tabs .nav-tabs > .active > a:hover {
+    border-color: #C3C3C3 #C3C3C3 #FFFFFF;
+}
+
 /* List
 ------------------------- */
 ul.list {
