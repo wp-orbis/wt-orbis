@@ -4,10 +4,16 @@ $s = filter_input( INPUT_GET, 's', FILTER_SANITIZE_STRING );
 
 $has_advanced = is_post_type_archive( 'orbis_project' );
 
+$action_url = '';
+
+if ( is_post_type_archive() ) {
+	$action_url = orbis_get_post_type_archive_link();
+}
+
 ?>
 
 <div class="well">
-	<form method="get">
+	<form method="get" action="<?php echo esc_attr( $action_url ); ?>">
 		<div class="form-search">
 			<input type="text" class="input-medium search-query" name="s" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php echo esc_attr( $s ); ?>" />
 

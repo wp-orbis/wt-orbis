@@ -232,11 +232,25 @@ class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
 	}
 }
 
+function orbis_get_archive_post_type() {
+	$post_type_obj = get_queried_object();
+	
+	$post_type = $post_type_obj->name;
+	
+	return $post_type;
+}
+
+function orbis_get_post_type_archive_link( $post_type = null ) {
+	if ( null === $post_type ) {
+		$post_type = orbis_get_archive_post_type();
+	}
+	
+	return get_post_type_archive_link( $post_type );
+}
+
 function orbis_get_url_post_new( $post_type = null ) {
 	if ( null === $post_type ) {
-		$post_type_obj = get_queried_object();
-		
-		$post_type = $post_type_obj->name;
+		$post_type = orbis_get_archive_post_type();
 	}
 	
 	$url = add_query_arg( 'post_type', $post_type, admin_url( 'post-new.php' ) );
