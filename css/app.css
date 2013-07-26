@@ -369,6 +369,14 @@ table tr.orbis-status-finished a {
 	color: #999;
 }
 
+table tr.orbis-status-cancelled,
+table tr.orbis-status-cancelled a,
+.single .orbis-status-cancelled .page-header {
+	color: #999;
+
+	text-decoration: line-through;
+}
+
 table tr.failed td.project-time {
 	color: #ff0000;
 }
