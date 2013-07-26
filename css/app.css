@@ -377,8 +377,9 @@ table tr.orbis-status-cancelled a,
 	text-decoration: line-through;
 }
 
-table tr.failed td.project-time {
-	color: #ff0000;
+table tr.failed td.project-time,
+table tr.failed td.number-days-column {
+    color: #FF0000;
 }
 
 table .actions {
