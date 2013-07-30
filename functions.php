@@ -28,7 +28,7 @@ function orbis_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	/* Register navigation menu's */
-	register_nav_menus( array( 
+	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'orbis' )
 	) );
 
@@ -59,7 +59,7 @@ add_action( 'widgets_init', 'orbis_unregister_wp_widgets', 1 );
  * Register our sidebars and widgetized areas.
  */
 function orbis_widgets_init() {
-	register_sidebar( array( 
+	register_sidebar( array(
 		'name' => __( 'Main Widget', 'orbis' ),
 		'id' => 'main-widget',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -68,7 +68,7 @@ function orbis_widgets_init() {
 		'after_title' => '</h3>'
 	) );
 
-	register_sidebar( array( 
+	register_sidebar( array(
 		'name' => __( 'Frontpage Top Widget', 'orbis' ),
 		'id' => 'frontpage-top-widget',
 		'before_widget' => '<div class="span6"><div id="%1$s" class="panel %2$s">',
@@ -77,7 +77,7 @@ function orbis_widgets_init() {
 		'after_title' => '</h3></header>'
 	) );
 
-	register_sidebar( array( 
+	register_sidebar( array(
 		'name' => __( 'Frontpage Bottom Widget', 'orbis' ),
 		'id' => 'frontpage-bottom-widget',
 		'before_widget' => '<div class="span4"><div id="%1$s" class="panel %2$s">',
@@ -95,16 +95,23 @@ add_action( 'widgets_init', 'orbis_widgets_init' );
  * Enqueue scripts & styles
  */
 function orbis_load_scripts() {
-	wp_enqueue_script( 
-		'bootstrap' , 
-		get_bloginfo('template_directory') . '/js/bootstrap.min.js' , 
+	wp_enqueue_script(
+		'bootstrap' ,
+		get_bloginfo('template_directory') . '/js/bootstrap.min.js' ,
 		array( 'jquery' )
 	);
 
 	wp_enqueue_script(
-		'app' , 
-		get_bloginfo('template_directory') . '/js/app.js' , 
+		'app' ,
+		get_bloginfo('template_directory') . '/js/app.js' ,
 		array( 'jquery', 'bootstrap' )
+	);
+
+	// @see https://github.com/t0m/select2-bootstrap-css
+	wp_enqueue_style(
+		'select2-bootstrap' ,
+		get_bloginfo('template_directory') . '/css/select2-bootstrap.css' ,
+		array( 'select2' )
 	);
 }
 add_action( 'wp_enqueue_scripts', 'orbis_load_scripts' );
@@ -142,11 +149,11 @@ class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
 	 */
 	function start_lvl( &$output, $depth ) {
 		$indent = str_repeat( "\t", $depth );
-		$output	   .= "\n$indent<ul class=\"dropdown-menu\">\n";		
+		$output	   .= "\n$indent<ul class=\"dropdown-menu\">\n";
 	}
 
 	function start_el(&$output, $item, $depth, $args) {
-		global $wp_query;           
+		global $wp_query;
 
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
@@ -187,17 +194,17 @@ class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
 	}
 
 	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
-		
+
 		if ( !$element )
 			return;
-		
+
 		$id_field = $this->db_fields['id'];
 
 		//display this element
-		if ( is_array( $args[0] ) ) 
+		if ( is_array( $args[0] ) )
 			$args[0]['has_children'] = ! empty( $children_elements[$element->$id_field] );
-		else if ( is_object( $args[0] ) ) 
-			$args[0]->has_children = ! empty( $children_elements[$element->$id_field] ); 
+		else if ( is_object( $args[0] ) )
+			$args[0]->has_children = ! empty( $children_elements[$element->$id_field] );
 		$cb_args = array_merge( array(&$output, $element, $depth), $args);
 		call_user_func_array(array(&$this, 'start_el'), $cb_args);
 
@@ -228,15 +235,15 @@ class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
 		//end this element
 		$cb_args = array_merge( array(&$output, $element, $depth), $args);
 		call_user_func_array(array(&$this, 'end_el'), $cb_args);
-		
+
 	}
 }
 
 function orbis_get_archive_post_type() {
 	$post_type_obj = get_queried_object();
-	
+
 	$post_type = $post_type_obj->name;
-	
+
 	return $post_type;
 }
 
@@ -244,7 +251,7 @@ function orbis_get_post_type_archive_link( $post_type = null ) {
 	if ( null === $post_type ) {
 		$post_type = orbis_get_archive_post_type();
 	}
-	
+
 	return get_post_type_archive_link( $post_type );
 }
 
@@ -252,7 +259,7 @@ function orbis_get_url_post_new( $post_type = null ) {
 	if ( null === $post_type ) {
 		$post_type = orbis_get_archive_post_type();
 	}
-	
+
 	$url = add_query_arg( 'post_type', $post_type, admin_url( 'post-new.php' ) );
 
 	return $url;
@@ -270,7 +277,7 @@ function orbis_the_content_empty( $content ) {
 			$content =  __( 'No description.', 'orbis' );
 		}
 	}
-	
+
 	return $content;
 }
 
