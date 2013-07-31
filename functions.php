@@ -97,15 +97,9 @@ add_action( 'widgets_init', 'orbis_widgets_init' );
 function orbis_load_scripts() {
 	wp_enqueue_script(
 		'bootstrap' ,
-		get_bloginfo('template_directory') . '/bootstrap/js/bootstrap.min.js',
+		get_bloginfo('template_directory') . '/js/bootstrap.min.js' ,
 		array( 'jquery' )
 	);
-
-	wp_enqueue_style(
-		'bootstrap' ,
-		get_bloginfo('template_directory') . '/bootstrap/css/bootstrap.min.css'
-	);
-
 
 	wp_enqueue_script(
 		'app' ,
