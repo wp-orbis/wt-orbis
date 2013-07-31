@@ -101,6 +101,16 @@ function orbis_load_scripts() {
 		array( 'jquery' )
 	);
 
+	wp_enqueue_style(
+		'bootstrap' ,
+		get_bloginfo('template_directory') . '/css/bootstrap.min.css'
+	);
+
+	wp_enqueue_style(
+		'bootstrap-responsive' ,
+		get_bloginfo('template_directory') . '/css/bootstrap-responsive.min.css'
+	);
+
 	wp_enqueue_script(
 		'app' ,
 		get_bloginfo('template_directory') . '/js/app.js' ,
