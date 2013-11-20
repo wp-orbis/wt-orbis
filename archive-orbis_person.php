@@ -61,7 +61,7 @@
 									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br />
 		
 									<p>
-										<?php if ( get_post_meta($post->ID, '_orbis_person_email_address', true ) ) : ?>
+										<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
 						
 											<span><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></span> <br />
 										
@@ -89,7 +89,7 @@
 		
 							$phone_number = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
 		
-							if( ! empty( $phone_number ) && function_exists( 'orbis_snom_call_form' ) ) {
+							if ( ! empty( $phone_number ) && function_exists( 'orbis_snom_call_form' ) ) {
 								orbis_snom_call_form( $phone_number );
 							}
 		
@@ -114,5 +114,4 @@
 
 <?php orbis_content_nav(); ?>
 
-<?php get_footer(); ?>
-
+<?php get_footer();

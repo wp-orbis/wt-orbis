@@ -21,9 +21,9 @@
 		
 							<?php if ( has_post_thumbnail() ) : ?>
 							
-							<div class="featured-image">
-								<?php the_post_thumbnail( 'featured' ); ?>
-							</div>
+								<div class="featured-image">
+									<?php the_post_thumbnail( 'featured' ); ?>
+								</div>
 		
 							<?php endif; ?>
 			
@@ -34,59 +34,57 @@
 							<div class="entry-meta">
 								<?php $show_sep = false; ?>
 							
-								<?php if( 'post' == get_post_type() ) : ?>
+								<?php if ( 'post' == get_post_type() ) : ?>
 						
-								<?php
+									<?php
 						
-								$categories_list = get_the_category_list( __( ',  ', 'orbis' ) );
+									$categories_list = get_the_category_list( __( ',  ', 'orbis' ) );
 							
-								if( $categories_list ) :
+									if ( $categories_list ) : ?>
 						
-								?>
-						
-								<span class="cat-links">
-									<?php 
+										<span class="cat-links">
+											<?php 
 									
-									printf( __( '<span class="%1$s">Posted in</span> %2$s', 'orbis' ), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list );
+											printf( __( '<span class="%1$s">Posted in</span> %2$s', 'orbis' ), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list );
 						
-									$show_sep = true; 
+											$show_sep = true; 
 									
-									?>
-								</span>
+											?>
+										</span>
 						
-								<?php endif; ?>
+									<?php endif; ?>
 						
-								<?php
+									<?php
 						
-								$tags_list = get_the_tag_list( '', __( ',  ', 'orbis' ) );
+									$tags_list = get_the_tag_list( '', __( ',  ', 'orbis' ) );
 						
-								if( $tags_list ) : if ( $show_sep ) : ?>
+									if ( $tags_list ) : if ( $show_sep ) : ?>
 						
-								<span class="sep"> | </span>
+										<span class="sep"> | </span>
 						
-								<?php endif; ?>
+										<?php endif; ?>
 						
-								<span class="tag-links">
-									<?php 
+										<span class="tag-links">
+											<?php 
 									
-									printf( __( '<span class="%1$s">Tagged</span> %2$s', 'orbis' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );
+											printf( __( '<span class="%1$s">Tagged</span> %2$s', 'orbis' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );
 						
-									$show_sep = true; 
+											$show_sep = true; 
 									
-									?>
-								</span>
+											?>
+										</span>
 						
-								<?php endif; endif; ?>
+									<?php endif; endif; ?>
 						
-								<?php if ( comments_open() ) : if ( $show_sep ) : ?>
+									<?php if ( comments_open() ) : if ( $show_sep ) : ?>
 						
-								<span class="sep"> | </span>
+										<span class="sep"> | </span>
 						
-								<?php endif; ?>
+									<?php endif; ?>
 						
-								<span class="comments-link">
-									<?php comments_popup_link( __( 'Leave a reply', 'orbis' ), __( '1 reply', 'orbis' ), __( '% replies', 'orbis' ) ); ?>
-								</span>
+									<span class="comments-link">
+										<?php comments_popup_link( __( 'Leave a reply', 'orbis' ), __( '1 reply', 'orbis' ), __( '% replies', 'orbis' ) ); ?>
+									</span>
 								
 								<?php endif; ?>
 							</div>

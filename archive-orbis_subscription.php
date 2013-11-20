@@ -62,7 +62,7 @@
 			</tbody>
 		</table>
 
-	<?php else: ?>
+	<?php else : ?>
 
 		<div class="content">
 			<p>
@@ -75,4 +75,4 @@
 
 <?php orbis_content_nav(); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

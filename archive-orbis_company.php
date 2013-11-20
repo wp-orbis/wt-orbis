@@ -99,4 +99,4 @@
 
 <?php orbis_content_nav(); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

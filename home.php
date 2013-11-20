@@ -50,13 +50,13 @@
 							<div class="entry-meta">
 								<?php $show_sep = false; ?>
 							
-								<?php if( 'post' == get_post_type() ) : ?>
+								<?php if ( 'post' == get_post_type() ) : ?>
 						
 								<?php
 						
 								$categories_list = get_the_category_list( __( ',  ', 'orbis' ) );
 							
-								if( $categories_list ) :
+								if ( $categories_list ) :
 						
 								?>
 						
@@ -76,7 +76,7 @@
 						
 								$tags_list = get_the_tag_list( '', __( ',  ', 'orbis' ) );
 						
-								if( $tags_list ) : if ( $show_sep ) : ?>
+								if ( $tags_list ) : if ( $show_sep ) : ?>
 						
 								<span class="sep"> | </span>
 						
@@ -96,7 +96,7 @@
 						
 								<?php if ( comments_open() ) : if ( $show_sep ) : ?>
 						
-								<span class="sep"> | </span>
+									<span class="sep"> | </span>
 						
 								<?php endif; ?>
 						
@@ -163,6 +163,4 @@
 	</div>
 </div>
 
-<?php get_footer(); ?>
-
-
+<?php get_footer();

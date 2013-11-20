@@ -38,16 +38,14 @@
 			<?php 
 			
 			$project_sections = array(
-				array(
-					'id'            => 'activities',
-					'name'          => __( 'Activities', 'orbis' ),
-					'template_part' => 'templates/project_flot_activities'
-				),
-				array(
+array(
+				'id'            => 'activities',
+				'name'          => __( 'Activities', 'orbis' ),
+				'template_part' => 'templates/project_flot_activities' ), array( 
 					'id'            => 'persons',
 					'name'          => __( 'Persons', 'orbis' ),
 					'template_part' => 'templates/project_flot_persons'
-				),
+				)
 			);
 
 			$project_sections = apply_filters( 'orbis_project_sections', $project_sections );
@@ -58,6 +56,7 @@
 					<header class="with-tabs">
 						<ul id="tabs" class="nav nav-tabs">
 							<?php $active = true; foreach ( $project_sections as $section ) : ?>
+
 
 								<li class="<?php echo $active ? 'active' : ''; ?>">
 									<a href="#<?php echo $section['id']; ?>"><?php echo $section['name']; ?></a>
@@ -72,22 +71,22 @@
 
 							<div id="<?php echo $section['id']; ?>" class="tab-pane <?php echo $active ? 'active' : ''; ?>">
 								<?php
-								
+
 								if ( isset( $section['action'] ) ) {
 									do_action( $section['action'] );
 								}
-								
+
 								if ( isset( $section['callback'] ) ) {
 									call_user_func( $section['callback'] );
 								}
-								
+
 								if ( isset( $section['template_part'] ) ) {
 									get_template_part( $section['template_part'] );
 								}
-								
+
 								?>
 							</div>
-						
+
 						<?php $active = false; endforeach; ?>
 					</div>
 				</div>
@@ -237,4 +236,4 @@
 
 <?php endwhile; ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

@@ -69,7 +69,7 @@
 													<?php
 								
 													printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-														'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ) ,
+														'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ),
 														'Twitter'
 													);
 							
@@ -84,7 +84,7 @@
 													<?php
 								
 													printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-														'http://www.facebook.com/' . get_post_meta( $post->ID, '_orbis_person_facebook', true ) ,
+														'http://www.facebook.com/' . get_post_meta( $post->ID, '_orbis_person_facebook', true ),
 														'Facebook'
 													);
 							
@@ -99,7 +99,7 @@
 													<?php
 								
 													printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-														'http://www.linkedin.com/in/' . get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ,
+														'http://www.linkedin.com/in/' . get_post_meta( $post->ID, '_orbis_person_linkedin', true ),
 														'LinkedIn'
 													);
 							

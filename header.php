@@ -69,14 +69,13 @@
 					<div class="nav-collapse">
 						<?php
 
-						$args = array(
-							'container' => false,
+						wp_nav_menu( array(
+							'container'      => false,
 							'theme_location' => 'primary',
-							'menu_class' => 'nav navbar-nav',
-							'walker' => new Bootstrap_Walker_Nav_Menu()
-						);
-
-						wp_nav_menu($args);
+							'menu_class'     => 'nav navbar-nav',
+							'fallback_cb'    => '',
+							'walker'         => new Bootstrap_Walker_Nav_Menu()
+						) );
 
 						$s = filter_input( INPUT_GET, 's', FILTER_SANITIZE_STRING );
 

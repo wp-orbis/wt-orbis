@@ -42,9 +42,13 @@ if ( is_post_type_archive() ) {
 		
 					<label for="orbis_project_principal"><?php _e( 'Client', 'orbis' ); ?></label>
 					<input id="orbis_project_principal" name="orbis_project_principal" value="<?php echo esc_attr( $principal ); ?>" type="text" placeholder="<?php _e( 'Search on Client', 'orbis' ); ?>">
-				
-					<label for="orbis_project_invoice_number"><?php _e( 'Invoice Number', 'orbis' ); ?></label>
-					<input id="orbis_project_invoice_number" name="orbis_project_invoice_number" value="<?php echo esc_attr( $invoice_number ); ?>" type="text" placeholder="<?php _e( 'Search on Invoice Number', 'orbis' ); ?>">
+					
+					<?php if ( function_exists( 'orbis_finance_bootstrap' ) ) : ?>
+					
+						<label for="orbis_project_invoice_number"><?php _e( 'Invoice Number', 'orbis' ); ?></label>
+						<input id="orbis_project_invoice_number" name="orbis_project_invoice_number" value="<?php echo esc_attr( $invoice_number ); ?>" type="text" placeholder="<?php _e( 'Search on Invoice Number', 'orbis' ); ?>">
+					
+					<?php endif; ?>
 		
 					<div>
 						<button type="submit" class="btn btn-primary"><?php _e( 'Search', 'orbis' ); ?></button>
