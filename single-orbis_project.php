@@ -38,14 +38,16 @@
 			<?php 
 			
 			$project_sections = array(
-array(
-				'id'            => 'activities',
-				'name'          => __( 'Activities', 'orbis' ),
-				'template_part' => 'templates/project_flot_activities' ), array( 
+				array(
+					'id'            => 'activities',
+					'name'          => __( 'Activities', 'orbis' ),
+					'template_part' => 'templates/project_flot_activities'
+				),
+				array( 
 					'id'            => 'persons',
 					'name'          => __( 'Persons', 'orbis' ),
 					'template_part' => 'templates/project_flot_persons'
-				)
+				),
 			);
 
 			$project_sections = apply_filters( 'orbis_project_sections', $project_sections );
