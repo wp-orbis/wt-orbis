@@ -173,15 +173,19 @@
 								<span class="label"><?php _e( 'Not finished', 'orbis' ); ?></span>
 	
 							<?php endif; ?>
+							
+							<?php if ( function_exists( 'orbis_finance_bootstrap' ) ) : ?>
 	
-							<?php if ( orbis_project_is_invoiced() ) : ?>
+								<?php if ( orbis_project_is_invoiced() ) : ?>
 	
-								<span class="label label-success"><?php _e( 'Invoiced', 'orbis' ); ?></span>
+									<span class="label label-success"><?php _e( 'Invoiced', 'orbis' ); ?></span>
 	
-							<?php else : ?>
+								<?php else : ?>
 	
-								<span class="label"><?php _e( 'Not invoiced', 'orbis' ); ?></span>
+									<span class="label"><?php _e( 'Not invoiced', 'orbis' ); ?></span>
 	
+								<?php endif; ?>
+							
 							<?php endif; ?>
 						</dd>
 						
