@@ -110,9 +110,7 @@
 		<?php dynamic_sidebar( 'frontpage-bottom-widget' ); ?>
 	</div>
 
-<?php endif; ?>
-
-<?php if ( ! is_active_sidebar( 'frontpage-bottom-widget' ) || ! is_active_sidebar( 'frontpage-bottom-widget' ) ) : ?>
+<?php else : ?>
 
 	<div class="row">
 		<?php 
@@ -163,4 +161,4 @@
 
 <?php endif; ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

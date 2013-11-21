@@ -43,16 +43,15 @@
 	
 					<tr>
 						<td>
-		
 							<div class="person-wrapper">
 								<div class="avatar">
 									<?php if ( has_post_thumbnail() ) : ?>
 									
-										<?php the_post_thumbnail( 'thumbnail' ); ?>
+										<?php the_post_thumbnail( 'avatar' ); ?>
 									
 									<?php else : ?>
 									
-										<img src="<?php bloginfo('template_directory'); ?>/placeholders/avatar.png">
+										<img src="<?php bloginfo('template_directory'); ?>/placeholders/avatar.png" alt="">
 									
 									<?php endif; ?>
 								</div>
@@ -104,7 +103,7 @@
 	<?php else : ?>
 
 		<div class="content">
-			<p>
+			<p class="alt">
 				<?php _e( 'No results found.', 'orbis' ); ?>
 			</p>
 		</div>

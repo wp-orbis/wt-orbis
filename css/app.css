@@ -5,7 +5,6 @@
 
 /* Body and structure
 -------------------------------------------------- */
-
 body {
 	background: #f6f6f6 url("../img/misc/body-texture.png");
 
@@ -26,8 +25,10 @@ dd {
 ------------------------- */
 span {
 	color: #999;
+}
 
-	font-size: 12px;
+p.alt {
+	color: #999;
 }
 
 a.badge:hover {
@@ -88,7 +89,6 @@ blockquote p {
 
 /* Intro
 ------------------------- */
-
 .hero-unit {
 	border: 1px solid #ddd;
 }
@@ -175,16 +175,18 @@ header.with-tabs {
 
 header.with-tabs .nav-tabs {
     border: medium none;
+
     margin: 0;
 }
 
 header.with-tabs .nav-tabs > .active > a,
 header.with-tabs .nav-tabs > .active > a:hover {
-    border-color: #C3C3C3 #C3C3C3 #FFFFFF;
+    border-color: #c3c3c3 #c3c3c3 #fff;
 }
 
 /* List
 ------------------------- */
+
 ul.list {
 	margin: 0;
 	padding: 0;
@@ -194,6 +196,10 @@ ul.list {
 
 ul.list li {
 	border-bottom: 1px solid #ddd;
+}
+
+ul.list li.current-cat a {
+	color: #000;
 }
 
 ul.list a {
@@ -295,7 +301,13 @@ ul.list.persons li .person-wrapper a,
 }
 
 .advanced-search-link {
-	margin-left: 20px;
+	color: #999;
+
+	margin-left: 15px;
+}
+
+.advanced-search-link:hover {
+	color: #666;
 }
 
 /* News
@@ -323,12 +335,17 @@ ul.list.persons li .person-wrapper a,
 
 /* Posts
 ------------------------- */
-.post {
+.archive .post,
+.blog .post {
 	border-bottom: 1px solid #ddd;
 }
 
 .post h2 {
 	margin: 0;
+}
+
+.post h2 a {
+	color: #000;
 }
 
 .post .entry-content {
@@ -503,6 +520,7 @@ p.project-time {
 
 .comment-author cite {
 	color: #000;
+
 	font-style: normal;
 	font-weight: bold;
 	
@@ -720,26 +738,4 @@ ul.social li.linkedin a { background: url("../img/icons/linkedin.png") no-repeat
 	body {
     	padding-top: 0;
 	}
-}
-
-/* Twitter
-------------------------- */
-body .twtr-tweets {
-	font-size: 12px;
-}
-
-body .twtr-tweet {
-	padding: 5px;
-}
-
-body .twtr-widget p {
-    line-height: 1.3 !important;
-}
-
-body .twtr-hd {
-	display: none;
-}
-
-body .twtr-ft {
-	display: none;
 }

@@ -6,6 +6,8 @@
 		<div class="page-header">
 			<h1>
 				<?php the_title(); ?>
+
+				<small><?php _e( 'Company Details', 'orbis' ); ?></small>
 			</h1>
 		</div>
 
@@ -18,15 +20,7 @@
 						<h3><?php _e( 'Description', 'orbis' ); ?></h3>
 					</header>
 
-					<div class="content clearfix">
-						<?php if ( has_post_thumbnail() ) : ?>
-				
-							<div class="thumbnail">
-								<?php the_post_thumbnail( 'thumbnail' ); ?>
-							</div>
-
-						<?php endif; ?>
-
+					<div class="content">
 						<?php the_content(); ?>
 					</div>
 				</div>
@@ -38,7 +32,47 @@
 
 			<div class="span4">
 				<?php do_action( 'orbis_before_side_content' ); ?>
+				
+				<?php if ( function_exists( 'p2p_register_connection_type' ) ) : ?>
+				
+					<div class="panel">
+						<header>
+							<h3><?php _e(' Connected persons', 'orbis' ); ?></h3>
+						</header>
 
+						<?php
+
+						$connected = new WP_Query( array(
+						  'connected_type'  => 'persons_to_companies',
+						  'connected_items' => get_queried_object(),
+						  'nopaging'        => true
+						) );
+
+						if ( $connected->have_posts() ) : ?>
+
+							<ul class="list">
+								<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+
+									<li>
+										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									</li>
+
+								<?php endwhile; ?>
+							</ul>
+
+						<?php wp_reset_postdata(); else : ?>
+
+							<div class="content">
+								<p class="alt">
+									<?php _e( 'No persons connected.', 'orbis' ); ?>
+								</p>
+							</div>
+					
+						<?php endif; ?>
+					</div>
+				
+				<?php endif; ?>
+				
 				<div class="panel">
 					<header>
 						<h3><?php _e( 'Additional Information', 'orbis' ); ?></h3>

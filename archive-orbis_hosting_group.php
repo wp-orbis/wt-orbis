@@ -73,7 +73,7 @@
 	<?php else : ?>
 
 		<div class="content">
-			<p>
+			<p class="alt">
 				<?php _e( 'No results found.', 'orbis' ); ?>
 			</p>
 		</div>

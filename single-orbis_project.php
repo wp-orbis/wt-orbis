@@ -154,9 +154,6 @@ array(
 
 						<?php endif; ?>
 
-						<dt><?php _e( 'ID', 'orbis' ); ?></dt>
-						<dd><?php echo get_the_ID(); ?></dd>
-
 						<dt><?php _e( 'Posted on', 'orbis' ); ?></dt>
 						<dd><?php echo get_the_date() ?></dd>
 

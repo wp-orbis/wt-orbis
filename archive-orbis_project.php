@@ -32,7 +32,7 @@
 		<table class="table table-striped table-bordered table-condense table-hover">
 			<thead>
 				<tr>
-					<th><?php _e( 'Principal', 'orbis' ); ?></th>
+					<th><?php _e( 'Client', 'orbis' ); ?></th>
 					<th><?php _e( 'Project', 'orbis' ); ?></th>
 					<th><?php _e( 'Time', 'orbis' ); ?></th>
 					<th><?php _e( 'Comments', 'orbis' ); ?></th>
@@ -67,15 +67,15 @@
 							<?php if ( function_exists( 'orbis_project_the_logged_time' ) ) : ?>
 
 								<?php 
-								
+
 								$classes = array();
 								$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
 
 								?>
 
 								<span class="<?php echo implode( $classes, ' ' ); ?>"><?php orbis_project_the_logged_time(); ?></span>
-							
-							<?php endif ?>
+
+							<?php endif; ?>
 						</td>
 						<td>
 							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
@@ -94,7 +94,7 @@
 	<?php else : ?>
 	
 		<div class="content">
-			<p>
+			<p class="alt">
 				<?php _e( 'No results found.', 'orbis' ); ?>
 			</p>
 		</div>

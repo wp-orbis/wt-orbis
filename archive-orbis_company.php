@@ -32,9 +32,7 @@
 		<table class="table table-striped table-bordered table-condense table-hover">
 			<thead>
 				<tr>
-					<th><?php _e( 'ID', 'orbis' ); ?></th>
 					<th><?php _e( 'Name', 'orbis' ); ?></th>
-					<th><?php _e( 'KvK Number', 'orbis' ); ?></th>
 					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 					<th><?php _e( 'Actions', 'orbis' ); ?></th>
 				</tr>
@@ -44,33 +42,7 @@
 		
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
-							<?php 
-							
-							$id = get_post_meta( $post->ID, '_orbis_company_id', true );
-							
-							if ( ! empty( $id ) ) {
-								$url = sprintf( 'http://orbis.pronamic.nl/bedrijven/details/%s/', $id );
-							
-								printf( '<a href="%s" target="_blank">%s</a>', $url, $id );
-							}
-							
-							?>
-						</td>
-						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</td>
-						<td>
-							<?php
-
-							$kvk_number = get_post_meta( $post->ID, '_orbis_company_kvk_number', true );
-
-							if ( ! empty( $kvk_number ) ) {
-								$url = sprintf( 'http://www.openkvk.nl/%s', $kvk_number );
-							
-								printf( '<a href="%s" target="_blank">%s</a>', $url, $kvk_number );
-							}
-							
-							?>
 						</td>
 						<td>
 							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
@@ -89,7 +61,7 @@
 	<?php else : ?>
 	
 		<div class="content">
-			<p>
+			<p class="alt">
 				<?php _e( 'No results found.', 'orbis' ); ?>
 			</p>
 		</div>

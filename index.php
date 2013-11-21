@@ -44,6 +44,7 @@
 		<table class="table table-striped table-bordered table-condense table-hover">
 			<thead>
 				<tr>
+					<th><?php _e( 'Type', 'orbis' ); ?></th>
 					<th><?php _e( 'Title', 'orbis' ); ?></th>
 					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 					<th><?php _e( 'Actions', 'orbis' ); ?></th>
@@ -53,6 +54,15 @@
 				<?php while ( have_posts() ) : the_post(); ?>
 	
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<td>
+							<?php
+							
+							$post_type = get_post_type_object( get_post_type( $post ) ); 
+
+							echo $post_type->labels->singular_name; 
+
+							?>
+						</td>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</td>
@@ -70,10 +80,10 @@
 			</tbody>
 		</table>
 
-	<?php else: ?>
+	<?php else : ?>
 
 		<div class="content">
-			<p>
+			<p class="alt">
 				<?php _e( 'No results found.', 'orbis' ); ?>
 			</p>
 		</div>

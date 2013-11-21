@@ -33,7 +33,8 @@ function orbis_setup() {
 	) );
 
 	/* Add image sizes */
-	add_image_size( 'featured', 570, 250 );
+	add_image_size( 'featured', 244, 150, true );
+	add_image_size( 'avatar', 60, 60, true );
 }
 add_action( 'after_setup_theme', 'orbis_setup' );
 
@@ -116,14 +117,8 @@ function orbis_load_scripts() {
 		get_bloginfo('template_directory') . '/js/app.js' ,
 		array( 'jquery', 'bootstrap' )
 	);
-
-	// @see https://github.com/t0m/select2-bootstrap-css
-	wp_enqueue_style(
-		'select2-bootstrap' ,
-		get_bloginfo('template_directory') . '/css/select2-bootstrap.css' ,
-		array( 'select2' )
-	);
 }
+
 add_action( 'wp_enqueue_scripts', 'orbis_load_scripts' );
 
 /**
@@ -132,6 +127,7 @@ add_action( 'wp_enqueue_scripts', 'orbis_load_scripts' );
 function orbis_excerpt_length( $length ) {
 	return 24;
 }
+
 add_filter( 'excerpt_length', 'orbis_excerpt_length' );
 
 /**
@@ -141,6 +137,7 @@ function orbis_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
+
 add_filter( 'wp_page_menu_args', 'orbis_page_menu_args' );
 
 /**
@@ -283,7 +280,7 @@ if ( ! function_exists( 'orbis_price' ) ) {
 function orbis_the_content_empty( $content ) {
 	if ( is_singular( array( 'post', 'orbis_person', 'orbis_project' ) ) ) {
 		if ( empty( $content ) ) {
-			$content =  __( 'No description.', 'orbis' );
+			$content =  '<p class="alt">' . __( 'No description.', 'orbis' ) . '</p>';
 		}
 	}
 
