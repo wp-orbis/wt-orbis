@@ -90,7 +90,7 @@
 
 							<ul class="nav pull-right">
 								<li class="dropdown">
-									<a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo get_avatar( $current_user->ID, 20 ); ?> <?php echo $current_user->user_login; ?> <b class="caret"></b></a>
+									<a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo get_avatar( $current_user->ID, 20 ); ?> <?php echo $current_user->display_name; ?> <b class="caret"></b></a>
 
 									<ul class="dropdown-menu">
 										<li><a href="http://orbiswp.com/help/"><i class="icon-question-sign"></i> <?php _e( 'Help', 'orbis' ); ?></a></li>

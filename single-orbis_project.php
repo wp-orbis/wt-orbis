@@ -128,7 +128,7 @@
 					<dl>
 						<?php if ( function_exists( 'orbis_project_has_principal' ) && orbis_project_has_principal() ) : ?>
 	
-							<dt><?php _e( 'Principal', 'orbis' ); ?></dt>
+							<dt><?php _e( 'Client', 'orbis' ); ?></dt>
 							<dd>
 								<?php
 			

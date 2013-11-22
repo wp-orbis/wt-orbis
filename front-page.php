@@ -15,7 +15,7 @@
 					
 					printf(
 						__( 'Logged in as %1$s', 'orbis' ),
-						$user->user_login
+						$user->display_name 
 					);
 				
 					?>
@@ -39,7 +39,7 @@
 			<h1><?php _e( 'Welcome to Orbis', 'orbis' ); ?></h1>
 		
 			<p>
-				<?php _e( 'Orbis is a tool to manage your projects, your customer relations, it can be used as intranet en has much more great features. Orbis is built on WordPress which is a great base to create a powerful tool for your bussiness. Enough introduction, time to work.', 'orbis' ); ?>
+				<?php _e( 'Orbis is a tool to manage your projects, your customer relations and has much more great features. Orbis is build on WordPress which is a great framework to create a powerful tool for your business. Enough introduction, time to get some work done.', 'orbis' ); ?>
 			</p>
 		
 			<ul>
