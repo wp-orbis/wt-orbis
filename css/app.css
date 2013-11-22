@@ -5,13 +5,10 @@
 
 /* Body and structure
 -------------------------------------------------- */
-
 body {
 	background: #f6f6f6 url("../img/misc/body-texture.png");
 
-	position: relative;
-
-	padding-top: 80px;
+	padding-top: 40px;
 }
 
 /* Definition list
@@ -30,6 +27,10 @@ span {
 	color: #999;
 
 	font-size: 12px;
+}
+
+p.alt {
+	color: #999;
 }
 
 a.badge:hover {
@@ -90,7 +91,6 @@ blockquote p {
 
 /* Intro
 ------------------------- */
-
 .hero-unit {
 	border: 1px solid #ddd;
 }
@@ -171,8 +171,24 @@ blockquote p {
 	margin: 0;
 }
 
+header.with-tabs {
+    padding-top: 10px;
+}
+
+header.with-tabs .nav-tabs {
+    border: medium none;
+
+    margin: 0;
+}
+
+header.with-tabs .nav-tabs > .active > a,
+header.with-tabs .nav-tabs > .active > a:hover {
+    border-color: #c3c3c3 #c3c3c3 #fff;
+}
+
 /* List
 ------------------------- */
+
 ul.list {
 	margin: 0;
 	padding: 0;
@@ -182,6 +198,10 @@ ul.list {
 
 ul.list li {
 	border-bottom: 1px solid #ddd;
+}
+
+ul.list li.current-cat a {
+	color: #000;
 }
 
 ul.list a {
@@ -283,7 +303,13 @@ ul.list.persons li .person-wrapper a,
 }
 
 .advanced-search-link {
-	margin-left: 20px;
+	color: #999;
+
+	margin-left: 15px;
+}
+
+.advanced-search-link:hover {
+	color: #666;
 }
 
 /* News
@@ -311,12 +337,17 @@ ul.list.persons li .person-wrapper a,
 
 /* Posts
 ------------------------- */
-.post {
+.archive .post,
+.blog .post {
 	border-bottom: 1px solid #ddd;
 }
 
 .post h2 {
 	margin: 0;
+}
+
+.post h2 a {
+	color: #000;
 }
 
 .post .entry-content {
@@ -355,8 +386,17 @@ table tr.orbis-status-finished a {
 	color: #999;
 }
 
-table tr.failed td.project-time {
-	color: #ff0000;
+table tr.orbis-status-cancelled,
+table tr.orbis-status-cancelled a,
+.single .orbis-status-cancelled .page-header {
+	color: #999;
+
+	text-decoration: line-through;
+}
+
+table tr.failed td.project-time,
+table tr.failed td.number-days-column {
+    color: #FF0000;
 }
 
 table .actions {
@@ -482,6 +522,7 @@ p.project-time {
 
 .comment-author cite {
 	color: #000;
+
 	font-style: normal;
 	font-weight: bold;
 	
@@ -699,26 +740,4 @@ ul.social li.linkedin a { background: url("../img/icons/linkedin.png") no-repeat
 	body {
     	padding-top: 0;
 	}
-}
-
-/* Twitter
-------------------------- */
-body .twtr-tweets {
-	font-size: 12px;
-}
-
-body .twtr-tweet {
-	padding: 5px;
-}
-
-body .twtr-widget p {
-    line-height: 1.3 !important;
-}
-
-body .twtr-hd {
-	display: none;
-}
-
-body .twtr-ft {
-	display: none;
 }

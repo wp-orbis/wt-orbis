@@ -15,7 +15,7 @@
 					
 					printf(
 						__( 'Logged in as %1$s', 'orbis' ),
-						$user->user_login
+						$user->display_name 
 					);
 				
 					?>
@@ -24,8 +24,6 @@
 			<?php endif; ?>
 		</h1>
 	</div>
-	
-	<?php the_content(); ?>
 
 <?php endwhile; ?>
 
@@ -41,7 +39,7 @@
 			<h1><?php _e( 'Welcome to Orbis', 'orbis' ); ?></h1>
 		
 			<p>
-				<?php _e( 'Orbis is a tool to manage your projects, your customer relations, it can be used as intranet en has much more great features. Orbis is built on WordPress which is a great base to create a powerful tool for your bussiness. Enough introduction, time to work.', 'orbis' ); ?>
+				<?php _e( 'Orbis is a tool to manage your projects, your customer relations and has much more great features. Orbis is build on WordPress which is a great framework to create a powerful tool for your business. Enough introduction, time to get some work done.', 'orbis' ); ?>
 			</p>
 		
 			<ul>
@@ -112,22 +110,20 @@
 		<?php dynamic_sidebar( 'frontpage-bottom-widget' ); ?>
 	</div>
 
-<?php endif; ?>
-
-<?php if ( ! is_active_sidebar( 'frontpage-bottom-widget' ) || ! is_active_sidebar( 'frontpage-bottom-widget' ) ) : ?>
+<?php else : ?>
 
 	<div class="row">
 		<?php 
 	
 		the_widget( 'Orbis_List_Posts_Widget', array(  
 			'post_type_name' => 'orbis_company', 
-			'number' => 8, 
-			'title' => __( 'Companies', 'orbis' ) 
+			'number'         => 8, 
+			'title'          => __( 'Companies', 'orbis' ) 
 		), array( 
-			'before_widget' => '<div class="span4"><div class="panel">',
-			'after_widget' => '</div></div>',
-			'before_title' => '<header><h3 class="widget-title">',
-			'after_title' => '</h3></header>' 
+			'before_widget'  => '<div class="span4"><div class="panel">',
+			'after_widget'   => '</div></div>',
+			'before_title'   => '<header><h3 class="widget-title">',
+			'after_title'    => '</h3></header>' 
 		) ); 
 	
 		?> 
@@ -136,13 +132,13 @@
 	
 		the_widget( 'Orbis_List_Posts_Widget', array(  
 			'post_type_name' => 'orbis_project', 
-			'number' => 8, 
-			'title' => __( 'Projects', 'orbis' ) 
+			'number'         => 8, 
+			'title'          => __( 'Projects', 'orbis' ) 
 		), array( 
-			'before_widget' => '<div class="span4"><div class="panel">',
-			'after_widget' => '</div></div>',
-			'before_title' => '<header><h3 class="widget-title">',
-			'after_title' => '</h3></header>' 
+			'before_widget'  => '<div class="span4"><div class="panel">',
+			'after_widget'   => '</div></div>',
+			'before_title'   => '<header><h3 class="widget-title">',
+			'after_title'    => '</h3></header>' 
 		) ); 
 	
 		?>
@@ -151,13 +147,13 @@
 	
 		the_widget( 'Orbis_List_Posts_Widget', array(  
 			'post_type_name' => 'orbis_person', 
-			'number' => 8, 
-			'title' => __( 'Persons', 'orbis' ) 
+			'number'         => 8, 
+			'title'          => __( 'Persons', 'orbis' ) 
 		), array( 
-			'before_widget' => '<div class="span4"><div class="panel">',
-			'after_widget' => '</div></div>',
-			'before_title' => '<header><h3 class="widget-title">',
-			'after_title' => '</h3></header>' 
+			'before_widget'  => '<div class="span4"><div class="panel">',
+			'after_widget'   => '</div></div>',
+			'before_title'   => '<header><h3 class="widget-title">',
+			'after_title'    => '</h3></header>' 
 		) ); 
 	
 		?> 
@@ -165,4 +161,4 @@
 
 <?php endif; ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

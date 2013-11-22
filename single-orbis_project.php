@@ -34,12 +34,55 @@
 					<?php the_content(); ?>
 				</div>
 			</div>
+			
+			<?php 
+
+			$project_sections = apply_filters( 'orbis_project_sections', array() );
+
+			if ( ! empty( $project_sections ) ): ?>
+
+				<div class="panel with-cols clearfix">
+					<header class="with-tabs">
+						<ul id="tabs" class="nav nav-tabs">
+							<?php $active = true; foreach ( $project_sections as $section ) : ?>
+
+
+								<li class="<?php echo $active ? 'active' : ''; ?>">
+									<a href="#<?php echo $section['id']; ?>"><?php echo $section['name']; ?></a>
+								</li>
+
+							<?php $active = false; endforeach; ?>
+						</ul>
+					</header>
+
+					<div class="tab-content">
+						<?php $active = true; foreach ( $project_sections as $section ) : ?>
+
+							<div id="<?php echo $section['id']; ?>" class="tab-pane <?php echo $active ? 'active' : ''; ?>">
+								<?php
+
+								if ( isset( $section['action'] ) ) {
+									do_action( $section['action'] );
+								}
+
+								if ( isset( $section['callback'] ) ) {
+									call_user_func( $section['callback'] );
+								}
+
+								if ( isset( $section['template_part'] ) ) {
+									get_template_part( $section['template_part'] );
+								}
+
+								?>
+							</div>
+
+						<?php $active = false; endforeach; ?>
+					</div>
+				</div>
+			
+			<?php endif; ?>
 
 			<?php do_action( 'orbis_after_main_content' ); ?>
-
-			<?php get_template_part( 'templates/project_flot_activities' ); ?>
-
-			<?php get_template_part( 'templates/project_flot_persons' ); ?>
 	
 			<?php comments_template( '', true ); ?>
 		</div>
@@ -85,7 +128,7 @@
 					<dl>
 						<?php if ( function_exists( 'orbis_project_has_principal' ) && orbis_project_has_principal() ) : ?>
 	
-							<dt><?php _e( 'Principal', 'orbis' ); ?></dt>
+							<dt><?php _e( 'Client', 'orbis' ); ?></dt>
 							<dd>
 								<?php
 			
@@ -99,9 +142,6 @@
 							</dd>
 
 						<?php endif; ?>
-
-						<dt><?php _e( 'ID', 'orbis' ); ?></dt>
-						<dd><?php echo get_the_ID(); ?></dd>
 
 						<dt><?php _e( 'Posted on', 'orbis' ); ?></dt>
 						<dd><?php echo get_the_date() ?></dd>
@@ -133,15 +173,19 @@
 								<span class="label"><?php _e( 'Not finished', 'orbis' ); ?></span>
 	
 							<?php endif; ?>
+							
+							<?php if ( function_exists( 'orbis_finance_bootstrap' ) ) : ?>
 	
-							<?php if ( orbis_project_is_invoiced() ) : ?>
+								<?php if ( orbis_project_is_invoiced() ) : ?>
 	
-								<span class="label label-success"><?php _e( 'Invoiced', 'orbis' ); ?></span>
+									<span class="label label-success"><?php _e( 'Invoiced', 'orbis' ); ?></span>
 	
-							<?php else : ?>
+								<?php else : ?>
 	
-								<span class="label"><?php _e( 'Not invoiced', 'orbis' ); ?></span>
+									<span class="label"><?php _e( 'Not invoiced', 'orbis' ); ?></span>
 	
+								<?php endif; ?>
+							
 							<?php endif; ?>
 						</dd>
 						
@@ -182,4 +226,4 @@
 
 <?php endwhile; ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

@@ -7,7 +7,7 @@
 			<?php the_title(); ?>
 		</h1>
 	</div>
-	
+
 	<div class="row">
 		<div class="span8">
 			<div class="panel with-cols clearfix">
@@ -16,16 +16,16 @@
 				</header>
 				
 				<div class="row-fluid">
-					<div class="span6">
+					<div class="span7">
 						<div class="content">
 							<div class="thumbnail">
 								<?php if ( has_post_thumbnail() ) : ?>
 		
-									<?php the_post_thumbnail( 'medium' ); ?>
+									<?php the_post_thumbnail( 'thumbnail' ); ?>
 		
-								<?php else: ?>
+								<?php else : ?>
 		
-									<img src="<?php bloginfo('template_directory'); ?>/placeholders/avatar-medium.png">
+									<img src="<?php bloginfo( 'template_directory' ); ?>/placeholders/avatar.png" alt="">
 		
 								<?php endif; ?>
 							</div>
@@ -34,7 +34,7 @@
 						</div>
 					</div>
 					
-					<div class="span6">
+					<div class="span5">
 						<div class="content">
 							<dl>
 								<?php if ( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ) : ?>
@@ -62,14 +62,14 @@
 		
 									<dt><?php _e( 'Social media', 'orbis' ); ?></dt>
 									<dd>
-										<ul class="social">
+										<ul class="social clearfix">
 											<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) ) : ?>
 								
 												<li class="twitter">
 													<?php
 								
 													printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-														'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ) ,
+														'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ),
 														'Twitter'
 													);
 							
@@ -84,7 +84,7 @@
 													<?php
 								
 													printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-														'http://www.facebook.com/' . get_post_meta( $post->ID, '_orbis_person_facebook', true ) ,
+														get_post_meta( $post->ID, '_orbis_person_facebook', true ),
 														'Facebook'
 													);
 							
@@ -99,7 +99,7 @@
 													<?php
 								
 													printf( __( '<a href="%1$s">%2$s</a>', 'orbis' ),
-														'http://www.linkedin.com/in/' . get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ,
+														'http://www.linkedin.com/in/' . get_post_meta( $post->ID, '_orbis_person_linkedin', true ),
 														'LinkedIn'
 													);
 							
@@ -130,46 +130,63 @@
 						<h3>
 							<?php
 							
-							printf( __( '%1$s op Twitter', 'orbis' ),
+							printf( __( '%1$s on Twitter', 'orbis' ),
 								get_the_title()
 							);
 						
 							?>
 						</h3>
 					</header>
-		
-					<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-					<script>
-						new TWTR.Widget({
-							version: 2,
-							type: 'profile',
-							rpp: 4,
-							interval: 20000,
-							width: 'auto',
-							theme: {
-								shell: {
-									background: 'none',
-									color: '#000'
-								},
-								tweets: {
-									background: 'none',
-									color: '#000',
-									links: '#0088CC'
-								}
-							},
-							features: {
-								scrollbar: false,
-								loop: true,
-								live: false,
-								behavior: 'all' ,
-								avatars: true
-							}
-						}).render().setUser('<?php echo $username; ?>').start();
-					</script>
+					
+					<div class="content">
+						<p class="alt">
+							<?php _e( 'No tweets available.', 'orbis' ); ?>
+						</p>
+					</div>
 				</div>
 	
 			<?php endif; ?>
-		
+
+			<?php if ( function_exists( 'p2p_register_connection_type' ) ) : ?>
+			
+				<div class="panel">
+					<header>
+						<h3><?php _e(' Connected companies', 'orbis' ); ?></h3>
+					</header>
+
+					<?php
+
+					$connected = new WP_Query( array(
+					  'connected_type'  => 'orbis_persons_to_companies',
+					  'connected_items' => get_queried_object(),
+					  'nopaging'        => true
+					) );
+
+					if ( $connected->have_posts() ) : ?>
+
+						<ul class="list">
+							<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+
+								<li>
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</li>
+
+							<?php endwhile; ?>
+						</ul>
+
+					<?php wp_reset_postdata(); else : ?>
+
+						<div class="content">
+							<p class="alt">
+								<?php _e( 'No companies connected.', 'orbis' ); ?>
+							</p>
+						</div>
+				
+					<?php endif; ?>
+				</div>
+			
+			<?php endif; ?>
+
 			<div class="panel">
 				<header>
 					<h3><?php _e( 'Additional information', 'orbis' ); ?></h3>
@@ -177,8 +194,6 @@
 	
 				<div class="content">
 					<dl>
-						<dt><?php _e( 'ID', 'orbis' ); ?></dt>
-						<dd><?php echo get_the_id(); ?></dd>
 						<dt><?php _e( 'Posted on', 'orbis' ); ?></dt>
 						<dd><?php echo get_the_date() ?></dd>
 						<dt><?php _e( 'Posted by', 'orbis' ); ?></dt>
@@ -193,4 +208,4 @@
 
 <?php endwhile; ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

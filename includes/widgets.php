@@ -17,7 +17,7 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 	 * Constructs and initializes this widget
 	 */
 	public function Orbis_List_Posts_Widget() {
-		parent::WP_Widget( 'orbis-list-posts', __( 'Posts list', 'orbis' ) );
+		parent::WP_Widget( 'orbis-list-posts', __( 'Orbis Posts List', 'orbis' ) );
 	}
 
 	function widget( $args, $instance ) {
@@ -40,7 +40,7 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 		<?php
 
 		$query = new WP_Query( array ( 
-			'post_type' => $post_type_name ,
+			'post_type'      => $post_type_name,
 			'posts_per_page' => $number
 		) );
 
@@ -103,9 +103,9 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 
 				<?php foreach ( $post_types as $post_type ) : ?>
 
-				<option value="<?php echo $post_type->name; ?>" <?php if ( $post_type->name == $post_type_name ) : ?>selected="selected"<?php endif; ?>>
-					<?php echo $post_type->label; ?>
-				</option>
+					<option value="<?php echo $post_type->name; ?>" <?php if ( $post_type->name == $post_type_name ) : ?>selected="selected"<?php endif; ?>>
+						<?php echo $post_type->label; ?>
+					</option>
 
 				<?php endforeach; ?>
 			</select>
@@ -117,7 +117,7 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 			<select id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>">
 				<?php while ( $i <= 10 ) : ?>
     		
-				<option value="<?php echo $i; ?>"<?php if( $number == $i) echo ' selected'; ?>><?php echo $i; ?></option>
+				<option value="<?php echo $i; ?>"<?php if ( $number == $i ) echo ' selected'; ?>><?php echo $i; ?></option>
 
 				<?php $i++; endwhile; ?>
 			</select>
@@ -144,7 +144,7 @@ class Orbis_News_Widget extends WP_Widget {
 	 * Constructs and initializes this widget
 	 */
 	public function Orbis_News_Widget() {
-		parent::WP_Widget( 'orbis-news', __( 'News', 'orbis' ) );
+		parent::WP_Widget( 'orbis-news', __( 'Orbis News', 'orbis' ) );
 	}
 
 	function widget( $args, $instance ) {
@@ -165,7 +165,7 @@ class Orbis_News_Widget extends WP_Widget {
 		<?php
 
 		$query = new WP_Query( array ( 
-			'post_type' => 'post' ,
+			'post_type'      => 'post',
 			'posts_per_page' => 11
 		) );
 
@@ -184,7 +184,7 @@ class Orbis_News_Widget extends WP_Widget {
 
 							<?php else : ?>
 
-								<img src="<?php bloginfo( 'template_directory' ); ?>/placeholders/featured.png" />
+								<img src="<?php bloginfo( 'template_directory' ); ?>/placeholders/featured.png" alt="" />
 
 							<?php endif; ?>
 						</a>
@@ -206,9 +206,9 @@ class Orbis_News_Widget extends WP_Widget {
 						<ul class="no-disc">
 							<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 		
-							<li>
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</li>
+								<li>
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</li>
 		
 							<?php endwhile; ?>
 						</ul>
@@ -248,4 +248,3 @@ class Orbis_News_Widget extends WP_Widget {
 		<?php
 	}
 }
-

@@ -21,12 +21,16 @@ $ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
 
 	<div class="content">
 		<dl>
-			<dt><?php _e( 'Address', 'orbis' ); ?></dt>
-			<dd>
-				<?php echo $address; ?><br />
-				<?php echo $postcode, ' ', $city; ?><br />
-				<?php echo $country; ?>
-			</dd>
+			<?php if ( ! empty( $address ) || ! empty( $postcode ) || ! empty( $country ) ) : ?>
+
+				<dt><?php _e( 'Address', 'orbis' ); ?></dt>
+				<dd>
+					<?php echo $address; ?><br />
+					<?php echo $postcode, ' ', $city; ?><br />
+					<?php echo $country; ?>
+				</dd>
+			
+			<?php endif; ?>
 
 			<?php if ( ! empty( $website ) ) : ?>
 
@@ -46,8 +50,12 @@ $ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
 
 			<?php endif; ?>
 
-			<dt><?php _e( 'Electronic billing', 'orbis' ); ?></dt>
-			<dd><?php echo $ebilling ? __( 'Yes', 'orbis' ) :  __( 'No', 'orbis' ); ?></dd>
+			<?php if ( function_exists( 'orbis_finance_bootstrap' ) ) : ?>
+
+				<dt><?php _e( 'Electronic billing', 'orbis' ); ?></dt>
+				<dd><?php echo $ebilling ? __( 'Yes', 'orbis' ) :  __( 'No', 'orbis' ); ?></dd>
+			
+			<?php endif; ?>
 
 			<?php if ( ! empty( $kvk_number ) ) : ?>
 	

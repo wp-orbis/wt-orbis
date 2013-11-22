@@ -43,16 +43,15 @@
 	
 					<tr>
 						<td>
-		
 							<div class="person-wrapper">
 								<div class="avatar">
 									<?php if ( has_post_thumbnail() ) : ?>
 									
-										<?php the_post_thumbnail( 'thumbnail' ); ?>
+										<?php the_post_thumbnail( 'avatar' ); ?>
 									
 									<?php else : ?>
 									
-										<img src="<?php bloginfo('template_directory'); ?>/placeholders/avatar.png">
+										<img src="<?php bloginfo('template_directory'); ?>/placeholders/avatar.png" alt="">
 									
 									<?php endif; ?>
 								</div>
@@ -61,7 +60,7 @@
 									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br />
 		
 									<p>
-										<?php if ( get_post_meta($post->ID, '_orbis_person_email_address', true ) ) : ?>
+										<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
 						
 											<span><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></span> <br />
 										
@@ -89,7 +88,7 @@
 		
 							$phone_number = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
 		
-							if( ! empty( $phone_number ) && function_exists( 'orbis_snom_call_form' ) ) {
+							if ( ! empty( $phone_number ) && function_exists( 'orbis_snom_call_form' ) ) {
 								orbis_snom_call_form( $phone_number );
 							}
 		
@@ -104,7 +103,7 @@
 	<?php else : ?>
 
 		<div class="content">
-			<p>
+			<p class="alt">
 				<?php _e( 'No results found.', 'orbis' ); ?>
 			</p>
 		</div>
@@ -114,5 +113,4 @@
 
 <?php orbis_content_nav(); ?>
 
-<?php get_footer(); ?>
-
+<?php get_footer();

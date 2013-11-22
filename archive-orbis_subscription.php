@@ -16,7 +16,7 @@
 	</h1>
 
 	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
-		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add company', 'orbis' ); ?>
+		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add subscription', 'orbis' ); ?>
 	</a>
 </div>
 
@@ -32,17 +32,21 @@
 		<table class="table table-striped table-bordered table-condense table-hover">
 			<thead>
 				<tr>
-					<th><?php _e( 'Name', 'orbis' ); ?></th>
+					<th><?php _e( 'Title', 'orbis' ); ?></th>
+					<th><?php _e( 'Price', 'orbis' ); ?></th>
 					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 					<th><?php _e( 'Actions', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php while ( have_posts() ) : the_post(); ?>
-		
+	
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</td>
+						<td>
+							<?php orbis_subscription_the_price(); ?>
 						</td>
 						<td>
 							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
@@ -57,9 +61,9 @@
 				<?php endwhile; ?>
 			</tbody>
 		</table>
-	
+
 	<?php else : ?>
-	
+
 		<div class="content">
 			<p class="alt">
 				<?php _e( 'No results found.', 'orbis' ); ?>
