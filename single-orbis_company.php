@@ -24,6 +24,8 @@
 						<?php the_content(); ?>
 					</div>
 				</div>
+			
+				<?php get_template_part( 'templates/company_sections' ); ?>
 
 				<?php do_action( 'orbis_after_main_content' ); ?>
 
