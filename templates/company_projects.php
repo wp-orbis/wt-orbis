@@ -59,9 +59,11 @@ if ( $query->have_posts() ) : ?>
 
 <?php else : ?>
 
-	<p>
-		No projects found.
-	</p>
+	<div class="content">
+		<p class="alt">
+			<?php _e( 'No projects found.', 'orbis' ); ?>
+		</p>
+	</div>
 
 <?php endif; ?>
 
