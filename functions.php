@@ -3,8 +3,9 @@
 /**
  * Includes
  */
-require_once get_template_directory() . '/includes/widgets.php';
+require_once get_template_directory() . '/includes/projects.php';
 require_once get_template_directory() . '/includes/template-tags.php';
+require_once get_template_directory() . '/includes/widgets.php';
 
 if ( function_exists( 'orbis_timesheets_bootstrap' ) ) {
 	require_once get_template_directory() . '/includes/timesheets.php';
