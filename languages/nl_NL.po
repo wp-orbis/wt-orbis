@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/orbis\n"
-"POT-Creation-Date: 2013-12-09 11:36:16+00:00\n"
-"PO-Revision-Date: 2013-12-09 12:38+0100\n"
+"POT-Creation-Date: 2013-12-09 14:49:46+00:00\n"
+"PO-Revision-Date: 2013-12-09 15:50+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -42,7 +42,7 @@ msgstr "Bedrijf toevoegen"
 
 #: archive-orbis_company.php:25 archive-orbis_hosting_group.php:25
 #: archive-orbis_person.php:25 archive-orbis_project.php:25
-#: archive-orbis_subscription.php:25 archive-orbis_task.php:25 index.php:37
+#: archive-orbis_subscription.php:25 archive-orbis_task.php:25 index.php:41
 msgid "Overview"
 msgstr "Overzicht"
 
@@ -52,14 +52,14 @@ msgstr "Naam"
 
 #: archive-orbis_company.php:36 archive-orbis_hosting_group.php:39
 #: archive-orbis_person.php:36 archive-orbis_project.php:38
-#: archive-orbis_subscription.php:37 archive-orbis_task.php:39 index.php:49
+#: archive-orbis_subscription.php:37 archive-orbis_task.php:39 index.php:53
 #: templates/company_projects.php:16
 msgid "Comments"
 msgstr "Reacties"
 
 #: archive-orbis_company.php:37 archive-orbis_hosting_group.php:40
 #: archive-orbis_person.php:37 archive-orbis_project.php:39
-#: archive-orbis_subscription.php:38 archive-orbis_task.php:40 index.php:50
+#: archive-orbis_subscription.php:38 archive-orbis_task.php:40 index.php:54
 #: single-orbis_company.php:91 single-orbis_person.php:201
 #: single-orbis_project.php:174 single.php:55
 #: templates/company_projects.php:17
@@ -68,7 +68,7 @@ msgstr "Acties"
 
 #: archive-orbis_company.php:52 archive-orbis_hosting_group.php:64
 #: archive-orbis_person.php:83 archive-orbis_project.php:85
-#: archive-orbis_subscription.php:56 archive-orbis_task.php:89 index.php:78
+#: archive-orbis_subscription.php:56 includes/functions.php:9 index.php:82
 #: single-orbis_company.php:92 single-orbis_person.php:202
 #: single-orbis_project.php:175 single.php:56
 #: templates/company_projects.php:50
@@ -77,8 +77,8 @@ msgstr "Bewerken"
 
 #: archive-orbis_company.php:65 archive-orbis_hosting_group.php:77
 #: archive-orbis_person.php:107 archive-orbis_project.php:98
-#: archive-orbis_subscription.php:69 archive-orbis_task.php:102
-#: content-post.php:100 home.php:115 index.php:91
+#: archive-orbis_subscription.php:69 archive-orbis_task.php:79
+#: content-post.php:100 home.php:115 index.php:95
 msgid "No results found."
 msgstr "Geen resultaten gevonden."
 
@@ -87,7 +87,7 @@ msgid "Add subscription"
 msgstr "Abonnement toevoegen"
 
 #: archive-orbis_hosting_group.php:35 archive-orbis_subscription.php:35
-#: index.php:48
+#: index.php:52
 msgid "Title"
 msgstr "Titel"
 
@@ -107,7 +107,7 @@ msgstr "Hostnaam leverancier"
 msgid "Add person"
 msgstr "Persoon toevoegen"
 
-#: archive-orbis_project.php:19 archive-orbis_task.php:19
+#: archive-orbis_project.php:19
 msgid "Add project"
 msgstr "Project toevoegen"
 
@@ -129,6 +129,10 @@ msgstr "Tijd"
 #: archive-orbis_subscription.php:36
 msgid "Price"
 msgstr "Prijs"
+
+#: archive-orbis_task.php:19
+msgid "Add task"
+msgstr "Taak toevoegen"
 
 #: archive-orbis_task.php:36
 msgid "Task"
@@ -293,23 +297,23 @@ msgstr "Projecten"
 msgid "Persons"
 msgstr "Personen"
 
-#: functions.php:37
+#: functions.php:38
 msgid "Primary Menu"
 msgstr "Primair menu"
 
-#: functions.php:69
+#: functions.php:70
 msgid "Main Widget"
 msgstr "Hoofd widget"
 
-#: functions.php:78
+#: functions.php:79
 msgid "Frontpage Top Widget"
 msgstr "Voorpagina bovenkant widget"
 
-#: functions.php:87
+#: functions.php:88
 msgid "Frontpage Bottom Widget"
 msgstr "Voorpagina onderkant widget"
 
-#: functions.php:288
+#: functions.php:289
 msgid "No description."
 msgstr "Geen beschrijving."
 
@@ -416,11 +420,11 @@ msgstr "Orbis nieuws"
 msgid "More news"
 msgstr "Meer nieuws"
 
-#: index.php:31
+#: index.php:33
 msgid "Add new"
 msgstr "Nieuwe toevoegen"
 
-#: index.php:47
+#: index.php:51
 msgid "Type"
 msgstr "Type"
 
@@ -612,7 +616,6 @@ msgid "The theme for Orbis based on Bootstrap."
 msgstr "Het thema voor Orbis gebasseerd op Bootstrap."
 
 #. Author of the plugin/theme
-#, fuzzy
 msgid "Pronamic"
 msgstr "Pronamic"
 
@@ -632,9 +635,6 @@ msgstr "Volledige breedte"
 
 #~ msgid "Tasks from this user"
 #~ msgstr "Taken van deze gebruiker"
-
-#~ msgid "Add task"
-#~ msgstr "Taak toevoegen"
 
 #~ msgid "User"
 #~ msgstr "Gebruiker"
