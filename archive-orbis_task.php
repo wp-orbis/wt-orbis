@@ -16,7 +16,7 @@
 	</h1>
 
 	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
-		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add project', 'orbis' ); ?>
+		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add task', 'orbis' ); ?>
 	</a>
 </div>
 
@@ -45,52 +45,29 @@
 		
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
-							<?php 
-							
-							if ( function_exists( 'orbis_project_has_principal' ) ) {
-								if ( orbis_project_has_principal() ) {
-									printf( 
-										'<a href="%s">%s</a>',
-										esc_attr( orbis_project_principal_get_permalink() ),
-										orbis_project_principel_get_the_name()
-									);
-								}
-							}
-		
-							?>
+							<?php orbis_task_project(); ?>
 						</td>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</td>
 						<td>
-							&mdash;
+							<?php orbis_task_due_at(); ?>
 						</td>
-						<td class="project-time">
-							<?php if ( function_exists( 'orbis_project_the_time' ) ) orbis_project_the_time(); ?>
-
-							<?php if ( function_exists( 'orbis_project_the_logged_time' ) ) : ?>
-
-								<?php 
-
-								$classes = array();
-								$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
-
-								?>
-
-								<span class="<?php echo implode( $classes, ' ' ); ?>"><?php orbis_project_the_logged_time(); ?></span>
-
-							<?php endif; ?>
+						<td class="task-time">
+							<?php orbis_task_time(); ?>
 						</td>
 						<td>
 							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
 						</td>
 						<td>
 							<div class="actions">
-								<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								<?php orbis_edit_post_link(); ?>
+								
+								<?php orbis_finish_task_link(); ?>
 							</div>
 						</td>
 					</tr>
-	
+
 				<?php endwhile; ?>
 			</tbody>
 		</table>
