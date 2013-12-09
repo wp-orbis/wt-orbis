@@ -27,9 +27,13 @@
 		<?php endif; ?>
 	</h1>
 
-	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
-		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add new', 'orbis' ); ?>
-	</a>
+	<?php if ( ! is_search() ) : ?>
+
+		<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
+			<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add new', 'orbis' ); ?>
+		</a>
+	
+	<?php endif; ?>
 </div>
 
 <div class="panel">
