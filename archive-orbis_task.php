@@ -32,6 +32,7 @@
 		<table class="table table-striped table-bordered table-condense table-hover">
 			<thead>
 				<tr>
+					<th><?php _e( 'Assignee', 'orbis' ); ?></th>
 					<th><?php _e( 'Project', 'orbis' ); ?></th>
 					<th><?php _e( 'Task', 'orbis' ); ?></th>
 					<th><?php _e( 'Due At', 'orbis' ); ?></th>
@@ -44,6 +45,9 @@
 				<?php while ( have_posts() ) : the_post(); ?>
 		
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<td>
+							<?php orbis_task_assignee(); ?>
+						</td>
 						<td>
 							<?php orbis_task_project(); ?>
 						</td>
