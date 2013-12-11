@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/orbis\n"
-"POT-Creation-Date: 2013-12-10 10:48:54+00:00\n"
-"PO-Revision-Date: 2013-12-10 11:49+0100\n"
+"POT-Creation-Date: 2013-12-11 07:48:20+00:00\n"
+"PO-Revision-Date: 2013-12-11 08:48+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.1\n"
+"X-Generator: Poedit 1.6.2\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;__ngettext:1,2;__withdesc;_ewithdesc;_c;"
 "_n_noop:1,2;__ngettext_noop:1,2;_x:2c,1;_nc:1,2;esc_attr_e;esc_html_e;"
 "esc_attr__;_nx:4c,1,2;_nx_noop:4c,1,2;esc_html_x:2c,1;esc_html__;_ex:2c,1\n"
@@ -60,7 +60,7 @@ msgstr "Reacties"
 #: archive-orbis_company.php:37 archive-orbis_hosting_group.php:40
 #: archive-orbis_person.php:37 archive-orbis_project.php:39
 #: archive-orbis_subscription.php:38 archive-orbis_task.php:41 index.php:54
-#: single-orbis_company.php:91 single-orbis_person.php:201
+#: single-orbis_company.php:91 single-orbis_person.php:167
 #: single-orbis_project.php:174 single.php:55
 #: templates/company_projects.php:17 templates/project_tasks.php:17
 msgid "Actions"
@@ -69,7 +69,7 @@ msgstr "Acties"
 #: archive-orbis_company.php:52 archive-orbis_hosting_group.php:64
 #: archive-orbis_person.php:83 archive-orbis_project.php:85
 #: archive-orbis_subscription.php:56 includes/functions.php:9 index.php:82
-#: single-orbis_company.php:92 single-orbis_person.php:202
+#: single-orbis_company.php:92 single-orbis_person.php:168
 #: single-orbis_project.php:175 single.php:56
 #: templates/company_projects.php:50 templates/project_tasks.php:37
 msgid "Edit"
@@ -457,12 +457,12 @@ msgstr "Geen personen verbonden."
 msgid "Additional Information"
 msgstr "Aanvullende informatie"
 
-#: single-orbis_company.php:85 single-orbis_person.php:197
+#: single-orbis_company.php:85 single-orbis_person.php:163
 #: single-orbis_project.php:101 single.php:49
 msgid "Posted on"
 msgstr "Geplaatst op"
 
-#: single-orbis_company.php:88 single-orbis_person.php:199
+#: single-orbis_company.php:88 single-orbis_person.php:165
 #: single-orbis_project.php:104 single.php:52
 msgid "Posted by"
 msgstr "Aangemaakt door"
@@ -504,15 +504,7 @@ msgstr "%1$s op Twitter"
 msgid "No tweets available."
 msgstr "Geen tweets beschikbaar."
 
-#: single-orbis_person.php:154
-msgid " Connected companies"
-msgstr "Gekoppelde bedrijven"
-
-#: single-orbis_person.php:181
-msgid "No companies connected."
-msgstr "Geen bedrijven verbonden."
-
-#: single-orbis_person.php:192
+#: single-orbis_person.php:158
 msgid "Additional information"
 msgstr "Aanvullende informatie"
 
@@ -595,6 +587,22 @@ msgstr "KvK nummer"
 #: templates/company_projects.php:64
 msgid "No projects found."
 msgstr "Geen projecten gevonden."
+
+#: templates/person_companies.php:3
+msgid "Connected Companies"
+msgstr "Gekoppelde bedrijven"
+
+#: templates/person_companies.php:30
+msgid "No companies connected."
+msgstr "Geen bedrijven verbonden."
+
+#: templates/project_persons.php:3
+msgid "Involved Persons"
+msgstr "Betrokken personen"
+
+#: templates/project_persons.php:30
+msgid "No persons involved."
+msgstr "Geen personen betrokken."
 
 #: templates/project_tasks.php:51
 msgid "No tasks found."

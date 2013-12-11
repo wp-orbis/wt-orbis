@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/orbis\n"
-"POT-Creation-Date: 2013-12-10 10:48:54+00:00\n"
+"POT-Creation-Date: 2013-12-11 07:48:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -54,7 +54,7 @@ msgstr ""
 #: archive-orbis_company.php:37 archive-orbis_hosting_group.php:40
 #: archive-orbis_person.php:37 archive-orbis_project.php:39
 #: archive-orbis_subscription.php:38 archive-orbis_task.php:41 index.php:54
-#: single-orbis_company.php:91 single-orbis_person.php:201
+#: single-orbis_company.php:91 single-orbis_person.php:167
 #: single-orbis_project.php:174 single.php:55
 #: templates/company_projects.php:17 templates/project_tasks.php:17
 msgid "Actions"
@@ -63,7 +63,7 @@ msgstr ""
 #: archive-orbis_company.php:52 archive-orbis_hosting_group.php:64
 #: archive-orbis_person.php:83 archive-orbis_project.php:85
 #: archive-orbis_subscription.php:56 includes/functions.php:9 index.php:82
-#: single-orbis_company.php:92 single-orbis_person.php:202
+#: single-orbis_company.php:92 single-orbis_person.php:168
 #: single-orbis_project.php:175 single.php:56
 #: templates/company_projects.php:50 templates/project_tasks.php:37
 msgid "Edit"
@@ -437,12 +437,12 @@ msgstr ""
 msgid "Additional Information"
 msgstr ""
 
-#: single-orbis_company.php:85 single-orbis_person.php:197
+#: single-orbis_company.php:85 single-orbis_person.php:163
 #: single-orbis_project.php:101 single.php:49
 msgid "Posted on"
 msgstr ""
 
-#: single-orbis_company.php:88 single-orbis_person.php:199
+#: single-orbis_company.php:88 single-orbis_person.php:165
 #: single-orbis_project.php:104 single.php:52
 msgid "Posted by"
 msgstr ""
@@ -484,15 +484,7 @@ msgstr ""
 msgid "No tweets available."
 msgstr ""
 
-#: single-orbis_person.php:154
-msgid " Connected companies"
-msgstr ""
-
-#: single-orbis_person.php:181
-msgid "No companies connected."
-msgstr ""
-
-#: single-orbis_person.php:192
+#: single-orbis_person.php:158
 msgid "Additional information"
 msgstr ""
 
@@ -574,6 +566,22 @@ msgstr ""
 
 #: templates/company_projects.php:64
 msgid "No projects found."
+msgstr ""
+
+#: templates/person_companies.php:3
+msgid "Connected Companies"
+msgstr ""
+
+#: templates/person_companies.php:30
+msgid "No companies connected."
+msgstr ""
+
+#: templates/project_persons.php:3
+msgid "Involved Persons"
+msgstr ""
+
+#: templates/project_persons.php:30
+msgid "No persons involved."
 msgstr ""
 
 #: templates/project_tasks.php:51
