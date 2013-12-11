@@ -149,41 +149,7 @@
 
 			<?php if ( function_exists( 'p2p_register_connection_type' ) ) : ?>
 			
-				<div class="panel">
-					<header>
-						<h3><?php _e(' Connected companies', 'orbis' ); ?></h3>
-					</header>
-
-					<?php
-
-					$connected = new WP_Query( array(
-					  'connected_type'  => 'orbis_persons_to_companies',
-					  'connected_items' => get_queried_object(),
-					  'nopaging'        => true
-					) );
-
-					if ( $connected->have_posts() ) : ?>
-
-						<ul class="list">
-							<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-
-								<li>
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								</li>
-
-							<?php endwhile; ?>
-						</ul>
-
-					<?php wp_reset_postdata(); else : ?>
-
-						<div class="content">
-							<p class="alt">
-								<?php _e( 'No companies connected.', 'orbis' ); ?>
-							</p>
-						</div>
-				
-					<?php endif; ?>
-				</div>
+				<?php get_template_part( 'templates/person_companies' ); ?>
 			
 			<?php endif; ?>
 
