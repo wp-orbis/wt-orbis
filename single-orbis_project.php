@@ -176,6 +176,12 @@
 					</dl>
 				</div>
 			</div>
+			
+			<?php if ( function_exists( 'p2p_register_connection_type' ) ) : ?>
+			
+				<?php get_template_part( 'templates/project_persons' ); ?>
+			
+			<?php endif; ?>
 		</div>
 	</div>
 
