@@ -421,6 +421,8 @@ table tr.failed td.number-days-column {
 }
 
 table tr .actions {
+	padding-right: 80px;
+
 	position: relative;
 }
 

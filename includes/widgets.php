@@ -73,6 +73,12 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 									<span><?php echo get_post_meta( get_the_ID(), '_orbis_person_email_address', true ); ?></span> <br />
 		
 								<?php endif; ?>
+
+								<?php if ( get_post_meta( get_the_ID(), '_orbis_person_phone_number', true ) ) : ?>
+
+									<span><?php echo get_post_meta( get_the_ID(), '_orbis_person_phone_number', true ); ?></span>
+	
+								<?php endif; ?>
 							</p>
 						</div>
 					</li>

@@ -13,39 +13,11 @@
 
 	if ( $query->have_posts() ) : ?>
 
-		<ul class="post-list">
+		<ul class="list">
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 				<li>
-					<a href="<?php the_permalink(); ?>" class="post-image">
-						<?php if ( has_post_thumbnail() ) : ?>
-
-							<?php the_post_thumbnail( 'avatar' ); ?>
-
-						<?php else : ?>
-
-							<img src="<?php bloginfo('template_directory'); ?>/placeholders/avatar.png" alt="">
-
-						<?php endif; ?>
-					</a>
-
-					<div class="post-content">
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br />
-
-						<p>
-							<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
-
-								<span><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></span> <br />
-	
-							<?php endif; ?>
-	
-							<?php if ( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ) : ?>
-
-								<span><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></span>
-	
-							<?php endif; ?>
-						</p>
-					</div>
+					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</li>
 
 			<?php endwhile; ?>
