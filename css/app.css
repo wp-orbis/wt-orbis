@@ -189,14 +189,16 @@ header.with-tabs .nav-tabs > .active > a:hover {
 /* List
 ------------------------- */
 
-ul.list {
+ul.list,
+ul.post-list {
 	margin: 0;
 	padding: 0;
 
 	list-style: none;
 }
 
-ul.list li {
+ul.list li,
+ul.post-list li {
 	border-bottom: 1px solid #ddd;
 }
 
@@ -218,6 +220,25 @@ ul.list a .comment {
 
 ul.list a:hover .comment {
 	display: inline;
+}
+
+/* Post list */
+ul.post-list li {
+	overflow: hidden;
+
+	padding: 5px;
+}
+
+ul.post-list .post-image {
+	float: left;
+
+	margin-right: 10px;
+}
+
+ul.post-list .post-content {
+	float: left; 
+
+	overflow: hidden;
 }
 
 /* Activities
