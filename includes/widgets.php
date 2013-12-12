@@ -43,18 +43,56 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 			'post_type'      => $post_type_name,
 			'posts_per_page' => $number
 		) );
-
+		
 		?>
 
-		<ul class="list">
-			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-			
-				<li>
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-				</li>
-			
-			<?php endwhile; ?>
-		</ul>
+		<?php if ( $post_type_name == 'orbis_person' ) : ?>
+		
+			<ul class="post-list">
+				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+					<li>
+						<a href="<?php the_permalink(); ?>" class="post-image">
+							<?php if ( has_post_thumbnail() ) : ?>
+	
+								<?php the_post_thumbnail( 'avatar' ); ?>
+	
+							<?php else : ?>
+	
+								<img src="<?php bloginfo('template_directory'); ?>/placeholders/avatar.png" alt="">
+	
+							<?php endif; ?>
+						</a>
+
+						<div class="post-content">
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br />
+
+							<p>
+								<?php if ( get_post_meta( get_the_ID(), '_orbis_person_email_address', true ) ) : ?>
+
+									<span><?php echo get_post_meta( get_the_ID(), '_orbis_person_email_address', true ); ?></span> <br />
+		
+								<?php endif; ?>
+							</p>
+						</div>
+					</li>
+
+				<?php endwhile; ?>
+			</ul>
+
+		<?php else : ?>
+
+			<ul class="list">
+				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+					<li>
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					</li>
+
+				<?php endwhile; ?>
+			</ul>
+		
+		<?php endif; ?>
 
 		<footer>
 			<a href="<?php echo get_post_type_archive_link( $post_type_name ); ?>" class="btn"><?php _e( 'Show all', 'orbis' );  ?></a>
