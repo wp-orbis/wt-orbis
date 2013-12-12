@@ -34,7 +34,6 @@
 				<tr>
 					<th><?php _e( 'Name', 'orbis' ); ?></th>
 					<th><?php _e( 'Comments', 'orbis' ); ?></th>
-					<th><?php _e( 'Actions', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -45,11 +44,12 @@
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</td>
 						<td>
-							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
-						</td>
-						<td>
 							<div class="actions">
-								<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
+							
+								<div class="nubbin">
+									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								</div>
 							</div>
 						</td>
 					</tr>

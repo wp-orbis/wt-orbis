@@ -34,7 +34,7 @@
 				<tr>
 					<th><?php _e( 'Name', 'orbis' ); ?></th>
 					<th><?php _e( 'Comments', 'orbis' ); ?></th>
-					<th colspan="2"><?php _e( 'Actions', 'orbis' ); ?></th>
+					<th><?php _e( 'Actions', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 		
@@ -80,19 +80,20 @@
 						</td>
 						<td>
 							<div class="actions">
-								<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								<?php
+		
+								$phone_number = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
+		
+								if ( ! empty( $phone_number ) && function_exists( 'orbis_snom_call_form' ) ) {
+									orbis_snom_call_form( $phone_number );
+								}
+		
+								?>
+
+								<div class="nubbin">
+									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								</div>
 							</div>
-						</td>
-						<td>
-							<?php
-		
-							$phone_number = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
-		
-							if ( ! empty( $phone_number ) && function_exists( 'orbis_snom_call_form' ) ) {
-								orbis_snom_call_form( $phone_number );
-							}
-		
-							?>
 						</td>
 					</tr>
 				

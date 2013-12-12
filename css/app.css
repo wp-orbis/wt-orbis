@@ -399,11 +399,29 @@ table tr.failed td.number-days-column {
     color: #FF0000;
 }
 
-table .actions {
+table tr .actions {
+	position: relative;
+}
+
+table tr .nubbin {
 	visibility: hidden;
 }
 
-table tr:hover .actions {
+table tr:hover .nubbin {
+	background: #fff;
+
+	box-shadow: 1px 0 1px rgba(0, 0, 0, 0.2);
+
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px; 
+    border-radius: 4px;
+
+	padding: 5px;
+
+	position: absolute;
+	right: -15px;
+	top: 0;
+
 	visibility: visible;
 }
 
