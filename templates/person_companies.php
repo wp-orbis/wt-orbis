@@ -17,6 +17,14 @@
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 				<li>
+					<?php if ( get_post_meta( $post->ID, '_orbis_company_website', true ) ) : ?>
+				
+						<?php $favicon_url = add_query_arg( 'domain', get_post_meta( $post->ID, '_orbis_company_website', true ), 'https://plus.google.com/_/favicon' ); ?>
+				
+						<img src="<?php echo esc_attr( $favicon_url ); ?>" alt="" />
+
+					<?php endif; ?>
+
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</li>
 
