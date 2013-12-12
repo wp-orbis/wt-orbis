@@ -20,27 +20,27 @@ if ( is_post_type_archive() ) {
 			<button type="submit" class="btn"><?php _e( 'Search', 'orbis' ); ?></button> 
 			
 			<?php if ( $has_advanced) : ?>
-			
+
 				<small><a href="#" class="advanced-search-link" data-toggle="collapse" data-target="#advanced-search"><?php _e( 'Advanced Search', 'orbis' ); ?></a></small>
 
 			<?php endif; ?>
 
 			<?php if ( is_post_type_archive( 'orbis_task' ) ) : ?>
-	
+
 				<div class="pull-right">
 					<?php
-					
+
 					wp_dropdown_users( array(
 						'name'             => 'orbis_task_assignee',
 						'selected'         => filter_input( INPUT_GET, 'orbis_task_assignee', FILTER_SANITIZE_STRING ),
 						'show_option_none' => __( '&mdash; Select Assignee &mdash;', 'orbis' ),
 					) );
-		
+
 					?>
-		
-					<button class="btn" type="submit">Filter</button>
+
+					<button class="btn" type="submit"><?php _e( 'Filter', 'orbis' ); ?></button>
 				</div>
-			
+
 			<?php endif; ?>
 		</div>
 

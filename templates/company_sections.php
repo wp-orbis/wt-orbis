@@ -9,7 +9,6 @@ if ( ! empty( $sections ) ): ?>
 			<ul id="tabs" class="nav nav-tabs">
 				<?php $active = true; foreach ( $sections as $section ) : ?>
 
-
 					<li class="<?php echo $active ? 'active' : ''; ?>">
 						<a href="#<?php echo $section['id']; ?>"><?php echo $section['name']; ?></a>
 					</li>

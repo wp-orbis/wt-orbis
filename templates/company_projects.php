@@ -14,7 +14,6 @@ if ( $query->have_posts() ) : ?>
 				<th><?php _e( 'Project', 'orbis' ); ?></th>
 				<th><?php _e( 'Time', 'orbis' ); ?></th>
 				<th><?php _e( 'Comments', 'orbis' ); ?></th>
-				<th><?php _e( 'Actions', 'orbis' ); ?></th>
 			</tr>
 		</thead>
 
@@ -44,11 +43,6 @@ if ( $query->have_posts() ) : ?>
 					</td>
 					<td>
 						<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
-					</td>
-					<td>
-						<div class="actions">
-							<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
-						</div>
 					</td>
 				</tr>
 			

@@ -14,7 +14,6 @@ if ( $query->have_posts() ) : ?>
 				<th><?php _e( 'Description', 'orbis' ); ?></th>
 				<th><?php _e( 'Time', 'orbis' ); ?></th>
 				<th><?php _e( 'Comments', 'orbis' ); ?></th>
-				<th><?php _e( 'Actions', 'orbis' ); ?></th>
 			</tr>
 		</thead>
 
@@ -32,11 +31,6 @@ if ( $query->have_posts() ) : ?>
 					<td>
 						<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
 					</td>
-					<td>
-						<div class="actions">
-							<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
-						</div>
-					</td>
 				</tr>
 			
 			<?php endwhile; ?>
@@ -52,10 +46,4 @@ if ( $query->have_posts() ) : ?>
 		</p>
 	</div>
 
-<?php endif; ?>
-
-<?php
-
-wp_reset_postdata();
-
-?>
+<?php endif; wp_reset_postdata(); ?>
