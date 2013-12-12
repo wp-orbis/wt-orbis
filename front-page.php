@@ -62,35 +62,27 @@
 	<div class="content stats">
 		<div class="row-fluid">
 			<div class="span3 col">
-				<?php $query = new WP_Query( array( 'post_type' => 'post' ) ); ?>
+				<?php $count_posts = wp_count_posts(); ?>
 
-				<span><?php _e( 'Posts', 'orbis' ); ?></span> <p class="important"><?php echo $query->found_posts; ?></p>
-
-				<?php wp_reset_postdata(); ?>
+				<span><?php _e( 'Posts', 'orbis' ); ?></span> <p class="important"><?php echo $count_posts->publish; ?></p>
 			</div>
 
 			<div class="span3 col">
-				<?php $query = new WP_Query( array( 'post_type' => 'orbis_company' ) ); ?>
+				<?php $count_posts = wp_count_posts( 'orbis_company' ); ?>
 
-				<span><?php _e( 'Companies', 'orbis' ); ?></span> <p class="important"><?php echo $query->found_posts; ?></p>
-
-				<?php wp_reset_postdata(); ?>
+				<span><?php _e( 'Companies', 'orbis' ); ?></span> <p class="important"><?php echo $count_posts->publish; ?></p>
 			</div>
 			
 			<div class="span3 col">
-				<?php $query = new WP_Query( array( 'post_type' => 'orbis_project' ) ); ?>
+				<?php $count_posts = wp_count_posts( 'orbis_project' ); ?>
 
-				<span><?php _e( 'Projects', 'orbis' ); ?></span> <p class="important"><?php echo $query->found_posts; ?></p>
-
-				<?php wp_reset_postdata(); ?>
+				<span><?php _e( 'Projects', 'orbis' ); ?></span> <p class="important"><?php echo $count_posts->publish; ?></p>
 			</div>
 
 			<div class="span3 col">
-				<?php $query = new WP_Query( array( 'post_type' => 'orbis_person' ) ); ?>
+				<?php $count_posts = wp_count_posts( 'orbis_person' ); ?>
 
-				<span><?php _e( 'Persons', 'orbis' ); ?></span> <p class="important"><?php echo $query->found_posts; ?></p>
-
-				<?php wp_reset_postdata(); ?>
+				<span><?php _e( 'Persons', 'orbis' ); ?></span> <p class="important"><?php echo $count_posts->publish; ?></p>
 			</div>
 		</div>
 	</div>
