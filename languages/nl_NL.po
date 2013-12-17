@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/orbis\n"
-"POT-Creation-Date: 2013-12-11 07:48:20+00:00\n"
-"PO-Revision-Date: 2013-12-11 08:48+0100\n"
+"POT-Creation-Date: 2013-12-17 10:29:59+00:00\n"
+"PO-Revision-Date: 2013-12-17 11:30+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -32,7 +32,8 @@ msgstr "Het lijkt erop dat we niet kunnen vinden waar je naar zoekt."
 
 #: archive-orbis_company.php:10 archive-orbis_hosting_group.php:10
 #: archive-orbis_person.php:10 archive-orbis_project.php:10
-#: archive-orbis_subscription.php:10 archive-orbis_task.php:10 index.php:20
+#: archive-orbis_subs_product.php:10 archive-orbis_subscription.php:10
+#: archive-orbis_task.php:10 index.php:20
 msgid "Overview of %1$s"
 msgstr "Overzicht van %1$s"
 
@@ -42,7 +43,8 @@ msgstr "Bedrijf toevoegen"
 
 #: archive-orbis_company.php:25 archive-orbis_hosting_group.php:25
 #: archive-orbis_person.php:25 archive-orbis_project.php:25
-#: archive-orbis_subscription.php:25 archive-orbis_task.php:25 index.php:41
+#: archive-orbis_subs_product.php:25 archive-orbis_subscription.php:25
+#: archive-orbis_task.php:25 index.php:41
 msgid "Overview"
 msgstr "Overzicht"
 
@@ -52,33 +54,24 @@ msgstr "Naam"
 
 #: archive-orbis_company.php:36 archive-orbis_hosting_group.php:39
 #: archive-orbis_person.php:36 archive-orbis_project.php:38
-#: archive-orbis_subscription.php:37 archive-orbis_task.php:40 index.php:53
-#: templates/company_projects.php:16 templates/project_tasks.php:16
+#: archive-orbis_subs_product.php:38 archive-orbis_subscription.php:37
+#: archive-orbis_task.php:40 index.php:53 templates/company_projects.php:16
+#: templates/project_tasks.php:16
 msgid "Comments"
 msgstr "Reacties"
 
-#: archive-orbis_company.php:37 archive-orbis_hosting_group.php:40
-#: archive-orbis_person.php:37 archive-orbis_project.php:39
-#: archive-orbis_subscription.php:38 archive-orbis_task.php:41 index.php:54
-#: single-orbis_company.php:91 single-orbis_person.php:167
-#: single-orbis_project.php:174 single.php:55
-#: templates/company_projects.php:17 templates/project_tasks.php:17
-msgid "Actions"
-msgstr "Acties"
-
-#: archive-orbis_company.php:52 archive-orbis_hosting_group.php:64
-#: archive-orbis_person.php:83 archive-orbis_project.php:85
-#: archive-orbis_subscription.php:56 includes/functions.php:9 index.php:82
-#: single-orbis_company.php:92 single-orbis_person.php:168
-#: single-orbis_project.php:175 single.php:56
-#: templates/company_projects.php:50 templates/project_tasks.php:37
+#: archive-orbis_company.php:59 archive-orbis_hosting_group.php:63
+#: archive-orbis_person.php:94 archive-orbis_project.php:84
+#: archive-orbis_subs_product.php:79 archive-orbis_subscription.php:55
+#: includes/functions.php:9 index.php:82 single-orbis_company.php:120
+#: single-orbis_person.php:168 single-orbis_project.php:175 single.php:56
 msgid "Edit"
 msgstr "Bewerken"
 
-#: archive-orbis_company.php:65 archive-orbis_hosting_group.php:77
-#: archive-orbis_person.php:107 archive-orbis_project.php:98
-#: archive-orbis_subscription.php:69 archive-orbis_task.php:83
-#: content-post.php:100 home.php:115 index.php:95
+#: archive-orbis_company.php:73 archive-orbis_hosting_group.php:77
+#: archive-orbis_person.php:108 archive-orbis_project.php:98
+#: archive-orbis_subs_product.php:93 archive-orbis_subscription.php:69
+#: archive-orbis_task.php:83 content-post.php:100 home.php:115 index.php:95
 msgid "No results found."
 msgstr "Geen resultaten gevonden."
 
@@ -86,8 +79,8 @@ msgstr "Geen resultaten gevonden."
 msgid "Add subscription"
 msgstr "Abonnement toevoegen"
 
-#: archive-orbis_hosting_group.php:35 archive-orbis_subscription.php:35
-#: index.php:52
+#: archive-orbis_hosting_group.php:35 archive-orbis_subs_product.php:35
+#: archive-orbis_subscription.php:35 index.php:52
 msgid "Title"
 msgstr "Titel"
 
@@ -106,6 +99,11 @@ msgstr "Hostnaam leverancier"
 #: archive-orbis_person.php:19
 msgid "Add person"
 msgstr "Persoon toevoegen"
+
+#: archive-orbis_person.php:37 index.php:54 single-orbis_company.php:119
+#: single-orbis_person.php:167 single-orbis_project.php:174 single.php:55
+msgid "Actions"
+msgstr "Acties"
 
 #: archive-orbis_project.php:19
 msgid "Add project"
@@ -126,9 +124,17 @@ msgstr "Project"
 msgid "Time"
 msgstr "Tijd"
 
-#: archive-orbis_subscription.php:36
+#: archive-orbis_subs_product.php:19
+msgid "Add subscription product"
+msgstr "Abonnement product toevoegen"
+
+#: archive-orbis_subs_product.php:36 archive-orbis_subscription.php:36
 msgid "Price"
 msgstr "Prijs"
+
+#: archive-orbis_subs_product.php:37
+msgid "Cost Price"
+msgstr "Kostprijs"
 
 #: archive-orbis_task.php:19
 msgid "Add task"
@@ -289,15 +295,15 @@ msgstr "Meer informatie"
 msgid "Posts"
 msgstr "Berichten"
 
-#: front-page.php:75 front-page.php:121
+#: front-page.php:73 front-page.php:113
 msgid "Companies"
 msgstr "Bedrijven"
 
-#: front-page.php:83 front-page.php:136 includes/projects.php:6
+#: front-page.php:79 front-page.php:128 includes/projects.php:6
 msgid "Projects"
 msgstr "Projecten"
 
-#: front-page.php:91 front-page.php:151 includes/timesheets.php:12
+#: front-page.php:85 front-page.php:143 includes/timesheets.php:12
 msgid "Persons"
 msgstr "Personen"
 
@@ -404,27 +410,27 @@ msgstr "Activiteiten"
 msgid "Orbis Posts List"
 msgstr "Orbis berichten lijst"
 
-#: includes/widgets.php:60
+#: includes/widgets.php:104
 msgid "Show all"
 msgstr "Bekijk alles"
 
-#: includes/widgets.php:90 includes/widgets.php:242
+#: includes/widgets.php:134 includes/widgets.php:286
 msgid "Title:"
 msgstr "Titel:"
 
-#: includes/widgets.php:98
+#: includes/widgets.php:142
 msgid "Post type:"
 msgstr "Post type:"
 
-#: includes/widgets.php:115
+#: includes/widgets.php:159
 msgid "Number:"
 msgstr "Aantal:"
 
-#: includes/widgets.php:147
+#: includes/widgets.php:191
 msgid "Orbis News"
 msgstr "Orbis nieuws"
 
-#: includes/widgets.php:204
+#: includes/widgets.php:248
 msgid "More news"
 msgstr "Meer nieuws"
 
@@ -449,20 +455,20 @@ msgstr "Beschrijving"
 msgid " Connected persons"
 msgstr "Gekoppelde personen"
 
-#: single-orbis_company.php:69
+#: single-orbis_company.php:97
 msgid "No persons connected."
 msgstr "Geen personen verbonden."
 
-#: single-orbis_company.php:80 single.php:44
+#: single-orbis_company.php:108 single.php:44
 msgid "Additional Information"
 msgstr "Aanvullende informatie"
 
-#: single-orbis_company.php:85 single-orbis_person.php:163
+#: single-orbis_company.php:113 single-orbis_person.php:163
 #: single-orbis_project.php:101 single.php:49
 msgid "Posted on"
 msgstr "Geplaatst op"
 
-#: single-orbis_company.php:88 single-orbis_person.php:165
+#: single-orbis_company.php:116 single-orbis_person.php:165
 #: single-orbis_project.php:104 single.php:52
 msgid "Posted by"
 msgstr "Aangemaakt door"
@@ -584,7 +590,7 @@ msgstr "Nee"
 msgid "KvK Number"
 msgstr "KvK nummer"
 
-#: templates/company_projects.php:64
+#: templates/company_projects.php:58
 msgid "No projects found."
 msgstr "Geen projecten gevonden."
 
@@ -592,7 +598,7 @@ msgstr "Geen projecten gevonden."
 msgid "Connected Companies"
 msgstr "Gekoppelde bedrijven"
 
-#: templates/person_companies.php:30
+#: templates/person_companies.php:36
 msgid "No companies connected."
 msgstr "Geen bedrijven verbonden."
 
@@ -600,11 +606,11 @@ msgstr "Geen bedrijven verbonden."
 msgid "Involved Persons"
 msgstr "Betrokken personen"
 
-#: templates/project_persons.php:30
+#: templates/project_persons.php:58
 msgid "No persons involved."
 msgstr "Geen personen betrokken."
 
-#: templates/project_tasks.php:51
+#: templates/project_tasks.php:45
 msgid "No tasks found."
 msgstr "Geen taken gevonden."
 
@@ -615,6 +621,10 @@ msgstr "Geavanceerd zoeken"
 #: templates/search_form.php:36
 msgid "&mdash; Select Assignee &mdash;"
 msgstr "&mdash; Selecteer uitvoerder &mdash;"
+
+#: templates/search_form.php:41
+msgid "Filter"
+msgstr "Filter"
 
 #: templates/search_form.php:62
 msgid "Search on Client"
