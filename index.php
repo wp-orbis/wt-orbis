@@ -27,7 +27,7 @@
 		<?php endif; ?>
 	</h1>
 
-	<?php if ( ! is_search() ) : ?>
+	<?php if ( is_post_type_archive() ) : ?>
 
 		<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
 			<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add new', 'orbis' ); ?>
