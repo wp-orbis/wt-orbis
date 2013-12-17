@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/orbis\n"
-"POT-Creation-Date: 2013-12-17 10:29:59+00:00\n"
-"PO-Revision-Date: 2013-12-17 11:30+0100\n"
+"POT-Creation-Date: 2013-12-17 11:30:13+00:00\n"
+"PO-Revision-Date: 2013-12-17 12:30+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -129,10 +129,12 @@ msgid "Add subscription product"
 msgstr "Abonnement product toevoegen"
 
 #: archive-orbis_subs_product.php:36 archive-orbis_subscription.php:36
+#: templates/subscription_product_details.php:8
 msgid "Price"
 msgstr "Prijs"
 
 #: archive-orbis_subs_product.php:37
+#: templates/subscription_product_details.php:23
 msgid "Cost Price"
 msgstr "Kostprijs"
 
@@ -307,23 +309,23 @@ msgstr "Projecten"
 msgid "Persons"
 msgstr "Personen"
 
-#: functions.php:42
+#: functions.php:43
 msgid "Primary Menu"
 msgstr "Primair menu"
 
-#: functions.php:74
+#: functions.php:75
 msgid "Main Widget"
 msgstr "Hoofd widget"
 
-#: functions.php:83
+#: functions.php:84
 msgid "Frontpage Top Widget"
 msgstr "Voorpagina bovenkant widget"
 
-#: functions.php:92
+#: functions.php:93
 msgid "Frontpage Bottom Widget"
 msgstr "Voorpagina onderkant widget"
 
-#: functions.php:293
+#: functions.php:294
 msgid "No description."
 msgstr "Geen beschrijving."
 
@@ -579,10 +581,12 @@ msgid "Electronic billing"
 msgstr "Elektronische facturatie"
 
 #: templates/company_contact.php:56
+#: templates/subscription_product_details.php:44
 msgid "Yes"
 msgstr "Ja"
 
 #: templates/company_contact.php:56
+#: templates/subscription_product_details.php:44
 msgid "No"
 msgstr "Nee"
 
@@ -641,6 +645,14 @@ msgstr "Zoek op factuurnummer"
 #: templates/search_form.php:73
 msgid "Cancel"
 msgstr "Annuleer"
+
+#: templates/subscription_product_details.php:3
+msgid "Subscription Product Details"
+msgstr "Abonnement product details"
+
+#: templates/subscription_product_details.php:38
+msgid "Auto Renew"
+msgstr "Automatisch verlengen"
 
 #. Theme Name of the plugin/theme
 msgid "Orbis"
