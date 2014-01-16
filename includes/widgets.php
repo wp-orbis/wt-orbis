@@ -380,6 +380,12 @@ class Orbis_Tasks_Widget extends WP_Widget {
 				<a href="<?php echo get_post_type_archive_link( 'orbis_task' ); ?>" class="btn"><?php _e( 'Show all tasks', 'orbis' );  ?></a>
 			</footer>
 
+		<?php else :  ?>
+		
+			<div class="content">
+				<p class="alt"><?php _e( 'Grab a beer, no tasks for you.', 'orbis' ); ?></p>
+			</div>
+		
 		<?php endif; wp_reset_postdata(); ?>
 
 		<?php echo $after_widget; ?>
