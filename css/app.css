@@ -29,6 +29,10 @@ span {
 	font-size: 12px;
 }
 
+span a {
+	color: #999;
+}
+
 p.alt {
 	color: #999;
 }
@@ -239,6 +243,15 @@ ul.post-list .post-content {
 	float: left; 
 
 	overflow: hidden;
+}
+
+/* Tasks list */
+ul.post-list.tasks li {
+	padding: 10px;
+}
+
+ul.post-list.tasks .label {
+	float: right;
 }
 
 /* Activities

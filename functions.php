@@ -100,6 +100,7 @@ function orbis_widgets_init() {
 
 	register_widget( 'Orbis_List_Posts_Widget' );
 	register_widget( 'Orbis_News_Widget' );
+	register_widget( 'Orbis_Tasks_Widget' );
 }
 add_action( 'widgets_init', 'orbis_widgets_init' );
 
