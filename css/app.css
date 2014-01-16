@@ -795,3 +795,17 @@ ul.social li.linkedin a { background: url("../img/icons/linkedin.png") no-repeat
     	padding-top: 0;
 	}
 }
+
+/* Clear grid
+------------------------- */
+.row .span6:nth-child(2n + 3) {
+	clear: left;
+}
+
+.row .span4:nth-child(3n + 4) {
+	clear: left;
+}
+
+.row .span3:nth-child(4n + 5) {
+	clear: left;
+}
