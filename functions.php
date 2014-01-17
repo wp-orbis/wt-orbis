@@ -64,7 +64,7 @@ function orbis_unregister_wp_widgets() {
 	unregister_widget( 'WP_Widget_RSS' );
 	unregister_widget( 'WP_Widget_Tag_Cloud' );
 	unregister_widget( 'WP_Nav_Menu_Widget' );
-	unregister_widget( 'WP_Widget_Recent_Posts' );
+	unregister_widget( 'WP_Widget_Recent_Comments' );
 }
 
 add_action( 'widgets_init', 'orbis_unregister_wp_widgets', 1 );
