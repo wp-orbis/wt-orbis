@@ -377,7 +377,7 @@ class Orbis_Tasks_Widget extends WP_Widget {
 			</ul>
 
 			<footer>
-				<a href="<?php echo get_post_type_archive_link( 'orbis_task' ); ?>" class="btn"><?php _e( 'Show all tasks', 'orbis' );  ?></a>
+				<a href="<?php echo add_query_arg( 'orbis_task_assignee', get_current_user_id(), get_post_type_archive_link( 'orbis_task' ) ); ?>" class="btn"><?php _e( 'Show all tasks', 'orbis' );  ?></a>
 			</footer>
 
 		<?php else :  ?>
@@ -425,6 +425,129 @@ class Orbis_Tasks_Widget extends WP_Widget {
 				<?php while ( $i <= 10 ) : ?>
     		
 				<option value="<?php echo $i; ?>"<?php if ( $number == $i ) echo ' selected'; ?>><?php echo $i; ?></option>
+
+				<?php $i++; endwhile; ?>
+			</select>
+		</p>
+		
+		<?php
+	}
+}
+
+/**
+ * List comments widget
+ */
+class Orbis_Comments_Widget extends WP_Widget {
+	/**
+	 * Register this widget
+	 */
+	public static function register() {
+		register_widget( __CLASS__ );
+	}
+
+	////////////////////////////////////////////////////////////
+
+	/**
+	 * Constructs and initializes this widget
+	 */
+	public function Orbis_Comments_Widget() {
+		parent::WP_Widget( 'orbis-comments', __( 'Orbis Comments', 'orbis' ) );
+	}
+
+	function widget( $args, $instance ) {
+		extract( $args );
+
+		$number = isset( $instance['number'] ) ? $instance['number'] : null;
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+
+		?>
+
+		<?php echo $before_widget; ?>
+
+		<?php if ( ! empty( $title ) ) : ?>
+
+			<?php echo $before_title . $title . $after_title; ?>
+
+		<?php endif; ?>
+
+		<?php 
+
+		$comments = get_comments( array( 
+			'number' => $number
+		) ); 
+
+		?>
+		
+		<div class="content">
+			<?php if ( $comments ) : ?>
+
+				<ul class="no-disc comments">
+					<?php foreach ( $comments as $comment ) : ?>
+
+						<li>
+							<div class="comment-label">
+								<span class="label"><?php _e( 'Comment', 'orbis' ); ?></span> 
+							</div>
+
+							<div class="comment-content">
+								<a href="<?php echo get_comments_link( $comment->comment_post_ID ); ?>"><?php echo get_the_title( $comment->comment_post_ID ); ?></a> <?php echo orbis_custom_excerpt( $comment->comment_content ); ?>
+
+								<?php
+
+								printf( __( '<span class="entry-meta">Posted by %1$s on %2$s</span>', 'orbis' ),
+									$comment->comment_author,
+									get_comment_date( 'H:i',  $comment->comment_ID )
+								);
+
+								?>
+							</div>
+						</li>
+
+					<?php endforeach; ?>
+				</ul>
+
+			<?php endif; ?>
+		</div>
+
+		<?php wp_reset_postdata(); ?>
+
+		<?php echo $after_widget; ?>
+		
+		<?php
+	}
+
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+
+		$instance['title'] = $new_instance['title'];
+		$instance['number'] = $new_instance['number'];
+
+		return $instance;
+	}
+
+	function form( $instance ) {
+		$title = isset( $instance['title'] ) ? esc_attr($instance['title'] ) : '';
+		$number = isset( $instance['number'] ) ? esc_attr($instance['number'] ) : '';
+
+		$i = 1;
+
+		?>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>">
+				<?php _e( 'Title:', 'orbis' ); ?>
+			</label>
+
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number:', 'orbis' ); ?></label>
+			
+			<select id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>">
+				<?php while ( $i <= 10 ) : ?>
+    		
+					<option value="<?php echo $i; ?>"<?php if ( $number == $i ) echo ' selected'; ?>><?php echo $i; ?></option>
 
 				<?php $i++; endwhile; ?>
 			</select>

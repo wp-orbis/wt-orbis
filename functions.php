@@ -9,8 +9,7 @@ require_once get_template_directory() . '/includes/subscriptions.php';
 require_once get_template_directory() . '/includes/template-tags.php';
 require_once get_template_directory() . '/includes/widgets.php';
 
-if ( function_exists( 'orbis_tasks_bootstrap' ) ) {
-	require_once get_template_directory() . '/includes/tasks.php';
+if ( function_exists( 'orbis_tasks_bootstrap' ) ) { require_once get_template_directory() . '/includes/tasks.php';
 }
 
 if ( function_exists( 'orbis_timesheets_bootstrap' ) ) {
@@ -47,6 +46,7 @@ function orbis_setup() {
 	add_image_size( 'featured', 244, 150, true );
 	add_image_size( 'avatar', 60, 60, true );
 }
+
 add_action( 'after_setup_theme', 'orbis_setup' );
 
 /**
@@ -64,7 +64,9 @@ function orbis_unregister_wp_widgets() {
 	unregister_widget( 'WP_Widget_RSS' );
 	unregister_widget( 'WP_Widget_Tag_Cloud' );
 	unregister_widget( 'WP_Nav_Menu_Widget' );
+	unregister_widget( 'WP_Widget_Recent_Posts' );
 }
+
 add_action( 'widgets_init', 'orbis_unregister_wp_widgets', 1 );
 
 /**
@@ -101,7 +103,9 @@ function orbis_widgets_init() {
 	register_widget( 'Orbis_List_Posts_Widget' );
 	register_widget( 'Orbis_News_Widget' );
 	register_widget( 'Orbis_Tasks_Widget' );
+	register_widget( 'Orbis_Comments_Widget' );
 }
+
 add_action( 'widgets_init', 'orbis_widgets_init' );
 
 /**
@@ -312,3 +316,19 @@ function orbis_companies_render_contact_details() {
 }
 
 add_action( 'orbis_before_side_content', 'orbis_companies_render_contact_details' );
+
+/**
+ * Custom excerpt
+ */
+function orbis_custom_excerpt( $excerpt, $charlength = 30 ) {
+	$excerpt = strip_shortcodes( $excerpt );
+	$excerpt = strip_tags( $excerpt );
+
+	if ( strlen( $excerpt ) > $charlength ) {
+		$excerpt = substr( $excerpt, 0, $charlength ) . '&hellip;';
+	} else {
+		$excerpt = $excerpt;
+	}
+
+	echo $excerpt;
+}

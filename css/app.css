@@ -247,11 +247,36 @@ ul.post-list .post-content {
 
 /* Tasks list */
 ul.post-list.tasks li {
-	padding: 10px;
+	padding: 10px 60px 10px 10px;
+
+	position: relative;
 }
 
 ul.post-list.tasks .label {
-	float: right;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+/* Comments */
+ul.comments li {
+	margin-bottom: 8px;
+}
+
+ul.comments li:last-child {
+	margin: 0;
+}
+
+ul.comments li .comment-label {
+	float: left;
+
+	margin-right: 10px;
+}
+
+ul.comments li .comment-content {
+	overflow: hidden;
+
+	line-height: 18px;
 }
 
 /* Activities
