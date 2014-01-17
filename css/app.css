@@ -273,6 +273,14 @@ ul.comments li .comment-label {
 	margin-right: 10px;
 }
 
+ul.comments li .comment-label .label {
+	display: inline-block;
+
+	min-width: 80px;
+
+	text-align: right;
+}
+
 ul.comments li .comment-content {
 	overflow: hidden;
 

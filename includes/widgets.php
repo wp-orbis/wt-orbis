@@ -484,9 +484,26 @@ class Orbis_Comments_Widget extends WP_Widget {
 				<ul class="no-disc comments">
 					<?php foreach ( $comments as $comment ) : ?>
 
+						<?php 
+
+						$comment_meta = get_comment_meta( $comment->comment_ID ); 
+
+						if ( array_key_exists( 'orbis_keychain_password_request', $comment_meta ) ) {
+							$label = __( 'Keychain', 'orbis' );
+							$class = 'badge-info';
+						} elseif ( array_key_exists( 'orbis_subscription_extend_request', $comment_meta ) ) {
+							$label = __( 'Subscription', 'orbis' );
+							$class = 'badge-success';
+						} else {
+							$label = __( 'Comment', 'orbis' );
+							$class = '';
+						}
+
+						?> 
+							
 						<li>
 							<div class="comment-label">
-								<span class="label"><?php _e( 'Comment', 'orbis' ); ?></span> 
+								<span class="label <?php echo $class; ?>"><?php echo $label; ?></span> 
 							</div>
 
 							<div class="comment-content">
