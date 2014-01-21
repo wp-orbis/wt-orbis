@@ -10,12 +10,12 @@
 	</h1>
 
 	<a class="btn btn-primary pull-right" href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php">
-		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add post', 'orbis' ); ?>
+		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add post', 'orbis' ); ?>
 	</a>
 </div>
 
 <div class="row">
-	<div class="span8">
+	<div class="col-md-8">
 		<div class="panel">
 			<header>
 				<h3><?php _e( 'News', 'orbis' ); ?></h3>
@@ -121,7 +121,7 @@
 		<?php orbis_content_nav(); ?>
 	</div>
 
-	<div class="span4">
+	<div class="col-md-4">
 		<div class="panel">
 			<header>
 				<h3><?php _e( 'Categories', 'orbis' ); ?></h3>
@@ -169,4 +169,4 @@
 	</div>
 </div>
 
-<?php get_footer();
+<?php get_footer(); ?>

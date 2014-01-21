@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Full width
+ * Template Name: Content in panel
  */
 
 get_header(); ?>
@@ -12,8 +12,12 @@ get_header(); ?>
 			<?php the_title(); ?>
 		</h1>
 	</div>
-	
-	<?php the_content(); ?>
+
+	<div class="panel">
+		<div class="content">
+			<?php the_content(); ?>
+		</div>
+	</div>
 
 <?php endwhile; ?>
 

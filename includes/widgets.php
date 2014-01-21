@@ -70,13 +70,13 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 							<p>
 								<?php if ( get_post_meta( get_the_ID(), '_orbis_person_email_address', true ) ) : ?>
 
-									<span><?php echo get_post_meta( get_the_ID(), '_orbis_person_email_address', true ); ?></span> <br />
+									<span class="entry-meta"><?php echo get_post_meta( get_the_ID(), '_orbis_person_email_address', true ); ?></span> <br />
 		
 								<?php endif; ?>
 
 								<?php if ( get_post_meta( get_the_ID(), '_orbis_person_phone_number', true ) ) : ?>
 
-									<span><?php echo get_post_meta( get_the_ID(), '_orbis_person_phone_number', true ); ?></span>
+									<span class="entry-meta"><?php echo get_post_meta( get_the_ID(), '_orbis_person_phone_number', true ); ?></span>
 	
 								<?php endif; ?>
 							</p>
@@ -101,7 +101,7 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 		<?php endif; ?>
 
 		<footer>
-			<a href="<?php echo get_post_type_archive_link( $post_type_name ); ?>" class="btn"><?php _e( 'Show all', 'orbis' );  ?></a>
+			<a href="<?php echo get_post_type_archive_link( $post_type_name ); ?>" class="btn btn-default"><?php _e( 'Show all', 'orbis' );  ?></a>
 		</footer>
 
 		<?php wp_reset_postdata(); ?>
@@ -218,8 +218,8 @@ class Orbis_News_Widget extends WP_Widget {
 		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 		
 		<div class="news with-cols clearfix">
-			<div class="row-fluid">
-				<div class="span6">
+			<div class="row">
+				<div class="col-md-6">
 					<div class="content">
 						<a href="<?php the_permalink(); ?>">
 							<?php if ( has_post_thumbnail() ) : ?>
@@ -243,7 +243,7 @@ class Orbis_News_Widget extends WP_Widget {
 
 				<?php break; endwhile; ?>
 
-				<div class="span6">
+				<div class="col-md-6">
 					<div class="content">
 						<h4><?php _e( 'More news', 'orbis' ); ?></h4>
 		
@@ -357,7 +357,7 @@ class Orbis_Tasks_Widget extends WP_Widget {
 						if ( $days > 0 ) {
 							$label = 'label-success';
 						} else {
-							$label = 'label-important';
+							$label = 'label-danger';
 						}
 
 						$due_at_ouput = sprintf( __( '%d days', 'orbis_tasks' ), $days );
@@ -377,7 +377,7 @@ class Orbis_Tasks_Widget extends WP_Widget {
 			</ul>
 
 			<footer>
-				<a href="<?php echo add_query_arg( 'orbis_task_assignee', get_current_user_id(), get_post_type_archive_link( 'orbis_task' ) ); ?>" class="btn"><?php _e( 'Show all tasks', 'orbis' );  ?></a>
+				<a href="<?php echo add_query_arg( 'orbis_task_assignee', get_current_user_id(), get_post_type_archive_link( 'orbis_task' ) ); ?>" class="btn btn-default"><?php _e( 'Show all tasks', 'orbis' );  ?></a>
 			</footer>
 
 		<?php else :  ?>
@@ -490,13 +490,13 @@ class Orbis_Comments_Widget extends WP_Widget {
 
 						if ( array_key_exists( 'orbis_keychain_password_request', $comment_meta ) ) {
 							$label = __( 'Keychain', 'orbis' );
-							$class = 'badge-info';
+							$class = 'label-info';
 						} elseif ( array_key_exists( 'orbis_subscription_extend_request', $comment_meta ) ) {
 							$label = __( 'Subscription', 'orbis' );
-							$class = 'badge-success';
+							$class = 'label-success';
 						} else {
 							$label = __( 'Comment', 'orbis' );
-							$class = '';
+							$class = 'label-default';
 						}
 
 						?> 

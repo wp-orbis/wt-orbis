@@ -15,11 +15,11 @@
 		</small>
 	</h1>
 
-	<a class="btn btn-primary pull-right" href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php">
-		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add post', 'orbis' ); ?>
+	<a class="btn btn-primary pull-right" href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php">	
+		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add post', 'orbis' ); ?>
 	</a>
 </div>
 
 <?php get_template_part( 'content', 'post' ); ?>
 
-<?php get_footer();
+<?php get_footer(); ?>

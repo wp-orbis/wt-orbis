@@ -3,7 +3,7 @@
 function orbis_edit_post_link() {
 	$text  = '';
 
-	$text .= '<i class="icon-pencil"></i>';
+	$text .= '<span class="glyphicon glyphicon-pencil"></span>';
 	$text .= sprintf(
 		'<span style="display: none">%s</span>',
 		__( 'Edit', 'orbis' )

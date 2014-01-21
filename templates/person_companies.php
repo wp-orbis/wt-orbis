@@ -8,7 +8,7 @@
 	$query = new WP_Query( array(
 	  'connected_type'  => 'orbis_persons_to_companies',
 	  'connected_items' => get_queried_object(),
-	  'nopaging'        => true,
+	  'nopaging'        => true
 	) );
 
 	if ( $query->have_posts() ) : ?>
@@ -37,7 +37,5 @@
 			</p>
 		</div>
 
-	<?php endif; ?>
-
-	<?php wp_reset_postdata(); ?>
+	<?php endif; wp_reset_postdata(); ?>
 </div>

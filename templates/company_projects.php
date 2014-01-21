@@ -18,7 +18,6 @@ if ( $query->have_posts() ) : ?>
 		</thead>
 
 		<tbody>
-	
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 			
 				<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -47,7 +46,6 @@ if ( $query->have_posts() ) : ?>
 				</tr>
 			
 			<?php endwhile; ?>
-		
 		</tbody>
 	</table>
 
@@ -59,10 +57,4 @@ if ( $query->have_posts() ) : ?>
 		</p>
 	</div>
 
-<?php endif; ?>
-
-<?php
-
-wp_reset_postdata();
-
-?>
+<?php endif; wp_reset_postdata(); ?>

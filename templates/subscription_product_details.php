@@ -38,9 +38,9 @@
 			<dt><?php _e( 'Auto Renew', 'orbis' ); ?></dt>
 			<dd>
 				<?php 
-				
+
 				$auto_renew = get_post_meta( get_the_ID(), '_orbis_subscription_product_auto_renew', true );
-				
+
 				echo $auto_renew ? __( 'Yes', 'orbis' ) : __( 'No', 'orbis' );
 
 				?>

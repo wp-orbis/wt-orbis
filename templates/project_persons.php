@@ -8,7 +8,7 @@
 	$query = new WP_Query( array(
 	  'connected_type'  => 'orbis_projects_to_persons',
 	  'connected_items' => get_queried_object(),
-	  'nopaging'        => true,
+	  'nopaging'        => true
 	) );
 
 	if ( $query->have_posts() ) : ?>
@@ -35,13 +35,13 @@
 						<p>
 							<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
 
-								<span><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></span> <br />
+								<span class="entry-meta"><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></span> <br />
 	
 							<?php endif; ?>
 	
 							<?php if ( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ) : ?>
 
-								<span><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></span>
+								<span class="entry-meta"><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></span>
 	
 							<?php endif; ?>
 						</p>
@@ -59,7 +59,5 @@
 			</p>
 		</div>
 
-	<?php endif; ?>
-
-	<?php wp_reset_postdata(); ?>
+	<?php endif; wp_reset_postdata(); ?>
 </div>

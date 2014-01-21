@@ -85,7 +85,7 @@ function orbis_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Frontpage Top Widget', 'orbis' ),
 		'id'            => 'frontpage-top-widget',
-		'before_widget' => '<div class="span6"><div id="%1$s" class="panel %2$s">',
+		'before_widget' => '<div class="col-md-6"><div id="%1$s" class="panel %2$s">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<header><h3 class="widget-title">',
 		'after_title'   => '</h3></header>'
@@ -94,7 +94,7 @@ function orbis_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Frontpage Bottom Widget', 'orbis' ),
 		'id'            => 'frontpage-bottom-widget',
-		'before_widget' => '<div class="span4"><div id="%1$s" class="panel %2$s">',
+		'before_widget' => '<div class="col-md-4"><div id="%1$s" class="panel %2$s">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<header><h3 class="widget-title">',
 		'after_title'   => '</h3></header>'
@@ -112,27 +112,35 @@ add_action( 'widgets_init', 'orbis_widgets_init' );
  * Enqueue scripts & styles
  */
 function orbis_load_scripts() {
-	wp_enqueue_script(
-		'bootstrap' ,
-		get_bloginfo( 'template_directory' ) . '/js/bootstrap.min.js' ,
-		array( 'jquery' )
-	);
-
-	wp_enqueue_style(
-		'bootstrap' ,
-		get_bloginfo( 'template_directory' ) . '/css/bootstrap.min.css'
-	);
-
-	wp_enqueue_style(
-		'bootstrap-responsive' ,
-		get_bloginfo( 'template_directory' ) . '/css/bootstrap-responsive.min.css'
+	wp_enqueue_script( 
+		'bootstrap', 
+		get_bloginfo( 'template_directory' ) . '/js/bootstrap.min.js', 
+		array( 'jquery' ),
+		'3.0.3',
+		true
 	);
 
 	wp_enqueue_script(
-		'app' ,
-		get_bloginfo( 'template_directory' ) . '/js/app.js' ,
-		array( 'jquery', 'bootstrap' )
+		'app',
+		get_bloginfo( 'template_directory' ) . '/js/app.js',
+		array( 'jquery', 'bootstrap' ),
+		'1.0.0',
+		true
 	);
+
+	/* Styles */
+	wp_enqueue_style( 
+		'bootstrap',
+		get_template_directory_uri() . '/css/bootstrap.min.css',
+		'3.0.3'
+	);
+
+	wp_enqueue_style( 
+		'orbis',
+		get_stylesheet_uri(),
+		'1.0.0'
+	);
+
 }
 
 add_action( 'wp_enqueue_scripts', 'orbis_load_scripts' );
@@ -145,16 +153,6 @@ function orbis_excerpt_length( $length ) {
 }
 
 add_filter( 'excerpt_length', 'orbis_excerpt_length' );
-
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- */
-function orbis_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
-}
-
-add_filter( 'wp_page_menu_args', 'orbis_page_menu_args' );
 
 /**
  * Walker for Bootstrap navigation

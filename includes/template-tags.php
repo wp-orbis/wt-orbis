@@ -1,6 +1,45 @@
 <?php
 
 /**
+ * Page title
+ */
+function orbis_wp_title( $title, $separator ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	$title .= get_bloginfo( 'name' );
+
+	$site_description = get_bloginfo( 'description', 'display' );
+
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $separator $site_description";
+
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $separator " . sprintf( __( 'Page %s', 'orbis' ), max( $paged, $page ) );
+
+	return $title;
+}
+
+add_filter( 'wp_title', 'orbis_wp_title', 10, 2 );
+
+/**
+ * Page menu
+ */
+function orbis_page_menu_args( $args ) {
+	$args['show_home'] = true;
+
+	return $args;
+}
+
+add_filter( 'wp_page_menu_args', 'orbis_page_menu_args' );
+
+
+///////////////////////////////////////////////
+
+
+/**
  * Display navigation to next/previous pages when applicable
  */
 function orbis_content_nav() {
@@ -20,11 +59,26 @@ function orbis_content_nav() {
 	<?php endif;
 }
 
+
+///////////////////////////////////////////////
+
+
 /**
- * Comments
+ * Enqueue comment reply script
+ */
+function orbis_enqueue_comments_reply() {
+	if ( get_option( 'thread_comments' ) )  {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action( 'comment_form_before', 'orbis_enqueue_comments_reply' );
+
+/**
+ * Template for comments and pingbacks.
  */
 function orbis_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
+
 	switch ( $comment->comment_type ) :
 		case '' :
 	?>

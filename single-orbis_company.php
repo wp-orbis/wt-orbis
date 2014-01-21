@@ -12,7 +12,7 @@
 		</div>
 
 		<div class="row">
-			<div class="span8">
+			<div class="col-md-8">
 				<?php do_action( 'orbis_before_main_content' ); ?>
 
 				<div class="panel">
@@ -32,7 +32,7 @@
 				<?php comments_template( '', true ); ?>
 			</div>
 
-			<div class="span4">
+			<div class="col-md-4">
 				<?php do_action( 'orbis_before_side_content' ); ?>
 				
 				<?php if ( function_exists( 'p2p_register_connection_type' ) ) : ?>
@@ -129,4 +129,4 @@
 
 <?php endwhile; ?>
 
-<?php get_footer();
+<?php get_footer(); ?>

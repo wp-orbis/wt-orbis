@@ -9,14 +9,14 @@
 	</div>
 
 	<div class="row">
-		<div class="span8">
+		<div class="col-md-8">
 			<div class="panel with-cols clearfix">
 				<header>
 					<h3><?php _e( 'About this person', 'orbis' ); ?></h3>
 				</header>
 				
-				<div class="row-fluid">
-					<div class="span7">
+				<div class="row">
+					<div class="col-md-7">
 						<div class="content">
 							<div class="thumbnail">
 								<?php if ( has_post_thumbnail() ) : ?>
@@ -34,7 +34,7 @@
 						</div>
 					</div>
 					
-					<div class="span5">
+					<div class="col-md-5">
 						<div class="content">
 							<dl>
 								<?php if ( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ) : ?>
@@ -120,7 +120,7 @@
 			<?php comments_template( '', true ); ?>
 		</div>
 	
-		<div class="span4">
+		<div class="col-md-4">
 			<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) ) : ?>
 			
 				<?php $username = get_post_meta( $post->ID, '_orbis_person_twitter', true ); ?>
@@ -174,4 +174,4 @@
 
 <?php endwhile; ?>
 
-<?php get_footer();
+<?php get_footer(); ?>

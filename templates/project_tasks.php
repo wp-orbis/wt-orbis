@@ -3,7 +3,7 @@
 $query = new WP_Query( array(
 	'post_type'          => 'orbis_task',
 	'posts_per_page'     => 25,
-	'orbis_task_project' => get_the_ID(),
+	'orbis_task_project' => get_the_ID()
 ) );
 
 if ( $query->have_posts() ) : ?>

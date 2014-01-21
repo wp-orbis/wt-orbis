@@ -30,7 +30,7 @@
 	<?php if ( is_post_type_archive() ) : ?>
 
 		<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
-			<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add new', 'orbis' ); ?>
+			<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add new', 'orbis' ); ?>
 		</a>
 	
 	<?php endif; ?>
@@ -62,14 +62,14 @@
 
 							<td>
 								<?php
-							
+
 								$post_type = get_post_type_object( get_post_type( $post ) ); 
 
 								echo $post_type->labels->singular_name; 
 
 								?>
 							</td>
-						
+
 						<?php endif; ?>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -83,7 +83,7 @@
 							</div>
 						</td>
 					</tr>
-	
+
 				<?php endwhile; ?>
 			</tbody>
 		</table>
@@ -101,4 +101,4 @@
 
 <?php orbis_content_nav(); ?>
 
-<?php get_footer();
+<?php get_footer(); ?>

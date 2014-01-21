@@ -13,11 +13,14 @@ if ( is_post_type_archive() ) {
 ?>
 
 <div class="well">
-	<form method="get" action="<?php echo esc_attr( $action_url ); ?>">
+	<form class="form-inline" method="get" action="<?php echo esc_attr( $action_url ); ?>">
 		<div class="form-search">
-			<input type="text" class="input-medium search-query" name="s" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php echo esc_attr( $s ); ?>" />
+			<div class="form-group">
+				<label for="orbis_search_query" class="sr-only"><?php _e( 'Search', 'orbis' ); ?></label>
+				<input id="orbis_search_query" type="search" class="form-control" name="s" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php echo esc_attr( $s ); ?>" />
+			</div>
 
-			<button type="submit" class="btn"><?php _e( 'Search', 'orbis' ); ?></button> 
+			<button type="submit" class="btn btn-default"><?php _e( 'Search', 'orbis' ); ?></button> 
 			
 			<?php if ( $has_advanced) : ?>
 
@@ -34,11 +37,12 @@ if ( is_post_type_archive() ) {
 						'name'             => 'orbis_task_assignee',
 						'selected'         => filter_input( INPUT_GET, 'orbis_task_assignee', FILTER_SANITIZE_STRING ),
 						'show_option_none' => __( '&mdash; Select Assignee &mdash;', 'orbis' ),
+						'class'            => 'form-control'
 					) );
 
 					?>
 
-					<button class="btn" type="submit"><?php _e( 'Filter', 'orbis' ); ?></button>
+					<button class="btn btn-default" type="submit"><?php _e( 'Filter', 'orbis' ); ?></button>
 				</div>
 
 			<?php endif; ?>
@@ -57,24 +61,28 @@ if ( is_post_type_archive() ) {
 			<div id="advanced-search" class="<?php echo $is_advanced ? 'in' : 'collapse'; ?>">
 				<fieldset>
 					<legend><?php _e( 'Advanced Search', 'orbis' ); ?></legend>
-		
-					<label for="orbis_project_principal"><?php _e( 'Client', 'orbis' ); ?></label>
-					<input id="orbis_project_principal" name="orbis_project_principal" value="<?php echo esc_attr( $principal ); ?>" type="text" placeholder="<?php _e( 'Search on Client', 'orbis' ); ?>">
-					
+
+  					<div class="form-group">
+						<label for="orbis_project_principal"><?php _e( 'Client', 'orbis' ); ?></label>
+						<input id="orbis_project_principal" class="form-control" name="orbis_project_principal" value="<?php echo esc_attr( $principal ); ?>" type="text" placeholder="<?php _e( 'Search on Client', 'orbis' ); ?>">
+					</div>
+
 					<?php if ( function_exists( 'orbis_finance_bootstrap' ) ) : ?>
-					
-						<label for="orbis_project_invoice_number"><?php _e( 'Invoice Number', 'orbis' ); ?></label>
-						<input id="orbis_project_invoice_number" name="orbis_project_invoice_number" value="<?php echo esc_attr( $invoice_number ); ?>" type="text" placeholder="<?php _e( 'Search on Invoice Number', 'orbis' ); ?>">
-					
+
+						<div class="form-group">
+							<label for="orbis_project_invoice_number"><?php _e( 'Invoice Number', 'orbis' ); ?></label>
+							<input id="orbis_project_invoice_number" name="orbis_project_invoice_number" value="<?php echo esc_attr( $invoice_number ); ?>" type="text" placeholder="<?php _e( 'Search on Invoice Number', 'orbis' ); ?>">
+						</div>
+
 					<?php endif; ?>
-		
-					<div>
+
+					<div class="form-footer">
 						<button type="submit" class="btn btn-primary"><?php _e( 'Search', 'orbis' ); ?></button>
-						<button type="button" class="btn" data-toggle="collapse" data-target="#advanced-search"><?php _e( 'Cancel', 'orbis' ); ?></button>
+						<button type="button" class="btn btn-default" data-toggle="collapse" data-target="#advanced-search"><?php _e( 'Cancel', 'orbis' ); ?></button>
 					</div>
 				</fieldset>
 			</div>
-		
+
 		<?php endif; ?>
 	</form>
 </div>

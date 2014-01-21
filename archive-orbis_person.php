@@ -16,7 +16,7 @@
 	</h1>
 
 	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
-		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add person', 'orbis' ); ?>
+		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add person', 'orbis' ); ?>
 	</a>
 </div>
   
@@ -62,13 +62,13 @@
 									<p>
 										<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
 						
-											<span><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></span> <br />
+											<span class="entry-meta"><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></span> <br />
 										
 										<?php endif; ?>
 										
 										<?php if ( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ) : ?>
 						
-											<span><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></span>
+											<span class="entry-meta"><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></span>
 										
 										<?php endif; ?>
 									</p>
@@ -114,4 +114,4 @@
 
 <?php orbis_content_nav(); ?>
 
-<?php get_footer();
+<?php get_footer(); ?>

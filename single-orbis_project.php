@@ -24,7 +24,7 @@
 	</div>
 	
 	<div class="row">
-		<div class="span8">
+		<div class="col-md-8">
 			<div class="panel">
 				<header>
 					<h3><?php _e( 'Description', 'orbis' ); ?></h3>
@@ -42,7 +42,7 @@
 			<?php comments_template( '', true ); ?>
 		</div>
 	
-		<div class="span4">
+		<div class="col-md-4">
 			<?php if ( function_exists( 'orbis_project_the_time' ) && is_singular( 'orbis_project' ) ) : ?>
 			
 				<div class="panel">
@@ -187,4 +187,4 @@
 
 <?php endwhile; ?>
 
-<?php get_footer();
+<?php get_footer(); ?>
