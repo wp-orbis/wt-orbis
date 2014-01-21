@@ -5,104 +5,73 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>
-			<?php
-
-			global $page, $paged;
-
-			wp_title( '|', true, 'right' );
-
-			bloginfo( 'name' );
-
-			$site_description = get_bloginfo( 'description', 'display' );
-
-			if ( $site_description && ( is_home() || is_front_page() ) ) {
-				echo ' | ' . $site_description;
-			}
-
-			if ( $paged >= 2 || $page >= 2 ) {
-				echo ' | ' . sprintf( __( 'Page %s', 'orbis' ), max( $paged, $page ) );
-			}
-
-			?>
-		</title>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
 
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-
 		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
 
-		<?php
-
-		if( is_singular() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
-		}
-
-		wp_head();
-
-		?>
+		<?php wp_head(); ?>
 	</head>
 
 	<body <?php body_class(); ?>>
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-navbar-collapse">
+						<span class="sr-only"><?php _e( 'Toggle navigation', 'orbis' ); ?></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
-					</a>
+					</button>
 
-					<a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+					<a class="navbar-brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+				</div>
+	
+				<div class="collapse navbar-collapse" id="primary-navbar-collapse">
+					<?php
 
-					<div class="nav-collapse">
-						<?php
+					wp_nav_menu( array(
+						'container'      => false,
+						'theme_location' => 'primary',
+						'menu_class'     => 'nav navbar-nav',
+						'fallback_cb'    => '',
+						'walker'         => new Bootstrap_Walker_Nav_Menu()
+					) );
+					
+					$s = filter_input( INPUT_GET, 's', FILTER_SANITIZE_STRING ); ?>
 
-						wp_nav_menu( array(
-							'container'      => false,
-							'theme_location' => 'primary',
-							'menu_class'     => 'nav navbar-nav',
-							'fallback_cb'    => '',
-							'walker'         => new Bootstrap_Walker_Nav_Menu()
-						) );
+					<?php if ( is_user_logged_in() ) : global $current_user; get_currentuserinfo(); ?>
 
-						$s = filter_input( INPUT_GET, 's', FILTER_SANITIZE_STRING );
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown">
+								<a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo get_avatar( $current_user->ID, 20 ); ?> <?php echo $current_user->display_name; ?> <b class="caret"></b></a>
 
-						?>
+								<ul class="dropdown-menu">
+									<li><a href="http://orbiswp.com/help/"><span class="glyphicon glyphicon-question-sign"></span> <?php _e( 'Help', 'orbis' ); ?></a></li>
+									<li><a href="<?php echo admin_url( 'profile.php' ); ?>"><span class="glyphicon glyphicon-user"></span> <?php _e( 'Edit profile', 'orbis' ); ?></a></li>
+									<li class="divider"></li>
+									<li><a href="<?php echo wp_logout_url(); ?>"><span class="glyphicon glyphicon-off"></span> <?php _e( 'Log out', 'orbis' ); ?></a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a data-toggle="dropdown" class="dropdown-toggle search-btn" href="#"><span class="glyphicon glyphicon-search"></span></a>
 
-						<form method="get" class="navbar-search pull-left" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                      		<input type="text" name="s" class="search-query span2" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php echo esc_attr( $s ); ?>">
-                    	</form>
+								<div class="dropdown-menu">
+									<form method="get" class="navbar-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+										<div class="form-group">
+											<input type="search" name="s" class="form-control search-input" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php echo esc_attr( $s ); ?>">
+										</div>
+									</form>
+								</div>
+							</li>
+						</ul>
 
-						<?php if ( is_user_logged_in() ) : ?>
-
-							<?php
-
-							global $current_user;
-
-							get_currentuserinfo();
-
-							?>
-
-							<ul class="nav pull-right">
-								<li class="dropdown">
-									<a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo get_avatar( $current_user->ID, 20 ); ?> <?php echo $current_user->display_name; ?> <b class="caret"></b></a>
-
-									<ul class="dropdown-menu">
-										<li><a href="http://orbiswp.com/help/"><i class="icon-question-sign"></i> <?php _e( 'Help', 'orbis' ); ?></a></li>
-										<li><a href="<?php echo admin_url( 'profile.php' ); ?>"><i class="icon-user"></i> <?php _e( 'Edit profile', 'orbis' ); ?></a></li>
-										<li class="divider"></li>
-										<li><a href="<?php echo wp_logout_url(); ?>""><i class="icon-off"></i> <?php _e( 'Log out', 'orbis' ); ?></a></li>
-									</ul>
-								</li>
-							</ul>
-
-						<?php endif; ?>
-					</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

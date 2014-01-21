@@ -24,7 +24,7 @@
 	</div>
 	
 	<div class="row">
-		<div class="span8">
+		<div class="col-md-8">
 			<div class="panel">
 				<header>
 					<h3><?php _e( 'Description', 'orbis' ); ?></h3>
@@ -35,59 +35,14 @@
 				</div>
 			</div>
 			
-			<?php 
-
-			$project_sections = apply_filters( 'orbis_project_sections', array() );
-
-			if ( ! empty( $project_sections ) ): ?>
-
-				<div class="panel with-cols clearfix">
-					<header class="with-tabs">
-						<ul id="tabs" class="nav nav-tabs">
-							<?php $active = true; foreach ( $project_sections as $section ) : ?>
-
-
-								<li class="<?php echo $active ? 'active' : ''; ?>">
-									<a href="#<?php echo $section['id']; ?>"><?php echo $section['name']; ?></a>
-								</li>
-
-							<?php $active = false; endforeach; ?>
-						</ul>
-					</header>
-
-					<div class="tab-content">
-						<?php $active = true; foreach ( $project_sections as $section ) : ?>
-
-							<div id="<?php echo $section['id']; ?>" class="tab-pane <?php echo $active ? 'active' : ''; ?>">
-								<?php
-
-								if ( isset( $section['action'] ) ) {
-									do_action( $section['action'] );
-								}
-
-								if ( isset( $section['callback'] ) ) {
-									call_user_func( $section['callback'] );
-								}
-
-								if ( isset( $section['template_part'] ) ) {
-									get_template_part( $section['template_part'] );
-								}
-
-								?>
-							</div>
-
-						<?php $active = false; endforeach; ?>
-					</div>
-				</div>
-			
-			<?php endif; ?>
+			<?php get_template_part( 'templates/project_sections' ); ?>
 
 			<?php do_action( 'orbis_after_main_content' ); ?>
 	
 			<?php comments_template( '', true ); ?>
 		</div>
 	
-		<div class="span4">
+		<div class="col-md-4">
 			<?php if ( function_exists( 'orbis_project_the_time' ) && is_singular( 'orbis_project' ) ) : ?>
 			
 				<div class="panel">
@@ -221,9 +176,15 @@
 					</dl>
 				</div>
 			</div>
+			
+			<?php if ( function_exists( 'p2p_register_connection_type' ) ) : ?>
+			
+				<?php get_template_part( 'templates/project_persons' ); ?>
+			
+			<?php endif; ?>
 		</div>
 	</div>
 
 <?php endwhile; ?>
 
-<?php get_footer();
+<?php get_footer(); ?>

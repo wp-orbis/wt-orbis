@@ -15,8 +15,8 @@
 		</small>
 	</h1>
 
-	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">		
-		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add company', 'orbis' ); ?>
+	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
+		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add task', 'orbis' ); ?>
 	</a>
 </div>
 
@@ -32,7 +32,11 @@
 		<table class="table table-striped table-bordered table-condense table-hover">
 			<thead>
 				<tr>
-					<th><?php _e( 'Name', 'orbis' ); ?></th>
+					<th><?php _e( 'Assignee', 'orbis' ); ?></th>
+					<th><?php _e( 'Project', 'orbis' ); ?></th>
+					<th><?php _e( 'Task', 'orbis' ); ?></th>
+					<th><?php _e( 'Due At', 'orbis' ); ?></th>
+					<th><?php _e( 'Time', 'orbis' ); ?></th>
 					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 				</tr>
 			</thead>
@@ -41,33 +45,39 @@
 		
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
-							<?php if ( get_post_meta( $post->ID, '_orbis_company_website', true ) ) : ?>
-								
-								<?php $favicon_url = add_query_arg( 'domain', get_post_meta( $post->ID, '_orbis_company_website', true ), 'https://plus.google.com/_/favicon' ); ?>
-								
-								<img src="<?php echo esc_attr( $favicon_url ); ?>" alt="" />
-
-							<?php endif; ?>
-
+							<?php orbis_task_assignee(); ?>
+						</td>
+						<td>
+							<?php orbis_task_project(); ?>
+						</td>
+						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</td>
+						<td>
+							<?php orbis_task_due_at(); ?>
+						</td>
+						<td class="task-time">
+							<?php orbis_task_time(); ?>
 						</td>
 						<td>
 							<div class="actions">
 								<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
 							
 								<div class="nubbin">
-									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+									<?php orbis_edit_post_link(); ?>
+								
+									<?php orbis_finish_task_link(); ?>
 								</div>
 							</div>
 						</td>
 					</tr>
-	
+
 				<?php endwhile; ?>
 			</tbody>
 		</table>
-
+	
 	<?php else : ?>
-
+	
 		<div class="content">
 			<p class="alt">
 				<?php _e( 'No results found.', 'orbis' ); ?>

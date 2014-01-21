@@ -60,37 +60,29 @@
 
 <div class="panel">
 	<div class="content stats">
-		<div class="row-fluid">
-			<div class="span3 col">
-				<?php $query = new WP_Query( array( 'post_type' => 'post' ) ); ?>
+		<div class="row">
+			<div class="col-md-3">
+				<?php $count_posts = wp_count_posts(); ?>
 
-				<span><?php _e( 'Posts', 'orbis' ); ?></span> <p class="important"><?php echo $query->found_posts; ?></p>
-
-				<?php wp_reset_postdata(); ?>
+				<span class="entry-meta"><?php _e( 'Posts', 'orbis' ); ?></span> <p class="important"><?php echo $count_posts->publish; ?></p>
 			</div>
 
-			<div class="span3 col">
-				<?php $query = new WP_Query( array( 'post_type' => 'orbis_company' ) ); ?>
+			<div class="col-md-3">
+				<?php $count_posts = wp_count_posts( 'orbis_company' ); ?>
 
-				<span><?php _e( 'Companies', 'orbis' ); ?></span> <p class="important"><?php echo $query->found_posts; ?></p>
-
-				<?php wp_reset_postdata(); ?>
+				<span class="entry-meta"><?php _e( 'Companies', 'orbis' ); ?></span> <p class="important"><?php echo $count_posts->publish; ?></p>
 			</div>
 			
-			<div class="span3 col">
-				<?php $query = new WP_Query( array( 'post_type' => 'orbis_project' ) ); ?>
+			<div class="col-md-3">
+				<?php $count_posts = wp_count_posts( 'orbis_project' ); ?>
 
-				<span><?php _e( 'Projects', 'orbis' ); ?></span> <p class="important"><?php echo $query->found_posts; ?></p>
-
-				<?php wp_reset_postdata(); ?>
+				<span class="entry-meta"><?php _e( 'Projects', 'orbis' ); ?></span> <p class="important"><?php echo $count_posts->publish; ?></p>
 			</div>
 
-			<div class="span3 col">
-				<?php $query = new WP_Query( array( 'post_type' => 'orbis_person' ) ); ?>
+			<div class="col-md-3">
+				<?php $count_posts = wp_count_posts( 'orbis_person' ); ?>
 
-				<span><?php _e( 'Persons', 'orbis' ); ?></span> <p class="important"><?php echo $query->found_posts; ?></p>
-
-				<?php wp_reset_postdata(); ?>
+				<span class="entry-meta"><?php _e( 'Persons', 'orbis' ); ?></span> <p class="important"><?php echo $count_posts->publish; ?></p>
 			</div>
 		</div>
 	</div>
@@ -120,7 +112,7 @@
 			'number'         => 8, 
 			'title'          => __( 'Companies', 'orbis' ) 
 		), array( 
-			'before_widget'  => '<div class="span4"><div class="panel">',
+			'before_widget'  => '<div class="col-md-4"><div class="panel">',
 			'after_widget'   => '</div></div>',
 			'before_title'   => '<header><h3 class="widget-title">',
 			'after_title'    => '</h3></header>' 
@@ -135,7 +127,7 @@
 			'number'         => 8, 
 			'title'          => __( 'Projects', 'orbis' ) 
 		), array( 
-			'before_widget'  => '<div class="span4"><div class="panel">',
+			'before_widget'  => '<div class="col-md-4"><div class="panel">',
 			'after_widget'   => '</div></div>',
 			'before_title'   => '<header><h3 class="widget-title">',
 			'after_title'    => '</h3></header>' 
@@ -150,7 +142,7 @@
 			'number'         => 8, 
 			'title'          => __( 'Persons', 'orbis' ) 
 		), array( 
-			'before_widget'  => '<div class="span4"><div class="panel">',
+			'before_widget'  => '<div class="col-md-4"><div class="panel">',
 			'after_widget'   => '</div></div>',
 			'before_title'   => '<header><h3 class="widget-title">',
 			'after_title'    => '</h3></header>' 
@@ -161,4 +153,4 @@
 
 <?php endif; ?>
 
-<?php get_footer();
+<?php get_footer(); ?>

@@ -15,8 +15,8 @@
 		</small>
 	</h1>
 
-	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">		
-		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add company', 'orbis' ); ?>
+	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
+		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add subscription product', 'orbis' ); ?>
 	</a>
 </div>
 
@@ -32,24 +32,44 @@
 		<table class="table table-striped table-bordered table-condense table-hover">
 			<thead>
 				<tr>
-					<th><?php _e( 'Name', 'orbis' ); ?></th>
+					<th><?php _e( 'Title', 'orbis' ); ?></th>
+					<th><?php _e( 'Price', 'orbis' ); ?></th>
+					<th><?php _e( 'Cost Price', 'orbis' ); ?></th>
 					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php while ( have_posts() ) : the_post(); ?>
-		
+	
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
-							<?php if ( get_post_meta( $post->ID, '_orbis_company_website', true ) ) : ?>
-								
-								<?php $favicon_url = add_query_arg( 'domain', get_post_meta( $post->ID, '_orbis_company_website', true ), 'https://plus.google.com/_/favicon' ); ?>
-								
-								<img src="<?php echo esc_attr( $favicon_url ); ?>" alt="" />
-
-							<?php endif; ?>
-
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</td>
+						<td>
+							<?php 
+							
+							$price = get_post_meta( get_the_ID(), '_orbis_subscription_product_price', true );
+							
+							if ( empty( $price ) ) {
+								echo '&mdash;';
+							} else {
+								echo orbis_price( $price );
+							}
+
+							?>
+						</td>
+						<td>
+							<?php 
+							
+							$price = get_post_meta( get_the_ID(), '_orbis_subscription_product_cost_price', true );
+							
+							if ( empty( $price ) ) {
+								echo '&mdash;';
+							} else {
+								echo orbis_price( $price );
+							}
+							
+							?>
 						</td>
 						<td>
 							<div class="actions">

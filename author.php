@@ -18,7 +18,7 @@
 		</h1>
 	
 		<a class="btn btn-primary pull-right" href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php">
-			<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add post', 'orbis' ); ?>
+			<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add post', 'orbis' ); ?>
 		</a>
 	</div>
 	
@@ -28,4 +28,4 @@
 
 <?php endif; ?>
 
-<?php get_footer();
+<?php get_footer(); ?>

@@ -10,4 +10,4 @@
 	<?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for.', 'orbis' ); ?>
 </p>
 
-<?php get_footer();
+<?php get_footer(); ?>

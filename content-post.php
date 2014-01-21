@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="span8">
+	<div class="col-md-8">
 		<div class="panel">
 			<header>
 				<h3><?php _e( 'News', 'orbis' ); ?></h3>
@@ -107,7 +107,7 @@
 		<?php orbis_content_nav(); ?>
 	</div>
 
-	<div class="span4">
+	<div class="col-md-4">
 		<div class="panel">
 			<header>
 				<h3><?php _e( 'Categories', 'orbis' ); ?></h3>

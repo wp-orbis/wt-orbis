@@ -15,8 +15,8 @@
 		</small>
 	</h1>
 
-	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
-		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add project', 'orbis' ); ?>
+	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">	
+		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add project', 'orbis' ); ?>
 	</a>
 </div>
 
@@ -36,7 +36,6 @@
 					<th><?php _e( 'Project', 'orbis' ); ?></th>
 					<th><?php _e( 'Time', 'orbis' ); ?></th>
 					<th><?php _e( 'Comments', 'orbis' ); ?></th>
-					<th><?php _e( 'Actions', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -78,11 +77,12 @@
 							<?php endif; ?>
 						</td>
 						<td>
-							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
-						</td>
-						<td>
 							<div class="actions">
-								<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
+							
+								<div class="nubbin">
+									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								</div>
 							</div>
 						</td>
 					</tr>
@@ -104,4 +104,4 @@
 
 <?php orbis_content_nav(); ?>
 
-<?php get_footer();
+<?php get_footer(); ?>

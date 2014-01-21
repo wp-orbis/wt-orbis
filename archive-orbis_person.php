@@ -16,7 +16,7 @@
 	</h1>
 
 	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
-		<i class="icon-plus-sign icon-white"></i> <?php _e( 'Add person', 'orbis' ); ?>
+		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add person', 'orbis' ); ?>
 	</a>
 </div>
   
@@ -34,7 +34,7 @@
 				<tr>
 					<th><?php _e( 'Name', 'orbis' ); ?></th>
 					<th><?php _e( 'Comments', 'orbis' ); ?></th>
-					<th colspan="2"><?php _e( 'Actions', 'orbis' ); ?></th>
+					<th><?php _e( 'Actions', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 		
@@ -62,13 +62,13 @@
 									<p>
 										<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
 						
-											<span><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></span> <br />
+											<span class="entry-meta"><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></span> <br />
 										
 										<?php endif; ?>
 										
 										<?php if ( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ) : ?>
 						
-											<span><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></span>
+											<span class="entry-meta"><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></span>
 										
 										<?php endif; ?>
 									</p>
@@ -80,19 +80,20 @@
 						</td>
 						<td>
 							<div class="actions">
-								<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								<?php
+		
+								$phone_number = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
+		
+								if ( ! empty( $phone_number ) && function_exists( 'orbis_snom_call_form' ) ) {
+									orbis_snom_call_form( $phone_number );
+								}
+		
+								?>
+
+								<div class="nubbin">
+									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								</div>
 							</div>
-						</td>
-						<td>
-							<?php
-		
-							$phone_number = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
-		
-							if ( ! empty( $phone_number ) && function_exists( 'orbis_snom_call_form' ) ) {
-								orbis_snom_call_form( $phone_number );
-							}
-		
-							?>
 						</td>
 					</tr>
 				
@@ -113,4 +114,4 @@
 
 <?php orbis_content_nav(); ?>
 
-<?php get_footer();
+<?php get_footer(); ?>
