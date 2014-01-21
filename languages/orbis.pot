@@ -1,14 +1,14 @@
-# Copyright (C) 2013 Pronamic
+# Copyright (C) 2014 Pronamic
 # This file is distributed under the same license as the Orbis package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orbis 1.0.0\n"
+"Project-Id-Version: Orbis 1.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/orbis\n"
-"POT-Creation-Date: 2013-12-17 11:30:13+00:00\n"
+"POT-Creation-Date: 2014-01-21 10:37:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -104,7 +104,7 @@ msgid "Add project"
 msgstr ""
 
 #: archive-orbis_project.php:35 single-orbis_project.php:86
-#: templates/search_form.php:61
+#: templates/search_form.php:66
 msgid "Client"
 msgstr ""
 
@@ -294,45 +294,46 @@ msgstr ""
 msgid "Persons"
 msgstr ""
 
-#: functions.php:43
+#: functions.php:42
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:75
+#: functions.php:77
 msgid "Main Widget"
 msgstr ""
 
-#: functions.php:84
+#: functions.php:86
 msgid "Frontpage Top Widget"
 msgstr ""
 
-#: functions.php:93
+#: functions.php:95
 msgid "Frontpage Bottom Widget"
 msgstr ""
 
-#: functions.php:294
+#: functions.php:297
 msgid "No description."
 msgstr ""
 
-#: header.php:24
-msgid "Page %s"
+#: header.php:26
+msgid "Toggle navigation"
 msgstr ""
 
-#: header.php:78 index.php:7 templates/search_form.php:18
-#: templates/search_form.php:20 templates/search_form.php:72
-msgid "Search"
-msgstr ""
-
-#: header.php:96
+#: header.php:55
 msgid "Help"
 msgstr ""
 
-#: header.php:97
+#: header.php:56
 msgid "Edit profile"
 msgstr ""
 
-#: header.php:99
+#: header.php:58
 msgid "Log out"
+msgstr ""
+
+#: header.php:67 index.php:7 templates/search_form.php:19
+#: templates/search_form.php:20 templates/search_form.php:23
+#: templates/search_form.php:80
+msgid "Search"
 msgstr ""
 
 #: home.php:8
@@ -343,35 +344,39 @@ msgstr ""
 msgid "Tasks"
 msgstr ""
 
-#: includes/template-tags.php:13
+#: includes/template-tags.php:20
+msgid "Page %s"
+msgstr ""
+
+#: includes/template-tags.php:52
 msgid "&larr; Previous"
 msgstr ""
 
-#: includes/template-tags.php:16
+#: includes/template-tags.php:55
 msgid "Next &rarr;"
 msgstr ""
 
-#: includes/template-tags.php:36
+#: includes/template-tags.php:90
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: includes/template-tags.php:41
+#: includes/template-tags.php:95
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: includes/template-tags.php:46
+#: includes/template-tags.php:100
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: includes/template-tags.php:46 includes/template-tags.php:64
+#: includes/template-tags.php:100 includes/template-tags.php:118
 msgid "(Edit)"
 msgstr ""
 
-#: includes/template-tags.php:64
+#: includes/template-tags.php:118
 msgid "Pingback:"
 msgstr ""
 
-#: includes/template-tags.php:74
+#: includes/template-tags.php:128
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
 "\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
@@ -380,7 +385,7 @@ msgid ""
 "rel=\"author\">%7$s</a></span></span>"
 msgstr ""
 
-#: includes/template-tags.php:80
+#: includes/template-tags.php:134
 msgid "View all posts by %s"
 msgstr ""
 
@@ -396,7 +401,8 @@ msgstr ""
 msgid "Show all"
 msgstr ""
 
-#: includes/widgets.php:134 includes/widgets.php:286
+#: includes/widgets.php:134 includes/widgets.php:286 includes/widgets.php:415
+#: includes/widgets.php:555
 msgid "Title:"
 msgstr ""
 
@@ -404,7 +410,7 @@ msgstr ""
 msgid "Post type:"
 msgstr ""
 
-#: includes/widgets.php:159
+#: includes/widgets.php:159 includes/widgets.php:422 includes/widgets.php:562
 msgid "Number:"
 msgstr ""
 
@@ -414,6 +420,54 @@ msgstr ""
 
 #: includes/widgets.php:248
 msgid "More news"
+msgstr ""
+
+#: includes/widgets.php:313
+msgid "Orbis Tasks"
+msgstr ""
+
+#: includes/widgets.php:363
+msgid "%d days"
+msgstr ""
+
+#: includes/widgets.php:372
+msgid "Project:"
+msgstr ""
+
+#: includes/widgets.php:372
+msgid "Deadline:"
+msgstr ""
+
+#: includes/widgets.php:372
+msgid "Time:"
+msgstr ""
+
+#: includes/widgets.php:380
+msgid "Show all tasks"
+msgstr ""
+
+#: includes/widgets.php:386
+msgid "Grab a beer, no tasks for you."
+msgstr ""
+
+#: includes/widgets.php:454
+msgid "Orbis Comments"
+msgstr ""
+
+#: includes/widgets.php:492
+msgid "Keychain"
+msgstr ""
+
+#: includes/widgets.php:495
+msgid "Subscription"
+msgstr ""
+
+#: includes/widgets.php:498
+msgid "Comment"
+msgstr ""
+
+#: includes/widgets.php:514
+msgid "<span class=\"entry-meta\">Posted by %1$s on %2$s</span>"
 msgstr ""
 
 #: index.php:33
@@ -574,7 +628,7 @@ msgstr ""
 msgid "KvK Number"
 msgstr ""
 
-#: templates/company_projects.php:58
+#: templates/company_projects.php:56
 msgid "No projects found."
 msgstr ""
 
@@ -598,31 +652,31 @@ msgstr ""
 msgid "No tasks found."
 msgstr ""
 
-#: templates/search_form.php:24 templates/search_form.php:59
+#: templates/search_form.php:27 templates/search_form.php:63
 msgid "Advanced Search"
 msgstr ""
 
-#: templates/search_form.php:36
+#: templates/search_form.php:39
 msgid "&mdash; Select Assignee &mdash;"
 msgstr ""
 
-#: templates/search_form.php:41
+#: templates/search_form.php:45
 msgid "Filter"
 msgstr ""
 
-#: templates/search_form.php:62
+#: templates/search_form.php:67
 msgid "Search on Client"
 msgstr ""
 
-#: templates/search_form.php:66
+#: templates/search_form.php:73
 msgid "Invoice Number"
 msgstr ""
 
-#: templates/search_form.php:67
+#: templates/search_form.php:74
 msgid "Search on Invoice Number"
 msgstr ""
 
-#: templates/search_form.php:73
+#: templates/search_form.php:81
 msgid "Cancel"
 msgstr ""
 
@@ -638,6 +692,10 @@ msgstr ""
 msgid "Orbis"
 msgstr ""
 
+#. Theme URI of the plugin/theme
+msgid "http://wp.pronamic.eu/themes/orbis/"
+msgstr ""
+
 #. Description of the plugin/theme
 msgid "The theme for Orbis based on Bootstrap."
 msgstr ""
@@ -648,6 +706,10 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://www.pronamic.nl/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Content in panel"
 msgstr ""
 
 #. Template Name of the plugin/theme
