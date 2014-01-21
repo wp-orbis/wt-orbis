@@ -71,7 +71,7 @@ if ( is_post_type_archive() ) {
 
 						<div class="form-group">
 							<label for="orbis_project_invoice_number"><?php _e( 'Invoice Number', 'orbis' ); ?></label>
-							<input id="orbis_project_invoice_number" name="orbis_project_invoice_number" value="<?php echo esc_attr( $invoice_number ); ?>" type="text" placeholder="<?php _e( 'Search on Invoice Number', 'orbis' ); ?>">
+							<input id="orbis_project_invoice_number" class="form-control" name="orbis_project_invoice_number" value="<?php echo esc_attr( $invoice_number ); ?>" type="text" placeholder="<?php _e( 'Search on Invoice Number', 'orbis' ); ?>">
 						</div>
 
 					<?php endif; ?>
