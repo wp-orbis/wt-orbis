@@ -57,7 +57,7 @@
 								<?php orbis_subscription_the_price(); ?>
 							
 								<div class="nubbin">
-									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+									<?php orbis_edit_post_link(); ?>
 								</div>
 							</div>
 						</td>

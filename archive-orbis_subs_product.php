@@ -76,7 +76,7 @@
 								<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
 							
 								<div class="nubbin">
-									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+									<?php orbis_edit_post_link(); ?>
 								</div>
 							</div>
 						</td>
