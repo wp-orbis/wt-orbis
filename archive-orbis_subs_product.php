@@ -35,7 +35,6 @@
 					<th><?php _e( 'Title', 'orbis' ); ?></th>
 					<th><?php _e( 'Price', 'orbis' ); ?></th>
 					<th><?php _e( 'Cost Price', 'orbis' ); ?></th>
-					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -44,6 +43,15 @@
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
+							<?php if ( get_comments_number() != 0  ) : ?>
+							
+								<div class="comments-number">
+									<span class="glyphicon glyphicon-comment"></span>
+									<?php comments_number( '0', '1', '%' ); ?>
+								</div>
+							
+							<?php endif; ?>
 						</td>
 						<td>
 							<?php 
@@ -59,21 +67,18 @@
 							?>
 						</td>
 						<td>
-							<?php 
-							
-							$price = get_post_meta( get_the_ID(), '_orbis_subscription_product_cost_price', true );
-							
-							if ( empty( $price ) ) {
-								echo '&mdash;';
-							} else {
-								echo orbis_price( $price );
-							}
-							
-							?>
-						</td>
-						<td>
 							<div class="actions">
-								<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
+								<?php 
+							
+								$price = get_post_meta( get_the_ID(), '_orbis_subscription_product_cost_price', true );
+							
+								if ( empty( $price ) ) {
+									echo '&mdash;';
+								} else {
+									echo orbis_price( $price );
+								}
+							
+								?>
 							
 								<div class="nubbin">
 									<?php orbis_edit_post_link(); ?>
