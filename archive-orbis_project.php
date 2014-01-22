@@ -35,7 +35,6 @@
 					<th><?php _e( 'Client', 'orbis' ); ?></th>
 					<th><?php _e( 'Project', 'orbis' ); ?></th>
 					<th><?php _e( 'Time', 'orbis' ); ?></th>
-					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -59,26 +58,32 @@
 						</td>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</td>
-						<td class="project-time">
-							<?php if ( function_exists( 'orbis_project_the_time' ) ) orbis_project_the_time(); ?>
 
-							<?php if ( function_exists( 'orbis_project_the_logged_time' ) ) : ?>
-
-								<?php 
-
-								$classes = array();
-								$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
-
-								?>
-
-								<span class="<?php echo implode( $classes, ' ' ); ?>"><?php orbis_project_the_logged_time(); ?></span>
-
+							<?php if ( get_comments_number() != 0  ) : ?>
+							
+								<div class="comments-number">
+									<span class="glyphicon glyphicon-comment"></span>
+									<?php comments_number( '0', '1', '%' ); ?>
+								</div>
+							
 							<?php endif; ?>
 						</td>
-						<td>
+						<td class="project-time">
 							<div class="actions">
-								<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
+								<?php if ( function_exists( 'orbis_project_the_time' ) ) orbis_project_the_time(); ?>
+
+								<?php if ( function_exists( 'orbis_project_the_logged_time' ) ) : ?>
+
+									<?php 
+
+									$classes = array();
+									$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
+
+									?>
+
+									<span class="<?php echo implode( $classes, ' ' ); ?>"><?php orbis_project_the_logged_time(); ?></span>
+
+								<?php endif; ?>
 							
 								<div class="nubbin">
 									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>

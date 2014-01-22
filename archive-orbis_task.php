@@ -37,7 +37,6 @@
 					<th><?php _e( 'Task', 'orbis' ); ?></th>
 					<th><?php _e( 'Due At', 'orbis' ); ?></th>
 					<th><?php _e( 'Time', 'orbis' ); ?></th>
-					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,11 +56,8 @@
 							<?php orbis_task_due_at(); ?>
 						</td>
 						<td class="task-time">
-							<?php orbis_task_time(); ?>
-						</td>
-						<td>
 							<div class="actions">
-								<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
+								<?php orbis_task_time(); ?>
 							
 								<div class="nubbin">
 									<?php orbis_edit_post_link(); ?>

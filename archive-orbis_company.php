@@ -33,7 +33,6 @@
 			<thead>
 				<tr>
 					<th><?php _e( 'Name', 'orbis' ); ?></th>
-					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,19 +40,25 @@
 		
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
-							<?php if ( get_post_meta( $post->ID, '_orbis_company_website', true ) ) : ?>
-								
-								<?php $favicon_url = add_query_arg( 'domain', get_post_meta( $post->ID, '_orbis_company_website', true ), 'https://plus.google.com/_/favicon' ); ?>
-								
-								<img src="<?php echo esc_attr( $favicon_url ); ?>" alt="" />
-
-							<?php endif; ?>
-
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</td>
-						<td>
 							<div class="actions">
-								<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
+								<?php if ( get_post_meta( $post->ID, '_orbis_company_website', true ) ) : ?>
+								
+									<?php $favicon_url = add_query_arg( 'domain', get_post_meta( $post->ID, '_orbis_company_website', true ), 'https://plus.google.com/_/favicon' ); ?>
+								
+									<img src="<?php echo esc_attr( $favicon_url ); ?>" alt="" />
+
+								<?php endif; ?>
+
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
+								<?php if ( get_comments_number() != 0  ) : ?>
+							
+									<div class="comments-number">
+										<span class="glyphicon glyphicon-comment"></span>
+										<?php comments_number( '0', '1', '%' ); ?>
+									</div>
+							
+								<?php endif; ?>
 							
 								<div class="nubbin">
 									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>

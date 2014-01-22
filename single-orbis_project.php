@@ -51,7 +51,7 @@
 					</header>
 		
 					<div class="content">
-						<span><?php _e( 'Project budget', 'orbis' ); ?></span> <br />
+						<span class="entry-meta"><?php _e( 'Project budget', 'orbis' ); ?></span> <br />
 						
 						<p class="project-time">
 							<?php orbis_project_the_time(); ?>
@@ -125,7 +125,7 @@
 	
 							<?php else : ?>
 	
-								<span class="label"><?php _e( 'Not finished', 'orbis' ); ?></span>
+								<span class="label label-default"><?php _e( 'Not finished', 'orbis' ); ?></span>
 	
 							<?php endif; ?>
 							
@@ -137,7 +137,7 @@
 	
 								<?php else : ?>
 	
-									<span class="label"><?php _e( 'Not invoiced', 'orbis' ); ?></span>
+									<span class="label label-default"><?php _e( 'Not invoiced', 'orbis' ); ?></span>
 	
 								<?php endif; ?>
 							

@@ -33,7 +33,6 @@
 			<thead>
 				<tr>
 					<th><?php _e( 'Name', 'orbis' ); ?></th>
-					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 					<th><?php _e( 'Actions', 'orbis' ); ?></th>
 				</tr>
 			</thead>
@@ -74,9 +73,6 @@
 									</p>
 								</div>
 							</div>
-						</td>
-						<td>
-							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
 						</td>
 						<td>
 							<div class="actions">

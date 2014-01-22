@@ -50,8 +50,6 @@
 				<tr>
 					<?php if ( is_search() ) : ?><th><?php _e( 'Type', 'orbis' ); ?></th><?php endif; ?>
 					<th><?php _e( 'Title', 'orbis' ); ?></th>
-					<th><?php _e( 'Comments', 'orbis' ); ?></th>
-					<th><?php _e( 'Actions', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -72,14 +70,21 @@
 
 						<?php endif; ?>
 						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</td>
-						<td>
-							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
-						</td>
-						<td>
 							<div class="actions">
-								<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
+								<?php if ( get_comments_number() != 0  ) : ?>
+							
+									<div class="comments-number">
+										<span class="glyphicon glyphicon-comment"></span>
+										<?php comments_number( '0', '1', '%' ); ?>
+									</div>
+							
+								<?php endif; ?>
+							
+								<div class="nubbin">
+									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								</div>
 							</div>
 						</td>
 					</tr>
