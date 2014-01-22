@@ -79,7 +79,7 @@
 						</td>
 						<td>
 							<div class="actions">
-								<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+								<?php orbis_edit_post_link(); ?>
 							</div>
 						</td>
 					</tr>
