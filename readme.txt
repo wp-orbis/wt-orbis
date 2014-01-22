@@ -3,10 +3,14 @@ Contributors: pronamic, remcotolsma, kjtolsma
 Tags: orbis, intranet
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 
 
 == Changelog ==
+
+= 1.1.1 =
+*	Tweak - Improved support for Bootstrap v3.0.3.
+*	Tweak - Removed comments column and added comments number after the title.
 
 = 1.1.0 =
 *	Updated from Bootstrap v2.1.1 to v3.0.3.

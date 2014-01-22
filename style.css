@@ -7,7 +7,7 @@ Author URI: http://www.pronamic.nl/
 
 Description: The theme for Orbis based on Bootstrap.
 
-Version: 1.1.0
+Version: 1.1.1
 
 Tags: bootstrap, clean, white, black
 
@@ -476,6 +476,10 @@ table td.project-time {
 	font-size: 18px;
 }
 
+table td.project-time span {
+	font-size: 12px;
+}
+
 table tr.orbis-status-finished,
 table tr.orbis-status-finished a {
 	color: #999;
@@ -508,6 +512,8 @@ table tr .nubbin {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px; 
     border-radius: 4px;
+
+	font-size: 12px;
 
 	padding: 2px 5px;
 
@@ -595,8 +601,22 @@ p.project-time {
 	font-weight: bold;
 }
 
+p.project-time span {
+	font-size: 12px;
+}
+
 /* Comments
 ------------------------- */
+.comments-number {
+	color: #bbb;
+
+	display: inline-block;
+
+	font-size: 12px;
+
+	margin-left: 5px;
+}
+
 .commentlist {
 	list-style: none;
 

@@ -34,7 +34,6 @@
 				<tr>
 					<th><?php _e( 'Title', 'orbis' ); ?></th>
 					<th><?php _e( 'Price', 'orbis' ); ?></th>
-					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -43,16 +42,22 @@
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</td>
-						<td>
-							<?php orbis_subscription_the_price(); ?>
+
+							<?php if ( get_comments_number() != 0  ) : ?>
+							
+								<div class="comments-number">
+									<span class="glyphicon glyphicon-comment"></span>
+									<?php comments_number( '0', '1', '%' ); ?>
+								</div>
+							
+							<?php endif; ?>
 						</td>
 						<td>
 							<div class="actions">
-								<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
+								<?php orbis_subscription_the_price(); ?>
 							
 								<div class="nubbin">
-									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+									<?php orbis_edit_post_link(); ?>
 								</div>
 							</div>
 						</td>

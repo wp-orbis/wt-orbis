@@ -36,7 +36,6 @@
 					<th><?php _e( 'IP address', 'orbis' ); ?></th>
 					<th><?php _e( 'Hostname', 'orbis' ); ?></th>
 					<th><?php _e( 'Hostname Provider', 'orbis' ); ?></th>
-					<th><?php _e( 'Comments', 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -45,6 +44,15 @@
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
+							<?php if ( get_comments_number() != 0  ) : ?>
+							
+								<div class="comments-number">
+									<span class="glyphicon glyphicon-comment"></span>
+									<?php comments_number( '0', '1', '%' ); ?>
+								</div>
+							
+							<?php endif; ?>
 						</td>
 						<td>
 							<?php echo get_post_meta( $post->ID, '_orbis_hosting_group_ip_address', true ); ?>
@@ -53,14 +61,11 @@
 							<?php echo get_post_meta( $post->ID, '_orbis_hosting_group_hostname', true ); ?>
 						</td>
 						<td>
-							<?php echo get_post_meta( $post->ID, '_orbis_hosting_group_hostname_provider', true ); ?>
-						</td>
-						<td>
 							<div class="actions">
-								<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
+								<?php echo get_post_meta( $post->ID, '_orbis_hosting_group_hostname_provider', true ); ?>
 							
 								<div class="nubbin">
-									<?php edit_post_link( __( 'Edit', 'orbis' ) ); ?>
+									<?php orbis_edit_post_link(); ?>
 								</div>
 							</div>
 						</td>

@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Orbis package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orbis 1.1.0\n"
+"Project-Id-Version: Orbis 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/orbis\n"
-"POT-Creation-Date: 2014-01-21 10:37:13+00:00\n"
+"POT-Creation-Date: 2014-01-22 16:00:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,26 +46,10 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: archive-orbis_company.php:36 archive-orbis_hosting_group.php:39
-#: archive-orbis_person.php:36 archive-orbis_project.php:38
-#: archive-orbis_subs_product.php:38 archive-orbis_subscription.php:37
-#: archive-orbis_task.php:40 index.php:53 templates/company_projects.php:16
-#: templates/project_tasks.php:16
-msgid "Comments"
-msgstr ""
-
-#: archive-orbis_company.php:59 archive-orbis_hosting_group.php:63
-#: archive-orbis_person.php:94 archive-orbis_project.php:84
-#: archive-orbis_subs_product.php:79 archive-orbis_subscription.php:55
-#: includes/functions.php:9 index.php:82 single-orbis_company.php:120
-#: single-orbis_person.php:168 single-orbis_project.php:175 single.php:56
-msgid "Edit"
-msgstr ""
-
-#: archive-orbis_company.php:73 archive-orbis_hosting_group.php:77
-#: archive-orbis_person.php:108 archive-orbis_project.php:98
-#: archive-orbis_subs_product.php:93 archive-orbis_subscription.php:69
-#: archive-orbis_task.php:83 content-post.php:100 home.php:115 index.php:95
+#: archive-orbis_company.php:78 archive-orbis_hosting_group.php:82
+#: archive-orbis_person.php:104 archive-orbis_project.php:103
+#: archive-orbis_subs_product.php:98 archive-orbis_subscription.php:74
+#: archive-orbis_task.php:79 content-post.php:100 home.php:115 index.php:100
 msgid "No results found."
 msgstr ""
 
@@ -94,7 +78,7 @@ msgstr ""
 msgid "Add person"
 msgstr ""
 
-#: archive-orbis_person.php:37 index.php:54 single-orbis_company.php:119
+#: archive-orbis_person.php:36 single-orbis_company.php:119
 #: single-orbis_person.php:167 single-orbis_project.php:174 single.php:55
 msgid "Actions"
 msgstr ""
@@ -338,6 +322,11 @@ msgstr ""
 
 #: home.php:8
 msgid "Overview of the latest news"
+msgstr ""
+
+#: includes/functions.php:9 single-orbis_company.php:120
+#: single-orbis_person.php:168 single-orbis_project.php:175 single.php:56
+msgid "Edit"
 msgstr ""
 
 #: includes/tasks.php:6
@@ -628,7 +617,7 @@ msgstr ""
 msgid "KvK Number"
 msgstr ""
 
-#: templates/company_projects.php:56
+#: templates/company_projects.php:61
 msgid "No projects found."
 msgstr ""
 
@@ -646,6 +635,10 @@ msgstr ""
 
 #: templates/project_persons.php:58
 msgid "No persons involved."
+msgstr ""
+
+#: templates/project_tasks.php:16
+msgid "Comments"
 msgstr ""
 
 #: templates/project_tasks.php:45
