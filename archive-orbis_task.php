@@ -41,6 +41,27 @@
 			</thead>
 			<tbody>
 				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php
+
+					$due_at = get_post_meta( get_the_ID(), '_orbis_task_due_at', true );
+
+					if ( empty( $due_at ) ) {
+							$due_at_ouput = '&mdash;';
+					} else {
+						$seconds = strtotime( $due_at );
+
+						$delta = $seconds - time();
+						$days = round( $delta / ( 3600 * 24 ) );
+					
+						if ( $days > 0 ) {
+							$due_at_ouput = '';
+						} else {
+							$due_at_ouput = sprintf( __( '<span class="label label-danger">%d days</span>', 'orbis_tasks' ), $days );
+						}
+					}
+
+					?>
 		
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
@@ -53,7 +74,7 @@
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</td>
 						<td>
-							<?php orbis_task_due_at(); ?>
+							<?php orbis_task_due_at(); ?> <?php echo $due_at_ouput; ?>
 						</td>
 						<td class="task-time">
 							<div class="actions">
