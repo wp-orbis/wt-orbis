@@ -9,7 +9,8 @@ require_once get_template_directory() . '/includes/subscriptions.php';
 require_once get_template_directory() . '/includes/template-tags.php';
 require_once get_template_directory() . '/includes/widgets.php';
 
-if ( function_exists( 'orbis_tasks_bootstrap' ) ) { require_once get_template_directory() . '/includes/tasks.php';
+if ( function_exists( 'orbis_tasks_bootstrap' ) ) {
+	require_once get_template_directory() . '/includes/tasks.php';
 }
 
 if ( function_exists( 'orbis_timesheets_bootstrap' ) ) {
@@ -168,12 +169,12 @@ class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
 	 * @param int $current_page Menu item ID.
 	 * @param object $args
 	 */
-	function start_lvl( &$output, $depth ) {
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
 		$output	   .= "\n$indent<ul class=\"dropdown-menu\">\n";
 	}
 
-	function start_el( &$output, $item, $depth, $args ) {
+	function start_el( &$output, $item, $depth = 0, $args = array(), $current_object_id = 0 ) {
 		global $wp_query;
 
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -307,8 +308,7 @@ add_filter( 'the_content', 'orbis_the_content_empty', 200 );
  * Orbis Companies
  */
 function orbis_companies_render_contact_details() {
-	if ( is_singular( 'orbis_company' ) ) {
-		
+	if ( is_singular( 'orbis_company' ) ) {	
 		get_template_part( 'templates/company_contact' );
 	}
 }
