@@ -9,7 +9,8 @@ require_once get_template_directory() . '/includes/subscriptions.php';
 require_once get_template_directory() . '/includes/template-tags.php';
 require_once get_template_directory() . '/includes/widgets.php';
 
-if ( function_exists( 'orbis_tasks_bootstrap' ) ) { require_once get_template_directory() . '/includes/tasks.php';
+if ( function_exists( 'orbis_tasks_bootstrap' ) ) {
+	require_once get_template_directory() . '/includes/tasks.php';
 }
 
 if ( function_exists( 'orbis_timesheets_bootstrap' ) ) {
@@ -307,8 +308,7 @@ add_filter( 'the_content', 'orbis_the_content_empty', 200 );
  * Orbis Companies
  */
 function orbis_companies_render_contact_details() {
-	if ( is_singular( 'orbis_company' ) ) {
-		
+	if ( is_singular( 'orbis_company' ) ) {	
 		get_template_part( 'templates/company_contact' );
 	}
 }
