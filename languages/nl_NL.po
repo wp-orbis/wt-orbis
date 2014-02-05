@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/orbis\n"
-"POT-Creation-Date: 2014-01-22 16:00:07+00:00\n"
-"PO-Revision-Date: 2014-01-22 17:00+0100\n"
+"POT-Creation-Date: 2014-02-05 14:47:16+00:00\n"
+"PO-Revision-Date: 2014-02-05 15:47+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -30,10 +30,10 @@ msgstr "Pagina niet gevonden"
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
 msgstr "Het lijkt erop dat we niet kunnen vinden waar je naar zoekt."
 
-#: archive-orbis_company.php:10 archive-orbis_hosting_group.php:10
-#: archive-orbis_person.php:10 archive-orbis_project.php:10
-#: archive-orbis_subs_product.php:10 archive-orbis_subscription.php:10
-#: archive-orbis_task.php:10 index.php:20
+#: archive-orbis_company.php:10 archive-orbis_deal.php:10
+#: archive-orbis_hosting_group.php:10 archive-orbis_person.php:10
+#: archive-orbis_project.php:10 archive-orbis_subs_product.php:10
+#: archive-orbis_subscription.php:10 archive-orbis_task.php:10 index.php:20
 msgid "Overview of %1$s"
 msgstr "Overzicht van %1$s"
 
@@ -41,10 +41,10 @@ msgstr "Overzicht van %1$s"
 msgid "Add company"
 msgstr "Bedrijf toevoegen"
 
-#: archive-orbis_company.php:25 archive-orbis_hosting_group.php:25
-#: archive-orbis_person.php:25 archive-orbis_project.php:25
-#: archive-orbis_subs_product.php:25 archive-orbis_subscription.php:25
-#: archive-orbis_task.php:25 index.php:41
+#: archive-orbis_company.php:25 archive-orbis_deal.php:25
+#: archive-orbis_hosting_group.php:25 archive-orbis_person.php:25
+#: archive-orbis_project.php:25 archive-orbis_subs_product.php:25
+#: archive-orbis_subscription.php:25 archive-orbis_task.php:25 index.php:41
 msgid "Overview"
 msgstr "Overzicht"
 
@@ -52,21 +52,41 @@ msgstr "Overzicht"
 msgid "Name"
 msgstr "Naam"
 
-#: archive-orbis_company.php:78 archive-orbis_hosting_group.php:82
-#: archive-orbis_person.php:104 archive-orbis_project.php:103
-#: archive-orbis_subs_product.php:98 archive-orbis_subscription.php:74
-#: archive-orbis_task.php:79 content-post.php:100 home.php:115 index.php:100
+#: archive-orbis_company.php:78 archive-orbis_deal.php:82
+#: archive-orbis_hosting_group.php:82 archive-orbis_person.php:104
+#: archive-orbis_project.php:103 archive-orbis_subs_product.php:98
+#: archive-orbis_subscription.php:74 archive-orbis_task.php:100
+#: content-post.php:100 home.php:115 index.php:100
 msgid "No results found."
 msgstr "Geen resultaten gevonden."
+
+#: archive-orbis_deal.php:19
+msgid "Add deal"
+msgstr "Deal toevoegen"
+
+#: archive-orbis_deal.php:35 archive-orbis_hosting_group.php:35
+#: archive-orbis_subs_product.php:35 archive-orbis_subscription.php:35
+#: index.php:52
+msgid "Title"
+msgstr "Titel"
+
+#: archive-orbis_deal.php:36
+msgid "Company"
+msgstr "Bedrijf"
+
+#: archive-orbis_deal.php:37 archive-orbis_subs_product.php:36
+#: archive-orbis_subscription.php:36
+#: templates/subscription_product_details.php:8
+msgid "Price"
+msgstr "Prijs"
+
+#: archive-orbis_deal.php:38 single-orbis_project.php:120
+msgid "Status"
+msgstr "Status"
 
 #: archive-orbis_hosting_group.php:19 archive-orbis_subscription.php:19
 msgid "Add subscription"
 msgstr "Abonnement toevoegen"
-
-#: archive-orbis_hosting_group.php:35 archive-orbis_subs_product.php:35
-#: archive-orbis_subscription.php:35 index.php:52
-msgid "Title"
-msgstr "Titel"
 
 #: archive-orbis_hosting_group.php:36
 msgid "IP address"
@@ -112,11 +132,6 @@ msgstr "Tijd"
 msgid "Add subscription product"
 msgstr "Abonnement product toevoegen"
 
-#: archive-orbis_subs_product.php:36 archive-orbis_subscription.php:36
-#: templates/subscription_product_details.php:8
-msgid "Price"
-msgstr "Prijs"
-
 #: archive-orbis_subs_product.php:37
 #: templates/subscription_product_details.php:23
 msgid "Cost Price"
@@ -137,6 +152,10 @@ msgstr "Taak"
 #: archive-orbis_task.php:38
 msgid "Due At"
 msgstr "Verloopt op"
+
+#: archive-orbis_task.php:58
+msgid "<span class=\"label label-danger\">%d days</span>"
+msgstr "<span class=”label label-danger”>%d dagen</span>"
 
 #: author.php:7 category.php:5 content-post.php:5 home.php:5 home.php:21
 #: tag.php:5
@@ -293,23 +312,23 @@ msgstr "Projecten"
 msgid "Persons"
 msgstr "Personen"
 
-#: functions.php:42
+#: functions.php:43
 msgid "Primary Menu"
 msgstr "Primair menu"
 
-#: functions.php:77
+#: functions.php:78
 msgid "Main Widget"
 msgstr "Hoofd widget"
 
-#: functions.php:86
+#: functions.php:87
 msgid "Frontpage Top Widget"
 msgstr "Voorpagina bovenkant widget"
 
-#: functions.php:95
+#: functions.php:96
 msgid "Frontpage Bottom Widget"
 msgstr "Voorpagina onderkant widget"
 
-#: functions.php:297
+#: functions.php:298
 msgid "No description."
 msgstr "Geen beschrijving."
 
@@ -574,10 +593,6 @@ msgstr "Project details"
 #: single-orbis_project.php:113
 msgid "Agreement"
 msgstr "Akkoord"
-
-#: single-orbis_project.php:120
-msgid "Status"
-msgstr "Status"
 
 #: single-orbis_project.php:124
 msgid "Finished"

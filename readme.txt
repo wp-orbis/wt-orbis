@@ -3,10 +3,14 @@ Contributors: pronamic, remcotolsma, kjtolsma
 Tags: orbis, intranet
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 
 
 == Changelog ==
+
+= 1.1.2 =
+*	Tweak - Fixed some strict standards issues.
+*	Tweak - Orbis Tasks - Added due at date.
 
 = 1.1.1 =
 *	Tweak - Improved support for Bootstrap v3.0.3.
