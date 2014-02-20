@@ -480,8 +480,13 @@ table td.project-time span {
 	font-size: 12px;
 }
 
+table td.project-time span.text-error {
+	color: #d9534f;
+}
+
 table tr.orbis-status-finished,
-table tr.orbis-status-finished a {
+table tr.orbis-status-finished a,
+table tr.orbis-status-finished td.project-time span.text-error {
 	color: #999;
 }
 
