@@ -480,7 +480,7 @@ table td.project-time span {
 	font-size: 12px;
 }
 
-table td.project-time span.text-error {
+.project-time span.text-error {
 	color: #d9534f;
 }
 
