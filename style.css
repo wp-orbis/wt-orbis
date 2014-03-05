@@ -655,6 +655,19 @@ p.project-time span {
 	padding: 19px;
 }
 
+/* Comment backgorund colors */
+#comments .orbis_comment .comment-content {
+	background-color: #d9edf7;
+}
+
+#comments .orbis_deal_won .comment-content {
+	background-color: #dff0d8;
+}
+
+#comments .orbis_deal_lost .comment-content {
+	background-color: #f2dede;
+}
+
 #comments .comment-body ul,
 #comments .comment-body ol {
 	margin-bottom: 18px;
