@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-03-05 13:46:23+00:00\n"
-"PO-Revision-Date: 2014-03-05 14:46+0100\n"
+"POT-Creation-Date: 2014-03-05 14:16:34+00:00\n"
+"PO-Revision-Date: 2014-03-05 15:17+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -52,7 +52,7 @@ msgstr "Overzicht"
 msgid "Name"
 msgstr "Naam"
 
-#: archive-orbis_company.php:78 archive-orbis_deal.php:82
+#: archive-orbis_company.php:78 archive-orbis_deal.php:86
 #: archive-orbis_hosting_group.php:82 archive-orbis_person.php:104
 #: archive-orbis_project.php:103 archive-orbis_subs_product.php:98
 #: archive-orbis_subscription.php:74 archive-orbis_task.php:100
@@ -64,23 +64,27 @@ msgstr "Geen resultaten gevonden."
 msgid "Add deal"
 msgstr "Deal toevoegen"
 
-#: archive-orbis_deal.php:35 archive-orbis_hosting_group.php:35
-#: archive-orbis_subs_product.php:35 archive-orbis_subscription.php:35
-#: index.php:52
-msgid "Title"
-msgstr "Titel"
+#: archive-orbis_deal.php:35
+msgid "Date"
+msgstr "Datum"
 
 #: archive-orbis_deal.php:36
 msgid "Company"
 msgstr "Bedrijf"
 
-#: archive-orbis_deal.php:37 archive-orbis_subs_product.php:36
+#: archive-orbis_deal.php:37 archive-orbis_hosting_group.php:35
+#: archive-orbis_subs_product.php:35 archive-orbis_subscription.php:35
+#: index.php:52
+msgid "Title"
+msgstr "Titel"
+
+#: archive-orbis_deal.php:38 archive-orbis_subs_product.php:36
 #: archive-orbis_subscription.php:36
 #: templates/subscription_product_details.php:8
 msgid "Price"
 msgstr "Prijs"
 
-#: archive-orbis_deal.php:38 single-orbis_project.php:120
+#: archive-orbis_deal.php:39 single-orbis_project.php:120
 msgid "Status"
 msgstr "Status"
 
@@ -114,7 +118,7 @@ msgid "Add project"
 msgstr "Project toevoegen"
 
 #: archive-orbis_project.php:35 single-orbis_project.php:86
-#: templates/search_form.php:66
+#: templates/filter_advanced-orbis_project.php:14
 msgid "Client"
 msgstr "Klant"
 
@@ -348,9 +352,9 @@ msgstr "Wijzig profiel"
 msgid "Log out"
 msgstr "Uitloggen"
 
-#: header.php:67 index.php:7 templates/search_form.php:19
-#: templates/search_form.php:20 templates/search_form.php:23
-#: templates/search_form.php:80
+#: header.php:67 index.php:7 templates/filter_advanced-orbis_project.php:28
+#: templates/search_form.php:19 templates/search_form.php:20
+#: templates/search_form.php:23
 msgid "Search"
 msgstr "Zoeken"
 
@@ -656,6 +660,38 @@ msgstr "KvK nummer"
 msgid "No projects found."
 msgstr "Geen projecten gevonden."
 
+#: templates/filter-orbis_deal.php:7
+msgid "&mdash; Select Status &mdash;"
+msgstr "&mdash; Selecteer status &mdash;"
+
+#: templates/filter-orbis_deal.php:23 templates/filter-orbis_task.php:13
+msgid "Filter"
+msgstr "Filter"
+
+#: templates/filter-orbis_task.php:7
+msgid "&mdash; Select Assignee &mdash;"
+msgstr "&mdash; Selecteer uitvoerder &mdash;"
+
+#: templates/filter_advanced-orbis_project.php:11 templates/search_form.php:27
+msgid "Advanced Search"
+msgstr "Geavanceerd zoeken"
+
+#: templates/filter_advanced-orbis_project.php:15
+msgid "Search on Client"
+msgstr "Zoek op klant"
+
+#: templates/filter_advanced-orbis_project.php:21
+msgid "Invoice Number"
+msgstr "Factuurnummer"
+
+#: templates/filter_advanced-orbis_project.php:22
+msgid "Search on Invoice Number"
+msgstr "Zoek op factuurnummer"
+
+#: templates/filter_advanced-orbis_project.php:29
+msgid "Cancel"
+msgstr "Annuleer"
+
 #: templates/person_companies.php:3
 msgid "Connected Companies"
 msgstr "Gekoppelde bedrijven"
@@ -679,34 +715,6 @@ msgstr "Reacties"
 #: templates/project_tasks.php:45
 msgid "No tasks found."
 msgstr "Geen taken gevonden."
-
-#: templates/search_form.php:27 templates/search_form.php:63
-msgid "Advanced Search"
-msgstr "Geavanceerd zoeken"
-
-#: templates/search_form.php:39
-msgid "&mdash; Select Assignee &mdash;"
-msgstr "&mdash; Selecteer uitvoerder &mdash;"
-
-#: templates/search_form.php:45
-msgid "Filter"
-msgstr "Filter"
-
-#: templates/search_form.php:67
-msgid "Search on Client"
-msgstr "Zoek op klant"
-
-#: templates/search_form.php:73
-msgid "Invoice Number"
-msgstr "Factuurnummer"
-
-#: templates/search_form.php:74
-msgid "Search on Invoice Number"
-msgstr "Zoek op factuurnummer"
-
-#: templates/search_form.php:81
-msgid "Cancel"
-msgstr "Annuleer"
 
 #: templates/subscription_product_details.php:3
 msgid "Subscription Product Details"
@@ -791,9 +799,6 @@ msgstr "Volledige breedte"
 
 #~ msgid "Person"
 #~ msgstr "Persoon"
-
-#~ msgid "Date"
-#~ msgstr "Datum"
 
 #~ msgid "Save task"
 #~ msgstr "Taak opslaan"
