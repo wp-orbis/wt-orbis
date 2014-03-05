@@ -3,10 +3,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.1.2\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/orbis\n"
-"POT-Creation-Date: 2014-02-05 14:47:16+00:00\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2014-03-05 13:46:23+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -169,8 +169,7 @@ msgid "In the category \"%1$s\""
 msgstr ""
 
 #: comments.php:5
-msgid ""
-"This post is password protected. Enter the password to view any comments."
+msgid "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
 #: comments.php:15
@@ -237,8 +236,8 @@ msgstr ""
 
 #: footer.php:4
 msgid ""
-"&copy; %1$s %2$s. WordPress theme by <a href=\"%3$s\">Pronamic</a>, based on "
-"<a href=\"%4$s\">Bootstrap</a>."
+"&copy; %1$s %2$s. WordPress theme by <a href=\"%3$s\">Pronamic</a>, based "
+"on <a href=\"%4$s\">Bootstrap</a>."
 msgstr ""
 
 #: front-page.php:7
@@ -386,11 +385,11 @@ msgstr ""
 
 #: includes/template-tags.php:128
 msgid ""
-"<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
-"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
-"time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span "
-"class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
-"rel=\"author\">%7$s</a></span></span>"
+"<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" "
+"rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" "
+"pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by "
+"</span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" "
+"title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
 
 #: includes/template-tags.php:134
