@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-03-05 14:16:34+00:00\n"
-"PO-Revision-Date: 2014-03-05 15:17+0100\n"
+"POT-Creation-Date: 2014-03-06 08:56:39+00:00\n"
+"PO-Revision-Date: 2014-03-06 09:57+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -332,7 +332,7 @@ msgstr "Voorpagina bovenkant widget"
 msgid "Frontpage Bottom Widget"
 msgstr "Voorpagina onderkant widget"
 
-#: functions.php:298
+#: functions.php:300
 msgid "No description."
 msgstr "Geen beschrijving."
 
@@ -383,27 +383,27 @@ msgstr "&larr; Vorige"
 msgid "Next &rarr;"
 msgstr "Volgende &rarr;"
 
-#: includes/template-tags.php:90
-msgid "%s <span class=\"says\">says:</span>"
-msgstr "%s <span class=\"says\">zegt:</span>"
-
-#: includes/template-tags.php:95
-msgid "Your comment is awaiting moderation."
-msgstr "Je reactie is in afwachting van moderatie."
-
-#: includes/template-tags.php:100
-msgid "%1$s at %2$s"
-msgstr "%1$s om %2$s"
-
-#: includes/template-tags.php:100 includes/template-tags.php:118
-msgid "(Edit)"
-msgstr "Bewerken"
-
-#: includes/template-tags.php:118
+#: includes/template-tags.php:87
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: includes/template-tags.php:128
+#: includes/template-tags.php:87 includes/template-tags.php:108
+msgid "(Edit)"
+msgstr "Bewerken"
+
+#: includes/template-tags.php:98
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">zegt:</span>"
+
+#: includes/template-tags.php:103
+msgid "Your comment is awaiting moderation."
+msgstr "Je reactie is in afwachting van moderatie."
+
+#: includes/template-tags.php:108
+msgid "%1$s at %2$s"
+msgstr "%1$s om %2$s"
+
+#: includes/template-tags.php:129
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
 "\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
@@ -417,7 +417,7 @@ msgstr ""
 "class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
 "rel=\"author\">%7$s</a></span></span>"
 
-#: includes/template-tags.php:134
+#: includes/template-tags.php:135
 msgid "View all posts by %s"
 msgstr "Bekijk alle berichten van %s"
 
@@ -729,8 +729,8 @@ msgid "Orbis"
 msgstr "Orbis"
 
 #. Theme URI of the plugin/theme
-msgid "http://wp.pronamic.eu/themes/orbis/"
-msgstr "http://wp.pronamic.eu/themes/orbis/"
+msgid "http://www.happywp.com/themes/orbis/"
+msgstr "http://www.happywp.com/themes/orbis/"
 
 #. Description of the plugin/theme
 msgid "The theme for Orbis based on Bootstrap."
@@ -741,7 +741,7 @@ msgid "Pronamic"
 msgstr "Pronamic"
 
 #. Author URI of the plugin/theme
-msgid "http://www.pronamic.nl/"
+msgid "http://www.pronamic.eu/"
 msgstr "http://www.pronamic.nl/"
 
 #. Template Name of the plugin/theme
