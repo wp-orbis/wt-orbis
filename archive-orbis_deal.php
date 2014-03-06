@@ -37,6 +37,7 @@
 					<th><?php _e( 'Title'  , 'orbis' ); ?></th>
 					<th><?php _e( 'Price'  , 'orbis' ); ?></th>
 					<th><?php _e( 'Status' , 'orbis' ); ?></th>
+					<th><?php _e( 'Author' , 'orbis' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -65,8 +66,11 @@
 							<?php orbis_deal_the_price(); ?>
 						</td>
 						<td>
+							<?php orbis_deal_the_status(); ?>
+						</td>
+						<td>
 							<div class="actions">
-								<?php orbis_deal_the_status(); ?>
+								<?php the_author(); ?>
 							
 								<div class="nubbin">
 									<?php orbis_edit_post_link(); ?>
