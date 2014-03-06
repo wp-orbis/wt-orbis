@@ -115,15 +115,15 @@ add_action( 'widgets_init', 'orbis_widgets_init' );
 function orbis_load_scripts() {
 	wp_enqueue_script( 
 		'bootstrap', 
-		get_bloginfo( 'template_directory' ) . '/js/bootstrap.min.js', 
+		get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', 
 		array( 'jquery' ),
-		'3.0.3',
+		'3.1.1',
 		true
 	);
 
 	wp_enqueue_script(
 		'app',
-		get_bloginfo( 'template_directory' ) . '/js/app.js',
+		get_template_directory_uri() . '/js/app.js',
 		array( 'jquery', 'bootstrap' ),
 		'1.0.0',
 		true
@@ -132,13 +132,15 @@ function orbis_load_scripts() {
 	/* Styles */
 	wp_enqueue_style( 
 		'bootstrap',
-		get_template_directory_uri() . '/css/bootstrap.min.css',
-		'3.0.3'
+		get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css',
+		array(),
+		'3.1.1'
 	);
 
 	wp_enqueue_style( 
 		'orbis',
 		get_stylesheet_uri(),
+		array( 'bootstrap' ),
 		'1.0.0'
 	);
 
