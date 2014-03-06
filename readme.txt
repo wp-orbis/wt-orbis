@@ -13,6 +13,7 @@ Stable tag: 1.1.3
 *	Tweak - Improved support for the Orbis Deals plugin.
 *	Tweak - Display all comment types.
 *	Tweak - Added support for different comment content background colors. 
+*	Tweak - Updated Bootstrap from v3.0.3 to v3.1.1.
 
 = 1.1.2 =
 *	Tweak - Fixed some strict standards issues.
