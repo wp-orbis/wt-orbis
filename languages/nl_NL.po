@@ -2,9 +2,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/orbis\n"
-"POT-Creation-Date: 2014-02-05 14:47:16+00:00\n"
-"PO-Revision-Date: 2014-02-05 15:47+0100\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2014-03-06 08:56:39+00:00\n"
+"PO-Revision-Date: 2014-03-06 09:57+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;__ngettext:1,2;__withdesc;_ewithdesc;_c;"
 "_n_noop:1,2;__ngettext_noop:1,2;_x:2c,1;_nc:1,2;esc_attr_e;esc_html_e;"
 "esc_attr__;_nx:4c,1,2;_nx_noop:4c,1,2;esc_html_x:2c,1;esc_html__;_ex:2c,1\n"
@@ -52,7 +52,7 @@ msgstr "Overzicht"
 msgid "Name"
 msgstr "Naam"
 
-#: archive-orbis_company.php:78 archive-orbis_deal.php:82
+#: archive-orbis_company.php:78 archive-orbis_deal.php:86
 #: archive-orbis_hosting_group.php:82 archive-orbis_person.php:104
 #: archive-orbis_project.php:103 archive-orbis_subs_product.php:98
 #: archive-orbis_subscription.php:74 archive-orbis_task.php:100
@@ -64,23 +64,27 @@ msgstr "Geen resultaten gevonden."
 msgid "Add deal"
 msgstr "Deal toevoegen"
 
-#: archive-orbis_deal.php:35 archive-orbis_hosting_group.php:35
-#: archive-orbis_subs_product.php:35 archive-orbis_subscription.php:35
-#: index.php:52
-msgid "Title"
-msgstr "Titel"
+#: archive-orbis_deal.php:35
+msgid "Date"
+msgstr "Datum"
 
 #: archive-orbis_deal.php:36
 msgid "Company"
 msgstr "Bedrijf"
 
-#: archive-orbis_deal.php:37 archive-orbis_subs_product.php:36
+#: archive-orbis_deal.php:37 archive-orbis_hosting_group.php:35
+#: archive-orbis_subs_product.php:35 archive-orbis_subscription.php:35
+#: index.php:52
+msgid "Title"
+msgstr "Titel"
+
+#: archive-orbis_deal.php:38 archive-orbis_subs_product.php:36
 #: archive-orbis_subscription.php:36
 #: templates/subscription_product_details.php:8
 msgid "Price"
 msgstr "Prijs"
 
-#: archive-orbis_deal.php:38 single-orbis_project.php:120
+#: archive-orbis_deal.php:39 single-orbis_project.php:120
 msgid "Status"
 msgstr "Status"
 
@@ -114,7 +118,7 @@ msgid "Add project"
 msgstr "Project toevoegen"
 
 #: archive-orbis_project.php:35 single-orbis_project.php:86
-#: templates/search_form.php:66
+#: templates/filter_advanced-orbis_project.php:14
 msgid "Client"
 msgstr "Klant"
 
@@ -328,7 +332,7 @@ msgstr "Voorpagina bovenkant widget"
 msgid "Frontpage Bottom Widget"
 msgstr "Voorpagina onderkant widget"
 
-#: functions.php:298
+#: functions.php:300
 msgid "No description."
 msgstr "Geen beschrijving."
 
@@ -348,9 +352,9 @@ msgstr "Wijzig profiel"
 msgid "Log out"
 msgstr "Uitloggen"
 
-#: header.php:67 index.php:7 templates/search_form.php:19
-#: templates/search_form.php:20 templates/search_form.php:23
-#: templates/search_form.php:80
+#: header.php:67 index.php:7 templates/filter_advanced-orbis_project.php:28
+#: templates/search_form.php:19 templates/search_form.php:20
+#: templates/search_form.php:23
 msgid "Search"
 msgstr "Zoeken"
 
@@ -379,27 +383,27 @@ msgstr "&larr; Vorige"
 msgid "Next &rarr;"
 msgstr "Volgende &rarr;"
 
-#: includes/template-tags.php:90
-msgid "%s <span class=\"says\">says:</span>"
-msgstr "%s <span class=\"says\">zegt:</span>"
-
-#: includes/template-tags.php:95
-msgid "Your comment is awaiting moderation."
-msgstr "Je reactie is in afwachting van moderatie."
-
-#: includes/template-tags.php:100
-msgid "%1$s at %2$s"
-msgstr "%1$s om %2$s"
-
-#: includes/template-tags.php:100 includes/template-tags.php:118
-msgid "(Edit)"
-msgstr "Bewerken"
-
-#: includes/template-tags.php:118
+#: includes/template-tags.php:87
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: includes/template-tags.php:128
+#: includes/template-tags.php:87 includes/template-tags.php:108
+msgid "(Edit)"
+msgstr "Bewerken"
+
+#: includes/template-tags.php:98
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">zegt:</span>"
+
+#: includes/template-tags.php:103
+msgid "Your comment is awaiting moderation."
+msgstr "Je reactie is in afwachting van moderatie."
+
+#: includes/template-tags.php:108
+msgid "%1$s at %2$s"
+msgstr "%1$s om %2$s"
+
+#: includes/template-tags.php:129
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
 "\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
@@ -413,7 +417,7 @@ msgstr ""
 "class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
 "rel=\"author\">%7$s</a></span></span>"
 
-#: includes/template-tags.php:134
+#: includes/template-tags.php:135
 msgid "View all posts by %s"
 msgstr "Bekijk alle berichten van %s"
 
@@ -656,6 +660,38 @@ msgstr "KvK nummer"
 msgid "No projects found."
 msgstr "Geen projecten gevonden."
 
+#: templates/filter-orbis_deal.php:7
+msgid "&mdash; Select Status &mdash;"
+msgstr "&mdash; Selecteer status &mdash;"
+
+#: templates/filter-orbis_deal.php:23 templates/filter-orbis_task.php:13
+msgid "Filter"
+msgstr "Filter"
+
+#: templates/filter-orbis_task.php:7
+msgid "&mdash; Select Assignee &mdash;"
+msgstr "&mdash; Selecteer uitvoerder &mdash;"
+
+#: templates/filter_advanced-orbis_project.php:11 templates/search_form.php:27
+msgid "Advanced Search"
+msgstr "Geavanceerd zoeken"
+
+#: templates/filter_advanced-orbis_project.php:15
+msgid "Search on Client"
+msgstr "Zoek op klant"
+
+#: templates/filter_advanced-orbis_project.php:21
+msgid "Invoice Number"
+msgstr "Factuurnummer"
+
+#: templates/filter_advanced-orbis_project.php:22
+msgid "Search on Invoice Number"
+msgstr "Zoek op factuurnummer"
+
+#: templates/filter_advanced-orbis_project.php:29
+msgid "Cancel"
+msgstr "Annuleer"
+
 #: templates/person_companies.php:3
 msgid "Connected Companies"
 msgstr "Gekoppelde bedrijven"
@@ -680,34 +716,6 @@ msgstr "Reacties"
 msgid "No tasks found."
 msgstr "Geen taken gevonden."
 
-#: templates/search_form.php:27 templates/search_form.php:63
-msgid "Advanced Search"
-msgstr "Geavanceerd zoeken"
-
-#: templates/search_form.php:39
-msgid "&mdash; Select Assignee &mdash;"
-msgstr "&mdash; Selecteer uitvoerder &mdash;"
-
-#: templates/search_form.php:45
-msgid "Filter"
-msgstr "Filter"
-
-#: templates/search_form.php:67
-msgid "Search on Client"
-msgstr "Zoek op klant"
-
-#: templates/search_form.php:73
-msgid "Invoice Number"
-msgstr "Factuurnummer"
-
-#: templates/search_form.php:74
-msgid "Search on Invoice Number"
-msgstr "Zoek op factuurnummer"
-
-#: templates/search_form.php:81
-msgid "Cancel"
-msgstr "Annuleer"
-
 #: templates/subscription_product_details.php:3
 msgid "Subscription Product Details"
 msgstr "Abonnement product details"
@@ -721,8 +729,8 @@ msgid "Orbis"
 msgstr "Orbis"
 
 #. Theme URI of the plugin/theme
-msgid "http://wp.pronamic.eu/themes/orbis/"
-msgstr "http://wp.pronamic.eu/themes/orbis/"
+msgid "http://www.happywp.com/themes/orbis/"
+msgstr "http://www.happywp.com/themes/orbis/"
 
 #. Description of the plugin/theme
 msgid "The theme for Orbis based on Bootstrap."
@@ -733,7 +741,7 @@ msgid "Pronamic"
 msgstr "Pronamic"
 
 #. Author URI of the plugin/theme
-msgid "http://www.pronamic.nl/"
+msgid "http://www.pronamic.eu/"
 msgstr "http://www.pronamic.nl/"
 
 #. Template Name of the plugin/theme
@@ -791,9 +799,6 @@ msgstr "Volledige breedte"
 
 #~ msgid "Person"
 #~ msgstr "Persoon"
-
-#~ msgid "Date"
-#~ msgstr "Datum"
 
 #~ msgid "Save task"
 #~ msgstr "Taak opslaan"

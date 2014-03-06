@@ -1,13 +1,13 @@
 /*
 Theme Name: Orbis
-Theme URI: http://wp.pronamic.eu/themes/orbis/
+Theme URI: http://www.happywp.com/themes/orbis/
 
 Author: Pronamic
-Author URI: http://www.pronamic.nl/
+Author URI: http://www.pronamic.eu/
 
 Description: The theme for Orbis based on Bootstrap.
 
-Version: 1.1.2
+Version: 1.1.3
 
 Tags: bootstrap, clean, white, black
 
@@ -480,8 +480,13 @@ table td.project-time span {
 	font-size: 12px;
 }
 
+.project-time span.text-error {
+	color: #d9534f;
+}
+
 table tr.orbis-status-finished,
-table tr.orbis-status-finished a {
+table tr.orbis-status-finished a,
+table tr.orbis-status-finished td.project-time span.text-error {
 	color: #999;
 }
 
@@ -648,6 +653,19 @@ p.project-time span {
 
 	margin-bottom: 1.625em;
 	padding: 19px;
+}
+
+/* Comment backgorund colors */
+#comments .orbis_comment .comment-content {
+	background-color: #d9edf7;
+}
+
+#comments .orbis_deal_won .comment-content {
+	background-color: #dff0d8;
+}
+
+#comments .orbis_deal_lost .comment-content {
+	background-color: #f2dede;
 }
 
 #comments .comment-body ul,
