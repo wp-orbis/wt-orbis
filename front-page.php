@@ -61,6 +61,20 @@
 
 <?php endif; ?>
 
+<?php if ( is_active_sidebar( 'frontpage-left-widget' ) || is_active_sidebar( 'frontpage-right-widget' ) ) : ?>
+
+	<div class="row">
+		<div class="col-md-6">
+			<?php dynamic_sidebar( 'frontpage-left-widget' ); ?>
+		</div>
+
+		<div class="col-md-6">
+			<?php dynamic_sidebar( 'frontpage-right-widget' ); ?>
+		</div>
+	</div>
+
+<?php endif; ?>
+
 <?php if ( is_active_sidebar( 'frontpage-bottom-widget' ) ) : ?>
 
 	<div class="row">

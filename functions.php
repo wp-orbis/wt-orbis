@@ -93,6 +93,24 @@ function orbis_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => __( 'Frontpage Left Widget', 'orbis' ),
+		'id'            => 'frontpage-left-widget',
+		'before_widget' => '<div id="%1$s" class="panel %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<header><h3 class="widget-title">',
+		'after_title'   => '</h3></header>'
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Frontpage Right Widget', 'orbis' ),
+		'id'            => 'frontpage-right-widget',
+		'before_widget' => '<div id="%1$s" class="panel %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<header><h3 class="widget-title">',
+		'after_title'   => '</h3></header>'
+	) );
+
+	register_sidebar( array(
 		'name'          => __( 'Frontpage Bottom Widget', 'orbis' ),
 		'id'            => 'frontpage-bottom-widget',
 		'before_widget' => '<div class="col-md-4"><div id="%1$s" class="panel %2$s">',
