@@ -66,7 +66,7 @@ $ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
 					<?php 
 					
 					$url_open_kvk = sprintf( 'http://openkvk.nl/%s', $kvk_number );
-					$url_kvk      = add_query_arg( 'q', $kvk_number, 'http://www.kvk.nl/zoek/' );
+					$url_kvk      = add_query_arg( 'q', $kvk_number, 'http://zoeken.kvk.nl/search.ashx' );
 					
 					?>
 					<small>
