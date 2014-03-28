@@ -3,13 +3,14 @@ Contributors: pronamic, remcotolsma, kjtolsma
 Tags: orbis, intranet
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 
 
 == Changelog ==
 
 = 1.1.4 =
 *	Tweak - Fixed KVK search URL on company contact block.
+*	Tweak - Added order by dropdown on projects archive page. 
 
 = 1.1.3 =
 *	Tweak - Adjusted project time colors.
