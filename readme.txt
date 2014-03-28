@@ -8,6 +8,9 @@ Stable tag: 1.1.3
 
 == Changelog ==
 
+= 1.1.4 =
+*	Tweak - Fixed KVK search URL on company contact block.
+
 = 1.1.3 =
 *	Tweak - Adjusted project time colors.
 *	Tweak - Improved support for the Orbis Deals plugin.
