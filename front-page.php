@@ -1,62 +1,27 @@
 <?php get_header(); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
+<div class="page-header">
+	<h1>
+		<?php _e( 'Dashboard', 'orbis' ); ?>
 
-	<div class="page-header">
-		<h1>
-			<?php _e( 'Dashboard', 'orbis' ); ?>
+		<?php if ( is_user_logged_in() ) : ?>
+
+			<?php $user = wp_get_current_user(); ?>
 	
-			<?php if ( is_user_logged_in() ) : ?>
-	
-				<?php $user = wp_get_current_user(); ?>
-		
-				<small>
-					<?php
-					
-					printf(
-						__( 'Logged in as %1$s', 'orbis' ),
-						$user->display_name 
-					);
+			<small>
+				<?php
 				
-					?>
-				</small>
-	
-			<?php endif; ?>
-		</h1>
-	</div>
+				printf(
+					__( 'Logged in as %1$s', 'orbis' ),
+					$user->display_name 
+				);
+			
+				?>
+			</small>
 
-<?php endwhile; ?>
-
-<?php if ( is_user_logged_in() ) : ?>
-	
-	<?php
-	
-	$user = wp_get_current_user();
-	
-	if ( strtotime( $user->user_registered ) > ( time() - 172800 ) ) : ?>
-	
-		<div class="hero-unit">
-			<h1><?php _e( 'Welcome to Orbis', 'orbis' ); ?></h1>
-		
-			<p>
-				<?php _e( 'Orbis is a tool to manage your projects, your customer relations and has much more great features. Orbis is build on WordPress which is a great framework to create a powerful tool for your business. Enough introduction, time to get some work done.', 'orbis' ); ?>
-			</p>
-		
-			<ul>
-				<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=post"><?php _e( 'Add a post', 'orbis' ); ?></a></li>	
-				<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=orbis_company"><?php _e( 'Add a company', 'orbis' ); ?></a></li>
-				<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=orbis_project"><?php _e( 'Add a project', 'orbis' ); ?></a></li>
-				<li><a href="<?php bloginfo( 'url' ); ?>/wp-admin/post-new.php?post_type=orbis_person"><?php _e( 'Add a person', 'orbis' ); ?></a></li>
-			</ul>
-		
-			<p>
-				<a class="btn btn-primary btn-large" href="http://orbiswp.com"><?php _e( 'Learn more', 'orbis' ); ?></a>
-			</p>
-		</div>
-	
-	<?php endif; ?>
-
-<?php endif; ?>
+		<?php endif; ?>
+	</h1>
+</div>
 
 <div class="panel">
 	<div class="content stats">
@@ -92,6 +57,20 @@
 
 	<div class="row">
 		<?php dynamic_sidebar( 'frontpage-top-widget' ); ?>
+	</div>
+
+<?php endif; ?>
+
+<?php if ( is_active_sidebar( 'frontpage-left-widget' ) || is_active_sidebar( 'frontpage-right-widget' ) ) : ?>
+
+	<div class="row">
+		<div class="col-md-6">
+			<?php dynamic_sidebar( 'frontpage-left-widget' ); ?>
+		</div>
+
+		<div class="col-md-6">
+			<?php dynamic_sidebar( 'frontpage-right-widget' ); ?>
+		</div>
 	</div>
 
 <?php endif; ?>

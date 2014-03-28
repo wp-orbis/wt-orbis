@@ -8,51 +8,53 @@ $query = new WP_Query( array(
 
 if ( $query->have_posts() ) : ?>
 
-	<table class="table table-striped table-bordered">
-		<thead>
-			<tr>
-				<th><?php _e( 'Project', 'orbis' ); ?></th>
-				<th><?php _e( 'Time', 'orbis' ); ?></th>
-			</tr>
-		</thead>
-
-		<tbody>
-			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-			
-				<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<td>
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-
-						<?php if ( get_comments_number() != 0  ) : ?>
-					
-							<div class="comments-number">
-								<span class="glyphicon glyphicon-comment"></span>
-								<?php comments_number( '0', '1', '%' ); ?>
-							</div>
-					
-						<?php endif; ?>
-					</td>
-					<td class="project-time">
-						<?php if ( function_exists( 'orbis_project_the_time' ) ) orbis_project_the_time(); ?>
-
-						<?php if ( function_exists( 'orbis_project_the_logged_time' ) ) : ?>
-
-							<?php 
-
-							$classes = array();
-							$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
-
-							?>
-
-							<span class="<?php echo implode( $classes, ' ' ); ?>"><?php orbis_project_the_logged_time(); ?></span>
-
-						<?php endif; ?>
-					</td>
+	<div class="table-responsive">
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th><?php _e( 'Project', 'orbis' ); ?></th>
+					<th><?php _e( 'Time', 'orbis' ); ?></th>
 				</tr>
+			</thead>
+
+			<tbody>
+				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 			
-			<?php endwhile; ?>
-		</tbody>
-	</table>
+					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<td>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
+							<?php if ( get_comments_number() != 0  ) : ?>
+					
+								<div class="comments-number">
+									<span class="glyphicon glyphicon-comment"></span>
+									<?php comments_number( '0', '1', '%' ); ?>
+								</div>
+					
+							<?php endif; ?>
+						</td>
+						<td class="project-time">
+							<?php if ( function_exists( 'orbis_project_the_time' ) ) orbis_project_the_time(); ?>
+
+							<?php if ( function_exists( 'orbis_project_the_logged_time' ) ) : ?>
+
+								<?php 
+
+								$classes = array();
+								$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
+
+								?>
+
+								<span class="<?php echo implode( $classes, ' ' ); ?>"><?php orbis_project_the_logged_time(); ?></span>
+
+							<?php endif; ?>
+						</td>
+					</tr>
+			
+				<?php endwhile; ?>
+			</tbody>
+		</table>
+	</div>
 
 <?php else : ?>
 

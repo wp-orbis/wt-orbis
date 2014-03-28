@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-03-06 08:56:39+00:00\n"
-"PO-Revision-Date: 2014-03-06 09:57+0100\n"
+"POT-Creation-Date: 2014-03-28 20:02:50+00:00\n"
+"PO-Revision-Date: 2014-03-28 21:03+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -48,14 +48,14 @@ msgstr "Bedrijf toevoegen"
 msgid "Overview"
 msgstr "Overzicht"
 
-#: archive-orbis_company.php:35 archive-orbis_person.php:35
+#: archive-orbis_company.php:36 archive-orbis_person.php:36
 msgid "Name"
 msgstr "Naam"
 
-#: archive-orbis_company.php:78 archive-orbis_deal.php:86
-#: archive-orbis_hosting_group.php:82 archive-orbis_person.php:104
-#: archive-orbis_project.php:103 archive-orbis_subs_product.php:98
-#: archive-orbis_subscription.php:74 archive-orbis_task.php:100
+#: archive-orbis_company.php:80 archive-orbis_deal.php:92
+#: archive-orbis_hosting_group.php:84 archive-orbis_person.php:106
+#: archive-orbis_project.php:105 archive-orbis_subs_product.php:100
+#: archive-orbis_subscription.php:76 archive-orbis_task.php:102
 #: content-post.php:100 home.php:115 index.php:100
 msgid "No results found."
 msgstr "Geen resultaten gevonden."
@@ -64,43 +64,47 @@ msgstr "Geen resultaten gevonden."
 msgid "Add deal"
 msgstr "Deal toevoegen"
 
-#: archive-orbis_deal.php:35
+#: archive-orbis_deal.php:36 templates/filter-orbis_project.php:9
 msgid "Date"
 msgstr "Datum"
 
-#: archive-orbis_deal.php:36
+#: archive-orbis_deal.php:37
 msgid "Company"
 msgstr "Bedrijf"
 
-#: archive-orbis_deal.php:37 archive-orbis_hosting_group.php:35
-#: archive-orbis_subs_product.php:35 archive-orbis_subscription.php:35
-#: index.php:52
+#: archive-orbis_deal.php:38 archive-orbis_hosting_group.php:36
+#: archive-orbis_subs_product.php:36 archive-orbis_subscription.php:36
+#: index.php:52 templates/filter-orbis_project.php:8
 msgid "Title"
 msgstr "Titel"
 
-#: archive-orbis_deal.php:38 archive-orbis_subs_product.php:36
-#: archive-orbis_subscription.php:36
+#: archive-orbis_deal.php:39 archive-orbis_subs_product.php:37
+#: archive-orbis_subscription.php:37
 #: templates/subscription_product_details.php:8
 msgid "Price"
 msgstr "Prijs"
 
-#: archive-orbis_deal.php:39 single-orbis_project.php:120
+#: archive-orbis_deal.php:40 single-orbis_project.php:120
 msgid "Status"
 msgstr "Status"
+
+#: archive-orbis_deal.php:41 templates/filter-orbis_project.php:7
+msgid "Author"
+msgstr "Auteur"
 
 #: archive-orbis_hosting_group.php:19 archive-orbis_subscription.php:19
 msgid "Add subscription"
 msgstr "Abonnement toevoegen"
 
-#: archive-orbis_hosting_group.php:36
+#: archive-orbis_hosting_group.php:37
 msgid "IP address"
 msgstr "IP-adres"
 
-#: archive-orbis_hosting_group.php:37
+#: archive-orbis_hosting_group.php:38
 msgid "Hostname"
 msgstr "Hostnaam"
 
-#: archive-orbis_hosting_group.php:38
+#: archive-orbis_hosting_group.php:39
 msgid "Hostname Provider"
 msgstr "Hostnaam leverancier"
 
@@ -108,7 +112,7 @@ msgstr "Hostnaam leverancier"
 msgid "Add person"
 msgstr "Persoon toevoegen"
 
-#: archive-orbis_person.php:36 single-orbis_company.php:119
+#: archive-orbis_person.php:37 single-orbis_company.php:119
 #: single-orbis_person.php:167 single-orbis_project.php:174 single.php:55
 msgid "Actions"
 msgstr "Acties"
@@ -117,18 +121,18 @@ msgstr "Acties"
 msgid "Add project"
 msgstr "Project toevoegen"
 
-#: archive-orbis_project.php:35 single-orbis_project.php:86
+#: archive-orbis_project.php:36 single-orbis_project.php:86
 #: templates/filter_advanced-orbis_project.php:14
 msgid "Client"
 msgstr "Klant"
 
-#: archive-orbis_project.php:36 archive-orbis_task.php:36
-#: templates/company_projects.php:14
+#: archive-orbis_project.php:37 archive-orbis_task.php:37
+#: templates/company_projects.php:15
 msgid "Project"
 msgstr "Project"
 
-#: archive-orbis_project.php:37 archive-orbis_task.php:39
-#: templates/company_projects.php:15 templates/project_tasks.php:15
+#: archive-orbis_project.php:38 archive-orbis_task.php:40
+#: templates/company_projects.php:16 templates/project_tasks.php:16
 msgid "Time"
 msgstr "Tijd"
 
@@ -136,7 +140,7 @@ msgstr "Tijd"
 msgid "Add subscription product"
 msgstr "Abonnement product toevoegen"
 
-#: archive-orbis_subs_product.php:37
+#: archive-orbis_subs_product.php:38
 #: templates/subscription_product_details.php:23
 msgid "Cost Price"
 msgstr "Kostprijs"
@@ -145,19 +149,19 @@ msgstr "Kostprijs"
 msgid "Add task"
 msgstr "Taak toevoegen"
 
-#: archive-orbis_task.php:35
+#: archive-orbis_task.php:36
 msgid "Assignee"
 msgstr "Uitvoerder"
 
-#: archive-orbis_task.php:37
+#: archive-orbis_task.php:38
 msgid "Task"
 msgstr "Taak"
 
-#: archive-orbis_task.php:38
+#: archive-orbis_task.php:39
 msgid "Due At"
 msgstr "Verloopt op"
 
-#: archive-orbis_task.php:58
+#: archive-orbis_task.php:59
 msgid "<span class=\"label label-danger\">%d days</span>"
 msgstr "<span class=”label label-danger”>%d dagen</span>"
 
@@ -255,64 +259,27 @@ msgstr ""
 "&copy; %1$s %2$s. WordPress thema door <a href=\"%3$s\">Pronamic</a>, "
 "gebaseerd op <a href=\"%4$s\">Bootstrap</a>."
 
-#: front-page.php:7
+#: front-page.php:5
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: front-page.php:17
+#: front-page.php:15
 msgid "Logged in as %1$s"
 msgstr "Ingelogd als %1$s"
 
-#: front-page.php:39
-msgid "Welcome to Orbis"
-msgstr "Welkom bij Orbis"
-
-#: front-page.php:42
-msgid ""
-"Orbis is a tool to manage your projects, your customer relations and has "
-"much more great features. Orbis is build on WordPress which is a great "
-"framework to create a powerful tool for your business. Enough introduction, "
-"time to get some work done."
-msgstr ""
-"Orbis is een hulpmiddel om uw projecten te beheren, uw klantenrelaties te "
-"onderhouden, het kan gebruikt worden als intranet en heeft veel meer "
-"geweldige functies. Orbis is gebouwd met WordPress wat een goede basis is om "
-"een krachtig hulpmiddel voor uw bussiness te creëren. Genoeg introductie, "
-"tijd om aan de slag te gaan. "
-
-#: front-page.php:46
-msgid "Add a post"
-msgstr "Bericht toevoegen"
-
-#: front-page.php:47
-msgid "Add a company"
-msgstr "Bedrijf toevoegen"
-
-#: front-page.php:48
-msgid "Add a project"
-msgstr "Project toevoegen"
-
-#: front-page.php:49
-msgid "Add a person"
-msgstr "Persoon toevoegen"
-
-#: front-page.php:53
-msgid "Learn more"
-msgstr "Meer informatie"
-
-#: front-page.php:67
+#: front-page.php:32
 msgid "Posts"
 msgstr "Berichten"
 
-#: front-page.php:73 front-page.php:113
+#: front-page.php:38 front-page.php:92
 msgid "Companies"
 msgstr "Bedrijven"
 
-#: front-page.php:79 front-page.php:128 includes/projects.php:6
+#: front-page.php:44 front-page.php:107 includes/projects.php:6
 msgid "Projects"
 msgstr "Projecten"
 
-#: front-page.php:85 front-page.php:143 includes/timesheets.php:12
+#: front-page.php:50 front-page.php:122 includes/timesheets.php:12
 msgid "Persons"
 msgstr "Personen"
 
@@ -320,19 +287,7 @@ msgstr "Personen"
 msgid "Primary Menu"
 msgstr "Primair menu"
 
-#: functions.php:78
-msgid "Main Widget"
-msgstr "Hoofd widget"
-
-#: functions.php:87
-msgid "Frontpage Top Widget"
-msgstr "Voorpagina bovenkant widget"
-
-#: functions.php:96
-msgid "Frontpage Bottom Widget"
-msgstr "Voorpagina onderkant widget"
-
-#: functions.php:300
+#: functions.php:241
 msgid "No description."
 msgstr "Geen beschrijving."
 
@@ -425,82 +380,106 @@ msgstr "Bekijk alle berichten van %s"
 msgid "Activities"
 msgstr "Activiteiten"
 
-#: includes/widgets.php:20
-msgid "Orbis Posts List"
-msgstr "Orbis berichten lijst"
-
-#: includes/widgets.php:104
-msgid "Show all"
-msgstr "Bekijk alles"
-
-#: includes/widgets.php:134 includes/widgets.php:286 includes/widgets.php:415
-#: includes/widgets.php:555
-msgid "Title:"
-msgstr "Titel:"
-
-#: includes/widgets.php:142
-msgid "Post type:"
-msgstr "Post type:"
-
-#: includes/widgets.php:159 includes/widgets.php:422 includes/widgets.php:562
-msgid "Number:"
-msgstr "Aantal:"
-
-#: includes/widgets.php:191
-msgid "Orbis News"
-msgstr "Orbis nieuws"
-
-#: includes/widgets.php:248
-msgid "More news"
-msgstr "Meer nieuws"
-
-#: includes/widgets.php:313
-msgid "Orbis Tasks"
-msgstr "Orbis Tasks"
-
-#: includes/widgets.php:363
-msgid "%d days"
-msgstr "%d dagen"
-
-#: includes/widgets.php:372
-msgid "Project:"
-msgstr "Project:"
-
-#: includes/widgets.php:372
-msgid "Deadline:"
-msgstr "Deadline:"
-
-#: includes/widgets.php:372
-msgid "Time:"
-msgstr "Tijd:"
-
-#: includes/widgets.php:380
-msgid "Show all tasks"
-msgstr "Bekijk alle taken"
-
-#: includes/widgets.php:386
-msgid "Grab a beer, no tasks for you."
-msgstr "Pak een biertje, er zijn geen taken voor jou."
-
-#: includes/widgets.php:454
+#: includes/widgets/orbis-widget-comments.php:20
 msgid "Orbis Comments"
 msgstr "Orbis Comments"
 
-#: includes/widgets.php:492
+#: includes/widgets/orbis-widget-comments.php:58
 msgid "Keychain"
 msgstr "Sleutelhanger"
 
-#: includes/widgets.php:495
+#: includes/widgets/orbis-widget-comments.php:61
 msgid "Subscription"
 msgstr "Abonnement"
 
-#: includes/widgets.php:498
+#: includes/widgets/orbis-widget-comments.php:64
 msgid "Comment"
 msgstr "Reactie"
 
-#: includes/widgets.php:514
+#: includes/widgets/orbis-widget-comments.php:80
 msgid "<span class=\"entry-meta\">Posted by %1$s on %2$s</span>"
 msgstr "<span class=\"entry-meta\">Geplaatst in %1$s op %2$s</span>"
+
+#: includes/widgets/orbis-widget-comments.php:121
+#: includes/widgets/orbis-widget-news.php:115
+#: includes/widgets/orbis-widget-orbis-tasks.php:122
+#: includes/widgets/orbis-widget-posts.php:134
+msgid "Title:"
+msgstr "Titel:"
+
+#: includes/widgets/orbis-widget-comments.php:128
+#: includes/widgets/orbis-widget-orbis-tasks.php:129
+#: includes/widgets/orbis-widget-posts.php:159
+msgid "Number:"
+msgstr "Aantal:"
+
+#: includes/widgets/orbis-widget-news.php:20
+msgid "Orbis News"
+msgstr "Orbis nieuws"
+
+#: includes/widgets/orbis-widget-news.php:77
+msgid "More news"
+msgstr "Meer nieuws"
+
+#: includes/widgets/orbis-widget-orbis-tasks.php:20
+msgid "Orbis Tasks"
+msgstr "Orbis Tasks"
+
+#: includes/widgets/orbis-widget-orbis-tasks.php:70
+msgid "%d days"
+msgstr "%d dagen"
+
+#: includes/widgets/orbis-widget-orbis-tasks.php:79
+msgid "Project:"
+msgstr "Project:"
+
+#: includes/widgets/orbis-widget-orbis-tasks.php:79
+msgid "Deadline:"
+msgstr "Deadline:"
+
+#: includes/widgets/orbis-widget-orbis-tasks.php:79
+msgid "Time:"
+msgstr "Tijd:"
+
+#: includes/widgets/orbis-widget-orbis-tasks.php:87
+msgid "Show all tasks"
+msgstr "Bekijk alle taken"
+
+#: includes/widgets/orbis-widget-orbis-tasks.php:93
+msgid "Grab a beer, no tasks for you."
+msgstr "Pak een biertje, er zijn geen taken voor jou."
+
+#: includes/widgets/orbis-widget-posts.php:20
+msgid "Orbis Posts List"
+msgstr "Orbis berichten lijst"
+
+#: includes/widgets/orbis-widget-posts.php:104
+msgid "Show all"
+msgstr "Bekijk alles"
+
+#: includes/widgets/orbis-widget-posts.php:142
+msgid "Post type:"
+msgstr "Post type:"
+
+#: includes/widgets.php:48
+msgid "Main Widget"
+msgstr "Hoofd widget"
+
+#: includes/widgets.php:57
+msgid "Frontpage Top Widget"
+msgstr "Voorpagina bovenkant widget"
+
+#: includes/widgets.php:66
+msgid "Frontpage Left Widget"
+msgstr "Voorpagina links widget"
+
+#: includes/widgets.php:75
+msgid "Frontpage Right Widget"
+msgstr "Voorpagina rechts widget"
+
+#: includes/widgets.php:84
+msgid "Frontpage Bottom Widget"
+msgstr "Voorpagina onderkant widget"
 
 #: index.php:33
 msgid "Add new"
@@ -515,7 +494,7 @@ msgid "Company Details"
 msgstr "Bedrijf details"
 
 #: single-orbis_company.php:20 single-orbis_project.php:30 single.php:18
-#: templates/project_tasks.php:14
+#: templates/project_tasks.php:15
 msgid "Description"
 msgstr "Beschrijving"
 
@@ -656,7 +635,7 @@ msgstr "Nee"
 msgid "KvK Number"
 msgstr "KvK nummer"
 
-#: templates/company_projects.php:61
+#: templates/company_projects.php:63
 msgid "No projects found."
 msgstr "Geen projecten gevonden."
 
@@ -667,6 +646,18 @@ msgstr "&mdash; Selecteer status &mdash;"
 #: templates/filter-orbis_deal.php:23 templates/filter-orbis_task.php:13
 msgid "Filter"
 msgstr "Filter"
+
+#: templates/filter-orbis_project.php:10
+msgid "Modified"
+msgstr "Gewijzigd"
+
+#: templates/filter-orbis_project.php:11
+msgid "Finished Modified"
+msgstr "Afgerond gewijzigd"
+
+#: templates/filter-orbis_project.php:12
+msgid "Invoice Number Modified"
+msgstr "Factuurnummer gewijzigd"
 
 #: templates/filter-orbis_task.php:7
 msgid "&mdash; Select Assignee &mdash;"
@@ -708,11 +699,11 @@ msgstr "Betrokken personen"
 msgid "No persons involved."
 msgstr "Geen personen betrokken."
 
-#: templates/project_tasks.php:16
+#: templates/project_tasks.php:17
 msgid "Comments"
 msgstr "Reacties"
 
-#: templates/project_tasks.php:45
+#: templates/project_tasks.php:47
 msgid "No tasks found."
 msgstr "Geen taken gevonden."
 
@@ -751,6 +742,41 @@ msgstr "Inhoud in panel"
 #. Template Name of the plugin/theme
 msgid "Full width"
 msgstr "Volledige breedte"
+
+#: templates/filter-orbis_project.php:33
+msgctxt "sorting"
+msgid "Order"
+msgstr "Sorteer"
+
+#~ msgid "Welcome to Orbis"
+#~ msgstr "Welkom bij Orbis"
+
+#~ msgid ""
+#~ "Orbis is a tool to manage your projects, your customer relations and has "
+#~ "much more great features. Orbis is build on WordPress which is a great "
+#~ "framework to create a powerful tool for your business. Enough "
+#~ "introduction, time to get some work done."
+#~ msgstr ""
+#~ "Orbis is een hulpmiddel om uw projecten te beheren, uw klantenrelaties te "
+#~ "onderhouden, het kan gebruikt worden als intranet en heeft veel meer "
+#~ "geweldige functies. Orbis is gebouwd met WordPress wat een goede basis is "
+#~ "om een krachtig hulpmiddel voor uw bussiness te creëren. Genoeg "
+#~ "introductie, tijd om aan de slag te gaan. "
+
+#~ msgid "Add a post"
+#~ msgstr "Bericht toevoegen"
+
+#~ msgid "Add a company"
+#~ msgstr "Bedrijf toevoegen"
+
+#~ msgid "Add a project"
+#~ msgstr "Project toevoegen"
+
+#~ msgid "Add a person"
+#~ msgstr "Persoon toevoegen"
+
+#~ msgid "Learn more"
+#~ msgstr "Meer informatie"
 
 #~ msgid "Principal"
 #~ msgstr "Opdrachtgever"
