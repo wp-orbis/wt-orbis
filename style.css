@@ -486,7 +486,8 @@ table td.project-time span {
 
 table tr.orbis-status-finished,
 table tr.orbis-status-finished a,
-table tr.orbis-status-finished td.project-time span.text-error {
+table tr.orbis-status-finished td.project-time span.text-error,
+table tr.orbis-status-finished td.project-time span.text-success {
 	color: #999;
 }
 
