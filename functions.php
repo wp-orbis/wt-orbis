@@ -54,9 +54,11 @@ add_action( 'after_setup_theme', 'orbis_setup' );
  * Enqueue scripts & styles
  */
 function orbis_load_scripts() {
+	$uri = get_template_directory_uri();
+
 	wp_enqueue_script( 
 		'bootstrap', 
-		get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', 
+		$uri . '/vendor/twbs/bootstrap/dist/js/bootstrap.min.js', 
 		array( 'jquery' ),
 		'3.1.1',
 		true
@@ -64,7 +66,7 @@ function orbis_load_scripts() {
 
 	wp_enqueue_script(
 		'app',
-		get_template_directory_uri() . '/js/app.js',
+		$uri . '/js/app.js',
 		array( 'jquery', 'bootstrap' ),
 		'1.0.0',
 		true
@@ -73,7 +75,7 @@ function orbis_load_scripts() {
 	/* Styles */
 	wp_enqueue_style( 
 		'bootstrap',
-		get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css',
+		$uri . '/vendor/twbs/bootstrap/dist/css/bootstrap.min.css',
 		array(),
 		'3.1.1'
 	);
