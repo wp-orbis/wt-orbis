@@ -30,6 +30,6 @@
     },
 	"type": "wordpress-theme",
 	"require": {
-		"twbs/bootstrap": "v3.1.1"
+		
 	}
 }

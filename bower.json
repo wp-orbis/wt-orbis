@@ -1,0 +1,7 @@
+{
+  "name": "orbis",
+  "version": "1.1.4",
+  "dependencies": {
+    "bootstrap": "~3.1.1"
+  }
+}

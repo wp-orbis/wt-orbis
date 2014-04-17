@@ -41,5 +41,6 @@ Stable tag: 1.1.4
 
 == Developers ==
 
-*	php ~/wp/svn/i18n-tools/makepot.php wp-theme ./ ./languages/orbis.pot
-
+*	http://alancrissey.com/grunt-bower-in-wordpress-part-1/
+*	http://www.gladdy.co.uk/blog/2014/01/21/modernising-wordpress-theme-development/
+*	https://github.com/wildlyinaccurate/wildly-minimalistic-wordpress-theme
