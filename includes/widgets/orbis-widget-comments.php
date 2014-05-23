@@ -24,7 +24,7 @@ class Orbis_Comments_Widget extends WP_Widget {
 		extract( $args );
 
 		$number = isset( $instance['number'] ) ? $instance['number'] : null;
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+		$title  = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
 		?>
 
@@ -102,14 +102,14 @@ class Orbis_Comments_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
-		$instance['title'] = $new_instance['title'];
+		$instance['title']  = $new_instance['title'];
 		$instance['number'] = $new_instance['number'];
 
 		return $instance;
 	}
 
 	function form( $instance ) {
-		$title = isset( $instance['title'] ) ? esc_attr($instance['title'] ) : '';
+		$title  = isset( $instance['title'] ) ? esc_attr($instance['title'] ) : '';
 		$number = isset( $instance['number'] ) ? esc_attr($instance['number'] ) : '';
 
 		$i = 1;

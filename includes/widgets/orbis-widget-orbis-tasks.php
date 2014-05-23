@@ -22,30 +22,25 @@ class Orbis_Tasks_Widget extends WP_Widget {
 
 	function widget( $args, $instance ) {
 		extract( $args );
-
+		
+		$title  = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 		$number = isset( $instance['number'] ) ? $instance['number'] : null;
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
-		?>
+		echo $before_widget;
 
-		<?php echo $before_widget; ?>
+		if ( ! empty( $title ) ) {
+			echo $before_title . $title . $after_title;
+		}
 
-		<?php if ( ! empty( $title ) ) : ?>
-
-			<?php echo $before_title . $title . $after_title; ?>
-
-		<?php endif; ?>
-
-		<?php
-
-		$query = new WP_Query( array ( 
+		$query = new WP_Query( array( 
 			'post_type'           => 'orbis_task',
 			'posts_per_page'      => $number,
-			'orbis_task_assignee' => get_current_user_id()
+			'orbis_task_assignee' => get_current_user_id(),
+			'no_found_rows'       => true,
 		) );
-		
+
 		if ( $query->have_posts() ) : ?>
-		
+
 			<ul class="post-list tasks">
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -103,14 +98,14 @@ class Orbis_Tasks_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
-		$instance['title'] = $new_instance['title'];
+		$instance['title']  = $new_instance['title'];
 		$instance['number'] = $new_instance['number'];
 
 		return $instance;
 	}
 
 	function form( $instance ) {
-		$title = isset( $instance['title'] ) ? esc_attr($instance['title'] ) : '';
+		$title  = isset( $instance['title'] ) ? esc_attr($instance['title'] ) : '';
 		$number = isset( $instance['number'] ) ? esc_attr($instance['number'] ) : '';
 	
 		$i = 1; 

@@ -692,8 +692,11 @@ p.project-time span {
 	left: 0;
 }
 
-.commentlist img.avatar {
-	border-radius: 100px;
+.comment img.avatar,
+.panel img.avatar {
+	-webkit-border-radius: 100px;
+	   -moz-border-radius: 100px;
+	        border-radius: 100px;
 }
 
 .comment-author cite {
