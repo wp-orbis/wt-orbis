@@ -33,11 +33,9 @@
 			<table class="table table-striped table-bordered table-condense table-hover">
 				<thead>
 					<tr>
-						<th><?php _e( 'Assignee', 'orbis' ); ?></th>
-						<th><?php _e( 'Project', 'orbis' ); ?></th>
 						<th><?php _e( 'Task', 'orbis' ); ?></th>
+						<th><?php _e( 'Assignee', 'orbis' ); ?></th>
 						<th><?php _e( 'Due At', 'orbis' ); ?></th>
-						<th><?php _e( 'Time', 'orbis' ); ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -66,20 +64,18 @@
 		
 						<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<td>
-								<?php orbis_task_assignee(); ?>
+								<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br />
+
+								<div class="entry-meta">
+									<span class="glyphicon glyphicon-file"></span> <?php orbis_task_project(); ?> <span class="glyphicon glyphicon-user"></span> <?php orbis_task_assignee(); ?> <span class="glyphicon glyphicon-time"></span> <?php orbis_task_time(); ?>
+								</div>
 							</td>
 							<td>
-								<?php orbis_task_project(); ?>
+								<?php echo get_avatar( get_post_meta( get_the_ID(), '_orbis_task_assignee_id', true ), 40 ); ?>
 							</td>
 							<td>
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</td>
-							<td>
-								<?php orbis_task_due_at(); ?> <?php echo $due_at_ouput; ?>
-							</td>
-							<td class="task-time">
 								<div class="actions">
-									<?php orbis_task_time(); ?>
+									<?php orbis_task_due_at(); ?> <?php echo $due_at_ouput; ?>
 							
 									<div class="nubbin">
 										<?php orbis_edit_post_link(); ?>
