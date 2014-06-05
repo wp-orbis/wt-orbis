@@ -8,10 +8,6 @@ require_once get_template_directory() . '/includes/widgets/orbis-widget-posts.ph
 require_once get_template_directory() . '/includes/widgets/orbis-widget-news.php';
 require_once get_template_directory() . '/includes/widgets/orbis-widget-comments.php';
 
-if ( function_exists( 'orbis_tasks_bootstrap' ) ) { 
-	require_once get_template_directory() . '/includes/widgets/orbis-widget-orbis-tasks.php';
-}
-
 /**
  * Register our sidebars and widgetized areas.
  */
@@ -37,10 +33,6 @@ function orbis_widgets_init() {
 	register_widget( 'Orbis_List_Posts_Widget' );
 	register_widget( 'Orbis_News_Widget' );
 	register_widget( 'Orbis_Comments_Widget' );
-
-	if ( function_exists( 'orbis_tasks_bootstrap' ) ) { 
-		register_widget( 'Orbis_Tasks_Widget' );
-	}
 
 	/* Register Widget Areas */
 
