@@ -21,6 +21,7 @@ $query = "
 ?>
 
 <?php foreach ( $users as $user ) : ?>
+
 	<?php 
 
 	$q = $wpdb->prepare( $query, $user->ID, date( 'Y-m-d' ) );
@@ -31,7 +32,7 @@ $query = "
 
 	<div class="person-timesheet-hours">
 		<div class="progress-wrapper">
-			<div class="avatar-wrapper" style="">
+			<div class="avatar-wrapper">
 				<?php echo get_avatar( $user->ID, 60 ); ?>
 			</div>
 
@@ -58,7 +59,7 @@ $query = "
 			?>
 
 			<div class="progress">
-				<div class="progress-bar progress-bar-<?php echo $bar; ?>" style="width: <?php echo $percentage; ?>%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="<?php echo $percentage; ?>" role="progressbar"><?php echo $percentage . '%'; ?></div>
+				<div class="progress-bar progress-bar-<?php echo $bar; ?>" style="width: <?php echo $percentage; ?>%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="<?php echo $percentage; ?>" role="progressbar"><?php echo round( $percentage ) . '%'; ?></div>
 			</div>
 		</div>
 
