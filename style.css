@@ -148,13 +148,13 @@ body.admin-bar .navbar-fixed-top {
 
 	border: 1px solid #c3c3c3;
 
-    -moz-border-radius: 4px;
     -webkit-border-radius: 4px; 
-    border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
 
-	-moz-box-shadow: 1px 1px 3px #e7e7e7;
 	-webkit-box-shadow: 1px 1px 3px #e7e7e7;
-	box-shadow: 1px 1px 3px #e7e7e7;
+	   -moz-box-shadow: 1px 1px 3px #e7e7e7;
+	        box-shadow: 1px 1px 3px #e7e7e7;
 
 	margin-bottom: 30px;
 }
@@ -174,9 +174,9 @@ body.admin-bar .navbar-fixed-top {
 .panel header {
 	background: #ececec;
 
-    -moz-border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
-    border-radius: 4px 4px 0 0;
+       -moz-border-radius: 4px 4px 0 0;
+            border-radius: 4px 4px 0 0;
     
 	background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#e8e8e8)); 
 	background: -moz-linear-gradient(top,  #fcfcfc,  #e8e8e8);
@@ -191,9 +191,9 @@ body.admin-bar .navbar-fixed-top {
 
 	padding: 20px;
 
-    -moz-border-radius: 0 0 4px 4px;
     -webkit-border-radius: 0 0 4px 4px;
-    border-radius: 0 0 4px 4px;
+       -moz-border-radius: 0 0 4px 4px;
+            border-radius: 0 0 4px 4px;
 }
 
 .panel h3 {
@@ -928,4 +928,102 @@ ul.social li.linkedin a { background: url("img/icons/linkedin.png") no-repeat; }
 		padding: 20px;
 	}
 
+}
+
+/* Dashboard
+------------------------- */
+
+.page-template-template-dashboard-php {
+	background: #000;
+
+	padding-top: 0;
+}
+
+.page-template-template-dashboard-php .container {
+	max-width: 1620px;
+	
+	width: auto;
+}
+
+.page-template-template-dashboard-php #footer,
+.page-template-template-dashboard-php .navbar,
+.page-template-template-dashboard-php #wpadminbar {
+	display: none;
+}
+
+.page-template-template-dashboard-php .panel {
+	background: #373737;
+
+    border: none;
+
+    box-shadow: none;
+
+	color: #fff;
+}
+
+.page-template-template-dashboard-php .panel header {
+    background: none;
+
+    border-color: #666;
+    
+    color: #999;
+
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+}
+
+.page-template-template-dashboard-php .panel header h3 {
+	font-size: 1em;
+	font-weight: normal;
+	
+	text-transform: uppercase;
+}
+
+.page-template-template-dashboard-php .dashboard-loader {
+	display: none;
+
+	background: #fff1a8;
+
+	font-weight: bold;
+
+	padding: 2px 4px;
+
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.person-timesheet-hours {
+	display: table;
+
+	margin-bottom: 10px;
+
+	width: 100%; 
+}
+
+.person-timesheet-hours .progress-wrapper {
+	display: table-cell; 
+
+	width: 80%;
+}
+
+.person-timesheet-hours .progress {
+	margin-top: 20px;
+}
+
+.person-timesheet-hours .avatar {
+	float: left; 
+
+	margin-right: 20px;
+}
+
+.person-timesheet-hours .number-hours {
+	display: table-cell; 
+
+	padding-left: 20px;
+
+	vertical-align: middle;
+
+	width: 20%; 
 }

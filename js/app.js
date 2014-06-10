@@ -22,5 +22,28 @@
     	// Tooltip
     	$( '.anchor-tooltip' ).tooltip();
 
+		// Ajax
+		( function loader() {
+			var ajaxURL = orbis_timesheets_vars.ajax_url;
+			
+			$( '.dashboard-loader' ).show();
+
+			$.ajax( {
+				type: 'POST',
+				url: ajaxURL,
+				data: {
+					action: 'load_data'
+				},
+				success: function( response ) {
+					$( '.data-holder' ).html( response );
+				},
+				complete: function() {
+					setTimeout( loader, 10000 );
+					
+					$( '.dashboard-loader' ).hide();
+				}
+			} );
+		} )();
+
 	} );
 } )( jQuery );

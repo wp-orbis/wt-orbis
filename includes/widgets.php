@@ -37,12 +37,21 @@ function orbis_widgets_init() {
 	/* Register Widget Areas */
 
 	register_sidebar( array(
-		'name'          => __( 'Main Widget', 'orbis' ),
+		'name'          => __( 'Main Widget Area', 'orbis' ),
 		'id'            => 'main-widget',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>'
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Dashboard Widget Area', 'orbis' ),
+		'id'            => 'dashboard-sidebar',
+		'before_widget' => '<div class="col-md-6"><div id="%1$s" class="panel %2$s">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<header><h3 class="widget-title">',
+		'after_title'   => '</h3></header>'
 	) );
 
 	register_sidebar( array(

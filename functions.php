@@ -72,6 +72,12 @@ function orbis_load_scripts() {
 		true
 	);
 
+	wp_localize_script(
+		'app',
+		'orbis_timesheets_vars',
+		array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
+	);
+
 	/* Styles */
 	wp_enqueue_style( 
 		'bootstrap',
@@ -275,3 +281,15 @@ function orbis_custom_excerpt( $excerpt, $charlength = 30 ) {
 
 	echo $excerpt;
 }
+
+/**
+ * Load timesheet data with AJAX
+ */
+function orbis_load_timesheet_data() {
+	get_template_part( 'templates/widget_timesheets' );
+
+	die();
+}
+
+add_action( 'wp_ajax_load_data', 'orbis_load_timesheet_data' );
+add_action( 'wp_ajax_nopriv_load_data', 'orbis_load_timesheet_data' );
