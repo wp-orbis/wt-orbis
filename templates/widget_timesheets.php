@@ -2,7 +2,11 @@
 
 global $wpdb;
 
-$users = get_users();
+$user_ids = filter_var( get_option( 'orbis_timesheets_email_users', array( -1 ) ), FILTER_VALIDATE_INT, array( 'flags' => FILTER_FORCE_ARRAY ) );
+
+$users = get_users( array(
+	'include' => $user_ids
+) );
 
 $query = "
 	SELECT
@@ -20,9 +24,7 @@ $query = "
 
 ?>
 
-<?php foreach ( $users as $user ) : ?>
-
-	<?php 
+<?php foreach ( $users as $user ) :
 
 	$q = $wpdb->prepare( $query, $user->ID, date( 'Y-m-d' ) );
 

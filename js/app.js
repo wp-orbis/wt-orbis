@@ -35,7 +35,7 @@
 					action: 'load_data'
 				},
 				success: function( response ) {
-					$( '.data-holder' ).html( response );
+					$( '#timesheet-hours-holder' ).html( response );
 				},
 				complete: function() {
 					setTimeout( loader, 10000 );
