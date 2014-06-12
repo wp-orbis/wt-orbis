@@ -38,7 +38,7 @@
 					$( '#timesheet-hours-holder' ).html( response );
 				},
 				complete: function() {
-					setTimeout( loader, 10000 );
+					setTimeout( loader, 60000 );
 					
 					$( '.dashboard-loader' ).hide();
 				}
