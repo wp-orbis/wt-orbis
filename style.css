@@ -994,6 +994,18 @@ ul.social li.linkedin a { background: url("img/icons/linkedin.png") no-repeat; }
 	top: 0;
 }
 
+/* Twitter */
+.page-template-template-dashboard-php .widget_orbis_twitter .post-list li {
+	font-size: 26px;
+
+	padding: 20px;
+}
+
+.page-template-template-dashboard-php .widget_orbis_twitter .post-list li:last-child {
+	border: none;
+}
+
+/* Timesheets */
 .person-timesheet-hours {
 	display: table;
 

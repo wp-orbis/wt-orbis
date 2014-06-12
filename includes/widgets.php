@@ -3,10 +3,10 @@
 /**
  * Widget includes
  */
-
 require_once get_template_directory() . '/includes/widgets/orbis-widget-posts.php';
 require_once get_template_directory() . '/includes/widgets/orbis-widget-news.php';
 require_once get_template_directory() . '/includes/widgets/orbis-widget-comments.php';
+require_once get_template_directory() . '/includes/widgets/orbis-widget-twitter.php';
 
 /**
  * Register our sidebars and widgetized areas.
@@ -33,6 +33,7 @@ function orbis_widgets_init() {
 	register_widget( 'Orbis_List_Posts_Widget' );
 	register_widget( 'Orbis_News_Widget' );
 	register_widget( 'Orbis_Comments_Widget' );
+	register_widget( 'Orbis_Twitter_Widget' );
 
 	/* Register Widget Areas */
 
