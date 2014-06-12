@@ -25,24 +25,26 @@
 		// Ajax
 		( function loader() {
 			var ajaxURL = orbis_timesheets_vars.ajax_url;
-			
-			$( '.dashboard-loader' ).show();
 
-			$.ajax( {
-				type: 'POST',
-				url: ajaxURL,
-				data: {
-					action: 'load_data'
-				},
-				success: function( response ) {
-					$( '#timesheet-hours-holder' ).html( response );
-				},
-				complete: function() {
-					setTimeout( loader, 60000 );
-					
-					$( '.dashboard-loader' ).hide();
-				}
-			} );
+			if ( $( '#timesheet-hours-holder' ).length ) {
+				$( '.dashboard-loader' ).show();
+
+				$.ajax( {
+					type: 'POST',
+					url: ajaxURL,
+					data: {
+						action: 'load_timesheet_data',
+					},
+					success: function( response ) {
+						$( '#timesheet-hours-holder' ).html( response );
+					},
+					complete: function() {
+						setTimeout( loader, 60000 );
+				
+						$( '.dashboard-loader' ).hide();
+					}
+				} );
+			}
 		} )();
 
 	} );

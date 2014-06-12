@@ -40,25 +40,17 @@ class Orbis_Twitter_Widget extends WP_Widget {
 
 		$connection = new TwitterOAuth( $consumerkey, $consumersecret, $accesstoken, $accesstokensecret );
 
-		$tweets = $connection->get( 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' . $screen_name . '&count=' . $number );
+		$file_template = locate_template( 'templates/widget_twitter.php' );
 
-		if ( $tweets ) : ?>
+		?>
 
-			<ul class="post-list">
-				<?php foreach ( $tweets as $tweet ) : ?>
+		<div id="twitter-holder">
+			<?php include( $file_template ); ?>
+		</div>
 
-					<li>
-						<?php echo $tweet->text; ?>
-					</li>
-
-				<?php endforeach; ?>
-			</ul>
-
-		<?php endif; ?>
-
-		<?php echo $after_widget; ?>
-		
 		<?php
+
+		echo $after_widget;
 	}
 
 	function update( $new_instance, $old_instance ) {
@@ -72,8 +64,8 @@ class Orbis_Twitter_Widget extends WP_Widget {
 	}
 
 	function form( $instance ) {
-		$title          = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-		$number         = isset( $instance['number'] ) ? esc_attr( $instance['number'] ) : '';
+		$title       = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$number      = isset( $instance['number'] ) ? esc_attr( $instance['number'] ) : '';
 		$screen_name = isset( $instance['screen_name'] ) ? esc_attr( $instance['screen_name'] ) : '';
 
 		?>

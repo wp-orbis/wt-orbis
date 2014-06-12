@@ -292,5 +292,4 @@ function orbis_load_timesheet_data() {
 	die();
 }
 
-add_action( 'wp_ajax_load_data', 'orbis_load_timesheet_data' );
-add_action( 'wp_ajax_nopriv_load_data', 'orbis_load_timesheet_data' );
+add_action( 'wp_ajax_load_timesheet_data', 'orbis_load_timesheet_data' );
