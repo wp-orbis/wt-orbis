@@ -12,14 +12,16 @@ get_header(); ?>
 	<div class="dashboard-loader">
 		<?php _e( 'Loading...', 'orbis' ); ?>
 	</div>
+	
+	<div id="dashboard-content-holder">
+		<?php if ( is_active_sidebar( 'dashboard-sidebar' ) ) : ?>
 
-	<?php if ( is_active_sidebar( 'dashboard-sidebar' ) ) : ?>
+			<div class="row">
+				<?php dynamic_sidebar( 'dashboard-sidebar' ); ?>
+			</div>
 
-		<div class="row">
-			<?php dynamic_sidebar( 'dashboard-sidebar' ); ?>
-		</div>
-
-	<?php endif; ?>
+		<?php endif; ?>
+	</div>
 
 <?php endwhile; ?>
 

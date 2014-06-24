@@ -40,13 +40,21 @@ class Orbis_Twitter_Widget extends WP_Widget {
 
 		$connection = new TwitterOAuth( $consumerkey, $consumersecret, $accesstoken, $accesstokensecret );
 
-		$file_template = locate_template( 'templates/widget_twitter.php' );
+		$tweets = $connection->get( 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' . $screen_name . '&count=' . $number );
 
-		?>
+			if ( $tweets && empty( $tweets->errors ) ) : ?>
 
-		<div id="twitter-holder">
-			<?php include( $file_template ); ?>
-		</div>
+				<ul class="post-list">
+					<?php foreach ( $tweets as $tweet ) : ?>
+
+						<li>
+							<?php echo $tweet->text; ?>
+						</li>
+
+					<?php endforeach; ?>
+				</ul>
+
+			<?php endif; ?>
 
 		<?php
 
