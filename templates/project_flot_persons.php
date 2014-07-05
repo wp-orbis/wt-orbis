@@ -2,12 +2,12 @@
 	<?php
 	
 	$result = $wpdb->get_results( '
-		SELECT SUM(wp_orbis_hours_registration.number_seconds) AS total_seconds, wp_orbis_persons.first_name, wp_orbis_persons.last_name, wp_orbis_projects.* 
-		FROM wp_orbis_hours_registration 
-		LEFT JOIN wp_orbis_persons ON(wp_orbis_hours_registration.user_id = wp_orbis_persons.id)
-		LEFT JOIN wp_orbis_projects ON(wp_orbis_hours_registration.project_id = wp_orbis_projects.id)
-		WHERE wp_orbis_projects.post_id = '. get_the_ID() .' 
-		GROUP BY wp_orbis_persons.id
+		SELECT SUM(orbis_hours_registration.number_seconds) AS total_seconds, orbis_persons.first_name, orbis_persons.last_name, orbis_projects.* 
+		FROM orbis_hours_registration 
+		LEFT JOIN orbis_persons ON(orbis_hours_registration.user_id = orbis_persons.id)
+		LEFT JOIN orbis_projects ON(orbis_hours_registration.project_id = orbis_projects.id)
+		WHERE orbis_projects.post_id = '. get_the_ID() .' 
+		GROUP BY orbis_persons.id
 	' );
 	
 	$flot_data = array();
