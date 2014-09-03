@@ -89,7 +89,7 @@ function orbis_load_scripts() {
 
 	wp_enqueue_style(
 		'wt-orbis',
-		$uri . '/src/css/orbis.css',
+		$uri . "/assets/css/orbis.min.css",
 		array( 'bootstrap' ),
 		'1.0.0'
 	);
