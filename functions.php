@@ -59,7 +59,7 @@ function orbis_load_scripts() {
 
 	wp_enqueue_script(
 		'bootstrap',
-		$uri . '/bower_components/bootstrap/dist/js/bootstrap.min.js',
+		$uri . '/assets/bootstrap/js/bootstrap.min.js',
 		array( 'jquery' ),
 		'3.2.0',
 		true
@@ -82,7 +82,7 @@ function orbis_load_scripts() {
 	/* Styles */
 	wp_enqueue_style(
 		'bootstrap',
-		$uri . '/bower_components/bootstrap/dist/css/bootstrap.min.css',
+		$uri . '/assets/bootstrap/css/bootstrap.min.css',
 		array(),
 		'3.2.0'
 	);
