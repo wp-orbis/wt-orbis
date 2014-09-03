@@ -66,7 +66,7 @@ function orbis_load_scripts() {
 	);
 
 	wp_enqueue_script(
-		'app',
+		'wt-orbis',
 		$uri . '/src/js/app.js',
 		array( 'jquery', 'bootstrap' ),
 		'1.0.0',
@@ -74,7 +74,7 @@ function orbis_load_scripts() {
 	);
 
 	wp_localize_script(
-		'app',
+		'wt-orbis',
 		'orbis_timesheets_vars',
 		array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
 	);
@@ -88,7 +88,7 @@ function orbis_load_scripts() {
 	);
 
 	wp_enqueue_style(
-		'orbis',
+		'wt-orbis',
 		get_stylesheet_uri(),
 		array( 'bootstrap' ),
 		'1.0.0'
