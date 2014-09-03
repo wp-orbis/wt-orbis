@@ -67,7 +67,7 @@ function orbis_load_scripts() {
 
 	wp_enqueue_script(
 		'wt-orbis',
-		$uri . '/src/js/app.js',
+		$uri . '/src/js/orbis.js',
 		array( 'jquery', 'bootstrap' ),
 		'1.0.0',
 		true
