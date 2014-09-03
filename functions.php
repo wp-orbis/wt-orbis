@@ -57,9 +57,9 @@ add_action( 'after_setup_theme', 'orbis_setup' );
 function orbis_load_scripts() {
 	$uri = get_template_directory_uri();
 
-	wp_enqueue_script( 
-		'bootstrap', 
-		$uri . '/bower_components/bootstrap/dist/js/bootstrap.min.js', 
+	wp_enqueue_script(
+		'bootstrap',
+		$uri . '/bower_components/bootstrap/dist/js/bootstrap.min.js',
 		array( 'jquery' ),
 		'3.1.1',
 		true
@@ -80,14 +80,14 @@ function orbis_load_scripts() {
 	);
 
 	/* Styles */
-	wp_enqueue_style( 
+	wp_enqueue_style(
 		'bootstrap',
 		$uri . '/bower_components/bootstrap/dist/css/bootstrap.min.css',
 		array(),
 		'3.1.1'
 	);
 
-	wp_enqueue_style( 
+	wp_enqueue_style(
 		'orbis',
 		get_stylesheet_uri(),
 		array( 'bootstrap' ),
@@ -260,7 +260,7 @@ add_filter( 'the_content', 'orbis_the_content_empty', 200 );
  * Orbis Companies
  */
 function orbis_companies_render_contact_details() {
-	if ( is_singular( 'orbis_company' ) ) {	
+	if ( is_singular( 'orbis_company' ) ) {
 		get_template_part( 'templates/company_contact' );
 	}
 }
