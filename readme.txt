@@ -8,6 +8,9 @@ Stable tag: 1.1.4
 
 == Changelog ==
 
+= 1.2.0 =
+*	Tweak - Updated Bootstrap from v3.1.1 to v3.2.0.
+
 = 1.1.4 =
 *	Tweak - Fixed KVK search URL on company contact block.
 *	Tweak - Added order by dropdown on projects archive page. 
