@@ -1,7 +1,7 @@
 /* Body and structure
 -------------------------------------------------- */
 body {
-	background: #f6f6f6 url("img/misc/body-texture.png");
+	background: #f6f6f6 url("../images/misc/body-texture.png");
 
 	padding-top: 70px;
 }
@@ -54,7 +54,7 @@ ul.list li:after {
 }
 
 .with-cols {
-	background: url("img/misc/line.png") center center repeat-y;
+	background: url("../images/misc/line.png") center center repeat-y;
 }
 
 .no-disc {
@@ -869,9 +869,9 @@ ul.social li a {
 	text-indent: -9999px;
 }
 
-ul.social li.twitter a { background: url("img/icons/twitter.png") no-repeat; }
-ul.social li.facebook a { background: url("img/icons/facebook.png") no-repeat; }
-ul.social li.linkedin a { background: url("img/icons/linkedin.png") no-repeat; }
+ul.social li.twitter a { background: url("../images/icons/twitter.png") no-repeat; }
+ul.social li.facebook a { background: url("../images/icons/facebook.png") no-repeat; }
+ul.social li.linkedin a { background: url("../images/icons/linkedin.png") no-repeat; }
 
 /* Footer
 ------------------------- */
