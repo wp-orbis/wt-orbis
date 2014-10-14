@@ -14,6 +14,17 @@
 
 			$( this ).tab( 'show' );
 		} );
+		
+		// Tasks
+		$( '.selector a' ).click( function() {
+			$( this ).next( '.dropdown' ).toggle();
+			
+			$( this ).toggleClass( 'active' );
+		} );
+
+		$( document ).on( 'click', '#cancel', function() {
+			$( '#popover' ).popover( 'hide');
+		} );
 
 		// Add class to input buttons
     	$( 'input#submit' ).addClass( 'btn btn-primary' );
