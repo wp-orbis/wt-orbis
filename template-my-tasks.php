@@ -220,7 +220,7 @@ get_header(); ?>
 		<div class="table-responsive">
 			<table class="table table-striped table-condense table-hover">
 				<tbody>
-					<tr class="orbis_task type-orbis_task status-publish hentry" ng-repeat="todo in todos">
+					<tr class="orbis_task type-orbis_task status-publish hentry" ng-repeat="todo in todos" ng-class="{completed: done}">
 						<td class="centered">
 								<input type="checkbox" ng-model="todo.done" />
 						</td>
@@ -228,13 +228,16 @@ get_header(); ?>
 							<a href="http://orbiswp.nl.beta.pronamic.nl/tasks/develop-login-functionality/" class="title">{{todo.text}}</a>
 
 							<span class="entry-meta">
-								<a href="http://orbiswp.nl.beta.pronamic.nl/projects/orbis-plugin-development/">Orbis plugin development</a>  <a href="#"><span class="glyphicon glyphicon-time"></span> 16:00</a>
+								<a href="http://orbiswp.nl.beta.pronamic.nl/projects/orbis-plugin-development/">Orbis plugin development</a>
+								<a href="#"><span class="glyphicon glyphicon-time"></span> {{todo.time}}</a>
 							</span>
 						</td>
 						<td>
-							<img width="50" height="50" class="avatar avatar-50 photo" src="http://0.gravatar.com/avatar/e9c225cf7bd8b668e11363ef85416539?s=50&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D50&amp;r=G" alt="">							</td>
+							<img width="50" height="50" class="avatar avatar-50 photo" src="http://0.gravatar.com/avatar/e9c225cf7bd8b668e11363ef85416539?s=50&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D50&amp;r=G" alt="">
+						</td>
 						<td class="right">
-							<div class="due-date"><span class="alt">Due:</span> 7 apr 2014</div> <span class="label label-danger"> -205 days</span>							</td>
+							<div class="due-date"><span class="alt">Due:</span> 7 apr 2014</div> <span class="label label-danger"> -205 days</span>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -249,7 +252,7 @@ get_header(); ?>
 
 				<div class="form-group inline task-time">
 					<label for="" class="sr-only">Time</label>
-					<input type="text" placeholder="00:00" id="" class="form-control input-lg">
+					<input type="text" placeholder="00:00" id="" class="form-control input-lg" ng-model="formTodoTime" ng-model-instant />
 				</div>
 
 				<button id="add-task" class="btn btn-success btn-lg" type="submit" ng-click="addTodo()">Add task</button>
