@@ -18,7 +18,7 @@ global $orbis_errors;
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><?php _e( 'Project', 'orbis_timesheets' ); ?></label>
-						<input  placeholder="<?php esc_attr_e( 'Select project…', 'orbis_timesheets' ); ?>" type="text" name="orbis_registration_project_id" value="" class="orbis-id-control orbis-project-id-control select-form-control" data-text="" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" autofocus="autofocus" />
+						<input  placeholder="<?php esc_attr_e( 'Select project…', 'orbis_timesheets' ); ?>" type="text" class="orbis-id-control orbis-project-id-control select-form-control" data-text="" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" autofocus="autofocus" ng-model="formTaskProjectId" />
 					</div>
 				</div>
 
@@ -39,7 +39,7 @@ global $orbis_errors;
 
 					<div class="form-group">
 						<label><?php _e( 'Date', 'orbis_timesheets' ); ?></label>
-						<input type="date" class="form-control datepicker" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" ng-model="formTaskDate" />
+						<input type="date" class="form-control datepicker" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" ng-model="formTaskDueAt" />
 
 						<style>
 							.input-group .form-control { z-index: auto; }

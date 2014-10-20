@@ -217,7 +217,7 @@ get_header(); ?>
 								<input type="checkbox" ng-model="task.done" />
 							</td>
 							<td>
-								<a href="http://orbiswp.nl.beta.pronamic.nl/tasks/develop-login-functionality/" class="title">{{task.text}}</a>
+								<a ng-href="{{task.url}}" class="title">{{task.text}}</a>
 
 								<span class="entry-meta">
 									<a href="http://orbiswp.nl.beta.pronamic.nl/projects/orbis-plugin-development/">Orbis plugin development</a>
@@ -225,10 +225,10 @@ get_header(); ?>
 								</span>
 							</td>
 							<td>
-								<img width="50" height="50" class="avatar avatar-50 photo" src="http://0.gravatar.com/avatar/e9c225cf7bd8b668e11363ef85416539?s=50&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D50&amp;r=G" alt="">
+								<img width="50" height="50" class="avatar avatar-50 photo" ng-src="http://www.gravatar.com/avatar/{{task.gravatar_hash}}.jpg?s=200" alt="">
 							</td>
 							<td class="right">
-								<div class="due-date"><span class="alt">Due:</span> {{ task.date | date : 'd MMM yyyy'}}</div> <span class="label label-danger"> -205 days</span>
+								<div class="due-date"><span class="alt">Due:</span> {{task.due_at | date : 'd MMM yyyy'}}</div>
 							</td>
 						</tr>
 					</tbody>
