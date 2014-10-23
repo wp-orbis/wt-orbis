@@ -18,12 +18,28 @@ global $orbis_errors;
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><?php _e( 'Project', 'orbis_timesheets' ); ?></label>
-						<input  placeholder="<?php esc_attr_e( 'Select project…', 'orbis_timesheets' ); ?>" type="text" class="orbis-id-control orbis-project-id-control select-form-control" data-text="" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" autofocus="autofocus" ng-model="formTaskProjectId" />
+						<input placeholder="<?php esc_attr_e( 'Select project…', 'orbis_timesheets' ); ?>" type="text" class="orbis-id-control orbis-project-id-control select-form-control" data-text="" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" autofocus="autofocus" ng-model="formTaskProjectId" />
 					</div>
 				</div>
 
 				<div class="col-md-6">
+					<div class="form-group">
+						<label><?php _e( 'Assignee', 'orbis_timesheets' ); ?></label>
 
+						<?php
+
+						$output = wp_dropdown_users( array(
+							'name'             => 'orbis_task_assignee',
+							'selected'         => filter_input( INPUT_GET, 'orbis_task_assignee', FILTER_SANITIZE_STRING ),
+							'show_option_none' => __( '&mdash; Select Assignee &mdash;', 'orbis' ),
+							'class'            => 'form-control',
+							'echo'             => false,
+						) );
+
+						echo str_replace( '<select ', '<select ng-model="formTaskAssigneeId" ', $output );
+
+						?>
+					</div>
 				</div>
 			</div>
 
