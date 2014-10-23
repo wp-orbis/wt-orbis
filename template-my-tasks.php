@@ -228,7 +228,7 @@ get_header(); ?>
 								<img width="50" height="50" class="avatar avatar-50 photo" ng-src="http://www.gravatar.com/avatar/{{task.assignee.gravatar_hash}}.jpg?s=200" alt="">
 							</td>
 							<td class="right">
-								<div class="due-date"><span class="alt">Due:</span> {{task.due_at | date : 'd MMM yyyy'}}</div>
+								<div class="due-date">{{task.due_at | date : 'd MMM yyyy'}}</div>
 
 								<span class="label" ng-class="{'label-default': task.days_left > 0, 'label-danger': task.days_left <= 0}">
  									<ng-pluralize count="task.days_left" when="{'1': '<?php esc_attr_e( '1 day', 'orbis' ); ?>', 'other': '<?php esc_attr_e( '{} days', 'orbis' ); ?>'}"></ng-pluralize>
