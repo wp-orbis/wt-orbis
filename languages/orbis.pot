@@ -4,14 +4,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.1.4\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-09-03 12:59:07+00:00\n"
+"POT-Creation-Date: 2014-10-23 13:32:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.4.7\n"
+"X-Generator: grunt-wp-i18n 0.4.8\n"
 
 #: 404.php:5
 msgid "404"
@@ -60,6 +60,7 @@ msgid "Add deal"
 msgstr ""
 
 #: archive-orbis_deal.php:36 templates/filter-orbis_project.php:9
+#: templates/task_form.php:57
 msgid "Date"
 msgstr ""
 
@@ -123,12 +124,12 @@ msgid "Client"
 msgstr ""
 
 #: archive-orbis_project.php:37 single-orbis_task.php:55
-#: templates/company_projects.php:15
+#: templates/company_projects.php:15 templates/task_form.php:20
 msgid "Project"
 msgstr ""
 
 #: archive-orbis_project.php:38 templates/company_projects.php:16
-#: templates/project_tasks.php:16
+#: templates/project_tasks.php:16 templates/task_form.php:75
 msgid "Time"
 msgstr ""
 
@@ -141,15 +142,17 @@ msgstr ""
 msgid "Cost Price"
 msgstr ""
 
-#: archive-orbis_task.php:19
+#: archive-orbis_task.php:19 templates/task_form.php:13
+#: templates/task_form.php:91
 msgid "Add task"
 msgstr ""
 
-#: archive-orbis_task.php:36
+#: archive-orbis_task.php:36 templates/task_form.php:49
 msgid "Task"
 msgstr ""
 
 #: archive-orbis_task.php:37 single-orbis_task.php:58
+#: templates/task_form.php:27
 msgid "Assignee"
 msgstr ""
 
@@ -278,7 +281,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:250
+#: functions.php:251
 msgid "No description."
 msgstr ""
 
@@ -584,6 +587,14 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
+#: template-my-tasks.php:234
+msgid "1 day"
+msgstr ""
+
+#: template-my-tasks.php:234
+msgid "{} days"
+msgstr ""
+
 #: templates/company_contact.php:19
 msgid "Contact Details"
 msgstr ""
@@ -642,7 +653,7 @@ msgstr ""
 msgid "Invoice Number Modified"
 msgstr ""
 
-#: templates/filter-orbis_task.php:7
+#: templates/filter-orbis_task.php:7 templates/task_form.php:34
 msgid "&mdash; Select Assignee &mdash;"
 msgstr ""
 
@@ -698,6 +709,22 @@ msgstr ""
 msgid "Auto Renew"
 msgstr ""
 
+#: templates/task_form.php:21
+msgid "Select project…"
+msgstr ""
+
+#: templates/task_form.php:50
+msgid "Task description"
+msgstr ""
+
+#: templates/task_form.php:79
+msgid "hours"
+msgstr ""
+
+#: templates/task_form.php:84
+msgid "minutes"
+msgstr ""
+
 #. Theme Name of the plugin/theme
 msgid "Orbis"
 msgstr ""
@@ -724,6 +751,10 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Full width"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "My Tasks"
 msgstr ""
 
 #: templates/filter-orbis_project.php:33
