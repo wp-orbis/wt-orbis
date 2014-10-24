@@ -60,6 +60,8 @@ get_header(); ?>
 	}
 
 	.due-date {
+		border-bottom: 1px dashed;
+
 		display: inline;
 
 		position: relative;
