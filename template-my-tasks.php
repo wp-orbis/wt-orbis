@@ -245,7 +245,7 @@ get_header(); ?>
 							<td class="right">
 								<div class="due-date" ng-hide="editing" ng-click="editing = true">{{task.due_at | date : 'd MMM yyyy'}}</div>
 
-								<form class="form-inline" role="form" ng-show="editing" ng-submit="$parent.updateTask( task ); editing = false;">
+								<form class="form-inline" role="form" ng-show="editing" ng-submit="updateTask( task ); editing = false;">
 									<input class="form-control" ui-date ng-model="task.due_at" ng-required="true">
 
 									<button class="btn btn-default" type="submit">Update</button>
