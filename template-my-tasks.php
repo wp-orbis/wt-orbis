@@ -217,7 +217,11 @@ get_header();
 
 			</div>
 
-			<div class="table-responsive">
+			<div ng-show="tasks == null" class="well">
+				<span class="glyphicon glyphicon-refresh"></span>
+			</div>
+
+			<div class="table-responsive" ng-show="tasks != null" ng-cloak>
 				<table class="table table-striped table-condense table-hover">
 					<col width="10">
 					<col width="50">
