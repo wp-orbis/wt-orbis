@@ -9,12 +9,6 @@ wp_enqueue_script( 'angular-ui-date' );
 wp_enqueue_script( 'orbis-tasks-angular' );
 
 get_header(); ?>
-
-
-<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
-
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-
 <style>
 	.table tr.completed {
 		color: #999;
