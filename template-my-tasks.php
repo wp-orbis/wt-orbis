@@ -8,7 +8,9 @@ wp_enqueue_style( 'angular-scp' );
 wp_enqueue_script( 'angular-ui-date' );
 wp_enqueue_script( 'orbis-tasks-angular' );
 
-get_header(); ?>
+get_header();
+
+?>
 <style>
 	.table tr.completed {
 		color: #999;
