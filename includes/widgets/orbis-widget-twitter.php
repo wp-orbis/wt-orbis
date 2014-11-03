@@ -22,23 +22,23 @@ class Orbis_Twitter_Widget extends WP_Widget {
 
 	function widget( $args, $instance ) {
 		extract( $args );
-		
+
 		$title       = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 		$number      = isset( $instance['number'] ) ? $instance['number'] : null;
-		$screen_name = isset( $instance['screen_name'] ) ? $instance['screen_name'] : null; 
+		$screen_name = isset( $instance['screen_name'] ) ? $instance['screen_name'] : null;
 
 		echo $before_widget;
 
 		if ( ! empty( $title ) ) {
-			echo $before_title . $title . $after_title; 
+			echo $before_title . $title . $after_title;
 		}
 
-		$consumerkey       = 'SfTNyuhqsX7yeIOZ4vIV0mXGW';
-		$consumersecret    = 'QJKUSh14WtstXGsD8NNGalqskwln2YLSwAReApoCImkEaHCPIc';
-		$accesstoken       = '16009406-GscT7hFZ6bQUOKga79GCC7nCyfFa2KrmRFhr4jkQH';
-		$accesstokensecret = 'zvXOrG1D98T51tRrjwaoxr5uhnmmIbrqNy0v13toVIwmx';
+		$consumer_key        = get_option( 'orbis_twitter_consumer_key' );
+		$consumer_secret     = get_option( 'orbis_twitter_consumer_secret' );
+		$access_token        = get_option( 'orbis_twitter_access_token' );
+		$access_token_secret = get_option( 'orbis_twitter_access_token_secret' );
 
-		$connection = new TwitterOAuth( $consumerkey, $consumersecret, $accesstoken, $accesstokensecret );
+		$connection = new TwitterOAuth( $consumer_key, $consumer_secret, $access_token, $access_token_secret );
 
 		$tweets = $connection->get( 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' . $screen_name . '&count=' . $number );
 
@@ -96,16 +96,16 @@ class Orbis_Twitter_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number:', 'orbis' ); ?></label>
-			
+
 			<select id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>">
 				<?php $i = 1; while ( $i <= 10 ) : ?>
-    		
+
 					<option value="<?php echo $i; ?>"<?php if ( $number == $i ) echo ' selected'; ?>><?php echo $i; ?></option>
 
 				<?php $i++; endwhile; ?>
 			</select>
 		</p>
-		
+
 		<?php
 	}
 }
