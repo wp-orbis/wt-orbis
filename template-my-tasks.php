@@ -259,61 +259,6 @@ get_header();
 					</tbody>
 				</table>
 			</div>
-
-			<?php if ( false ) : ?>
-
-				<footer>
-					<form role="form">
-						<div class="form-group inline task-description">
-							<label for="" class="sr-only">Task</label>
-							<input type="text" placeholder="Add task…" class="form-control input-lg" ng-model="formTaskText" />
-						</div>
-
-						<div class="form-group inline task-time">
-							<label for="" class="sr-only">Time</label>
-							<input type="text" placeholder="00:00" id="" class="form-control input-lg" ng-model="formTaskTime" />
-						</div>
-
-						<button id="add-task" class="btn btn-success btn-lg" type="submit" ng-click="addTask()">Add task</button>
-
-						<div class="selectors">
-							<span data-type="user" class="selector">
-								<a href="#"><span class="glyphicon glyphicon-user"></span> Karel-Jan Tolsma</a>
-
-								<ul class="dropdown">
-									<li><a href="#">Remco</a></li>
-									<li><a href="#">Duker</a></li>
-									<li><a href="#">Jelke</a></li>
-									<li><a href="#">Leo</a></li>
-								</ul>
-							</span>
-
-							<span data-type="time" class="selector">
-								<a href="#"><span class="glyphicon glyphicon-calendar"></span> 04 apr 2014</a>
-
-								<div class="dropdown">
-									<div class="datepicker hasDatepicker" id="dp1410271891303"><div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a title="Prev" class="ui-datepicker-prev ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a title="Next" data-event="click" data-handler="next" class="ui-datepicker-next ui-corner-all"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">September</span>&nbsp;<span class="ui-datepicker-year">2014</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th><span title="Monday">Mo</span></th><th><span title="Tuesday">Tu</span></th><th><span title="Wednesday">We</span></th><th><span title="Thursday">Th</span></th><th><span title="Friday">Fr</span></th><th class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">5</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">6</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">7</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">8</span></td><td class=" ui-datepicker-unselectable ui-state-disabled  ui-datepicker-today"><span class="ui-state-default">9</span></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" ui-datepicker-days-cell-over  ui-datepicker-current-day"><a href="#" class="ui-state-default ui-state-active ui-state-hover">10</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">11</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">12</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">13</a></td></tr><tr><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">14</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">15</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">16</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">17</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">18</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">19</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">20</a></td></tr><tr><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">21</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">22</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">23</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">24</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">25</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">26</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">27</a></td></tr><tr><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" ui-datepicker-week-end "><a href="#" class="ui-state-default">28</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">29</a></td><td data-year="2014" data-month="8" data-event="click" data-handler="selectDay" class=" "><a href="#" class="ui-state-default">30</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></div>
-								</div>
-							</span>
-
-							<span data-type="project" class="selector">
-								<a href="#"><span class="glyphicon glyphicon-file"></span> No project</a>
-
-								<div class="dropdown">
-									<div class="form-group">
-										<label for="">Project</label>
-										<input type="text" placeholder="Connect this task to a project" id="" class="form-control">
-									</div>
-
-									<button id="cancel" class="btn btn-default" type="submit">Cancel</button> <button class="btn btn-primary" type="submit">Submit</button>
-								</div>
-							</span>
-						</div>
-					</form>
-				</footer>
-
-			<?php endif; ?>
-
 		</div>
 
 		<?php get_template_part( 'templates/task_form' ); ?>
