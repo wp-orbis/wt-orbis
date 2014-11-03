@@ -3,14 +3,10 @@
 /**
  * Widget includes
  */
-
 require_once get_template_directory() . '/includes/widgets/orbis-widget-posts.php';
 require_once get_template_directory() . '/includes/widgets/orbis-widget-news.php';
 require_once get_template_directory() . '/includes/widgets/orbis-widget-comments.php';
-
-if ( function_exists( 'orbis_tasks_bootstrap' ) ) { 
-	require_once get_template_directory() . '/includes/widgets/orbis-widget-orbis-tasks.php';
-}
+require_once get_template_directory() . '/includes/widgets/orbis-widget-twitter.php';
 
 /**
  * Register our sidebars and widgetized areas.
@@ -37,20 +33,26 @@ function orbis_widgets_init() {
 	register_widget( 'Orbis_List_Posts_Widget' );
 	register_widget( 'Orbis_News_Widget' );
 	register_widget( 'Orbis_Comments_Widget' );
-
-	if ( function_exists( 'orbis_tasks_bootstrap' ) ) { 
-		register_widget( 'Orbis_Tasks_Widget' );
-	}
+	register_widget( 'Orbis_Twitter_Widget' );
 
 	/* Register Widget Areas */
 
 	register_sidebar( array(
-		'name'          => __( 'Main Widget', 'orbis' ),
+		'name'          => __( 'Main Widget Area', 'orbis' ),
 		'id'            => 'main-widget',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>'
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Dashboard Widget Area', 'orbis' ),
+		'id'            => 'dashboard-sidebar',
+		'before_widget' => '<div class="col-md-6"><div id="%1$s" class="panel %2$s">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<header><h3 class="widget-title">',
+		'after_title'   => '</h3></header>'
 	) );
 
 	register_sidebar( array(

@@ -22,89 +22,92 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 
 	function widget( $args, $instance ) {
 		extract( $args );
-
-		$number = isset( $instance['number'] ) ? $instance['number'] : null;
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+		
+		$title          = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+		$number         = isset( $instance['number'] ) ? $instance['number'] : null;
 		$post_type_name = isset( $instance['post_type_name'] ) ? $instance['post_type_name'] : null; 
 
-		?>
+		echo $before_widget;
 
-		<?php echo $before_widget; ?>
-
-		<?php if ( ! empty( $title ) ) : ?>
-
-			<?php echo $before_title . $title . $after_title; ?>
-
-		<?php endif; ?>
-
-		<?php
+		if ( ! empty( $title ) ) {
+			echo $before_title . $title . $after_title; 
+		}
 
 		$query = new WP_Query( array ( 
 			'post_type'      => $post_type_name,
-			'posts_per_page' => $number
+			'posts_per_page' => $number,
+			'no_found_rows'  => true,
 		) );
 		
-		?>
+		if ( $query->have_posts() ) : ?>
 
-		<?php if ( $post_type_name == 'orbis_person' ) : ?>
-		
-			<ul class="post-list">
-				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+			<?php if ( $post_type_name == 'orbis_person' ) : ?>
 
-					<li>
-						<a href="<?php the_permalink(); ?>" class="post-image">
-							<?php if ( has_post_thumbnail() ) : ?>
+				<ul class="post-list">
+					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+						<li>
+							<a href="<?php the_permalink(); ?>" class="post-image">
+								<?php if ( has_post_thumbnail() ) : ?>
 	
-								<?php the_post_thumbnail( 'avatar' ); ?>
+									<?php the_post_thumbnail( 'avatar', array( 'class' => 'avatar' ) ); ?>
 	
-							<?php else : ?>
+								<?php else : ?>
 	
-								<img src="<?php bloginfo('template_directory'); ?>/placeholders/avatar.png" alt="">
-	
-							<?php endif; ?>
-						</a>
-
-						<div class="post-content">
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br />
-
-							<p>
-								<?php if ( get_post_meta( get_the_ID(), '_orbis_person_email_address', true ) ) : ?>
-
-									<span class="entry-meta"><?php echo get_post_meta( get_the_ID(), '_orbis_person_email_address', true ); ?></span> <br />
-		
-								<?php endif; ?>
-
-								<?php if ( get_post_meta( get_the_ID(), '_orbis_person_phone_number', true ) ) : ?>
-
-									<span class="entry-meta"><?php echo get_post_meta( get_the_ID(), '_orbis_person_phone_number', true ); ?></span>
+									<img class="avatar" src="<?php bloginfo('template_directory'); ?>/placeholders/avatar.png" alt="">
 	
 								<?php endif; ?>
-							</p>
-						</div>
-					</li>
+							</a>
 
-				<?php endwhile; ?>
-			</ul>
+							<div class="post-content">
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br />
 
-		<?php else : ?>
+								<p>
+									<?php if ( get_post_meta( get_the_ID(), '_orbis_person_email_address', true ) ) : ?>
 
-			<ul class="list">
-				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-
-					<li>
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					</li>
-
-				<?php endwhile; ?>
-			</ul>
+										<span class="entry-meta"><?php echo get_post_meta( get_the_ID(), '_orbis_person_email_address', true ); ?></span> <br />
 		
+									<?php endif; ?>
+
+									<?php if ( get_post_meta( get_the_ID(), '_orbis_person_phone_number', true ) ) : ?>
+
+										<span class="entry-meta"><?php echo get_post_meta( get_the_ID(), '_orbis_person_phone_number', true ); ?></span>
+	
+									<?php endif; ?>
+								</p>
+							</div>
+						</li>
+
+					<?php endwhile; ?>
+				</ul>
+
+			<?php else : ?>
+
+				<ul class="list">
+					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+						<li>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</li>
+
+					<?php endwhile; ?>
+				</ul>
+
+			<?php endif; ?>
+
+			<footer>
+				<a href="<?php echo get_post_type_archive_link( $post_type_name ); ?>" class="btn btn-default"><?php _e( 'Show all', 'orbis' );  ?></a>
+			</footer>
+
+		<?php wp_reset_postdata(); else : ?>
+
+			<div class="content">
+				<p class="alt">
+					<?php _e( 'No posts found.', 'orbis' ); ?>
+				</p>
+			</div>
+
 		<?php endif; ?>
-
-		<footer>
-			<a href="<?php echo get_post_type_archive_link( $post_type_name ); ?>" class="btn btn-default"><?php _e( 'Show all', 'orbis' );  ?></a>
-		</footer>
-
-		<?php wp_reset_postdata(); ?>
 
 		<?php echo $after_widget; ?>
 		
@@ -114,16 +117,16 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
-		$instance['title'] = $new_instance['title'];
+		$instance['title']          = $new_instance['title'];
 		$instance['post_type_name'] = $new_instance['post_type_name'];
-		$instance['number'] = $new_instance['number'];
+		$instance['number']         = $new_instance['number'];
 
 		return $instance;
 	}
 
 	function form( $instance ) {
-		$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-		$number = isset( $instance['number'] ) ? esc_attr( $instance['number'] ) : '';
+		$title          = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$number         = isset( $instance['number'] ) ? esc_attr( $instance['number'] ) : '';
 		$post_type_name = isset( $instance['post_type_name'] ) ? esc_attr( $instance['post_type_name'] ) : '';
 
 		$i = 1; 

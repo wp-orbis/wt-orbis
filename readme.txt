@@ -3,10 +3,19 @@ Contributors: pronamic, remcotolsma, kjtolsma
 Tags: orbis, intranet
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 1.1.4
+Stable tag: 1.2.0
 
 
 == Changelog ==
+
+= 1.2.0 =
+*	Tweak - Updated Bootstrap from v3.1.1 to v3.2.0.
+*	Tweak - Added support for Composer.
+*	Tweak - Use [Bower](http://bower.io/) for some libraries.
+*	Tweak - Moved task widget to the Orbis Tasks plugin.
+*	Feature - Added an page template for an TV-screen dashboard.
+*	Feature - Added support for an Twitter widget.
+*	Feature - Added an AngularJS drive page template for Orbis Tasks.
 
 = 1.1.4 =
 *	Tweak - Fixed KVK search URL on company contact block.
@@ -41,5 +50,6 @@ Stable tag: 1.1.4
 
 == Developers ==
 
-*	php ~/wp/svn/i18n-tools/makepot.php wp-theme ./ ./languages/orbis.pot
-
+*	http://alancrissey.com/grunt-bower-in-wordpress-part-1/
+*	http://www.gladdy.co.uk/blog/2014/01/21/modernising-wordpress-theme-development/
+*	https://github.com/wildlyinaccurate/wildly-minimalistic-wordpress-theme

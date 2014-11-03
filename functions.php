@@ -8,6 +8,7 @@ require_once get_template_directory() . '/includes/projects.php';
 require_once get_template_directory() . '/includes/subscriptions.php';
 require_once get_template_directory() . '/includes/template-tags.php';
 require_once get_template_directory() . '/includes/widgets.php';
+require_once get_template_directory() . '/vendor/twitteroauth/twitteroauth/twitteroauth.php';
 
 if ( function_exists( 'orbis_tasks_bootstrap' ) ) {
 	require_once get_template_directory() . '/includes/tasks.php';
@@ -54,33 +55,42 @@ add_action( 'after_setup_theme', 'orbis_setup' );
  * Enqueue scripts & styles
  */
 function orbis_load_scripts() {
-	wp_enqueue_script( 
-		'bootstrap', 
-		get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', 
+	$uri = get_template_directory_uri();
+
+	// Bootstrap
+	wp_enqueue_script(
+		'bootstrap',
+		$uri . '/assets/bootstrap/js/bootstrap.min.js',
 		array( 'jquery' ),
-		'3.1.1',
+		'3.2.0',
 		true
 	);
 
+	wp_enqueue_style(
+		'bootstrap',
+		$uri . '/assets/bootstrap/css/bootstrap.min.css',
+		array(),
+		'3.2.0'
+	);
+
+	// Orbis
 	wp_enqueue_script(
-		'app',
-		get_template_directory_uri() . '/js/app.js',
+		'wt-orbis',
+		$uri . "/assets/orbis/js/orbis.min.js",
 		array( 'jquery', 'bootstrap' ),
 		'1.0.0',
 		true
 	);
 
-	/* Styles */
-	wp_enqueue_style( 
-		'bootstrap',
-		get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css',
-		array(),
-		'3.1.1'
+	wp_localize_script(
+		'wt-orbis',
+		'orbis_timesheets_vars',
+		array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
 	);
 
-	wp_enqueue_style( 
-		'orbis',
-		get_stylesheet_uri(),
+	wp_enqueue_style(
+		'wt-orbis',
+		$uri . "/assets/orbis/css/orbis.min.css",
 		array( 'bootstrap' ),
 		'1.0.0'
 	);
@@ -251,7 +261,7 @@ add_filter( 'the_content', 'orbis_the_content_empty', 200 );
  * Orbis Companies
  */
 function orbis_companies_render_contact_details() {
-	if ( is_singular( 'orbis_company' ) ) {	
+	if ( is_singular( 'orbis_company' ) ) {
 		get_template_part( 'templates/company_contact' );
 	}
 }
@@ -273,3 +283,14 @@ function orbis_custom_excerpt( $excerpt, $charlength = 30 ) {
 
 	echo $excerpt;
 }
+
+/**
+ * Load timesheet data with AJAX
+ */
+function orbis_load_timesheet_data() {
+	get_template_part( 'templates/widget_timesheets' );
+
+	die();
+}
+
+add_action( 'wp_ajax_load_timesheet_data', 'orbis_load_timesheet_data' );

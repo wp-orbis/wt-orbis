@@ -2,15 +2,16 @@
 # This file is distributed under the same license as the Orbis package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orbis 1.1.4\n"
+"Project-Id-Version: Orbis 1.2.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-03-28 20:02:50+00:00\n"
+"POT-Creation-Date: 2014-11-03 09:49:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
 
 #: 404.php:5
 msgid "404"
@@ -49,7 +50,7 @@ msgstr ""
 #: archive-orbis_company.php:80 archive-orbis_deal.php:92
 #: archive-orbis_hosting_group.php:84 archive-orbis_person.php:106
 #: archive-orbis_project.php:105 archive-orbis_subs_product.php:100
-#: archive-orbis_subscription.php:76 archive-orbis_task.php:102
+#: archive-orbis_subscription.php:76 archive-orbis_task.php:98
 #: content-post.php:100 home.php:115 index.php:100
 msgid "No results found."
 msgstr ""
@@ -59,6 +60,7 @@ msgid "Add deal"
 msgstr ""
 
 #: archive-orbis_deal.php:36 templates/filter-orbis_project.php:9
+#: templates/task_form.php:57
 msgid "Date"
 msgstr ""
 
@@ -107,7 +109,8 @@ msgid "Add person"
 msgstr ""
 
 #: archive-orbis_person.php:37 single-orbis_company.php:119
-#: single-orbis_person.php:167 single-orbis_project.php:174 single.php:55
+#: single-orbis_person.php:167 single-orbis_project.php:174
+#: single-orbis_task.php:64 single.php:55
 msgid "Actions"
 msgstr ""
 
@@ -120,13 +123,13 @@ msgstr ""
 msgid "Client"
 msgstr ""
 
-#: archive-orbis_project.php:37 archive-orbis_task.php:37
-#: templates/company_projects.php:15
+#: archive-orbis_project.php:37 single-orbis_task.php:55
+#: templates/company_projects.php:15 templates/task_form.php:20
 msgid "Project"
 msgstr ""
 
-#: archive-orbis_project.php:38 archive-orbis_task.php:40
-#: templates/company_projects.php:16 templates/project_tasks.php:16
+#: archive-orbis_project.php:38 templates/company_projects.php:16
+#: templates/project_tasks.php:16 templates/task_form.php:75
 msgid "Time"
 msgstr ""
 
@@ -139,23 +142,25 @@ msgstr ""
 msgid "Cost Price"
 msgstr ""
 
-#: archive-orbis_task.php:19
+#: archive-orbis_task.php:19 templates/task_form.php:13
+#: templates/task_form.php:91
 msgid "Add task"
 msgstr ""
 
-#: archive-orbis_task.php:36
+#: archive-orbis_task.php:36 templates/task_form.php:49
+msgid "Task"
+msgstr ""
+
+#: archive-orbis_task.php:37 single-orbis_task.php:58
+#: templates/task_form.php:27
 msgid "Assignee"
 msgstr ""
 
 #: archive-orbis_task.php:38
-msgid "Task"
-msgstr ""
-
-#: archive-orbis_task.php:39
 msgid "Due At"
 msgstr ""
 
-#: archive-orbis_task.php:59
+#: archive-orbis_task.php:57
 msgid "<span class=\"label label-danger\">%d days</span>"
 msgstr ""
 
@@ -248,7 +253,7 @@ msgid ""
 "on <a href=\"%4$s\">Bootstrap</a>."
 msgstr ""
 
-#: front-page.php:5
+#. Template Name of the plugin/theme
 msgid "Dashboard"
 msgstr ""
 
@@ -272,11 +277,11 @@ msgstr ""
 msgid "Persons"
 msgstr ""
 
-#: functions.php:43
+#: functions.php:44
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:241
+#: functions.php:251
 msgid "No description."
 msgstr ""
 
@@ -307,7 +312,8 @@ msgid "Overview of the latest news"
 msgstr ""
 
 #: includes/functions.php:9 single-orbis_company.php:120
-#: single-orbis_person.php:168 single-orbis_project.php:175 single.php:56
+#: single-orbis_person.php:168 single-orbis_project.php:175
+#: single-orbis_task.php:65 single.php:56
 msgid "Edit"
 msgstr ""
 
@@ -385,15 +391,15 @@ msgid "<span class=\"entry-meta\">Posted by %1$s on %2$s</span>"
 msgstr ""
 
 #: includes/widgets/orbis-widget-comments.php:121
-#: includes/widgets/orbis-widget-news.php:115
-#: includes/widgets/orbis-widget-orbis-tasks.php:122
-#: includes/widgets/orbis-widget-posts.php:134
+#: includes/widgets/orbis-widget-news.php:110
+#: includes/widgets/orbis-widget-posts.php:137
+#: includes/widgets/orbis-widget-twitter.php:83
 msgid "Title:"
 msgstr ""
 
 #: includes/widgets/orbis-widget-comments.php:128
-#: includes/widgets/orbis-widget-orbis-tasks.php:129
-#: includes/widgets/orbis-widget-posts.php:159
+#: includes/widgets/orbis-widget-posts.php:162
+#: includes/widgets/orbis-widget-twitter.php:98
 msgid "Number:"
 msgstr ""
 
@@ -401,67 +407,55 @@ msgstr ""
 msgid "Orbis News"
 msgstr ""
 
-#: includes/widgets/orbis-widget-news.php:77
+#: includes/widgets/orbis-widget-news.php:72
 msgid "More news"
-msgstr ""
-
-#: includes/widgets/orbis-widget-orbis-tasks.php:20
-msgid "Orbis Tasks"
-msgstr ""
-
-#: includes/widgets/orbis-widget-orbis-tasks.php:70
-msgid "%d days"
-msgstr ""
-
-#: includes/widgets/orbis-widget-orbis-tasks.php:79
-msgid "Project:"
-msgstr ""
-
-#: includes/widgets/orbis-widget-orbis-tasks.php:79
-msgid "Deadline:"
-msgstr ""
-
-#: includes/widgets/orbis-widget-orbis-tasks.php:79
-msgid "Time:"
-msgstr ""
-
-#: includes/widgets/orbis-widget-orbis-tasks.php:87
-msgid "Show all tasks"
-msgstr ""
-
-#: includes/widgets/orbis-widget-orbis-tasks.php:93
-msgid "Grab a beer, no tasks for you."
 msgstr ""
 
 #: includes/widgets/orbis-widget-posts.php:20
 msgid "Orbis Posts List"
 msgstr ""
 
-#: includes/widgets/orbis-widget-posts.php:104
+#: includes/widgets/orbis-widget-posts.php:99
 msgid "Show all"
 msgstr ""
 
-#: includes/widgets/orbis-widget-posts.php:142
+#: includes/widgets/orbis-widget-posts.php:106
+msgid "No posts found."
+msgstr ""
+
+#: includes/widgets/orbis-widget-posts.php:145
 msgid "Post type:"
 msgstr ""
 
-#: includes/widgets.php:48
-msgid "Main Widget"
+#: includes/widgets/orbis-widget-twitter.php:20
+msgid "Orbis Twitter"
 msgstr ""
 
-#: includes/widgets.php:57
+#: includes/widgets/orbis-widget-twitter.php:91
+msgid "User:"
+msgstr ""
+
+#: includes/widgets.php:41
+msgid "Main Widget Area"
+msgstr ""
+
+#: includes/widgets.php:50
+msgid "Dashboard Widget Area"
+msgstr ""
+
+#: includes/widgets.php:59
 msgid "Frontpage Top Widget"
 msgstr ""
 
-#: includes/widgets.php:66
+#: includes/widgets.php:68
 msgid "Frontpage Left Widget"
 msgstr ""
 
-#: includes/widgets.php:75
+#: includes/widgets.php:77
 msgid "Frontpage Right Widget"
 msgstr ""
 
-#: includes/widgets.php:84
+#: includes/widgets.php:86
 msgid "Frontpage Bottom Widget"
 msgstr ""
 
@@ -477,8 +471,8 @@ msgstr ""
 msgid "Company Details"
 msgstr ""
 
-#: single-orbis_company.php:20 single-orbis_project.php:30 single.php:18
-#: templates/project_tasks.php:15
+#: single-orbis_company.php:20 single-orbis_project.php:30
+#: single-orbis_task.php:18 single.php:18 templates/project_tasks.php:15
 msgid "Description"
 msgstr ""
 
@@ -490,17 +484,17 @@ msgstr ""
 msgid "No persons connected."
 msgstr ""
 
-#: single-orbis_company.php:108 single.php:44
+#: single-orbis_company.php:108 single-orbis_task.php:44 single.php:44
 msgid "Additional Information"
 msgstr ""
 
 #: single-orbis_company.php:113 single-orbis_person.php:163
-#: single-orbis_project.php:101 single.php:49
+#: single-orbis_project.php:101 single-orbis_task.php:49 single.php:49
 msgid "Posted on"
 msgstr ""
 
 #: single-orbis_company.php:116 single-orbis_person.php:165
-#: single-orbis_project.php:104 single.php:52
+#: single-orbis_project.php:104 single-orbis_task.php:52 single.php:52
 msgid "Posted by"
 msgstr ""
 
@@ -581,8 +575,24 @@ msgstr ""
 msgid "Invoice"
 msgstr ""
 
+#: single-orbis_task.php:61
+msgid "Deadline"
+msgstr ""
+
 #: tag.php:10
 msgid "From the tag \"%1$s\""
+msgstr ""
+
+#: template-dashboard.php:13
+msgid "Loading..."
+msgstr ""
+
+#: template-my-tasks.php:255
+msgid "1 day"
+msgstr ""
+
+#: template-my-tasks.php:255
+msgid "{} days"
 msgstr ""
 
 #: templates/company_contact.php:19
@@ -643,7 +653,7 @@ msgstr ""
 msgid "Invoice Number Modified"
 msgstr ""
 
-#: templates/filter-orbis_task.php:7
+#: templates/filter-orbis_task.php:7 templates/task_form.php:34
 msgid "&mdash; Select Assignee &mdash;"
 msgstr ""
 
@@ -699,6 +709,22 @@ msgstr ""
 msgid "Auto Renew"
 msgstr ""
 
+#: templates/task_form.php:21
+msgid "Select project…"
+msgstr ""
+
+#: templates/task_form.php:50
+msgid "Task description"
+msgstr ""
+
+#: templates/task_form.php:79
+msgid "hours"
+msgstr ""
+
+#: templates/task_form.php:84
+msgid "minutes"
+msgstr ""
+
 #. Theme Name of the plugin/theme
 msgid "Orbis"
 msgstr ""
@@ -725,6 +751,10 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Full width"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "My Tasks"
 msgstr ""
 
 #: templates/filter-orbis_project.php:33

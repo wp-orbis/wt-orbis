@@ -1,42 +1,14 @@
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+# Bower
+/bower_components/
 
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
+# Eclipse
+/.externalToolBuilders/
+/.settings/
+/.buildpath
+/.project
 
-# Logs and databases #
-######################
-*.log
-*.sqlite
+# Grunt
+/node_modules/
 
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
-
-# Grunt #
-#########
-node_modules
-release
+# Node
+/node_modules/
