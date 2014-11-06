@@ -9,7 +9,7 @@ global $orbis_errors;
 ?>
 <div class="panel">
 	<div class="content">
-		<form role="form">
+		<form role="form" name="addTaskForm">
 			<legend><?php _e( 'Add task', 'orbis' ); ?></legend>
 
 			<?php $tabindex = 2; ?>
@@ -18,7 +18,7 @@ global $orbis_errors;
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><?php _e( 'Project', 'orbis' ); ?></label>
-						<input placeholder="<?php esc_attr_e( 'Select project…', 'orbis' ); ?>" type="text" class="orbis-id-control orbis-project-id-control select-form-control" data-text="" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" autofocus="autofocus" ng-model="formTaskProjectId" />
+						<input placeholder="<?php esc_attr_e( 'Select project…', 'orbis' ); ?>" type="text" class="orbis-id-control orbis-project-id-control select-form-control" data-text="" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" autofocus="autofocus" ng-model="formTaskProjectId" required />
 					</div>
 				</div>
 
@@ -36,7 +36,7 @@ global $orbis_errors;
 							'echo'             => false,
 						) );
 
-						echo str_replace( '<select ', '<select ng-model="formTaskAssigneeId" ', $output );
+						echo str_replace( '<select ', '<select ng-model="formTaskAssigneeId" required ', $output );
 
 						?>
 					</div>
@@ -47,7 +47,7 @@ global $orbis_errors;
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><?php _e( 'Task', 'orbis' ); ?></label>
-						<textarea placeholder="<?php esc_attr_e( 'Task description', 'orbis' ); ?>" class="input-lg" cols="60" rows="5"  tabindex="<?php echo esc_attr( $tabindex++ ); ?>"  ng-model="formTaskText"></textarea>
+						<textarea placeholder="<?php esc_attr_e( 'Task description', 'orbis' ); ?>" class="input-lg" cols="60" rows="5"  tabindex="<?php echo esc_attr( $tabindex++ ); ?>" ng-model="formTaskText" required></textarea>
 					</div>
 				</div>
 
@@ -55,7 +55,7 @@ global $orbis_errors;
 
 					<div class="form-group">
 						<label><?php _e( 'Date', 'orbis' ); ?></label>
-						<input type="date" class="form-control datepicker" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" ng-model="formTaskDueAt" />
+						<input type="date" class="form-control datepicker" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" ng-model="formTaskDueAt" required />
 
 						<style>
 							.input-group .form-control { z-index: auto; }
@@ -88,7 +88,7 @@ global $orbis_errors;
 			</div>
 
 			<div class="form-actions">
-				<button id="add-task" class="btn btn-primary" type="submit" ng-click="addTask()"><?php esc_html_e( 'Add task', 'orbis' ); ?></button>
+				<button id="add-task" class="btn btn-primary" type="submit" ng-click="addTask()"  ng-disabled="addTaskForm.$invalid"><?php esc_html_e( 'Add task', 'orbis' ); ?></button>
 			</div>
 		</form>
 	</div>
