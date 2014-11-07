@@ -20,7 +20,8 @@ module.exports = function( grunt ) {
 				options: {
 					cwd: '',
 					domainPath: 'languages',
-					type: 'wp-theme'
+					type: 'wp-theme',
+					exclude: [ 'bower_components/.*', 'node_modules/.*' ],
 				}
 			}
 		},
