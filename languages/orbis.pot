@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.2.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-11-03 09:49:36+00:00\n"
+"POT-Creation-Date: 2014-11-07 10:21:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -109,7 +109,7 @@ msgid "Add person"
 msgstr ""
 
 #: archive-orbis_person.php:37 single-orbis_company.php:119
-#: single-orbis_person.php:167 single-orbis_project.php:174
+#: single-orbis_person.php:175 single-orbis_project.php:174
 #: single-orbis_task.php:64 single.php:55
 msgid "Actions"
 msgstr ""
@@ -312,7 +312,7 @@ msgid "Overview of the latest news"
 msgstr ""
 
 #: includes/functions.php:9 single-orbis_company.php:120
-#: single-orbis_person.php:168 single-orbis_project.php:175
+#: single-orbis_person.php:176 single-orbis_project.php:175
 #: single-orbis_task.php:65 single.php:56
 msgid "Edit"
 msgstr ""
@@ -488,12 +488,12 @@ msgstr ""
 msgid "Additional Information"
 msgstr ""
 
-#: single-orbis_company.php:113 single-orbis_person.php:163
+#: single-orbis_company.php:113 single-orbis_person.php:171
 #: single-orbis_project.php:101 single-orbis_task.php:49 single.php:49
 msgid "Posted on"
 msgstr ""
 
-#: single-orbis_company.php:116 single-orbis_person.php:165
+#: single-orbis_company.php:116 single-orbis_person.php:173
 #: single-orbis_project.php:104 single-orbis_task.php:52 single.php:52
 msgid "Posted by"
 msgstr ""
@@ -527,15 +527,15 @@ msgstr ""
 msgid "<a href=\"%1$s\">%2$s</a>"
 msgstr ""
 
-#: single-orbis_person.php:133
+#: single-orbis_person.php:131
+msgid "Tweets from @%s"
+msgstr ""
+
+#: single-orbis_person.php:140
 msgid "%1$s on Twitter"
 msgstr ""
 
-#: single-orbis_person.php:143
-msgid "No tweets available."
-msgstr ""
-
-#: single-orbis_person.php:158
+#: single-orbis_person.php:166
 msgid "Additional information"
 msgstr ""
 
