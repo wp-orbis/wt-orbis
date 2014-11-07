@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-11-03 09:49:36+00:00\n"
-"PO-Revision-Date: 2014-11-03 10:50+0100\n"
+"POT-Creation-Date: 2014-11-07 14:06:03+00:00\n"
+"PO-Revision-Date: 2014-11-07 15:09+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -114,7 +114,7 @@ msgid "Add person"
 msgstr "Persoon toevoegen"
 
 #: archive-orbis_person.php:37 single-orbis_company.php:119
-#: single-orbis_person.php:167 single-orbis_project.php:174
+#: single-orbis_person.php:175 single-orbis_project.php:174
 #: single-orbis_task.php:64 single.php:55
 msgid "Actions"
 msgstr "Acties"
@@ -322,7 +322,7 @@ msgid "Overview of the latest news"
 msgstr "Overzicht van het laatste nieuws"
 
 #: includes/functions.php:9 single-orbis_company.php:120
-#: single-orbis_person.php:168 single-orbis_project.php:175
+#: single-orbis_person.php:176 single-orbis_project.php:175
 #: single-orbis_task.php:65 single.php:56
 msgid "Edit"
 msgstr "Bewerken"
@@ -503,12 +503,12 @@ msgstr "Geen personen verbonden."
 msgid "Additional Information"
 msgstr "Aanvullende informatie"
 
-#: single-orbis_company.php:113 single-orbis_person.php:163
+#: single-orbis_company.php:113 single-orbis_person.php:171
 #: single-orbis_project.php:101 single-orbis_task.php:49 single.php:49
 msgid "Posted on"
 msgstr "Geplaatst op"
 
-#: single-orbis_company.php:116 single-orbis_person.php:165
+#: single-orbis_company.php:116 single-orbis_person.php:173
 #: single-orbis_project.php:104 single-orbis_task.php:52 single.php:52
 msgid "Posted by"
 msgstr "Aangemaakt door"
@@ -542,15 +542,15 @@ msgstr "Social media"
 msgid "<a href=\"%1$s\">%2$s</a>"
 msgstr "<a href=\"%1$s\">%2$s</a>"
 
-#: single-orbis_person.php:133
+#: single-orbis_person.php:131
+msgid "Tweets from @%s"
+msgstr "Tweets van @%s"
+
+#: single-orbis_person.php:140
 msgid "%1$s on Twitter"
 msgstr "%1$s op Twitter"
 
-#: single-orbis_person.php:143
-msgid "No tweets available."
-msgstr "Geen tweets beschikbaar."
-
-#: single-orbis_person.php:158
+#: single-orbis_person.php:166
 msgid "Additional information"
 msgstr "Aanvullende informatie"
 
@@ -776,6 +776,9 @@ msgstr "Mijn taken"
 msgctxt "sorting"
 msgid "Order"
 msgstr "Sorteer"
+
+#~ msgid "No tweets available."
+#~ msgstr "Geen tweets beschikbaar."
 
 #, fuzzy
 #~ msgid "Due:"

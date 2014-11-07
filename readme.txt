@@ -3,10 +3,14 @@ Contributors: pronamic, remcotolsma, kjtolsma
 Tags: orbis, intranet
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 
 
 == Changelog ==
+
+= 1.2.1 =
+*	Tweak - Improved support for the Orbis Twitter plugin.
+*	Tweak - Improved Orbis Tasks form with some required fields.
 
 = 1.2.0 =
 *	Tweak - Updated Bootstrap from v3.1.1 to v3.2.0.
