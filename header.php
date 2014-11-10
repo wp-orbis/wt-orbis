@@ -31,7 +31,7 @@
 
 					<a class="navbar-brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 				</div>
-	
+
 				<div class="collapse navbar-collapse" id="primary-navbar-collapse">
 					<?php
 
@@ -42,7 +42,7 @@
 						'fallback_cb'    => '',
 						'walker'         => new Bootstrap_Walker_Nav_Menu()
 					) );
-					
+
 					$s = filter_input( INPUT_GET, 's', FILTER_SANITIZE_STRING ); ?>
 
 					<?php if ( is_user_logged_in() ) : global $current_user; get_currentuserinfo(); ?>
