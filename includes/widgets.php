@@ -7,6 +7,7 @@ require_once get_template_directory() . '/includes/widgets/orbis-widget-posts.ph
 require_once get_template_directory() . '/includes/widgets/orbis-widget-news.php';
 require_once get_template_directory() . '/includes/widgets/orbis-widget-comments.php';
 require_once get_template_directory() . '/includes/widgets/orbis-widget-twitter.php';
+require_once get_template_directory() . '/includes/widgets/orbis-widget-stats.php';
 
 /**
  * Register our sidebars and widgetized areas.
@@ -34,6 +35,7 @@ function orbis_widgets_init() {
 	register_widget( 'Orbis_News_Widget' );
 	register_widget( 'Orbis_Comments_Widget' );
 	register_widget( 'Orbis_Twitter_Widget' );
+	register_widget( 'Orbis_Stats_Widget' );
 
 	/* Register Widget Areas */
 
