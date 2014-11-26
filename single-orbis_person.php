@@ -18,17 +18,13 @@
 				<div class="row">
 					<div class="col-md-7">
 						<div class="content">
-							<div class="thumbnail">
-								<?php if ( has_post_thumbnail() ) : ?>
+							<?php if ( has_post_thumbnail() ) : ?>
 
+								<div class="thumbnail">
 									<?php the_post_thumbnail( 'thumbnail' ); ?>
+								</div>
 
-								<?php else : ?>
-
-									<img src="<?php bloginfo( 'template_directory' ); ?>/placeholders/avatar.png" alt="">
-
-								<?php endif; ?>
-							</div>
+							<?php endif; ?>
 
 							<?php the_content(); ?>
 						</div>
