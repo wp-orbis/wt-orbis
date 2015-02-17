@@ -102,6 +102,8 @@
 					</div>
 				
 				<?php endif; ?>
+
+				<?php get_template_part( 'templates/company_twitter' ); ?>
 				
 				<div class="panel">
 					<header>
