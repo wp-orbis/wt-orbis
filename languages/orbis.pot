@@ -1,14 +1,14 @@
-# Copyright (C) 2014 Pronamic
+# Copyright (C) 2015 Pronamic
 # This file is distributed under the same license as the Orbis package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.2.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-11-07 14:06:03+00:00\n"
+"POT-Creation-Date: 2015-03-28 13:41:21+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
@@ -27,8 +27,9 @@ msgstr ""
 
 #: archive-orbis_company.php:10 archive-orbis_deal.php:10
 #: archive-orbis_hosting_group.php:10 archive-orbis_person.php:10
-#: archive-orbis_project.php:10 archive-orbis_subs_product.php:10
-#: archive-orbis_subscription.php:10 archive-orbis_task.php:10 index.php:20
+#: archive-orbis_product.php:10 archive-orbis_project.php:10
+#: archive-orbis_subs_product.php:10 archive-orbis_subscription.php:10
+#: archive-orbis_task.php:10 index.php:20
 msgid "Overview of %1$s"
 msgstr ""
 
@@ -38,8 +39,9 @@ msgstr ""
 
 #: archive-orbis_company.php:25 archive-orbis_deal.php:25
 #: archive-orbis_hosting_group.php:25 archive-orbis_person.php:25
-#: archive-orbis_project.php:25 archive-orbis_subs_product.php:25
-#: archive-orbis_subscription.php:25 archive-orbis_task.php:25 index.php:41
+#: archive-orbis_product.php:25 archive-orbis_project.php:25
+#: archive-orbis_subs_product.php:25 archive-orbis_subscription.php:25
+#: archive-orbis_task.php:25 index.php:41
 msgid "Overview"
 msgstr ""
 
@@ -47,11 +49,19 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: archive-orbis_company.php:80 archive-orbis_deal.php:92
+#: archive-orbis_company.php:37 templates/company_contact.php:26
+msgid "Address"
+msgstr ""
+
+#: archive-orbis_company.php:38
+msgid "Online"
+msgstr ""
+
+#: archive-orbis_company.php:116 archive-orbis_deal.php:92
 #: archive-orbis_hosting_group.php:84 archive-orbis_person.php:106
-#: archive-orbis_project.php:105 archive-orbis_subs_product.php:100
-#: archive-orbis_subscription.php:76 archive-orbis_task.php:98
-#: content-post.php:100 home.php:115 index.php:100
+#: archive-orbis_product.php:76 archive-orbis_project.php:105
+#: archive-orbis_subs_product.php:100 archive-orbis_subscription.php:76
+#: archive-orbis_task.php:98 content-post.php:100 home.php:115 index.php:100
 msgid "No results found."
 msgstr ""
 
@@ -69,13 +79,14 @@ msgid "Company"
 msgstr ""
 
 #: archive-orbis_deal.php:38 archive-orbis_hosting_group.php:36
-#: archive-orbis_subs_product.php:36 archive-orbis_subscription.php:36
-#: index.php:52 templates/filter-orbis_project.php:8
+#: archive-orbis_product.php:36 archive-orbis_subs_product.php:36
+#: archive-orbis_subscription.php:36 index.php:52
+#: templates/filter-orbis_project.php:8
 msgid "Title"
 msgstr ""
 
-#: archive-orbis_deal.php:39 archive-orbis_subs_product.php:37
-#: archive-orbis_subscription.php:37
+#: archive-orbis_deal.php:39 archive-orbis_product.php:37
+#: archive-orbis_subs_product.php:37 archive-orbis_subscription.php:37
 #: templates/subscription_product_details.php:8
 msgid "Price"
 msgstr ""
@@ -108,10 +119,14 @@ msgstr ""
 msgid "Add person"
 msgstr ""
 
-#: archive-orbis_person.php:37 single-orbis_company.php:119
-#: single-orbis_person.php:175 single-orbis_project.php:174
+#: archive-orbis_person.php:37 single-orbis_company.php:121
+#: single-orbis_person.php:121 single-orbis_project.php:174
 #: single-orbis_task.php:64 single.php:55
 msgid "Actions"
+msgstr ""
+
+#: archive-orbis_product.php:19
+msgid "Add product"
 msgstr ""
 
 #: archive-orbis_project.php:19
@@ -261,19 +276,17 @@ msgstr ""
 msgid "Logged in as %1$s"
 msgstr ""
 
-#: front-page.php:32
-msgid "Posts"
-msgstr ""
-
-#: front-page.php:38 front-page.php:92
+#: front-page.php:62 includes/widgets/orbis-widget-stats.php:47
 msgid "Companies"
 msgstr ""
 
-#: front-page.php:44 front-page.php:107 includes/projects.php:6
+#: front-page.php:77 includes/projects.php:6
+#: includes/widgets/orbis-widget-stats.php:53
 msgid "Projects"
 msgstr ""
 
-#: front-page.php:50 front-page.php:122 includes/timesheets.php:12
+#: front-page.php:92 includes/timesheets.php:12
+#: includes/widgets/orbis-widget-stats.php:59
 msgid "Persons"
 msgstr ""
 
@@ -285,23 +298,23 @@ msgstr ""
 msgid "No description."
 msgstr ""
 
-#: header.php:26
+#: header.php:28
 msgid "Toggle navigation"
 msgstr ""
 
-#: header.php:55
+#: header.php:57
 msgid "Help"
 msgstr ""
 
-#: header.php:56
+#: header.php:58
 msgid "Edit profile"
 msgstr ""
 
-#: header.php:58
+#: header.php:60
 msgid "Log out"
 msgstr ""
 
-#: header.php:67 index.php:7 templates/filter_advanced-orbis_project.php:28
+#: header.php:69 index.php:7 templates/filter_advanced-orbis_project.php:28
 #: templates/search_form.php:19 templates/search_form.php:20
 #: templates/search_form.php:23
 msgid "Search"
@@ -311,8 +324,8 @@ msgstr ""
 msgid "Overview of the latest news"
 msgstr ""
 
-#: includes/functions.php:9 single-orbis_company.php:120
-#: single-orbis_person.php:176 single-orbis_project.php:175
+#: includes/functions.php:9 single-orbis_company.php:122
+#: single-orbis_person.php:122 single-orbis_project.php:175
 #: single-orbis_task.php:65 single.php:56
 msgid "Edit"
 msgstr ""
@@ -393,6 +406,7 @@ msgstr ""
 #: includes/widgets/orbis-widget-comments.php:121
 #: includes/widgets/orbis-widget-news.php:110
 #: includes/widgets/orbis-widget-posts.php:137
+#: includes/widgets/orbis-widget-stats.php:84
 #: includes/widgets/orbis-widget-twitter.php:83
 msgid "Title:"
 msgstr ""
@@ -427,6 +441,14 @@ msgstr ""
 msgid "Post type:"
 msgstr ""
 
+#: includes/widgets/orbis-widget-stats.php:20
+msgid "Orbis Stats"
+msgstr ""
+
+#: includes/widgets/orbis-widget-stats.php:41
+msgid "Posts"
+msgstr ""
+
 #: includes/widgets/orbis-widget-twitter.php:20
 msgid "Orbis Twitter"
 msgstr ""
@@ -435,27 +457,27 @@ msgstr ""
 msgid "User:"
 msgstr ""
 
-#: includes/widgets.php:41
+#: includes/widgets.php:43
 msgid "Main Widget Area"
 msgstr ""
 
-#: includes/widgets.php:50
+#: includes/widgets.php:52
 msgid "Dashboard Widget Area"
 msgstr ""
 
-#: includes/widgets.php:59
+#: includes/widgets.php:61
 msgid "Frontpage Top Widget"
 msgstr ""
 
-#: includes/widgets.php:68
+#: includes/widgets.php:70
 msgid "Frontpage Left Widget"
 msgstr ""
 
-#: includes/widgets.php:77
+#: includes/widgets.php:79
 msgid "Frontpage Right Widget"
 msgstr ""
 
-#: includes/widgets.php:86
+#: includes/widgets.php:88
 msgid "Frontpage Bottom Widget"
 msgstr ""
 
@@ -484,16 +506,16 @@ msgstr ""
 msgid "No persons connected."
 msgstr ""
 
-#: single-orbis_company.php:108 single-orbis_task.php:44 single.php:44
+#: single-orbis_company.php:110 single-orbis_task.php:44 single.php:44
 msgid "Additional Information"
 msgstr ""
 
-#: single-orbis_company.php:113 single-orbis_person.php:171
+#: single-orbis_company.php:115 single-orbis_person.php:117
 #: single-orbis_project.php:101 single-orbis_task.php:49 single.php:49
 msgid "Posted on"
 msgstr ""
 
-#: single-orbis_company.php:116 single-orbis_person.php:173
+#: single-orbis_company.php:118 single-orbis_person.php:119
 #: single-orbis_project.php:104 single-orbis_task.php:52 single.php:52
 msgid "Posted by"
 msgstr ""
@@ -502,40 +524,39 @@ msgstr ""
 msgid "About this person"
 msgstr ""
 
-#: single-orbis_person.php:42
+#: single-orbis_person.php:38
 msgid "Phone number"
 msgstr ""
 
-#: single-orbis_person.php:43 single-orbis_person.php:50
+#: single-orbis_person.php:39 single-orbis_person.php:46
 msgid "Call this number"
 msgstr ""
 
-#: single-orbis_person.php:49
+#: single-orbis_person.php:45
 msgid "Mobile number"
 msgstr ""
 
-#: single-orbis_person.php:56
+#: single-orbis_person.php:52
 msgid "E-mail address"
 msgstr ""
 
-#: single-orbis_person.php:63
+#: single-orbis_person.php:59
 msgid "Social media"
 msgstr ""
 
-#: single-orbis_person.php:71 single-orbis_person.php:86
-#: single-orbis_person.php:101
-msgid "<a href=\"%1$s\">%2$s</a>"
+#: single-orbis_person.php:66
+msgid "Twitter"
 msgstr ""
 
-#: single-orbis_person.php:131
-msgid "Tweets from @%s"
+#: single-orbis_person.php:75
+msgid "Facebook"
 msgstr ""
 
-#: single-orbis_person.php:140
-msgid "%1$s on Twitter"
+#: single-orbis_person.php:84
+msgid "LinkedIn"
 msgstr ""
 
-#: single-orbis_person.php:166
+#: single-orbis_person.php:112
 msgid "Additional information"
 msgstr ""
 
@@ -599,10 +620,6 @@ msgstr ""
 msgid "Contact Details"
 msgstr ""
 
-#: templates/company_contact.php:26
-msgid "Address"
-msgstr ""
-
 #: templates/company_contact.php:37
 msgid "Website"
 msgstr ""
@@ -631,6 +648,14 @@ msgstr ""
 
 #: templates/company_projects.php:63
 msgid "No projects found."
+msgstr ""
+
+#: templates/company_twitter.php:8 templates/person_twitter.php:8
+msgid "Tweets from @%s"
+msgstr ""
+
+#: templates/company_twitter.php:17 templates/person_twitter.php:17
+msgid "%1$s on Twitter"
 msgstr ""
 
 #: templates/filter-orbis_deal.php:7

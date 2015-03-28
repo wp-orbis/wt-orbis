@@ -1,19 +1,18 @@
 # Translation of Pronamic in Dutch
 msgid ""
 msgstr ""
-"Project-Id-Version: Pronamic\n"
+"Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-11-07 14:06:03+00:00\n"
-"PO-Revision-Date: 2015-02-16 11:27+0100\n"
-"Last-Translator: K.Tolsma <kareljan@pronamic.nl>\n"
+"POT-Creation-Date: 2015-03-28 13:41:21+00:00\n"
+"PO-Revision-Date: 2015-03-28 14:42+0100\n"
+"Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.10\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;__ngettext:1,2;__withdesc;_ewithdesc;_c;_n_noop:1,2;__ngettext_noop:1,2;_x:2c,1;_nc:1,2;esc_attr_e;esc_html_e;esc_attr__;_nx:4c,1,2;_nx_noop:4c,1,2;esc_html_x:2c,1;esc_html__;_ex:2c,1\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: 404.php:5
@@ -28,15 +27,11 @@ msgstr "Pagina niet gevonden"
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
 msgstr "Het lijkt erop dat we niet kunnen vinden waar je naar zoekt."
 
-#: archive-orbis_company.php:10
-#: archive-orbis_deal.php:10
-#: archive-orbis_hosting_group.php:10
-#: archive-orbis_person.php:10
-#: archive-orbis_project.php:10
-#: archive-orbis_subs_product.php:10
-#: archive-orbis_subscription.php:10
-#: archive-orbis_task.php:10
-#: index.php:20
+#: archive-orbis_company.php:10 archive-orbis_deal.php:10
+#: archive-orbis_hosting_group.php:10 archive-orbis_person.php:10
+#: archive-orbis_product.php:10 archive-orbis_project.php:10
+#: archive-orbis_subs_product.php:10 archive-orbis_subscription.php:10
+#: archive-orbis_task.php:10 index.php:20
 msgid "Overview of %1$s"
 msgstr "Overzicht van %1$s"
 
@@ -44,34 +39,31 @@ msgstr "Overzicht van %1$s"
 msgid "Add company"
 msgstr "Bedrijf toevoegen"
 
-#: archive-orbis_company.php:25
-#: archive-orbis_deal.php:25
-#: archive-orbis_hosting_group.php:25
-#: archive-orbis_person.php:25
-#: archive-orbis_project.php:25
-#: archive-orbis_subs_product.php:25
-#: archive-orbis_subscription.php:25
-#: archive-orbis_task.php:25
-#: index.php:41
+#: archive-orbis_company.php:25 archive-orbis_deal.php:25
+#: archive-orbis_hosting_group.php:25 archive-orbis_person.php:25
+#: archive-orbis_product.php:25 archive-orbis_project.php:25
+#: archive-orbis_subs_product.php:25 archive-orbis_subscription.php:25
+#: archive-orbis_task.php:25 index.php:41
 msgid "Overview"
 msgstr "Overzicht"
 
-#: archive-orbis_company.php:36
-#: archive-orbis_person.php:36
+#: archive-orbis_company.php:36 archive-orbis_person.php:36
 msgid "Name"
 msgstr "Naam"
 
-#: archive-orbis_company.php:80
-#: archive-orbis_deal.php:92
-#: archive-orbis_hosting_group.php:84
-#: archive-orbis_person.php:106
-#: archive-orbis_project.php:105
-#: archive-orbis_subs_product.php:100
-#: archive-orbis_subscription.php:76
-#: archive-orbis_task.php:98
-#: content-post.php:100
-#: home.php:115
-#: index.php:100
+#: archive-orbis_company.php:37 templates/company_contact.php:26
+msgid "Address"
+msgstr "Adres"
+
+#: archive-orbis_company.php:38
+msgid "Online"
+msgstr "Online"
+
+#: archive-orbis_company.php:116 archive-orbis_deal.php:92
+#: archive-orbis_hosting_group.php:84 archive-orbis_person.php:106
+#: archive-orbis_product.php:76 archive-orbis_project.php:105
+#: archive-orbis_subs_product.php:100 archive-orbis_subscription.php:76
+#: archive-orbis_task.php:98 content-post.php:100 home.php:115 index.php:100
 msgid "No results found."
 msgstr "Geen resultaten gevonden."
 
@@ -79,8 +71,7 @@ msgstr "Geen resultaten gevonden."
 msgid "Add deal"
 msgstr "Deal toevoegen"
 
-#: archive-orbis_deal.php:36
-#: templates/filter-orbis_project.php:9
+#: archive-orbis_deal.php:36 templates/filter-orbis_project.php:9
 #: templates/task_form.php:57
 msgid "Date"
 msgstr "Datum"
@@ -89,34 +80,28 @@ msgstr "Datum"
 msgid "Company"
 msgstr "Bedrijf"
 
-#: archive-orbis_deal.php:38
-#: archive-orbis_hosting_group.php:36
-#: archive-orbis_subs_product.php:36
-#: archive-orbis_subscription.php:36
-#: index.php:52
+#: archive-orbis_deal.php:38 archive-orbis_hosting_group.php:36
+#: archive-orbis_product.php:36 archive-orbis_subs_product.php:36
+#: archive-orbis_subscription.php:36 index.php:52
 #: templates/filter-orbis_project.php:8
 msgid "Title"
 msgstr "Titel"
 
-#: archive-orbis_deal.php:39
-#: archive-orbis_subs_product.php:37
-#: archive-orbis_subscription.php:37
+#: archive-orbis_deal.php:39 archive-orbis_product.php:37
+#: archive-orbis_subs_product.php:37 archive-orbis_subscription.php:37
 #: templates/subscription_product_details.php:8
 msgid "Price"
 msgstr "Prijs"
 
-#: archive-orbis_deal.php:40
-#: single-orbis_project.php:120
+#: archive-orbis_deal.php:40 single-orbis_project.php:120
 msgid "Status"
 msgstr "Status"
 
-#: archive-orbis_deal.php:41
-#: templates/filter-orbis_project.php:7
+#: archive-orbis_deal.php:41 templates/filter-orbis_project.php:7
 msgid "Author"
 msgstr "Auteur"
 
-#: archive-orbis_hosting_group.php:19
-#: archive-orbis_subscription.php:19
+#: archive-orbis_hosting_group.php:19 archive-orbis_subscription.php:19
 msgid "Add subscription"
 msgstr "Abonnement toevoegen"
 
@@ -136,36 +121,32 @@ msgstr "Hostnaam leverancier"
 msgid "Add person"
 msgstr "Persoon toevoegen"
 
-#: archive-orbis_person.php:37
-#: single-orbis_company.php:119
-#: single-orbis_person.php:175
-#: single-orbis_project.php:174
-#: single-orbis_task.php:64
-#: single.php:55
+#: archive-orbis_person.php:37 single-orbis_company.php:121
+#: single-orbis_person.php:121 single-orbis_project.php:174
+#: single-orbis_task.php:64 single.php:55
 msgid "Actions"
 msgstr "Acties"
+
+#: archive-orbis_product.php:19
+msgid "Add product"
+msgstr "Product toevoegen"
 
 #: archive-orbis_project.php:19
 msgid "Add project"
 msgstr "Project toevoegen"
 
-#: archive-orbis_project.php:36
-#: single-orbis_project.php:86
+#: archive-orbis_project.php:36 single-orbis_project.php:86
 #: templates/filter_advanced-orbis_project.php:14
 msgid "Client"
 msgstr "Klant"
 
-#: archive-orbis_project.php:37
-#: single-orbis_task.php:55
-#: templates/company_projects.php:15
-#: templates/task_form.php:20
+#: archive-orbis_project.php:37 single-orbis_task.php:55
+#: templates/company_projects.php:15 templates/task_form.php:20
 msgid "Project"
 msgstr "Project"
 
-#: archive-orbis_project.php:38
-#: templates/company_projects.php:16
-#: templates/project_tasks.php:16
-#: templates/task_form.php:75
+#: archive-orbis_project.php:38 templates/company_projects.php:16
+#: templates/project_tasks.php:16 templates/task_form.php:75
 msgid "Time"
 msgstr "Tijd"
 
@@ -178,19 +159,16 @@ msgstr "Abonnement product toevoegen"
 msgid "Cost Price"
 msgstr "Kostprijs"
 
-#: archive-orbis_task.php:19
-#: templates/task_form.php:13
+#: archive-orbis_task.php:19 templates/task_form.php:13
 #: templates/task_form.php:91
 msgid "Add task"
 msgstr "Taak toevoegen"
 
-#: archive-orbis_task.php:36
-#: templates/task_form.php:49
+#: archive-orbis_task.php:36 templates/task_form.php:49
 msgid "Task"
 msgstr "Taak"
 
-#: archive-orbis_task.php:37
-#: single-orbis_task.php:58
+#: archive-orbis_task.php:37 single-orbis_task.php:58
 #: templates/task_form.php:27
 msgid "Assignee"
 msgstr "Uitvoerder"
@@ -203,11 +181,7 @@ msgstr "Verloopt op"
 msgid "<span class=\"label label-danger\">%d days</span>"
 msgstr "<span class=”label label-danger”>%d dagen</span>"
 
-#: author.php:7
-#: category.php:5
-#: content-post.php:5
-#: home.php:5
-#: home.php:21
+#: author.php:7 category.php:5 content-post.php:5 home.php:5 home.php:21
 #: tag.php:5
 msgid "News"
 msgstr "Nieuws"
@@ -216,10 +190,7 @@ msgstr "Nieuws"
 msgid "Written by %1$s"
 msgstr "Geschreven door %1$s"
 
-#: author.php:21
-#: category.php:19
-#: home.php:13
-#: tag.php:19
+#: author.php:21 category.php:19 home.php:13 tag.php:19
 msgid "Add post"
 msgstr "Bericht toevoegen"
 
@@ -228,8 +199,11 @@ msgid "In the category \"%1$s\""
 msgstr "In de categorie \"%1$s\""
 
 #: comments.php:5
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr "Dit bericht is beveiligd met een wachtwoord. Geef het wachtwoord om de reacties te bekijken."
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Dit bericht is beveiligd met een wachtwoord. Geef het wachtwoord om de "
+"reacties te bekijken."
 
 #: comments.php:15
 msgid "One thought"
@@ -237,13 +211,11 @@ msgid_plural "%1$s thoughts"
 msgstr[0] "1 reactie"
 msgstr[1] "%1$s reacties"
 
-#: comments.php:21
-#: comments.php:34
+#: comments.php:21 comments.php:34
 msgid "&larr; Older Comments"
 msgstr "&larr; Oudere reacties"
 
-#: comments.php:22
-#: comments.php:35
+#: comments.php:22 comments.php:35
 msgid "Newer Comments &rarr;"
 msgstr "Nieuwe reacties &rarr;"
 
@@ -255,61 +227,53 @@ msgstr "Reacties zijn gesloten."
 msgid "Give a comment"
 msgstr "Geef een reactie"
 
-#: content-post.php:15
-#: home.php:31
+#: content-post.php:15 home.php:31
 msgid "Permalink to %s"
 msgstr "Permalink naar %s"
 
-#: content-post.php:31
-#: home.php:47
+#: content-post.php:31 home.php:47
 msgid "Continue reading &rarr;"
 msgstr "Lees verder &rarr;"
 
-#: content-post.php:41
-#: content-post.php:59
-#: home.php:55
-#: home.php:73
+#: content-post.php:41 content-post.php:59 home.php:55 home.php:73
 msgid ",  "
 msgstr ", "
 
-#: content-post.php:48
-#: home.php:62
+#: content-post.php:48 home.php:62
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
 msgstr "<span class=\"%1$s\">Geplaatst in</span> %2$s"
 
-#: content-post.php:70
-#: home.php:86
+#: content-post.php:70 home.php:86
 msgid "<span class=\"%1$s\">Tagged</span> %2$s"
 msgstr "<span class=\"%1$s\">Tags:</span> %2$s"
 
-#: content-post.php:86
-#: home.php:102
+#: content-post.php:86 home.php:102
 msgid "Leave a reply"
 msgstr "Geef een reactie"
 
-#: content-post.php:86
-#: home.php:102
+#: content-post.php:86 home.php:102
 msgid "1 reply"
 msgstr "1 reactie"
 
-#: content-post.php:86
-#: home.php:102
+#: content-post.php:86 home.php:102
 msgid "% replies"
 msgstr "% reacties"
 
-#: content-post.php:113
-#: home.php:127
+#: content-post.php:113 home.php:127
 msgid "Categories"
 msgstr "Categorie&#235;n"
 
-#: content-post.php:136
-#: home.php:150
+#: content-post.php:136 home.php:150
 msgid "Tags"
 msgstr "Tags"
 
 #: footer.php:4
-msgid "&copy; %1$s %2$s. WordPress theme by <a href=\"%3$s\">Pronamic</a>, based on <a href=\"%4$s\">Bootstrap</a>."
-msgstr "&copy; %1$s %2$s. WordPress thema door <a href=\"%3$s\">Pronamic</a>, gebaseerd op <a href=\"%4$s\">Bootstrap</a>."
+msgid ""
+"&copy; %1$s %2$s. WordPress theme by <a href=\"%3$s\">Pronamic</a>, based on "
+"<a href=\"%4$s\">Bootstrap</a>."
+msgstr ""
+"&copy; %1$s %2$s. WordPress thema door <a href=\"%3$s\">Pronamic</a>, "
+"gebaseerd op <a href=\"%4$s\">Bootstrap</a>."
 
 #. Template Name of the plugin/theme
 msgid "Dashboard"
@@ -319,24 +283,17 @@ msgstr "Dashboard"
 msgid "Logged in as %1$s"
 msgstr "Ingelogd als %1$s"
 
-#: front-page.php:32
-msgid "Posts"
-msgstr "Berichten"
-
-#: front-page.php:38
-#: front-page.php:92
+#: front-page.php:62 includes/widgets/orbis-widget-stats.php:47
 msgid "Companies"
 msgstr "Bedrijven"
 
-#: front-page.php:44
-#: front-page.php:107
-#: includes/projects.php:6
+#: front-page.php:77 includes/projects.php:6
+#: includes/widgets/orbis-widget-stats.php:53
 msgid "Projects"
 msgstr "Projecten"
 
-#: front-page.php:50
-#: front-page.php:122
-#: includes/timesheets.php:12
+#: front-page.php:92 includes/timesheets.php:12
+#: includes/widgets/orbis-widget-stats.php:59
 msgid "Persons"
 msgstr "Personen"
 
@@ -348,27 +305,24 @@ msgstr "Primair menu"
 msgid "No description."
 msgstr "Geen beschrijving."
 
-#: header.php:26
+#: header.php:28
 msgid "Toggle navigation"
 msgstr "Toggle navigatie"
 
-#: header.php:55
+#: header.php:57
 msgid "Help"
 msgstr "Help"
 
-#: header.php:56
+#: header.php:58
 msgid "Edit profile"
 msgstr "Wijzig profiel"
 
-#: header.php:58
+#: header.php:60
 msgid "Log out"
 msgstr "Uitloggen"
 
-#: header.php:67
-#: index.php:7
-#: templates/filter_advanced-orbis_project.php:28
-#: templates/search_form.php:19
-#: templates/search_form.php:20
+#: header.php:69 index.php:7 templates/filter_advanced-orbis_project.php:28
+#: templates/search_form.php:19 templates/search_form.php:20
 #: templates/search_form.php:23
 msgid "Search"
 msgstr "Zoeken"
@@ -377,12 +331,9 @@ msgstr "Zoeken"
 msgid "Overview of the latest news"
 msgstr "Overzicht van het laatste nieuws"
 
-#: includes/functions.php:9
-#: single-orbis_company.php:120
-#: single-orbis_person.php:176
-#: single-orbis_project.php:175
-#: single-orbis_task.php:65
-#: single.php:56
+#: includes/functions.php:9 single-orbis_company.php:122
+#: single-orbis_person.php:122 single-orbis_project.php:175
+#: single-orbis_task.php:65 single.php:56
 msgid "Edit"
 msgstr "Bewerken"
 
@@ -406,8 +357,7 @@ msgstr "Volgende &rarr;"
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: includes/template-tags.php:87
-#: includes/template-tags.php:108
+#: includes/template-tags.php:87 includes/template-tags.php:108
 msgid "(Edit)"
 msgstr "Bewerken"
 
@@ -424,8 +374,18 @@ msgid "%1$s at %2$s"
 msgstr "%1$s om %2$s"
 
 #: includes/template-tags.php:129
-msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
-msgstr "<span class=\"sep\">Geplaatst op </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> door </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgid ""
+"<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
+"time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span "
+"class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
+"rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+"<span class=\"sep\">Geplaatst op </span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
+"time></a><span class=\"by-author\"> <span class=\"sep\"> door </span> <span "
+"class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
+"rel=\"author\">%7$s</a></span></span>"
 
 #: includes/template-tags.php:135
 msgid "View all posts by %s"
@@ -458,6 +418,7 @@ msgstr "<span class=\"entry-meta\">Geplaatst in %1$s op %2$s</span>"
 #: includes/widgets/orbis-widget-comments.php:121
 #: includes/widgets/orbis-widget-news.php:110
 #: includes/widgets/orbis-widget-posts.php:137
+#: includes/widgets/orbis-widget-stats.php:84
 #: includes/widgets/orbis-widget-twitter.php:83
 msgid "Title:"
 msgstr "Titel:"
@@ -492,6 +453,14 @@ msgstr "Geen berichten gevonden."
 msgid "Post type:"
 msgstr "Post type:"
 
+#: includes/widgets/orbis-widget-stats.php:20
+msgid "Orbis Stats"
+msgstr "Orbis statistieken"
+
+#: includes/widgets/orbis-widget-stats.php:41
+msgid "Posts"
+msgstr "Berichten"
+
 #: includes/widgets/orbis-widget-twitter.php:20
 msgid "Orbis Twitter"
 msgstr "Orbis Twitter"
@@ -500,27 +469,27 @@ msgstr "Orbis Twitter"
 msgid "User:"
 msgstr "Gebruiker:"
 
-#: includes/widgets.php:41
+#: includes/widgets.php:43
 msgid "Main Widget Area"
 msgstr "Hoofd widget gebied"
 
-#: includes/widgets.php:50
+#: includes/widgets.php:52
 msgid "Dashboard Widget Area"
 msgstr "Dashboard widget gebied"
 
-#: includes/widgets.php:59
+#: includes/widgets.php:61
 msgid "Frontpage Top Widget"
 msgstr "Voorpagina bovenkant widget"
 
-#: includes/widgets.php:68
+#: includes/widgets.php:70
 msgid "Frontpage Left Widget"
 msgstr "Voorpagina links widget"
 
-#: includes/widgets.php:77
+#: includes/widgets.php:79
 msgid "Frontpage Right Widget"
 msgstr "Voorpagina rechts widget"
 
-#: includes/widgets.php:86
+#: includes/widgets.php:88
 msgid "Frontpage Bottom Widget"
 msgstr "Voorpagina onderkant widget"
 
@@ -536,11 +505,8 @@ msgstr "Type"
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: single-orbis_company.php:20
-#: single-orbis_project.php:30
-#: single-orbis_task.php:18
-#: single.php:18
-#: templates/project_tasks.php:15
+#: single-orbis_company.php:20 single-orbis_project.php:30
+#: single-orbis_task.php:18 single.php:18 templates/project_tasks.php:15
 msgid "Description"
 msgstr "Beschrijving"
 
@@ -552,25 +518,17 @@ msgstr "Gekoppelde personen"
 msgid "No persons connected."
 msgstr "Geen personen verbonden."
 
-#: single-orbis_company.php:108
-#: single-orbis_task.php:44
-#: single.php:44
+#: single-orbis_company.php:110 single-orbis_task.php:44 single.php:44
 msgid "Additional Information"
 msgstr "Aanvullende informatie"
 
-#: single-orbis_company.php:113
-#: single-orbis_person.php:171
-#: single-orbis_project.php:101
-#: single-orbis_task.php:49
-#: single.php:49
+#: single-orbis_company.php:115 single-orbis_person.php:117
+#: single-orbis_project.php:101 single-orbis_task.php:49 single.php:49
 msgid "Posted on"
 msgstr "Geplaatst op"
 
-#: single-orbis_company.php:116
-#: single-orbis_person.php:173
-#: single-orbis_project.php:104
-#: single-orbis_task.php:52
-#: single.php:52
+#: single-orbis_company.php:118 single-orbis_person.php:119
+#: single-orbis_project.php:104 single-orbis_task.php:52 single.php:52
 msgid "Posted by"
 msgstr "Aangemaakt door"
 
@@ -578,42 +536,39 @@ msgstr "Aangemaakt door"
 msgid "About this person"
 msgstr "Over deze persoon"
 
-#: single-orbis_person.php:42
+#: single-orbis_person.php:38
 msgid "Phone number"
 msgstr "Telefoon nummer"
 
-#: single-orbis_person.php:43
-#: single-orbis_person.php:50
+#: single-orbis_person.php:39 single-orbis_person.php:46
 msgid "Call this number"
 msgstr "Bel dit nummer"
 
-#: single-orbis_person.php:49
+#: single-orbis_person.php:45
 msgid "Mobile number"
 msgstr "Mobiel nummer"
 
-#: single-orbis_person.php:56
+#: single-orbis_person.php:52
 msgid "E-mail address"
 msgstr "E-mailadres"
 
-#: single-orbis_person.php:63
+#: single-orbis_person.php:59
 msgid "Social media"
 msgstr "Social media"
 
-#: single-orbis_person.php:71
-#: single-orbis_person.php:86
-#: single-orbis_person.php:101
-msgid "<a href=\"%1$s\">%2$s</a>"
-msgstr "<a href=\"%1$s\">%2$s</a>"
+#: single-orbis_person.php:66
+msgid "Twitter"
+msgstr "Twitter"
 
-#: single-orbis_person.php:131
-msgid "Tweets from @%s"
-msgstr "Tweets van @%s"
+#: single-orbis_person.php:75
+msgid "Facebook"
+msgstr "Facebook"
 
-#: single-orbis_person.php:140
-msgid "%1$s on Twitter"
-msgstr "%1$s op Twitter"
+#: single-orbis_person.php:84
+msgid "LinkedIn"
+msgstr "LinkedIn"
 
-#: single-orbis_person.php:166
+#: single-orbis_person.php:112
 msgid "Additional information"
 msgstr "Aanvullende informatie"
 
@@ -677,10 +632,6 @@ msgstr "{} dagen"
 msgid "Contact Details"
 msgstr "Contact details"
 
-#: templates/company_contact.php:26
-msgid "Address"
-msgstr "Adres"
-
 #: templates/company_contact.php:37
 msgid "Website"
 msgstr "Website"
@@ -711,12 +662,19 @@ msgstr "KvK nummer"
 msgid "No projects found."
 msgstr "Geen projecten gevonden."
 
+#: templates/company_twitter.php:8 templates/person_twitter.php:8
+msgid "Tweets from @%s"
+msgstr "Tweets van @%s"
+
+#: templates/company_twitter.php:17 templates/person_twitter.php:17
+msgid "%1$s on Twitter"
+msgstr "%1$s op Twitter"
+
 #: templates/filter-orbis_deal.php:7
 msgid "&mdash; Select Status &mdash;"
 msgstr "&mdash; Selecteer status &mdash;"
 
-#: templates/filter-orbis_deal.php:23
-#: templates/filter-orbis_task.php:13
+#: templates/filter-orbis_deal.php:23 templates/filter-orbis_task.php:13
 msgid "Filter"
 msgstr "Filter"
 
@@ -732,13 +690,11 @@ msgstr "Afgerond gewijzigd"
 msgid "Invoice Number Modified"
 msgstr "Factuurnummer gewijzigd"
 
-#: templates/filter-orbis_task.php:7
-#: templates/task_form.php:34
+#: templates/filter-orbis_task.php:7 templates/task_form.php:34
 msgid "&mdash; Select Assignee &mdash;"
 msgstr "&mdash; Selecteer uitvoerder &mdash;"
 
-#: templates/filter_advanced-orbis_project.php:11
-#: templates/search_form.php:27
+#: templates/filter_advanced-orbis_project.php:11 templates/search_form.php:27
 msgid "Advanced Search"
 msgstr "Geavanceerd zoeken"
 
@@ -842,6 +798,9 @@ msgstr "Mijn taken"
 msgctxt "sorting"
 msgid "Order"
 msgstr "Sorteer"
+
+#~ msgid "<a href=\"%1$s\">%2$s</a>"
+#~ msgstr "<a href=\"%1$s\">%2$s</a>"
 
 #~ msgid "No tweets available."
 #~ msgstr "Geen tweets beschikbaar."
@@ -1020,19 +979,18 @@ msgstr "Sorteer"
 #~ msgstr "Geen beschrijving voor dit bericht."
 
 #~ msgid "One thought on &ldquo;%2$s&rdquo;"
-
 #~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 #~ msgstr[0] "1 reactie op &ldquo;%2$s&rdquo;"
 #~ msgstr[1] "%1$s reacties op &ldquo;%2$s&rdquo;"
 
 #~ msgid "Quote"
 #~ msgstr "Citaat"
-#~ msgctxt "comments number"
 
+#~ msgctxt "comments number"
 #~ msgid "1"
 #~ msgstr "1"
-#~ msgctxt "comments number"
 
+#~ msgctxt "comments number"
 #~ msgid "%"
 #~ msgstr "%"
 
@@ -1061,15 +1019,15 @@ msgstr "Sorteer"
 #~ msgstr "Afbeelding"
 
 #~ msgid ""
-#~ "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2"
-#~ "$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span class=\"sep"
-#~ "\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%"
-#~ "4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+#~ "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime="
+#~ "\"%2$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span class="
+#~ "\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" "
+#~ "href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 #~ msgstr ""
-#~ "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2"
-#~ "$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span class=\"sep"
-#~ "\"> door </span> <span class=\"author vcard\"><a class=\"url fn n\" href="
-#~ "\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+#~ "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime="
+#~ "\"%2$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span class="
+#~ "\"sep\"> door </span> <span class=\"author vcard\"><a class=\"url fn n\" "
+#~ "href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
 #~ msgid "Archives"
 #~ msgstr "Archief"
@@ -1087,7 +1045,6 @@ msgstr "Sorteer"
 #~ msgstr "Galerij"
 
 #~ msgid "This gallery contains <a %1$s>%2$s photo</a>."
-
 #~ msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
 #~ msgstr[0] "Deze galerij bevat <a %1$s>%2$s foto</a>."
 #~ msgstr[1] "Deze galerij bevat <a %1$s>%2$s foto&#39;s</a>."
@@ -1314,15 +1271,15 @@ msgstr "Sorteer"
 
 #~ msgid "Monthly Archives: %s"
 #~ msgstr "Maandelijks archief: %s"
-#~ msgctxt "monthly archives date format"
 
+#~ msgctxt "monthly archives date format"
 #~ msgid "F Y"
 #~ msgstr "F Y"
 
 #~ msgid "Yearly Archives: %s"
 #~ msgstr "Jaarlijks archief: %s"
-#~ msgctxt "yearly archives date format"
 
+#~ msgctxt "yearly archives date format"
 #~ msgid "Y"
 #~ msgstr "Y"
 
